@@ -1,22 +1,34 @@
-import React from "react";
+import React,{useState} from "react";
 import "./lang.css";
  import Usa from "../img/Group(1).png"
+ import Ru from "../img/Group(3).png"
+ import Kg from "../img/Group(2).png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-class Lang extends React.Component {
-  state = {
-    isOpen: false
-  };
+const Lang =()=> {
 
-  toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
+  const [open,setOpen]= useState(false);
+  const [flag,setFlag]=useState(Usa);
+  const [country,setCountry]= useState(["EN","RU","KG"]);
+const flagRu=()=>{
+  setFlag(Ru)
+}
+const flagKg=()=>{
+  setFlag(Kg)
+}
+const toggleOpen=()=>{
+  setOpen(!open);
+}
 
-  render() {
-    const menuClass = `dropdown-menu${this.state.isOpen ? " show" : ""}`;
+
+
+
+    const menuClass = `dropdown-menu${open ? " show" : ""}`;
     return (
-      <div className="dropdown" onClick={this.toggleOpen}>
-        <img src={Usa}/>
+      <div className="dropdown" onClick={toggleOpen}>
+        <img src={flag}/>
         <sran
           className="btn  dropdown-toggle"
           type="button"
@@ -24,19 +36,18 @@ class Lang extends React.Component {
           data-toggle="dropdown"
           aria-haspopup="true"
         >
-          EN
+          {country[0]}
         </sran>
         <div className={menuClass} aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" href="#nogo">
-            RU
+          <a className="dropdown-item" href="#nogo" onClick={flagRu}>
+            {country[1]}
           </a>
-          <a className="dropdown-item" href="#nogo">
-          KG
+          <a className="dropdown-item" href="#nogo" onClick={flagKg}>
+          {country[2]}
           </a>
         </div>
       </div>
     );
   }
-}
 
 export default Lang;

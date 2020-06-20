@@ -1,21 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 import "./toursBtn.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-class ToursBtn extends React.Component {
-  state = {
-    isOpen: false
-  };
+const ToursBtn =()=>{
 
-  toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
+  const [open,setOpen]=useState(false);
 
-  render() {
-    const menuClass = `dropdown-menu${this.state.isOpen ? " show" : ""}`;
+  const toggleOpen = () => {
+    setOpen(!open)
+  }
+
+
+    const menuClass = `dropdown-menu${open ? " show" : ""}`;
     return (
-      <div className="dropdown" onClick={this.toggleOpen}>
+      <div className="dropdown" onClick={toggleOpen}>
 
         <sran
           className="btn  dropdown-toggle"
@@ -37,6 +38,6 @@ class ToursBtn extends React.Component {
       </div>
     );
   }
-}
+
 
 export default ToursBtn;
