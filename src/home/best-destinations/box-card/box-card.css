@@ -1,0 +1,23 @@
+.box-card {
+  width: 100%;
+  height: 1200px;
+  background: #ffffff;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: none !important;
+  padding-right: none !important;
+  margin-top: 30px;
+}
+.cards {
+  width: 250px;
+  height: 330px;
+}
+.img {
+  width: 250px;
+  height: 330px;
+  display: block;
+}

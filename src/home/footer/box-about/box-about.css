@@ -1,0 +1,9 @@
+.box-about{
+    width: 70%;
+    height: 145px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
