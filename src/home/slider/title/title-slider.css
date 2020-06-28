@@ -1,0 +1,15 @@
+.title-slider {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-slider > span {
+  font-size: 72px;
+  line-height: 97%;
+
+  /* or 70px */
+
+  color: #ffffff;
+}

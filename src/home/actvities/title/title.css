@@ -1,0 +1,22 @@
+.title1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.span1 {
+  font-size: 36px;
+  line-height: 43px;
+
+  color: #000000;
+}
+.span2 {
+  font-size: 19.0588px;
+  line-height: 23px;
+
+  /* identical to box height */
+
+  color: #000000;
+}

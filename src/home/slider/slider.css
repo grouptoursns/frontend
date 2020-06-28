@@ -2,20 +2,19 @@
 
 
 .nav-panel{
-    height: 70px;
+    height: 60px;
     background: none;
     position: absolute;
     top: 0;
     left: 0;
-    width: 45%;
-    transform: translate(62%,230%);
+    width: 65%;
+    transform: translate(24%,630%);
 }
-.carousel-inner {
-    height: 586px;
-    width: 100%;
+.text-slider{
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(87%,105%);
+}
 
-}
-.slide-text{
-    font-size: 65px;
-    font-family: 'Lato', sans-serif;
-}

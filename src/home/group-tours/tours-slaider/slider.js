@@ -10,8 +10,8 @@ const ToursSlider=()=>  {
       infinite: true,
       speed: 500,
       arrows:true,
-      slidesToShow: 5,
-      slidesToScroll: 4
+      slidesToShow: 3,
+      slidesToScroll: 2
     }
 
     return (
