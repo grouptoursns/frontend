@@ -6,7 +6,7 @@ const Title=()=>{
     return(
         <div className="block-title container">
               <span className="title">Best destinations</span>
-              <span>All destinations <img src={next}/></span>
+              <span className="all">All destinations <img src={next}/></span>
         </div>
       
     )

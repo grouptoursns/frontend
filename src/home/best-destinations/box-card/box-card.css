@@ -4,14 +4,13 @@
   background: #ffffff; 
 
 }
-.container {
-
-   display: flex;
+.flex-box{
+     display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
-
 }
+
 .cards {
   width: 250px;
   height: 310px;

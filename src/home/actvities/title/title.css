@@ -1,10 +1,12 @@
 .title1 {
   width: 100%;
-  height: auto;
+  height: 40px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 60px;
+
 }
 .span1 {
   font-size: 36px;

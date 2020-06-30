@@ -7,8 +7,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 65%;
-    transform: translate(24%,630%);
+    width: 62%;
+    transform: translate(31%,630%);
 }
 .text-slider{
     background: none;
@@ -18,3 +18,17 @@
     transform: translate(87%,105%);
 }
 
+.control-prev-icon {
+    display: none;
+ 
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: none;
+
+}
+.carousel-indicators .active {
+    opacity: 0;
+}
+.carousel-indicators li {
+    display: none;
+}

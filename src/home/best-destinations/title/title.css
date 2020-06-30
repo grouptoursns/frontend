@@ -1,6 +1,9 @@
 .title{
     font-size: 24px;
-line-height: 29px;
+
+font-size: 36px;
+line-height: 43px;
+
 
 }
 .block-title{
@@ -9,4 +12,14 @@ line-height: 29px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+.all{
+    font-size: 19.0588px;
+line-height: 23px;
+
+/* identical to box height */
+
+
+color: #000000;
 }

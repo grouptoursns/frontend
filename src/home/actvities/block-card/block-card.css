@@ -1,12 +1,14 @@
 .cards1 {
-  height: 460px;
+  height: auto;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 40px;
+
 }
 .img_act {
   width: 354px;
   height: 124px;
+  margin: 8px;
 }
