@@ -1,0 +1,62 @@
+.book{
+    padding: 0px 20px 10px 20px;
+    margin-left: 40px;
+    /*margin-right: 40px;*/
+    background-color: #fff;
+    width: 30%;
+}
+
+.book-price{
+    font-weight: bold;
+    border-bottom: #E4E4E4 1px solid;
+}
+.book-price__size{
+    /*font-weight: 500;*/
+    font-size: 14px;
+    color: #55575B;
+    margin-top: -15px;
+}
+.book-price__guarantee{
+    /*font-weight: normal;*/
+    font-size: 16px;
+    color: #495F25;
+}
+
+
+.book-picker{
+    display: flex;
+    flex-direction: column;
+}
+
+.book-picker__input{
+    margin-top: 10px;
+    width: 250px;
+    cursor: pointer;
+}
+.book-picker__btn{
+    margin-top: 10px;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.book-picker__select{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+
+
+.book-picker__text-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+.book-picker__text-subtitle{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: -10px;
+}

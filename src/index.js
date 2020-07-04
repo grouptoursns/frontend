@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './home/home.js';
+import Tour from './tour-page/tour.js';
+// import Home from './home/home.js';
 
 
 ReactDOM.render(
-    <Home />,
+    <Tour />,
   document.getElementById('root')
 );
 

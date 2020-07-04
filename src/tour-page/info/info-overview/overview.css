@@ -1,0 +1,9 @@
+.overview{
+    display: flex;
+    flex-direction: column;
+    border-top: #C4C4C4 2px solid;
+    margin: 15px 0px;
+}
+.overview span{
+    margin-bottom: 6px;
+}

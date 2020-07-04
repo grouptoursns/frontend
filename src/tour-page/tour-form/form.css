@@ -1,0 +1,11 @@
+.contain{
+    /*background-color: #F4F4F4;*/
+    margin: auto;
+
+}
+.form{
+    width: 100%;
+}
+.form-content{
+    display: flex;
+}
