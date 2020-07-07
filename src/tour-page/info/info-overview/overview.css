@@ -7,3 +7,15 @@
 .overview span{
     margin-bottom: 6px;
 }
+.overview-bold{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+.duration{
+    margin-bottom: -15px;
+}
+.overview-list li{
+    margin-bottom: 10px;
+    margin-left: -20px;
+}

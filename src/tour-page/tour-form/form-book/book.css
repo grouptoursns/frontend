@@ -41,6 +41,9 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+.book-picker__btn:hover{
+
+}
 .book-picker__select{
     font-style: normal;
     font-weight: normal;

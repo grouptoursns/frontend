@@ -1,0 +1,26 @@
+.booking{
+    margin: 20px 0px;
+    width: 100%;
+    border: #DADADA 2px solid;
+}
+
+.booking-form{
+    display: flex;
+    justify-content: space-around;
+}
+
+.booking-info{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    width: 75%;
+}
+.booking-form__right{
+    display: flex;
+    flex-direction: column;
+}
+.booking-form__left button{
+    background-color: #186B6D;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+}

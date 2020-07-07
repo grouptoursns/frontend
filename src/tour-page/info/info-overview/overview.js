@@ -21,16 +21,36 @@ const Over =()=>{
             </div>
             <div className='overview'>
                 <h4>Departure & Return</h4>
-                <span>Departure Point</span>
+                <span className='overview-bold'>Departure Point</span>
                 <span>Traveler pickup is offered</span>
-                <span>Departure Time</span>
+                <span className='overview-bold'>Departure Time</span>
                 <span>8:00 AM</span>
             </div>
             <div className='overview'>
                 <h4>What to Expect</h4>
+                <span className='overview-bold'>Itinerary</span>
+                <p><span className='overview-bold'>Stop at:</span> Burana tower</p>
+                <p>You will visit a UNESCO heritage site build in 11th century.
+                    Famous Burana tower, a stop on the Great Silk Road</p>
+
+                <p className="duration">Duration: 40 minutes</p>
+                <p>Admission: Ticket included</p>
+
+                <p><span className='overview-bold'>Stop at:</span> Koltor lake</p>
+                <p className="duration">Duration: 40 minutes</p>
+                <p>Admission: Ticket included</p>
+
+
             </div>
             <div className='overview'>
                 <h4>Additional Info</h4>
+                <ul className='overview-list'>
+                    <li>Confirmation will be received at time of booking </li>
+                    <li>Not wheelchair accessible</li>
+                    <li>Children must be accompanied by an adult</li>
+                    <li>Minimum age 10</li>
+                    <li>This is a private tour/activity. Only your group will participate</li>
+                </ul>
             </div>
 
         </div>
