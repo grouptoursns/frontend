@@ -13,8 +13,8 @@ const Booking = () =>{
                 <div className='booking-form__right'>
                     <p>$240.12</p>
                     <p>2 Audits x $120.06</p>
-                    <button>Reserve Now & Pay Later</button>
-                    <button>Book now</button>
+                    <button className='booking-form__right-btn'>Reserve Now & Pay Later</button>
+                    <button className='booking-form__right-btn'>Book now</button>
                 </div>
             </div>
             <div className='booking-info'>
