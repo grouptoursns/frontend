@@ -1,11 +1,12 @@
 .contain{
     /*background-color: #F4F4F4;*/
     margin: auto;
-
+    margin-top: 30px;
 }
 .form{
     width: 100%;
 }
 .form-content{
     display: flex;
+    justify-content: center;
 }

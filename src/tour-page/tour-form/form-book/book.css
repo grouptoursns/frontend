@@ -3,7 +3,7 @@
     margin-left: 40px;
     /*margin-right: 40px;*/
     background-color: #fff;
-    width: 30%;
+    width: 21.4%;
 }
 
 .book-price{
@@ -40,6 +40,9 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    width: 250px;
+    height: 39px;
+
 }
 .book-picker__btn:hover{
 
