@@ -22,3 +22,7 @@
 
   color: #000000;
 }
+.span2:hover{
+  color:  rgba(7, 58, 245, 0.63);
+  cursor: pointer;
+}

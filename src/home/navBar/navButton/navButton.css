@@ -9,3 +9,9 @@
 .link{
     cursor: pointer;
 }
+.link:hover{
+    color: rgba(7, 58, 245, 0.63);
+}
+.link:focus{
+    color: rgba(7, 58, 245, 0.63);
+}
