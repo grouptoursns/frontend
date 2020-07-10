@@ -35,13 +35,15 @@
 }
 .book-picker__btn{
     margin-top: 10px;
+    margin-bottom: 5px;
     color: #FFFFFF;
     background-color: #000000;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 20px;
     cursor: pointer;
     width: 250px;
     height: 39px;
+
 
 }
 .book-picker__btn:hover{

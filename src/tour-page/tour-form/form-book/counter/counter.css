@@ -1,0 +1,15 @@
+.book-picker__adults{
+    display: flex;
+    margin: 10px;
+}
+.book-picker__adults h5{
+    width: 20px;
+}
+.book-picker__adults-btn{
+    width: 30px;
+    border: #000000 1px solid;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+}

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Counter from "./counter/counter.js";
 import DatePicker from "react-datepicker/es";
 import 'react-datepicker/dist/react-datepicker.css'
 import './book.css'
@@ -7,6 +8,7 @@ import input from './img/Input.png'
 
 const Book =()=>{
     const [selectedDate, setSelectedDate] = useState(null)
+
     return(
         <div className="book">
             <div className="book-price">
@@ -22,7 +24,9 @@ const Book =()=>{
                     dateFormat='dd/MM/yyyy'
                     minDate = {new Date()}
                 />
-                <img className="book-picker__input" src={input} alt="input.icon"/>
+
+                    <Counter />
+
                 <button className="book-picker__btn">Update search</button>
 
                 <div className="book-picker__text">

@@ -11,8 +11,8 @@ const Booking = () =>{
                     <button>8:00 AM</button>
                 </div>
                 <div className='booking-form__right'>
-                    <p>$240.12</p>
-                    <p>2 Audits x $120.06</p>
+                    <p className='booking-form__right-cost'>$240.12</p>
+                    <p className='booking-form__right-count'>2 Audits x $120.06</p>
                     <button className='booking-form__right-btn'>Reserve Now & Pay Later</button>
                     <button className='booking-form__right-btn'>Book now</button>
                 </div>
@@ -20,7 +20,7 @@ const Booking = () =>{
             <div className='booking-info'>
                 <p>Reserve Now & Pay Later is an easy way to secure your spot while keeping your plans flexible.
                     Pay at any time up to 2 days before your experience.
-                    Canceling is simple too. Learn More
+                    Canceling is simple too.
                 </p>
             </div>
         </div>
