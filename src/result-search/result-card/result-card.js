@@ -6,15 +6,32 @@ import star2 from "./img/Star 6 (1).png";
 import mapPaint from "./img/map-pin.png";
 
 const ResultCard = () => {
-  const cards = {
+  const cards =[
+       {
     img: imgCard,
     stars: [star1, star1, star1, star1, star2],
     paint: mapPaint,
-  };
+  },
+  {
+    img: imgCard,
+    stars: [star1, star1, star1, star1, star2],
+    paint: mapPaint,
+  },
+  ]
 
   return(
 <div>
-    
+    (
+        {
+            cards.map(item=>{
+                return(
+                    <div className="content">
+                        
+                    </div>
+                )
+            })
+        }
+    )
 </div>
   )
 };
