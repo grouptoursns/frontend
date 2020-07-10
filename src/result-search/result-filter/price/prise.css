@@ -1,0 +1,23 @@
+.MuiSlider-root {
+    color: #FF690F !important;
+   
+   
+}
+.makeStyles-root-1 {
+     width: 100% !important; 
+}
+.MuiSlider-rail {
+
+    background-color: #E2E2E2 !important;
+}
+.MuiSlider-thumb {
+
+    background-color: #FFFFFF !important;
+    border: 1px solid #FF690F;
+}
+.MuiTypography-body1 {
+    font-size: 14px !important;
+ 
+    line-height:  17px !important;
+   
+}
