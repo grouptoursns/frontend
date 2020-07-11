@@ -8,6 +8,7 @@ import card5 from "../home/best-destinations/img/CARD_DESTINATON(4).png";
 import card6 from "../home/best-destinations/img/CARD_DESTINATON(5).png";
 import card7 from "../home/best-destinations/img/CARD_DESTINATON(6).png";
 import card8 from "../home/best-destinations/img/CARD_DESTINATON(7).png";
+import {Link} from "react-router-dom"
 
 const Destinations = () => {
   const pictures = [
@@ -32,9 +33,11 @@ const Destinations = () => {
       <div className="destion-cards">
         {pictures.map((item) => {
           return (
-            <div className="cards" key={item.id}>
-              <img className="img" src={item.img} />
-            </div>
+            <Link to="/result_search">
+              <div className="cards" key={item.id}>
+                <img className="img" src={item.img} />
+              </div>
+            </Link>
           );
         })}
       </div>

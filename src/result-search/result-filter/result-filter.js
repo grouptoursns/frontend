@@ -4,8 +4,10 @@ import DropdownCountry from "./country/country.js";
 import Activity from "./activity/activity.js";
 import Price from "./price/prise.js";
 
-const Filter = () => {
+const Filter = (props) => {
+    console.log(props)
   return (
+      
     <div className="block-filter">
       <div className="block-title-filter">
         <h1>Results of search</h1>

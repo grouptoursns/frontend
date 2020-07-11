@@ -9,6 +9,7 @@ import card5 from "../home/actvities/block-card/img/Rectangle 5.png";
 import card6 from "../home/actvities/block-card/img/Rectangle 6.png";
 import card7 from "../home/actvities/block-card/img/Rectangle 7.png";
 import card8 from "../home/actvities/block-card/img/Rectangle 8.png";
+import {Link} from "react-router-dom"
 
 const Activity = () => {
     const pictures = [
@@ -37,7 +38,10 @@ const Activity = () => {
       <div className="destion-cards">
        
                {pictures.map((item) => {
-                return <img key={item.id} className="img_act" src={item.img} />;
+                return(
+                    <Link to="/result_search"><img key={item.id} className="img_act" src={item.img} /></Link>
+                    
+                ) 
               })}
        
       </div>
