@@ -6,12 +6,16 @@
     justify-content: space-around;
     align-items: center;
 }
-.link{
+.link1{
     cursor: pointer;
 }
-.link:hover{
+.link1:hover{
     color: rgba(7, 58, 245, 0.63);
 }
-.link:focus{
-    color: rgba(7, 58, 245, 0.63);
+a {
+    color: #000000 !important;
+    text-decoration: none;
+}
+a:hover{
+    color: rgba(7, 58, 245, 0.63) !important;  
 }
