@@ -5,7 +5,7 @@ import "./text-tours.css"
 const TextTours= ()=>{
     return(
         <div className="text-block">
-               <span className="text">Group tours</span>
+               <span className="text2">Group tours</span>
         </div>
      
     );
