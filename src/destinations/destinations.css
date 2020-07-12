@@ -1,0 +1,24 @@
+.p1 {
+  height: auto;
+  margin-top: 35px;
+}
+.destion-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.destion-title > span {
+  font-size: 36px;
+  line-height: 43px;
+  color: #000000;
+}
+.destion-cards{
+    margin-top: 25px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
