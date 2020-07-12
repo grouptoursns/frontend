@@ -1,0 +1,35 @@
+.notFound-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  color: #000000;
+}
+.back {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.page-notFound{
+    background: #F4F4F4;
+    width: 100%;
+    height: 557px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.content-notFound{
+    width: 337px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.not-home{
+    color: blue !important;
+    text-decoration:underline;
+}
