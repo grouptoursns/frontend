@@ -24,9 +24,7 @@ const Book =()=>{
                     dateFormat='dd/MM/yyyy'
                     minDate = {new Date()}
                 />
-
                     <Counter />
-
                 <button className="book-picker__btn">Update search</button>
 
                 <div className="book-picker__text">

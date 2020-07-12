@@ -17,6 +17,8 @@
 
 .overview-cont{
     width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 .duration{
     margin-bottom: -3px;
