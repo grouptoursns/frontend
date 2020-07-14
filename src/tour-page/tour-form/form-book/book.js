@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import Counter from "./counter/counter.js";
-import DatePicker from "react-datepicker/es";
+import DatePicker from "react-datepicker/dist/es";
 import 'react-datepicker/dist/react-datepicker.css'
 import './book.css'
-import input from './img/Input.png'
+
 
 
 const Book =()=>{

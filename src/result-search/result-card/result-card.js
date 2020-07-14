@@ -4,6 +4,7 @@ import imgCard from "./img/Frame 42.png";
 import star1 from "./img/Star 6.png";
 import star2 from "./img/Star 6 (1).png";
 import mapPaint from "./img/map-pin.png";
+import {Link} from "react-router-dom";
 
 const ResultCard = () => {
   const cards = [
@@ -52,7 +53,8 @@ const ResultCard = () => {
                   <span className="descrip_text">Kyrgyzstan, Bishkek</span>
               </div>
               <sapn className="price">from 200$ </sapn> 
-               <button className="more_details">more details</button>
+              <Link to="/tourspage"><button className="more_details">more details</button></Link>
+               
             </div>
           
           </div>

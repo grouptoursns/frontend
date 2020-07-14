@@ -16,46 +16,11 @@ const Lang =()=>{
   const toggleOpen = () => {
     setOpen(!open)
   }
-  const Clickcountry=(event)=>{
-      const arr=[...country];
-      if(event.target.id==="1"){
-          for(var i=0;i<arr.length;i++){
-              if(i==1){
-                  arr.splice(i,1);
-                  arr.unshift(country[1]);
-                  setCountry([...arr])
-              }
-          }
-      }
-      if(event.target.id==="2"){
-        for(var i=0;i<arr.length;i++){
-            if(i==2){
-                arr.splice(i,1);
-                arr.unshift(country[2]);
-                setCountry([...arr])
-            }
-        }
-    }
-    switch(event.target.innerHTML){
-        case "EN":
-            setFlag(Usa);
-            break;
-        case "RU":
-            setFlag(Ru);
-            break;
-        case "KG":
-            setFlag(Kg);
-            break;
-    }
-  
-   
-  }
 
 
     const menuClass = `dropdown-menu${open ? " show" : ""}`;
     return (
       <div className="dropdown" onClick={toggleOpen}>
-          <img src={flag}/>
         <sran
           className="btn  dropdown-toggle"
           type="button"
@@ -63,14 +28,14 @@ const Lang =()=>{
           data-toggle="dropdown"
           aria-haspopup="true"
         >
-          {country[0]}
+          Login in
         </sran>
         <div className={menuClass} aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" id="1" href="#nogo" onClick={Clickcountry}>
-          {country[1]}
+          <a className="dropdown-item" id="1" href="#nogo" >
+          Login in
           </a>
-          <a className="dropdown-item" id="2" href="#nogo" onClick={Clickcountry}>
-          {country[2]}
+          <a className="dropdown-item" id="2" href="#nogo" >
+          Login up
           </a>
         </div>
       </div>
