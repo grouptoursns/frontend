@@ -4,12 +4,18 @@ import './form.css'
 const Form =()=>{
     return(
         <div className="form">
-            <form>
-                <input placeholder='Login' type="text"/>
-                <input placeholder='Password' type="text"/>
-                <a>Forgot your password?</a>
-                <button>Sign In</button>
-            </form>
+            <div className="form-cont">
+                <div>
+                    <p className="form-cont__title">Login</p>
+                    <input className="form-cont__input" placeholder='Login' type="text"/>
+                </div>
+                <div>
+                    <p className="form-cont__title">Password</p>
+                    <input className="form-cont__input" placeholder='Password' type="text"/>
+                </div>
+                <a className="form-cont__link">Forgot your password?</a>
+                <button className="form-cont__btn">Sign In</button>
+            </div>
         </div>
     )
 }
