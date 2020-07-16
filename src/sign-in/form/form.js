@@ -1,22 +1,28 @@
 import React from "react";
-import './form.css'
+import { Tabs, Tab} from "@material-ui/core";
+
+import User from './user/user.js'
+
 
 const Form =()=>{
+
+        const [selectedTab, setSelectedTab] = React.useState(0);
+        const handleChange =(event, newValue)=>{
+            setSelectedTab(newValue);
+        }
+
+
     return(
-        <div className="form">
-            <div className="form-cont">
-                <div>
-                    <p className="form-cont__title">Login</p>
-                    <input className="form-cont__input" placeholder='Login' type="text"/>
-                </div>
-                <div>
-                    <p className="form-cont__title">Password</p>
-                    <input className="form-cont__input" placeholder='Password' type="text"/>
-                </div>
-                <a className="form-cont__link">Forgot your password?</a>
-                <button className="form-cont__btn">Sign In</button>
-            </div>
-        </div>
-    )
+        <>
+            <Tabs value={selectedTab} onChange={handleChange} centered indicatorColor="none" textColor="black">
+                <Tab label="User"/>
+                <Tab label="Company"/>
+            </Tabs>
+
+            {selectedTab === 0 && <User />}
+            {selectedTab === 1 && <User />}
+        </>
+
+)
 }
 export default Form;
