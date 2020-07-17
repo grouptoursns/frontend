@@ -1,8 +1,18 @@
-.user-form{
-    width: 100%;
-    background: red;
-    height: 100% ;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.sign-user-content {
+  width: 380px;
+  height: 90%;
+}
+.user-names {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.user-firstName .user-lastName {
+  width: 27px !important;
+  background: #252424;
+  border: 1px solid #373e4a;
+
+  border-radius: 7px;
 }

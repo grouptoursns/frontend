@@ -10,6 +10,7 @@
 .sign-up_content{
     width: 55%;
     height:515px;
+
 }
 .sign-block-btn{
     width: 100%;
@@ -28,6 +29,10 @@
     background: #ffff;
     width: 100%;
     height: 479px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .act{
     background: #ffff;

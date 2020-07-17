@@ -1,42 +1,51 @@
 import React from "react";
 import "./user.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 
-const User = () => {
-  return (
-    <div>
-      <Formik
-        initialValues={{ email: "", password: "" }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.email) {
-            errors.email = "Required";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Invalid email address";
-          }
-          return errors;
-        }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
-        }}
-      >
-        {({ isSubmitting }) => (
-          <Form className="user-form">
-            <Field type="email" name="email" />
-            <Field type="phone" name="phone" />
-            <Field type="password" name="password" />
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
-    </div>
-  );
-};
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+});
+
+const User = () => (
+  <div className="sign-user-content">
+    <h1>Signup</h1>
+    <Formik
+      initialValues={{
+        firstName: "",
+        lastName: "",
+        email: "",
+      }}
+      validationSchema={SignupSchema}
+      onSubmit={(values) => {
+        // same shape as initial values
+        console.log(values);
+      }}
+    >
+      {({ errors, touched }) => (
+        <Form>
+          <div className="user-names">
+            <Field name="firstName" className="name" />
+    
+            <Field name="lastName"  />
+ 
+          </div>
+
+          <Field name="email" type="email" />
+          {errors.email && touched.email ? <div>{errors.email}</div> : null}
+          <button type="submit">Submit</button>
+        </Form>
+      )}
+    </Formik>
+  </div>
+);
+
 export default User;
