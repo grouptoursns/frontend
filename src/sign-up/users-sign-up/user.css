@@ -2,17 +2,94 @@
   width: 380px;
   height: 90%;
 }
-.user-names {
+.App {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+label,
+.input {
+  display: block;
+  width: 180px;
+}
+
+label {
+  margin-bottom: 5px;
+  height: 22px;
+  font-size: 12px;
+}
+
+.input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #373e4a;
+  height: 27px;
+}
+
+input.error {
+  border-color: red;
+}
+
+.input-feedback {
+  color: rgb(235, 54, 54);
+  margin-top: -15px;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.submit {
+  background-color: #373e4a;
+  color: #ffffff;
+  border: 1px solid #373e4a;
+  background-color: 250ms;
+  width: 172px;
+  height: 23px;
+  font-size: 12px;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(70, 153, 179);
+}
+.input-row {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.user-firstName .user-lastName {
-  width: 27px !important;
-  background: #252424;
-  border: 1px solid #373e4a;
-
-  border-radius: 7px;
+.black-line {
+  width: 70%;
+  height: 2px;
+  background: #373e4a;
+}
+.line-block {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pasw {
+  margin-top: 10px;
+}
+.block-check{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkbox{
+  margin-right: 10px;
 }
