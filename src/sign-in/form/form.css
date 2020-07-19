@@ -35,7 +35,6 @@
 .form-cont__link{
     color: #000000;
     text-decoration: none;
-    margin-bottom: 10px;
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
@@ -49,4 +48,22 @@
     color: #ffffff;
     width: 172px;
     height: 27px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
+
+.form-cont__check{
+    display: flex;
+    align-items: center;
+}
+.form-cont__check-input{
+    margin-right: 8px;
+    border: 2px #000000 solid;
+}
+
+.form-cont__check-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+

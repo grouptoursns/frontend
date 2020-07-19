@@ -15,8 +15,14 @@ const User =()=>{
                     <p className="form-cont__title">Password</p>
                     <input className="form-cont__input" placeholder='Password' type="password"/>
                 </div>
-                <a className="form-cont__link">Forgot your password?</a>
+                <div className="form-cont__check">
+                    <input className="form-cont__check-input" type="checkbox"/>
+                    <p className="form-cont__check-title">Remember me</p>
+                </div>
+
                 <button className="form-cont__btn">Sign In</button>
+                <a className="form-cont__link">Forgot your password?</a>
+
             </div>
         </div>
     )
