@@ -1,8 +1,6 @@
 import React,{useState} from "react";
 import "./lang.css";
-import Usa from "../img/Group(1).png";
-import Kg from "../img/Group(2).png";
-import Ru from "../img/Group(3).png";
+import {Link} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -10,8 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Lang =()=>{
 
   const [open,setOpen]=useState(false);
-  const [flag,setFlag]=useState(Usa);
-  const [country,setCountry]= useState(['EN','RU','KG']);
+
 
   const toggleOpen = () => {
     setOpen(!open)
@@ -31,12 +28,9 @@ const Lang =()=>{
           Login in
         </sran>
         <div className={menuClass} aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" id="1" href="#nogo" >
-          Login in
-          </a>
-          <a className="dropdown-item" id="2" href="#nogo" >
-          Login up
-          </a>
+          
+          <Link className="dropdown-item" to="/sign-in">Login in</Link>
+          <Link className="dropdown-item" to="/sign-up">Login up</Link>
         </div>
       </div>
     );
