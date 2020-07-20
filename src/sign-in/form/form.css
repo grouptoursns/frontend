@@ -12,6 +12,8 @@
     align-items: center;
     background-color: #ffffff;
     padding: 40px 0px 40px 0px;
+    margin-top: 40px;
+
 }
 
 .form-cont__input{
@@ -40,6 +42,7 @@
     font-weight: normal;
     font-size: 12px;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 .form-cont__btn{
     font-family: Lato;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from  'react-router-dom';
 import '../form.css'
 
 const User =()=>{
@@ -22,7 +23,7 @@ const User =()=>{
 
                 <button className="form-cont__btn">Sign In</button>
                 <a className="form-cont__link">Forgot your password?</a>
-
+                <Link to="/company">Sign in as Company</Link>
             </div>
         </div>
     )

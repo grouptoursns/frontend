@@ -7,7 +7,7 @@ import SingIn from './sign-in/sign-in.js'
 
 
 ReactDOM.render(
-    <SingIn />,
+    <SingIn/>,
   document.getElementById('root')
 );
 
