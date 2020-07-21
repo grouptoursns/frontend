@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from  'react-router-dom';
+import { Link, NavLink } from  'react-router-dom';
 import '../form.css'
 
 const Company =()=>{
         return(
             <div className="form">
+                <div className="form-tabs">
+                    <NavLink to="/user" className="form-tabs__link" activeClassName="selected">User</NavLink>
+                    <NavLink to="/company" className="form-tabs__link" activeClassName="selected">Company</NavLink>
+                </div>
                 <div className="form-cont">
                     <h2>Company</h2>
                     <div>
@@ -22,7 +26,6 @@ const Company =()=>{
 
                     <button className="form-cont__btn">Sign In</button>
                     <a className="form-cont__link">Forgot your password?</a>
-                    <Link to="/user">Sign in as User</Link>
                 </div>
             </div>
         )

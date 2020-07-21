@@ -1,8 +1,11 @@
 .form{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-color: #F4F4F4;
-    padding: 0px 0px 90px 0px;
+    padding-bottom:90px;
+    
 }
 
 .form-cont{
@@ -12,7 +15,6 @@
     align-items: center;
     background-color: #ffffff;
     padding: 40px 0px 40px 0px;
-    margin-top: 40px;
 
 }
 
@@ -70,3 +72,16 @@
     font-size: 14px;
 }
 
+.selected{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+
+.form-tabs{
+    margin-top: 50px;
+    padding-bottom: 8px;
+}
+.form-tabs__link{
+    padding: 10px 20px;
+}

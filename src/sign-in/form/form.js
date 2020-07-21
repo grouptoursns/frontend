@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom'
 import { Tabs, Tab} from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import Company from './company/company.js'
@@ -45,10 +45,13 @@ const Form =()=>{
 // )
     return(
         <div className="tabs">
+            
+
             <Router>
                 <Switch>
                     <Route path="/user" component={User} />
                     <Route path="/company" component={Company} />
+                    <Redirect from="/" to="/user" />
                 </Switch>
             </Router>
         </div>
