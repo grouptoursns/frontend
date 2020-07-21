@@ -2,7 +2,6 @@ import React from "react";
 import "./user.css";
 import Calendar from "./calendar";
 import { Formik } from "formik";
-import * as EmailValidator from "email-validator";
 import * as Yup from "yup";
 const User = () => (
   <Formik
