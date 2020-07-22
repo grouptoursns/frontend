@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "./home/navBar/navBar.js";
-import Footer from "./home/footer/footer.js";
-import Home from "./home/home.js";
-import ResultSearch from "./result-search/result-search.js";
-import Destinations from "./destinations/destinations.js";
-import Activity from "./activity/activity.js";
-import NotFound from "./notFound/notFound.js";
-import Tour from "./tour-page/tour.js";
+import NavBar from "./componens/home/navBar/navBar.js";
+import Footer from "./componens/home/footer/footer.js";
+import Home from "./componens/home/home.js";
+import ResultSearch from "./componens/result-search/result-search.js";
+import Destinations from "./componens/destinations/destinations.js";
+import Activity from "./componens/activity/activity.js";
+import NotFound from "./componens/notFound/notFound.js";
+import Tour from "./componens/tour-page/tour.js";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
