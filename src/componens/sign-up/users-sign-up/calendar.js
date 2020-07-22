@@ -5,6 +5,7 @@ import "./user.css";
 
 const Calendar=() => {
     const [startDate, setStartDate] = useState(new Date());
+    console.log(startDate)
     return (
       <DatePicker selected={startDate} className="input" onChange={date => setStartDate(date)} />
     );

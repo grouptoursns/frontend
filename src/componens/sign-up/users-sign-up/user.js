@@ -3,6 +3,7 @@ import "./user.css";
 import Calendar from "./calendar";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 const User = () => (
   <Formik
     initialValues={{ email: "", password: "" }}
@@ -11,6 +12,18 @@ const User = () => (
         console.log("Logging in", values);
         setSubmitting(false);
       }, 500);
+      axios
+        .post('http://161.35.199.172/api/users/registration/', {
+          "email": values.email,
+          "first_name": values.firstName,
+          "last_name": values.lastName,
+          "birthday": values.birthday,
+          "password": values.password,
+          "password2": values.repeatPassword
+        })
+        .then((res) => {
+          console.log(res);
+        });
     }}
     //********Handling validation messages yourself*******/
     // validate={values => {
@@ -36,15 +49,17 @@ const User = () => (
 
     validationSchema={Yup.object().shape({
       email: Yup.string().email().required("Required"),
-      firstName:Yup.string().required("Name not provided")
-      .min(3,"The name is too short - must be at least 3 characters."),
-      lastName:Yup.string().required("Surname not provided.")
-      .min(3,"The surname is too short - must be at least 3 characters."),
+      firstName: Yup.string()
+        .required("Name not provided")
+        .min(3, "The name is too short - must be at least 3 characters."),
+      lastName: Yup.string()
+        .required("Surname not provided.")
+        .min(3, "The surname is too short - must be at least 3 characters."),
       password: Yup.string()
         .required("No password provided.")
         .min(8, "Password is too short - should be 8 chars minimum.")
         .matches(/(?=.*[0-9])/, "Password must contain a number."),
-        repeatPassword:Yup.string()
+      repeatPassword: Yup.string()
         .required("No repeat password provided.")
         .min(8, "Password is too short - should be 8 chars minimum.")
         .matches(/(?=.*[0-9])/, "Password must contain a number."),
@@ -60,6 +75,7 @@ const User = () => (
         handleBlur,
         handleSubmit,
       } = props;
+
       return (
         <div className="sign-user-content ">
           <form onSubmit={handleSubmit}>
@@ -95,7 +111,6 @@ const User = () => (
                 )}
               </div>
             </div>
-
             <div className="input-row">
               <div>
                 <label htmlFor="email">Email</label>
@@ -115,7 +130,15 @@ const User = () => (
               </div>
               <div>
                 <label htmlFor="email">Birthday</label>
-                <Calendar />
+                <input
+                  type="date"
+                  id="birthday"
+                  name="birthday"
+                  value={values.date}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className="input"
+                />
               </div>
             </div>
             <div className="line-block">
@@ -148,7 +171,9 @@ const User = () => (
                   value={values.repeatPassword}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={errors.repeatPassword && touched.repeatPassword && "error"}
+                  className={
+                    errors.repeatPassword && touched.repeatPassword && "error"
+                  }
                   className="input"
                 />
                 {errors.repeatPassword && touched.repeatPassword && (
@@ -159,8 +184,13 @@ const User = () => (
 
             <div className="block-check">
               <p>
-                <input type="checkbox" name="option1" value="a1" className="checkbox" />I
-                have read and agree to the privacy policy and terms
+                <input
+                  type="checkbox"
+                  name="option1"
+                  value="a1"
+                  className="checkbox"
+                />
+                I have read and agree to the privacy policy and terms
               </p>
               <button type="submit" disabled={isSubmitting} className="submit">
                 Sign up
