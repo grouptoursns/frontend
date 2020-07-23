@@ -15,7 +15,7 @@
     align-items: center;
     background-color: #ffffff;
     padding: 40px 0px 40px 0px;
-
+    margin-top: 60px;
 }
 
 .form-cont__input{
@@ -75,13 +75,4 @@
 .selected{
     background-color: #FFFFFF;
     color: #000000;
-}
-
-
-.form-tabs{
-    margin-top: 50px;
-    padding-bottom: 8px;
-}
-.form-tabs__link{
-    padding: 10px 20px;
 }

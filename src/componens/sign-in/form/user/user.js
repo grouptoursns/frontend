@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, NavLink} from 'react-router-dom';
 import '../form.css'
 
 
@@ -9,14 +8,27 @@ export default class User extends Component {
         super(props);
         this.state={
             isAuthenticated:false,
-            resData:''
+            resData:'',
+            text1:'',
+            text2:'',
+            checkbox: false
         }
     }
 
-    componentDidMount(){
+    change =(e)=>{
+        const { name, value, type, checked } = e.target
+
+        // if (type === 'checkbox'){
+        //     checked = ;
+        // }
+
+        this.setState({ [name]: value })
+    }
+
+    componentDidMount() {
         const payLoad={
-            email:'customer@bk.ru',
-            password:'1234'
+            email: '{this.state.text1}',
+            password: '{this.state.text2}'
         }
         fetch('http:///161.35.199.172/api/users/login/',{
             method:'POST',
@@ -47,53 +59,51 @@ export default class User extends Component {
 
 
     render() {
-        if(this.state.isAuthenticated){
-            return (
-                <div>
-                    <p>Token is - {this.state.resData}</p>
-                </div>
-            ); 
-        }
-        else{
-            return(<p>No data was return</p>)
-        }
+        if(this.state.isAuthenticated){}
+        //         return (
+        //             <div>
+        //                 <p>Token is - {this.state.resData}</p>
+        //             </div>
+        //         );
+        //     }
+        //     else{
+        //         return(<p>No data was return</p>)
+        //     }
+        // }
+
+        return (
+
+            <div className="form">
+                <form className="form-cont">
+                    <h2>Log in</h2>
+                    <div>
+                        <p className="form-cont__title">Login</p>
+                        <input className="form-cont__input"
+                        placeholder='Login'
+                        type="text"
+                               name="text1"
+                               value={this.state.text1}
+                               onChange={this.change}
+                        />
+                    </div>
+                    <div>
+                        <p className="form-cont__title">Password</p>
+                        <input className="form-cont__input"
+                        placeholder='Password'
+                        type="password"
+                        name="text2"
+                               value={this.state.text2}
+                               onChange={this.change}
+                        />
+                    </div>
+                    <div className="form-cont__check">
+                        <input className="form-cont__check-input" type="checkbox" name="checkbox" value={this.state.checkbox} onChange={this.change} />
+                        <p className="form-cont__check-title">Remember me</p>
+                    </div>
+                    <button className="form-cont__btn">Login</button>
+                    <a className="form-cont__link">Forgot your password?</a>
+                </form>
+            </div>
+        )
     }
 }
-        // return (
-        //     <div className="form">
-        //         <div className="form-tabs">
-        //             <NavLink to="/user" className="form-tabs__link" activeClassName="selected">User</NavLink>
-        //             <NavLink to="/company" className="form-tabs__link" activeClassName="selected">Company</NavLink>
-        //         </div>
-        //         <form className="form-cont" onSubmit={this.submitForm}>
-
-        //             <h2>User</h2>
-        //             <div>
-        //                 <p className="form-cont__title">Login</p>
-        //                 <input className="form-cont__input" 
-        //                 placeholder='Login' 
-        //                 type="text" 
-        //                 />
-        //             </div>
-        //             <div>
-        //                 <p className="form-cont__title">Password</p>
-        //                 <input className="form-cont__input" 
-        //                 placeholder='Password' 
-        //                 type="password" 
-        //                 />
-        //             </div>
-        //             <div className="form-cont__check">
-        //                 <input className="form-cont__check-input" type="checkbox" />
-        //                 <p className="form-cont__check-title">Remember me</p>
-        //             </div>
-
-        //             <input type="submit" className="form-cont__btn" />
-        //             <a className="form-cont__link">Forgot your password?</a>
-
-        //         </form>
-
-                
-            // </div>
-//         )
-//     }
-// }
