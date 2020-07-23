@@ -27,7 +27,6 @@ const App = () => {
         <Route path="/sign-up"  component={SignUp} />
         <Route path="/sign-up-company"  component={SignCompany} />
         <Route  component={NotFound} />
-        
         </Switch>
 
         <Footer />

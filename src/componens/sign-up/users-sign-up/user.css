@@ -16,24 +16,12 @@ form {
   margin: 0 auto;
 }
 
-label,
-.input {
-  display: block;
-  width: 180px;
-}
 
-label {
-  margin-bottom: 5px;
-  height: 22px;
-  font-size: 12px;
-}
 
 .input {
-  margin-bottom: 20px;
-  padding: 10px;
   border-radius: 7px;
   border: 1px solid #373e4a;
-  height: 27px;
+
 }
 
 input.error {
@@ -55,6 +43,8 @@ input.error {
   width: 172px;
   height: 23px;
   font-size: 12px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .submit:hover {
@@ -79,6 +69,7 @@ input.error {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .pasw {
   margin-top: 10px;
@@ -92,4 +83,8 @@ input.error {
 }
 .checkbox{
   margin-right: 10px;
+}
+.pl-3 {
+  padding-left: 1rem!important;
+  text-align: center !important;
 }
