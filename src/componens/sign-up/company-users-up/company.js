@@ -1,263 +1,353 @@
 
-import React,{useState} from "react";
+import React from "react";
 import "./company.css";
-import { Formik } from "formik";
-import * as Yup from "yup";
+
 import 'react-phone-number-input/style.css'
 import Phone from "./phone"
+import "../users-sign-up/user.css"
 
-const Company = () => (
-  <Formik
-    initialValues={{ email: "", password: "" }}
-    onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-        console.log("Logging in", values);
-        setSubmitting(false);
-      }, 500);
-    }}
-    //********Handling validation messages yourself*******/
-    // validate={values => {
-    //   let errors = {};
-    //   if (!values.email) {
-    //     errors.email = "Required";
-    //   } else if (!EmailValidator.validate(values.email)) {
-    //     errors.email = "Invalid email address";
-    //   }
+import { connect } from "react-redux";
+import DropdownExampleSearchSelection from "./country"
+import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import {putCompany} from "../../../actions/company.js"
 
-    //   const passwordRegex = /(?=.*[0-9])/;
-    //   if (!values.password) {
-    //     errors.password = "Required";
-    //   } else if (values.password.length < 8) {
-    //     errors.password = "Password must be 8 characters long.";
-    //   } else if (!passwordRegex.test(values.password)) {
-    //     errors.password = "Invalida password. Must contain one number";
-    //   }
+class Company extends React.Component {
+  state = {
+    fname: "",
+    lname: "",
+    cname:"",
+    email: "",
+    pasword: "",
+    pasword2: "",
+    country: "",
+    avatar: null,
+    site:"",
+    adress:"",
+    tripadvisor:"",
+    form:true,
+    phone:"",
+  };
+  changePhone=(phone1)=>{
+    this.setState({phone:phone1})
+    console.log(this.state.phone)
+  }
+  changeCountry=(country1)=>{
+    this.setState({country:country1})
+    console.log(this.state.country)
+  }
+  submitHandler = (event) => {
+    event.preventDefault();
+    event.target.className += " was-validated";
+    if (
+      this.state.pasword === this.state.pasword2 &&
+      this.state.pasword != "" &&
+      this.state.pasword2 != ""
+    ) {
+      this.setState({  form: false });
+      this.props.postCompany(this.state);
+      this.setState({ isOpen: true, form: false });
+      console.log(this.state)
+      
+    } else {
+      console.log(this.state);
+    }
+  };
 
-    //   return errors;
-    // }}
-    //********Using Yum for validation********/
+  changeHandler = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-    validationSchema={Yup.object().shape({
-      email: Yup.string().email().required("Required"),
-      firstName:Yup.string().required("Name not provided")
-      .min(3,"The name is too short - must be at least 3 characters."),
-      lastName:Yup.string().required("Surname not provided.")
-      .min(3,"The surname is too short - must be at least 3 characters."),
-      password: Yup.string()
-        .required("No password provided.")
-        .min(8, "Password is too short - should be 8 chars minimum.")
-        .matches(/(?=.*[0-9])/, "Password must contain a number."),
-        repeatPassword:Yup.string()
-        .required("No repeat password provided.")
-        .min(8, "Password is too short - should be 8 chars minimum.")
-        .matches(/(?=.*[0-9])/, "Password must contain a number."),
-    })}
-  >
-    {(props) => {
-      const {
-        values,
-        touched,
-        errors,
-        isSubmitting,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-      } = props;
+  render() {
+    const modal =this.props.spiner;
+    if (modal === true) {
       return (
-        <div className="sign-user-content ">
-          <form onSubmit={handleSubmit}>
-            <div className="input-row">
-              <div>
-                <label htmlFor="email">First name</label>
+        <div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      );
+    }
+    if (modal === false) {
+      return(
+        <span>{this.props.seccess}</span>
+      )
+      
+    }
+    if (this.state.form === true) {
+      return (
+        <div>
+          <form
+            className="needs-validation"
+            onSubmit={this.submitHandler}
+            noValidate
+          >
+            <MDBRow>
+              <MDBCol md="6" className="mb-3  ">
+                <label
+                  htmlFor="defaultFormRegisterNameEx"
+                  className="grey-text"
+                >
+                  First name
+                </label>
                 <input
-                  name="firstName"
+                  value={this.state.fname}
+                  name="fname"
+                  onChange={this.changeHandler}
                   type="text"
-                  value={values.firstName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.firstName && touched.firstName && "error"}
-                  className="input"
+                  id="defaultFormRegisterNameEx"
+                  className="form-control input"
+                  required
                 />
-                {errors.firstName && touched.firstName && (
-                  <div className="input-feedback">{errors.firstName}</div>
-                )}
-              </div>
-             <div>
-                <label htmlFor="email">Last name</label>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3  ">
+                <label
+                  htmlFor="defaultFormRegisterEmailEx2"
+                  className="grey-text"
+                >
+                  Last name
+                </label>
                 <input
-                  name="lastName"
-                  type="text" 
-                  value={values.lastName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.lastName && touched.lastName && "error"}
-                  className="input"
+                  value={this.state.lname}
+                  name="lname"
+                  onChange={this.changeHandler}
+                  type="text"
+                  id="defaultFormRegisterEmailEx2"
+                  className="form-control input"
+                  required
                 />
-                {errors.lastName && touched.lastName && (
-                  <div className="input-feedback">{errors.lastName}</div>
-                )}
-              </div>
-            </div>
-
-            <div className="input-row">
-              <div>
-                <label htmlFor="email">Company name</label>
-
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Company name
+                </label>
                 <input
+                  value={this.state.cname}
+                  onChange={this.changeHandler}
+                  type="text"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
+                  name="cname"
+                  required
+                />
+                <div className="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Phone
+                </label>
+                <Phone phone={this.changePhone}/>
+                
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Company site
+                </label>
+                <input
+                  value={this.state.site}
+                  onChange={this.changeHandler}
+                  type="text"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
+                  name="site"
+                  required
+                />
+                <div className="invalid-feedback">
+                  Please provide a valid email.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Email
+                </label>
+                <input
+                  value={this.state.email}
+                  onChange={this.changeHandler}
+                  type="text"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
                   name="email"
-                  type="text"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.email && touched.email && "error"}
-                  className="input"
+                  required
                 />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
+                <div className="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <div className="line-block">
+                <div className="black-line"></div>
               </div>
-              <div>
-                <label htmlFor="email">Phone</label>
-               <Phone/>
-              </div>
-            </div>
-            <div className="input-row">
-              <div>
-                <label htmlFor="email">Company name</label>
 
+              <MDBCol md="12" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Address
+                </label>
                 <input
-                  name="email"
+                  value={this.state.adress}
+                  onChange={this.changeHandler}
                   type="text"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.email && touched.email && "error"}
-                  className="input"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
+                  name="adress"
+                  required
                 />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
-              </div>
-              <div>
-                <label htmlFor="email">Phone</label>
-
-<input
-                  name="email"
+                <div className="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Choose country
+                </label>
+                <DropdownExampleSearchSelection country={this.changeCountry}/>
+                <div className="invalid-feedback">
+                  Please provide a valid email.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                 Tripadvisor
+                </label>
+                <input
+                  value={this.state.tripadvisor}
+                  onChange={this.changeHandler}
                   type="text"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.email && touched.email && "error"}
-                  className="input"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
+                  name="tripadvisor"
+                  required
                 />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
+                <div className="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <div className="line-block">
+                <div className="black-line"></div>
               </div>
-            </div>
-            <div className="line-block">
-              <div className="black-line"></div>
-            </div>
-            <div className="input-width">
-            <label htmlFor="email">Phone</label>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Password
+                </label>
                 <input
-                  name="email"
+                  value={this.state.pasword}
+                  onChange={this.changeHandler}
                   type="text"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.email && touched.email && "error"}
-                  className="input input-w"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
+                  name="pasword"
+                  required
                 />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
-            </div>
-            <div className="input-row">
-              <div>
-                <label htmlFor="email">Company name</label>
-
+                <div className="invalid-feedback">
+                  Please provide a valid email.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+              <MDBCol md="6" className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Repeat password
+                </label>
                 <input
-                  name="email"
+                  value={this.state.pasword2}
+                  onChange={this.changeHandler}
                   type="text"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.email && touched.email && "error"}
-                  className="input"
+                  id="defaultFormRegisterPasswordEx4"
+                  className="form-control input"
+                  name="pasword2"
+                  required
                 />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
-              </div>
-              <div>
-                <label htmlFor="email">Phone</label>
-                <input
-                  name="email"
-                  type="text"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.email && touched.email && "error"}
-                  className="input"
-                />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
-              </div>
-            </div>
-            <div className="line-block">
-              <div className="black-line"></div>
-            </div>
-            <div className="input-row pasw">
-              <div>
-                <label htmlFor="email">Password</label>
-
-                <input
-                  name="password"
-                  type="password"
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.password && touched.password && "error"}
-                  className="input"
-                />
-                {errors.password && touched.password && (
-                  <div className="input-feedback">{errors.password}</div>
-                )}
-              </div>
-              <div>
-                <label htmlFor="email">Repeat password</label>
-
-                <input
-                  name="repeatPassword"
-                  type="password"
-                  value={values.repeatPassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.repeatPassword && touched.repeatPassword && "error"}
-                  className="input"
-                />
-                {errors.repeatPassword && touched.repeatPassword && (
-                  <div className="input-feedback">{errors.repeatPassword}</div>
-                )}
-              </div>
-            </div>
-
+                <div className="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBCol>
+            </MDBRow>
             <div className="block-check">
-              <p>
-                <input type="checkbox" name="option1" value="a1" className="checkbox" />I
-                have read and agree to the privacy policy and terms
-              </p>
-              <button type="submit" disabled={isSubmitting} className="submit">
+              <MDBCol md="10" className="mb-3">
+                <div className="custom-control custom-checkbox pl-3">
+                  <input
+                    className="custom-control-input"
+                    type="checkbox"
+                    value=""
+                    id="invalidCheck"
+                    required
+                  />
+                  <label
+                    className="custom-control-label"
+                    htmlFor="invalidCheck"
+                  >
+                    I have read and agree to the privacy policy and terms
+                  </label>
+                  <div className="invalid-feedback">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </MDBCol>
+              <MDBBtn color="primary" type="submit" className="submit">
                 Sign up
-              </button>
+              </MDBBtn>
             </div>
           </form>
         </div>
       );
-    }}
-  </Formik>
-);
+    }
+  }
+}
+const mapStateToProps = (state) => {
+  return {
+   seccess:state.SuccessCompany.successCompany,
+    spiner:state.Spiner.spiner
+  };
+};
 
-export default Company;
+const mapDispatchToProps = (dispatch) => {
+  return {
+   postCompany:(data)=>dispatch(putCompany(data))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Company);
+
+
+//<Phone/>

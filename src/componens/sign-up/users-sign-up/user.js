@@ -20,14 +20,19 @@ class User extends React.Component {
     country: "KG",
     avatar: null,
     isOpen: false,
+    form: true,
   };
 
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
-    if (this.state.pasword === this.state.pasword2 && this.state.pasword!="" && this.state.pasword2!="") {
+    if (
+      this.state.pasword === this.state.pasword2 &&
+      this.state.pasword != "" &&
+      this.state.pasword2 != ""
+    ) {
       this.props.postUser(this.state);
-      this.setState({ isOpen: true });
+      this.setState({ isOpen: true, form: false });
     } else {
       console.log(this.state);
     }
@@ -38,10 +43,23 @@ class User extends React.Component {
   };
 
   render() {
-    const modal = this.state.isOpen;
+    const modal =this.props.spiner;
     if (modal === true) {
-      return <div>Modal</div>;
-    } else {
+      return (
+        <div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      );
+    }
+    if (modal === false) {
+      return(
+        <span>{this.props.success}</span>
+      )
+      
+    }
+    if (this.state.form === true) {
       return (
         <div>
           <form
@@ -210,7 +228,10 @@ class User extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    success: state.Success.success,
+    spiner:state.Spiner.spiner
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
