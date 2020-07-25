@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import '../form.css'
 
 
@@ -9,7 +10,8 @@ const  initialState ={
     password:'',
     emailErr:'',
     passwordErr:'',
-    check: false
+    checked: false,
+    userErr: ''
 }
 
 export default class User extends Component {
@@ -32,6 +34,11 @@ export default class User extends Component {
     validate = () =>{
         let emailErr = '';
         let passwordErr = '';
+        let userErr = '';
+
+        if(this.state.resData){
+            userErr = "No such user exists"
+        }
 
         if(!this.state.password){
             passwordErr = "Password cannot be blank"
@@ -40,8 +47,8 @@ export default class User extends Component {
         if (!this.state.email.includes("@")){
             emailErr = 'Invalid email';
         }
-        if (emailErr || passwordErr){
-            this.setState({emailErr, passwordErr})
+        if (emailErr || passwordErr || userErr){
+            this.setState({emailErr, passwordErr, userErr})
             return false;
         }
         return true;
@@ -53,7 +60,7 @@ export default class User extends Component {
         if (isValid){
             console.log(this.state);
             //clear form
-            this.setState(initialState)
+            // this.setState(initialState)
         }
 
     }
@@ -82,7 +89,7 @@ export default class User extends Component {
             console.log(error)
             this.setState({
                 isAuthenticated:false,
-                resData:'no data'
+                resData:''
             })
         }
         );
@@ -91,24 +98,14 @@ export default class User extends Component {
 
     render() {
         if(this.state.isAuthenticated){}
-        //         return (
-        //             <div>
-        //                 <p>Token is - {this.state.resData}</p>
-        //             </div>
-        //         );
-        //     }
-        //     else{
-        //         return(<p>No data was return</p>)
-        //     }
-        // }
         return (
             <div className="form">
                 <form className="form-cont" onSubmit={this.handleSubmit}>
-                    <h2>Log in</h2>
+                    <h2>Login</h2>
                     <div>
-                        <p className="form-cont__title">Login</p>
+                        <p className="form-cont__title">Email</p>
                         <input className="form-cont__input"
-                        placeholder='Login'
+                        placeholder='Email'
                         type="text" name="email" onChange={this.handleChange} value={this.state.email}
                         />
 
@@ -131,12 +128,18 @@ export default class User extends Component {
                         <input className="form-cont__check-input"
                                type="checkbox"
                                name="checkbox"
-                                onChange={this.handleChange} value={this.state.check}
+                               onChange={this.handleChange.bind(this)}
+                               value={this.state.checked}
                         />
                         <p className="form-cont__check-title">Remember me</p>
                     </div>
                     <button className="form-cont__btn" type="submit" onClick={this.Login}>Login</button>
                     <a className="form-cont__link">Forgot your password?</a>
+
+                    <div style={{color:"red",fontWeight:"bold", marginTop:"-7px", marginBottom:"5px"}}>
+                        {this.state.userErr}
+                    </div>
+
                 </form>
             </div>
         )
