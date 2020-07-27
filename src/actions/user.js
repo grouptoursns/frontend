@@ -35,7 +35,7 @@ export function putData(data) {
           first_name: data.fname,
           last_name: data.lname,
           birthday: data.date,
-          country: "KG",
+          country: "Australia",
           avatar: null,
         })
         .then((res) => {

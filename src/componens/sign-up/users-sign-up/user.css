@@ -88,3 +88,19 @@ input.error {
   padding-left: 1rem!important;
   text-align: center !important;
 }
+.modal1{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-galka{
+  width: 150px;
+}
+.madal-text{
+  font-size: 18px;
+margin-top: 10px;
+
+color: #000000;
+}

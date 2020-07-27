@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { putData } from "../../../actions/user.js";
 import { connect } from "react-redux";
+import galka from "./img/image 1.png";
 
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 
@@ -17,33 +18,45 @@ class User extends React.Component {
     pasword: "",
     pasword2: "",
     date: "",
-    country: "KG",
+    country: "Australia",
     avatar: null,
     isOpen: false,
     form: true,
+    checkbox:false,
   };
+
+  
 
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
+    console.log(event.target);
     if (
       this.state.pasword === this.state.pasword2 &&
       this.state.pasword != "" &&
-      this.state.pasword2 != ""
+      this.state.pasword2 != "" &&
+      this.state.checkbox ===true
     ) {
       this.props.postUser(this.state);
       this.setState({ isOpen: true, form: false });
     } else {
       console.log(this.state);
     }
+    console.log("hide-above-xs")
   };
 
   changeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
-
+  onClickCheckbox = (e)=>{
+    if (e.target.checked) {
+      this.setState({checkbox:true})
+     } else {
+      this.setState({checkbox:false})
+     }
+  }
   render() {
-    const modal =this.props.spiner;
+    const modal = this.props.spiner;
     if (modal === true) {
       return (
         <div className="d-flex justify-content-center">
@@ -54,10 +67,12 @@ class User extends React.Component {
       );
     }
     if (modal === false) {
-      return(
-        <span>{this.props.success}</span>
-      )
-      
+      return (
+        <div className="modal1">
+          <img className="modal-galka" src={galka} alt=""/>
+          <span className="madal-text">{this.props.success}</span>
+        </div>
+      );
     }
     if (this.state.form === true) {
       return (
@@ -204,7 +219,9 @@ class User extends React.Component {
                     type="checkbox"
                     value=""
                     id="invalidCheck"
+                    onClick={this.onClickCheckbox}
                     required
+                    
                   />
                   <label
                     className="custom-control-label"
@@ -230,7 +247,7 @@ class User extends React.Component {
 const mapStateToProps = (state) => {
   return {
     success: state.Success.success,
-    spiner:state.Spiner.spiner
+    spiner: state.Spiner.spiner,
   };
 };
 
