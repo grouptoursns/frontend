@@ -1,0 +1,21 @@
+.ui.fluid.dropdown {
+    height: 20px !important;
+     margin-top: 0px !important; 
+}
+.search{
+    border-radius: 7px !important;
+    height: 33.5px !important;
+    border: none !important;
+}
+.ui.search.dropdown>input.search {
+    background: none transparent!important;
+    border: 1px solid #373e4a !important; 
+    box-shadow: none!important;
+    cursor: text;
+    top: 0;
+    left: 1px;
+    width: 100%;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    padding: inherit;
+}

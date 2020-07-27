@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:tour-page" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/company.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/dataHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/saga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/about/about.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/about/about.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/about/img/44240014405_58ce5bce45_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/img/Rectangle 16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/img/Star 6 (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/img/Star 6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/img/map-pin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/img/users.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/company.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/company.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/country.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/country.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/phone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/sign-up.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/sign-up.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/users-sign-up/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/users-sign-up/user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componens/sign-up/users-sign-up/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/Success.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/SuccessCompany.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/companyRegistr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/homeData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/rootReduser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/spiner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reduser/userRegistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-destinations/box-card/box-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-destinations/box-card/box-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-destinations/box-card/box-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-destinations/box-card/box-card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/group-tours/tours-slaider/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/group-tours/tours-slaider/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/group-tours/tours-slaider/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/group-tours/tours-slaider/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/toursBtn/toursBtn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/toursBtn/toursBtn.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/toursBtn/toursBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/toursBtn/toursBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1e6JRt0Jk3oTCzWvefe5b91XAf8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="tour.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tour-page/tour.js" working-dir="$PROJECT_DIR$/src/tour-page">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.tour.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="" />
+      <created>1593636108606</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593636108606</updated>
+      <workItem from="1593636150902" duration="2304000" />
+      <workItem from="1593701666977" duration="543000" />
+      <workItem from="1593709693142" duration="5143000" />
+      <workItem from="1593802171320" duration="6884000" />
+      <workItem from="1593868235921" duration="9055000" />
+      <workItem from="1593888947752" duration="6145000" />
+      <workItem from="1593920622054" duration="6366000" />
+      <workItem from="1594139153629" duration="1431000" />
+      <workItem from="1594153714824" duration="3487000" />
+      <workItem from="1594226319677" duration="3319000" />
+      <workItem from="1594245188813" duration="3563000" />
+      <workItem from="1594324896459" duration="5933000" />
+      <workItem from="1594408973176" duration="6158000" />
+      <workItem from="1594462806899" duration="3575000" />
+      <workItem from="1594571715902" duration="5358000" />
+      <workItem from="1594744284313" duration="40000" />
+      <workItem from="1594757011245" duration="6333000" />
+      <workItem from="1594840785525" duration="3638000" />
+      <workItem from="1594932480148" duration="4389000" />
+      <workItem from="1595022144300" duration="3629000" />
+      <workItem from="1595114562740" duration="2191000" />
+      <workItem from="1595196320948" duration="2767000" />
+      <workItem from="1595244122968" duration="1689000" />
+      <workItem from="1595283354824" duration="3387000" />
+      <workItem from="1595347688320" duration="1028000" />
+      <workItem from="1595524381802" duration="7549000" />
+      <workItem from="1595579674665" duration="9929000" />
+      <workItem from="1595671821195" duration="7202000" />
+      <workItem from="1595687646945" duration="4640000" />
+      <workItem from="1595844056267" duration="1944000" />
+      <workItem from="1595851023296" duration="2075000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="tour-page" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/tour-page" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1343" height="122" key="GridCell.Tab.0.bottom" timestamp="1593718802452">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1343" height="122" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593718802452" />
+    <state width="1343" height="122" key="GridCell.Tab.0.center" timestamp="1593718802452">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1343" height="122" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593718802452" />
+    <state width="1343" height="122" key="GridCell.Tab.0.left" timestamp="1593718802452">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1343" height="122" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593718802452" />
+    <state width="1343" height="122" key="GridCell.Tab.0.right" timestamp="1593718802452">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1343" height="122" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593718802452" />
+    <state x="413" y="0" key="RollbackChangesDialog" timestamp="1595588262727">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="0" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595588262727" />
+    <state x="274" y="93" key="Vcs.Push.Dialog.v2" timestamp="1593719878679">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="274" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593719878679" />
+  </component>
+</project>

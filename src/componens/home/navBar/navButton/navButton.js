@@ -1,22 +1,21 @@
 import React from "react";
-import "./navButton.css"
-import ToursBtn from "../toursBtn/toursBtn.js"
-import {Link} from "react-router-dom";
+import "./navButton.css";
+import { Link } from "react-router-dom";
 
-const NavButton = ()=>{
-    return(
-        <div className="navBtn">
-            <Link className="link1" to="/">Home</Link>
-           
+const NavButton = () => {
+  return (
+    <div className="navBtn">
+      <Link className="link1" to="/">
+        Home
+      </Link>
 
-            
-           <ToursBtn/>
+      <Link className="link1" to="/about">
+        About
+      </Link>
 
-            <span className="link1">Group tours</span>
-            <span className="link1">Blog</span>
-            <span className="link1">About</span>
-
-        </div>
-    );
+      <span className="link1">Activities</span>
+      <span className="link1">Destinations</span>
+    </div>
+  );
 };
 export default NavButton;

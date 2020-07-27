@@ -1,0 +1,24 @@
+.input-width{
+    width: 100%;
+}
+.input-w{
+    width: 100% !important;
+}
+.input-feedback {
+     margin-bottom: 0px !important; 
+}
+.input {
+    margin-bottom: 10px !important;
+}
+.PhoneInput{
+    width: 100% !important;
+    height: 33.5px !important;
+    padding-left: 5px !important;
+    border: 1px solid black !important;
+    border-radius: 7px !important;
+
+}
+.PhoneInputInput{
+    height: 33.5px !important;
+    border-radius: 0px 7px 7px 0px !important;
+}
