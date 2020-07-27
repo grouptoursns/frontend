@@ -10,7 +10,7 @@ import card6 from "../img/CARD_DESTINATON(5).png";
 import card7 from "../img/CARD_DESTINATON(6).png";
 import card8 from "../img/CARD_DESTINATON(7).png";
 
-const BoxCard = () => {
+const BoxCard = (props=[]) => {
   const pictures=[
     { id:1, img:card1},
     { id:2, img:card2},
@@ -21,16 +21,23 @@ const BoxCard = () => {
     { id:7, img:card7},
     { id:8, img:card8}
   ]
-
+  let card=[];
+  if(props.cards===undefined){
+    card=[];
+  }
+  else{
+    card=[...props.cards]
+  }
   return (
     <div className="box-card">
       <Title />
       <div className="container flex-box">
         {
-          pictures.map(item=>{
+          card.map(item=>{
             return(
               <div className="cards" key={item.id}>
-              <img className="img" src={item.img} />
+              <img className="img" src={item. image} />
+          <sapn className="card-text">{item.name}</sapn>
             </div>
             )
           })

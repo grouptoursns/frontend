@@ -4,6 +4,7 @@ import {UserRegistr} from "./userRegistration.js"
 import {Spiner} from "./spiner";
 import {Success} from "./Success";
 import {SuccessCompany} from "./SuccessCompany";
+import {dataHome} from "./homeData";
 
 
 const rootReduser = combineReducers({
@@ -11,7 +12,8 @@ const rootReduser = combineReducers({
     UserRegistr,
     Spiner,
     Success,
-    SuccessCompany
+    SuccessCompany,
+    dataHome
 });
 
 export default rootReduser;

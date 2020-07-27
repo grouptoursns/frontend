@@ -20,9 +20,9 @@ const ToursSlider=()=>  {
         <div  className="card">
           <h3>1</h3>
         </div>
-        <di className="card">
+        <div className="card">
           <h3>2</h3>
-        </di>
+        </div>
         <div className="card">
           <h3>3</h3>
         </div>

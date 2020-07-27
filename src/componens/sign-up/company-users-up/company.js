@@ -343,6 +343,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    
    postCompany:(data)=>dispatch(putCompany(data))
   };
 };
