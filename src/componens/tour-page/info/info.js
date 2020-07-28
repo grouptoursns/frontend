@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './info.css'
 import Tabs from "./tabs/tabs.js";
 import General from "./general/general";
@@ -16,17 +16,16 @@ const Info = () =>{
             <div>
                 <Router>
                     <Switch>
-                        <Route path="/tourspage/general" component={General}/>
-                        <Route path="/tourspage/:itinerary" component={Itinerary}/>
-                        <Route path="/tourspage/:inclusions" component={Inclusions}/>
-                        <Route path="/tourspage/:guide" component={Guide}/>
-                        <Route path="/tourspage/:meet" component={Meet}/>
-                        <Route path="/tourspage/:reviews" component={Reviews}/>
+                        <Route path="tourspage/:general" component={General}/>
+                        <Route path="tourspage/:itinerary" component={Itinerary}/>
+                        <Route path="tourspage/:inclusions" component={Inclusions}/>
+                        <Route path="tourspage/:guide" component={Guide}/>
+                        <Route path="tourspage/:meet" component={Meet}/>
+                        <Route path="tourspage/:reviews" component={Reviews}/>
                     </Switch>
                 </Router>
             </div>
         </div>
     )
 }
-
 export default Info;

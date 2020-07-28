@@ -27,14 +27,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-overview/overview.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-overview/overview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-subtitle/img/car.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-subtitle/img/clock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-subtitle/img/ticket-alt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-subtitle/subtitle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info-subtitle/subtitle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +69,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="E:\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
     <configuration name="tour.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tour-page/tour.js" working-dir="$PROJECT_DIR$/src/tour-page">
@@ -123,7 +122,9 @@
       <workItem from="1595687646945" duration="4640000" />
       <workItem from="1595844056267" duration="1944000" />
       <workItem from="1595851023296" duration="2075000" />
-      <workItem from="1595881609176" duration="4971000" />
+      <workItem from="1595881609176" duration="5733000" />
+      <workItem from="1595926391396" duration="7830000" />
+      <workItem from="1595969959248" duration="6003000" />
     </task>
     <servers />
   </component>
