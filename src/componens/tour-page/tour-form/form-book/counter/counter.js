@@ -28,7 +28,11 @@ class Counter extends Component{
         return(
             <div>
                 <div>
-                    <input className="book-picker__adults-inp" onClick={ ()=>this.showFunc()} type="text" value={"Adults: " + this.state.count}/>
+                    <input className="book-picker__adults-inp"
+                           onClick={ ()=>this.showFunc()}
+                           type="text"
+                           value={"Adults: " + this.state.count}
+                    />
                     {
                         this.state.show?
                            <div className="book-picker__adults">

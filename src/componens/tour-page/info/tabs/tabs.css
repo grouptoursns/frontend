@@ -1,0 +1,14 @@
+.tabs{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info-tabs{
+    padding: 20px 41px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.active{
+    background-color: #FFFFFF;
+}

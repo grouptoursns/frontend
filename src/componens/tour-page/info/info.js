@@ -12,18 +12,16 @@ import Inclusions from "./inclusions/inclusions";
 const Info = () =>{
     return(
         <div className='info'>
-            <Tabs />
             <div>
-                <Router>
+                <Tabs />
                     <Switch>
-                        <Route path="tourspage/:general" component={General}/>
-                        <Route path="tourspage/:itinerary" component={Itinerary}/>
-                        <Route path="tourspage/:inclusions" component={Inclusions}/>
-                        <Route path="tourspage/:guide" component={Guide}/>
-                        <Route path="tourspage/:meet" component={Meet}/>
-                        <Route path="tourspage/:reviews" component={Reviews}/>
+                        <Route exact path="/tourspage" component={General}/>
+                        <Route path="/tourspage/itinerary" component={Itinerary}/>
+                        <Route path="/tourspage/inclusions" component={Inclusions}/>
+                        <Route path="/tourspage/guide" component={Guide}/>
+                        <Route path="/tourspage/meet" component={Meet}/>
+                        <Route path="/tourspage/reviews" component={Reviews}/>
                     </Switch>
-                </Router>
             </div>
         </div>
     )

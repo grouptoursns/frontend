@@ -1,5 +1,7 @@
 .form-title{
-    margin-left: 210px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -400px;
 }
 .title-info{
     margin-bottom: 30px;
