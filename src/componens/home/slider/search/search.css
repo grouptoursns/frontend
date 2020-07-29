@@ -14,3 +14,25 @@
     border:2px solid rgba(33, 68, 190, 0.63);
     box-shadow: 0 0 10px rgba(33, 68, 190, 0.63);
 }
+.MuiInputBase-root {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+    background: #FFFFFF !important;
+border-radius: 5px !important;
+border: 1px solid rgb(190, 186, 186);
+outline:none !important;
+background-image: url(./img/search.png) !important;   
+background-repeat: no-repeat !important; 
+background-position:   left center !important;
+padding-left: 60px !important;
+background-position: 30px !important;
+}

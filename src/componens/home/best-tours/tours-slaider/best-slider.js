@@ -8,8 +8,9 @@ import blackStar from "./img/Star 6.png";
 import whiteStar from "./img/Star 6 (1).png";
 import mapPaint from "./img/map-pin.png";
 import userIcon from "./img/users.png";
+import { Link } from "react-router-dom";
 
-const BestSlider = () => {
+const BestSlider = (props) => {
   var settings = {
     infinite: true,
     speed: 500,
@@ -17,7 +18,7 @@ const BestSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 2,
   };
-  const cards = [
+  const cards1 = [
     {
       img: photo,
       stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
@@ -61,45 +62,53 @@ const BestSlider = () => {
       user: userIcon,
     },
   ];
+  let cards = [];
+  if (props.cards === undefined) {
+    cards = [];
+  } else {
+    cards = [...props.cards];
+  }
+  console.log(props.cards);
   return (
     <div className="container1">
       <Slider {...settings}>
         {cards.map((item) => {
           return (
-            <div className="card">
-              <div className="block-img">
-                <img src={item.img} />
-              </div>
+            <Link to="/result_search">
+              <div className="card">
+                <div className="block-img">
+                  <img src={cards1[0].img} />
+                </div>
 
-              <div className="content">
-                <span className="card-name">
-                  Kyrgyzstan Horse-riding <br />
-                  Tour 2020
-                </span>
-                <div>
-                  <span className="from">from </span>
-                  <span className="tour-price">200$</span>
-                </div>
-                <div className="reitng">
-                  <div className="block-stars">
-                    {item.stars.map((items) => {
-                      return <img src={items} alt="" className="stars" />;
-                    })}
+                <div className="content">
+                  <span className="card-name">{item.name}</span>
+                  <div>
+                    <span className="from">from </span>
+                    <span className="tour-price">{item.min_price} $</span>
                   </div>
-                  <span className="reting-figures">422 reviews</span>
-                </div>
-                <div className="block-buttom">
-                  <div className="location">
-                    <img src={item.paint}/>
-                    <span>Kyrgyzstan, Bishkek</span>
+                  <div className="reitng">
+                    <div className="block-stars">
+                      {cards1[0].stars.map((items) => {
+                        return <img src={items} alt="" className="stars" />;
+                      })}
+                    </div>
+                    <span className="reting-figures">422 reviews</span>
                   </div>
-                  <div className="people">
-                    <img src={item.user}/>
-                    <span>20/30 available</span>
+                  <div className="block-buttom">
+                    <div className="location">
+                      <img src={cards1[0].paint} />
+                      <span>{item.country}</span>
+                    </div>
+                    <div className="people">
+                      <img src={cards1[0].user} />
+                      <span>
+                        {`${item.min_people}/${item.max_people}`} available
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </Slider>

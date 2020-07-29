@@ -5,7 +5,10 @@ import {Spiner} from "./spiner";
 import {Success} from "./Success";
 import {SuccessCompany} from "./SuccessCompany";
 import {dataHome} from "./homeData";
-
+import {countBest} from "./countBest"
+import {tourSearch} from "./tourSearch"
+import {trigerSearch} from "./trigerSearch"
+import {dataActivity} from "./dataActivity";
 
 const rootReduser = combineReducers({
     routing:routeReducer,
@@ -13,7 +16,11 @@ const rootReduser = combineReducers({
     Spiner,
     Success,
     SuccessCompany,
-    dataHome
+    dataHome,
+    countBest,
+    tourSearch,
+    trigerSearch,
+    dataActivity
 });
 
 export default rootReduser;

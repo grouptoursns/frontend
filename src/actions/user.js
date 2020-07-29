@@ -36,7 +36,6 @@ export function putData(data) {
           last_name: data.lname,
           birthday: data.date,
           country: "Australia",
-          avatar: null,
         })
         .then((res) => {
             dispatch(closeSpiner());

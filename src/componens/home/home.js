@@ -19,8 +19,8 @@ const Home = (props) => {
     <div>
       <Slider1 />
       <BoxCard cards={props.bestImg.ImageToFront} />
-      <BestTours/>
-      <Actvities />
+      <BestTours card={props.bestImg.Tour}/>
+      <Actvities activityCard={props.bestImg.Category}/>
       <GroupTours />
     </div>
   );

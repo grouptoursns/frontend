@@ -13,22 +13,22 @@ import TitleSlider from "./title/title-slider.js"
 
 const Slider1 = () => {
   return (
-    <div>
+    <div className="slider-home">
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100 " src={slide1}  />
+          <img className=" w-100 " src={slide1}  />
           <Carousel.Caption>
            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100 " src={slide1}  />
+          <img className=" w-100 " src={slide1}  />
           <Carousel.Caption>
            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100 " src={slide1}  />
+          <img className=" w-100 " src={slide1}  />
           <Carousel.Caption>
            
           </Carousel.Caption>

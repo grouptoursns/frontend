@@ -15,7 +15,7 @@ const Filter = (props) => {
       <div className="filter-block">
         <div className="dropdown-filter">
           <div className="country">
-            <span>Countries</span>
+            <span className="country-span">Countries</span>
             <DropdownCountry />
           </div>
           <div className="activity">

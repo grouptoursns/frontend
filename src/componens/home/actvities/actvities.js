@@ -3,11 +3,11 @@ import "./actvities.css"
 import Title from "./title/title.js"
 import BlockCardActv from "./block-card/block-card.js"
 
-const Actvities =()=>{
+const Actvities =(props)=>{
     return(
         <div className="actvities container">
             <Title/>
-            <BlockCardActv/>
+            <BlockCardActv card={props.activityCard}/>
         </div>
     )
 }

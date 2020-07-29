@@ -24,7 +24,8 @@ class Company extends React.Component {
     site:"",
     adress:"",
     tripadvisor:"",
-    form:true,
+    form1: true,
+    isOpen: false,
     phone:"",
   };
   changePhone=(phone1)=>{
@@ -45,7 +46,7 @@ class Company extends React.Component {
     ) {
       this.setState({  form: false });
       this.props.postCompany(this.state);
-      this.setState({ isOpen: true, form: false });
+      this.setState({ isOpen: true, form1: false });
       console.log(this.state)
       
     } else {
@@ -74,7 +75,7 @@ class Company extends React.Component {
       )
       
     }
-    if (this.state.form === true) {
+    if (this.state.form1 === true) {
       return (
         <div>
           <form

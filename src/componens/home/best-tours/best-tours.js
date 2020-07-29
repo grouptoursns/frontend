@@ -3,11 +3,11 @@ import "./best-tours.css";
 import TextTours from "./text-tours/text-tours.js";
 import BestSlider from "./tours-slaider/best-slider.js";
 
-const BestTours = () => {
+const BestTours = (props) => {
   return (
     <div className="block-tours">
       <TextTours />
-      <BestSlider />
+      <BestSlider cards={props.card}/>
     </div>
   );
 };
