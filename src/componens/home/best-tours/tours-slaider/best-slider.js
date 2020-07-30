@@ -9,6 +9,8 @@ import whiteStar from "./img/Star 6 (1).png";
 import mapPaint from "./img/map-pin.png";
 import userIcon from "./img/users.png";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { detailsTour } from "../../../../actions/detailsTour";
 
 const BestSlider = (props) => {
   var settings = {
@@ -68,14 +70,17 @@ const BestSlider = (props) => {
   } else {
     cards = [...props.cards];
   }
+  const onClickCard = (id) => {
+    props.detailsTour(id);
+  };
   console.log(props.cards);
   return (
     <div className="container1">
       <Slider {...settings}>
         {cards.map((item) => {
           return (
-            <Link to="/result_search">
-              <div className="card">
+            <Link to="/tourspage">
+              <div className="card" key="" onClick={() => onClickCard(item.id)}>
                 <div className="block-img">
                   <img src={cards1[0].img} />
                 </div>
@@ -115,4 +120,16 @@ const BestSlider = (props) => {
     </div>
   );
 };
-export default BestSlider;
+
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    detailsTour: (id) => dispatch(detailsTour(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BestSlider);

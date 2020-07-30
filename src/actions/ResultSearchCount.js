@@ -4,8 +4,3 @@ export function ResultSearchCount(city){
         city,
     }
 }
-export function ofBestCount(){
-    return{
-        type:"OFCLICK_COUNT",
-    }
-}

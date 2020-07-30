@@ -47,6 +47,7 @@ margin-bottom: 8px !important;
 .activity {
   display: flex;
   flex-direction: column;
+  width: 25%;
 }
 .activity > span {
   font-size: 14px;

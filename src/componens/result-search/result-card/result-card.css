@@ -66,3 +66,13 @@
   line-height: 22px;
   margin-top: 27px;
 }
+.filter-spiner{
+  height: 300px !important;
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}

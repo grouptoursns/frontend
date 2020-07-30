@@ -4,8 +4,4 @@ export function pushActivity(activity) {
     activity,
   };
 }
-export function trigerActivytyOff() {
-  return {
-    type: "TRIGER_OFF",
-  };
-}
+

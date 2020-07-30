@@ -13,7 +13,9 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {ResultSearchCount} from "../../../../actions/ResultSearchCount";
 import {searchTrigerFalse} from "../../../../actions/tourSearch";
-import {trigerActivytyOff} from "../../../../actions/dataActivity"
+import {trigerActivityOff} from "../../../../actions/trigerActivity"
+import {trigerBestOn} from "../../../../actions/trigerBest";
+
 
 const BoxCard = (props) => {
   const pictures = [
@@ -36,6 +38,7 @@ const BoxCard = (props) => {
   const onClickCard=(item)=>{
     props.triger()   
     props.trigerActivity()
+    props.trigerBest()
     props.pushCount(item)
 
   }
@@ -68,7 +71,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     pushCount: (city) => dispatch(ResultSearchCount(city)),
     triger: () => dispatch(searchTrigerFalse()),
-    trigerActivity:()=>dispatch(trigerActivytyOff())
+    trigerActivity:()=>dispatch(trigerActivityOff()),
+    trigerBest:()=>dispatch(trigerBestOn())
   };
 };
 

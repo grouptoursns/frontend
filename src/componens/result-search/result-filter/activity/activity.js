@@ -32,10 +32,27 @@ const countryOptions = [
   { key: "be", value: "be", flag: "be", text: "Belgium" },
   { key: "bz", value: "bz", flag: "bz", text: "Belize" },
   { key: "bj", value: "bj", flag: "bj", text: "Benin" },
-  { key: "", value: "", flag: "", text: "China" },
+  { key: "ju", value: "ht", flag: "th", text: "China" },
 ];
 
+
 const Activity = (props) => {
+  let category=[]
+if(props.allActivity=== undefined){
+  category =[]
+}
+else{
+  category=props.allActivity.map((item)=>{
+    return{
+      key:item.id,
+      value:item.name,
+      flag:item.name,
+     text:item.name,
+    }
+  });
+  
+}
+
   const [value,setValue]= useState(props.activity)
   if(props.country!=""){
     console.log(props.activity)
@@ -47,15 +64,16 @@ const Activity = (props) => {
       fluid
       search
       selection
-      text={props.activity}
-      options={countryOptions}
+      options={category}
+      onChange={(e) => props.activityProps(e.target.textContent)}
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    activity:state.dataActivity.activity
+    activity:state.dataActivity.activity,
+    allActivity:state.dataHome.homeData.Category
   };
 };
 

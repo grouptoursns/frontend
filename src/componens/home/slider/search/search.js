@@ -6,9 +6,9 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import {tourSearch} from "../../../../actions/tourSearch"
-import {ofBestCount} from "../../../../actions/ResultSearchCount"
-import {trigerActivytyOff} from "../../../../actions/dataActivity"
-
+import {trigerBestOff} from "../../../../actions/trigerBest"
+import {trigerActivityOff} from "../../../../actions/trigerActivity"
+import {searchTrigerTrue} from "../../../../actions/tourSearch"
 
  function Search(props) {
   let top100Films = []
@@ -40,7 +40,8 @@ top100Films=[...name,...count];
       history.push("/result_search");
       props.getTourSearch(`http://161.35.199.172/api/tour-search/?search=${e.target.value}`);
       props.ofBestCount()
-      props.trigerActivity()
+      props.trigerActiv()
+      props.trigerSearchOn()
     }
   }
   return (
@@ -74,8 +75,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getTourSearch:(url)=>dispatch(tourSearch(url)),
-    ofBestCount:()=> dispatch(ofBestCount()),
-    trigerActivity:()=>dispatch(trigerActivytyOff())
+    ofBestCount:()=> dispatch(trigerBestOff()),
+    trigerActiv:()=>dispatch(trigerActivityOff()),
+    trigerSearchOn:()=>dispatch(searchTrigerTrue()),
   };
 };
 

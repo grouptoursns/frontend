@@ -14,12 +14,13 @@ function valuetext(value) {
   return `${value} $`;
 }
 
-export default function Price() {
+export default function Price(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState([200, 600]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    props.priceProps(value)
   };
 
   return (

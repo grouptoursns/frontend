@@ -27,23 +27,41 @@ const countryOptions = [
   { key: "be", value: "be", flag: "be", text: "Belgium" },
   { key: "bz", value: "bz", flag: "bz", text: "Belize" },
   { key: "bj", value: "bj", flag: "bj", text: "Benin" },
-  { key: "", value: "", flag: "", text: "China" },
+  { key: "jue", value: "htr", flag: "thr", text: "China" },
+  { key: "jue", value: "htr", flag: "thr", text: "vdfbfn" },
 ];
 
 const DropdownCountry = (props) => {
+
+  let country=[]
+if(props.allCountry=== undefined){
+  country =[]
+}
+else{
+  country=props.allCountry.map((item)=>{
+    return{
+      key:item.id,
+      value:item.country,
+      flag:item.country,
+     text:item.country,
+    }
+  });
+  
+}
+
   const [value,setValue]= useState(props.country)
   if(props.country!=""){
-    console.log(props.country)
-    console.log(props.tourCountry)
+
   }
+
   return (
     <Dropdown
       placeholder="Сhoose a country"
       fluid
       search
       selection
-      text={props.country}
-      options={countryOptions}
+      options={country}
+      onChange={(e) => props.countryProps(e.target.textContent)}
     />
   );
 };
@@ -51,7 +69,8 @@ const DropdownCountry = (props) => {
 const mapStateToProps = (state) => {
   return {
     country: state.countBest.count,
-    tourCountry:state.dataHome.homeData.Tour.map((item)=>item.country)
+    tourCountry:state.dataHome.homeData.Tour.map((item)=>item.country),
+    allCountry:state.dataHome.homeData.TourCountry
   };
 };
 

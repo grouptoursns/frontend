@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { searchTrigerFalse } from "../../../../actions/tourSearch";
 import { pushActivity } from "../../../../actions/dataActivity";
+import {trigerBestOff} from "../../../../actions/trigerBest"
+import {trigerActivityOn} from "../../../../actions/trigerActivity"
 
 const BlockCardActv = (props) => {
   let card = [];
@@ -13,6 +15,9 @@ const BlockCardActv = (props) => {
     card = [...props.card];
   }
   const onClickCard = (item) => {
+    props.triger()
+    props.trigerBest()
+    props.trigerActivOn()
     props.pushActivity(item);
   };
   return (
@@ -39,6 +44,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     pushActivity: (activity) => dispatch(pushActivity(activity)),
     triger: () => dispatch(searchTrigerFalse()),
+    trigerBest:()=>dispatch(trigerBestOff()),
+    trigerActivOn:()=>dispatch(trigerActivityOn()),
   };
 };
 
