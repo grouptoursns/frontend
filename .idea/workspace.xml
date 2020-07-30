@@ -27,20 +27,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/booking/booking.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/booking/booking.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/title.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +128,8 @@
       <workItem from="1595926391396" duration="7830000" />
       <workItem from="1595969959248" duration="6408000" />
       <workItem from="1596028077951" duration="3378000" />
-      <workItem from="1596043879795" duration="9001000" />
+      <workItem from="1596043879795" duration="9309000" />
+      <workItem from="1596143061663" duration="6390000" />
     </task>
     <servers />
   </component>
@@ -211,5 +205,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593719878679" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596150675550">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596150675550" />
   </component>
 </project>

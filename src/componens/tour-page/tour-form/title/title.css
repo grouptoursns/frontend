@@ -4,8 +4,10 @@
     margin-left: -400px;
 }
 .title-info{
+    display: flex;
+    justify-content: flex-start;
     margin-bottom: 30px;
 }
 .title-info img{
-    margin-right: 8px;
+    margin-right: 5px;
 }

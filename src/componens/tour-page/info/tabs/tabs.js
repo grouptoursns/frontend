@@ -6,7 +6,7 @@ class Tabs extends Component {
     render() {
         return (
             <div className="tabs">
-                <NavLink activeClassName="active" className="info-tabs" to="/tourspage">General information</NavLink>
+                <NavLink activeClassName="active" className="info-tabs" to="/tourspage/general">General information</NavLink>
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/itinerary">Itinerary</NavLink>
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/inclusions">Inclusions</NavLink>
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/guide">Your guide</NavLink>

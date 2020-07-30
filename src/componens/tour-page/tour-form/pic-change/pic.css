@@ -4,3 +4,13 @@
 .carousel li.slide img{
     height: 350px;
 }
+.carousel .thumb{
+
+}
+ul.thumbs.animated{
+    padding: 0;
+}
+ul.thumbs.animated li{
+    width: 105px !important;
+
+}
