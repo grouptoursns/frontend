@@ -18,7 +18,7 @@ const Lang =()=>{
     const menuClass = `dropdown-menu${open ? " show" : ""}`;
     return (
       <div className="dropdown" onClick={toggleOpen}>
-        <sran
+        <span
           className="btn  dropdown-toggle"
           type="button"
           id="dropdownMenuButton"
@@ -26,7 +26,7 @@ const Lang =()=>{
           aria-haspopup="true"
         >
           Login in
-        </sran>
+        </span>
         <div className={menuClass} aria-labelledby="dropdownMenuButton">
           
           <Link className="dropdown-item" to="/sign-in">Login in</Link>

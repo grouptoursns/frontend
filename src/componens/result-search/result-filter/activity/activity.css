@@ -16,3 +16,19 @@
 
     height: 20px !important;
 }
+.text1{
+    font-size: 14px;
+    color: #000000;
+}
+.ui.default.dropdown:not(.button) > .text, .ui.dropdown:not(.button) > .default.text{
+    color: #000000 !important;
+}
+.ui.search.dropdown > .text {
+
+    top: -5px;
+}
+.ui.fluid.dropdown {
+
+    height: 20px !important;
+    margin-top: 6.4px !important;
+}

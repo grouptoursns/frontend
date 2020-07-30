@@ -38,20 +38,21 @@
 .country {
   width: 25%;
 }
-.country > span {
+.country-span {
   font-size: 14px;
   line-height: 17px;
-
+margin-bottom: 8px !important;
   color: #000000;
 }
 .activity {
   display: flex;
   flex-direction: column;
+  width: 25%;
 }
 .activity > span {
   font-size: 14px;
   line-height: 17px;
-  margin-bottom: 8px;
+
 
   color: #000000;
 }
@@ -69,4 +70,17 @@
   /* identical to box height */
 
   color: #ffffff;
+}
+.ui.search.selection.dropdown>input.search {
+  line-height: 1.21428571em;
+  padding: .67857143em 2.1em .67857143em 1em;
+  margin-top: 8px;
+}
+.ui.search.dropdown > .text {
+  top: 2px !important;
+}
+.ui.selection.dropdown>.delete.icon, .ui.selection.dropdown>.dropdown.icon, .ui.selection.dropdown>.search.icon {
+
+  top: 1.2em !important;
+
 }

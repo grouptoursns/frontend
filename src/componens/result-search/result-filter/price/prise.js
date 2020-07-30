@@ -6,20 +6,21 @@ import "./prise.css";
 
 const useStyles = makeStyles({
   root: {
-    width: 300,
+    width: 150,
   },
 });
 
 function valuetext(value) {
-  return `${value}°C`;
+  return `${value} $`;
 }
 
-export default function Price() {
+export default function Price(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([200, 600]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    props.priceProps(value)
   };
 
   return (
@@ -31,6 +32,8 @@ export default function Price() {
         value={value}
         onChange={handleChange}
         valueLabelDisplay="auto"
+        min={0}
+        max={1000}
         aria-labelledby="range-slider"
         getAriaValueText={valuetext}
       />

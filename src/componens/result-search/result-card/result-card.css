@@ -50,7 +50,7 @@
   font-size: 14px;
   color: #000000;
 }
-.price {
+.result-price {
   font-size: 12px;
   line-height: 13px;
   display: block;
@@ -65,4 +65,14 @@
   font-size: 18px;
   line-height: 22px;
   margin-top: 27px;
+}
+.filter-spiner{
+  height: 300px !important;
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
 }

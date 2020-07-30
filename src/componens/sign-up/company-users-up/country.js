@@ -32,13 +32,13 @@ const DropdownExampleSearchSelection = (props) => {
   const change=(e)=>{
     if (e.target.value !== undefined) {
    
-      props.country(countryOptions.filter((item) =>item.text.includes(e.target.value))[0].key.toUpperCase())
+      props.country(countryOptions.filter((item) =>item.text.includes(e.target.value))[0].text)
 
       
     } 
     else {
      
-        props.country(countryOptions.filter((item) =>item.text.includes(e.target.textContent))[0].key.toUpperCase())
+        props.country(countryOptions.filter((item) =>item.text.includes(e.target.textContent))[0].text)
     }
   }
   return(  <Dropdown
