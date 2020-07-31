@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import "./search.css";
 import search from "./img/search.png";
 import TextField from '@material-ui/core/TextField';

@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect} from "react";
 import Slider1 from "./slider/slider.js";
 import GroupTours from "./group-tours/group-tours.js";
 import BoxCard from "./best-destinations/box-card/box-card.js";
@@ -7,15 +7,17 @@ import BestTours from "./best-tours/best-tours.js"
 import { connect } from "react-redux";
 import {homeAxiosData} from "../../actions/dataHome";
 import{allTour}from "../../actions/allTour"
-import {trigerFilterOff} from "../../actions/trigerFilter"
+import {trigerFilterOff} from "../../actions/trigerFilter";
+import {destinationsData} from "../../actions/destinations";
 
 const Home = (props) => {
-  const [best,setBest]=useState({hist:[]});
+
   useEffect( () => {
 
     props.trigerFilterOff()
     props.AxiosData('http://161.35.199.172/main-page');
     props.AllTours(' http://161.35.199.172/api/tours/');
+    props.destinationsData('http://161.35.199.172/api/test/')
   
   },[]);
   return (
@@ -24,7 +26,7 @@ const Home = (props) => {
       <BoxCard cards={props.bestImg.ImageToFront} />
       <BestTours card={props.bestImg.Tour}/>
       <Actvities activityCard={props.bestImg.Category}/>
-      <GroupTours />
+      <GroupTours card1={props.bestImg.Tour}/>
     </div>
   );
 };
@@ -38,7 +40,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     AxiosData: (url) => dispatch(homeAxiosData(url)),
     AllTours:(url)=>dispatch(allTour(url)),
-    trigerFilterOff:()=>dispatch(trigerFilterOff())
+    trigerFilterOff:()=>dispatch(trigerFilterOff()),
+    destinationsData: (url) => dispatch(destinationsData(url)),
   };
 };
 

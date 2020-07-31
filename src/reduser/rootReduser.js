@@ -15,9 +15,9 @@ import {trigerActivity} from "./trigerActivity";
 import {filterTour} from "./filterTour";
 import {trigerFilter} from "./trigerFilter";
 import {detailsTour} from "./detailsTour"
+import {allDestinations} from "./allDestinations"
 
 const rootReduser = combineReducers({
-    routing:routeReducer,
     UserRegistr,
     Spiner,
     Success,
@@ -32,7 +32,8 @@ const rootReduser = combineReducers({
     allTour,
     filterTour,
     trigerFilter,
-    detailsTour
+    detailsTour,
+    allDestinations
 });
 
 export default rootReduser;

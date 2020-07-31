@@ -20,12 +20,13 @@ const BlockCardActv = (props) => {
     props.trigerActivOn()
     props.pushActivity(item);
   };
+  console.log(card)
   return (
     <div className="cards1">
       {card.map((item) => {
         return (
-          <Link to="/result_search">
-            <div className="active-card" onClick={() => onClickCard(item.name)}>
+          <Link to="/result_search" key={item.id} onClick={() => onClickCard(item.name)}>
+            <div className="active-card"   >
               <img key={item.name} className="img_act" src={item.image} />
               <span className="card-text-activity">{item.name}</span>
             </div>

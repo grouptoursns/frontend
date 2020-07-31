@@ -14,7 +14,6 @@ export function homeAxiosData(url){
       .get(url)
       .then(res => {
         dispatch(homeAxiosDataSeccess(res.data.results))
-    console.log(res.data)
       });
 
 }

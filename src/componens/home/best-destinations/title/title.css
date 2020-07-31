@@ -1,29 +1,30 @@
-.title{
-    font-size: 24px;
+.title {
+  font-size: 24px;
 
-font-size: 36px;
-line-height: 43px;
-
-
+  font-size: 36px;
+  line-height: 43px;
 }
-.block-title{
-    margin-top: 30px;
+.block-title {
+  margin-top: 30px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.all{
-    font-size: 19.0588px;
-line-height: 23px;
+.all {
+  font-size: 19.0588px;
+  line-height: 23px;
 
-/* identical to box height */
+  /* identical to box height */
 
-
-color: #000000;
+  color: #000000;
 }
-.all:hover{
-    color:  rgba(7, 58, 245, 0.63);
-    cursor: pointer;
+.all:hover {
+  color: rgba(7, 58, 245, 0.63);
+  cursor: pointer;
+}
+.all svg:hover {
+  stroke: rgba(7, 58, 245, 0.63);
+  fill: rgba(7, 58, 245, 0.63);
 }

@@ -22,3 +22,25 @@
     justify-content: space-between;
     margin-bottom: 50px;
 }
+.cards {
+  width: 250px;
+  height: 310px;
+  border-radius: 8px;
+  margin-top: 40px;
+  position: relative;
+
+}
+.img {
+  width: 250px;
+  height: 310px;
+  display: block;
+  border-radius: 8px;
+}
+.card-text {
+  position: absolute;
+  bottom: 60px;
+  left: 30px;
+  font-size: 24px;
+
+  color: #ffffff;
+}

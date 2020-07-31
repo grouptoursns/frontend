@@ -14,7 +14,6 @@ export function allTour(url){
       .get(url)
       .then(res => {
         dispatch(allTourSeccess(res.data))
-    console.log(res.data)
       });
 
 }

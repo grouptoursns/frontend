@@ -23,46 +23,32 @@ const BestSlider = (props) => {
   const cards1 = [
     {
       img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
+      stars: [
+        {
+          id:1,
+          img:blackStar,
+        },
+        {
+          id:2,
+          img:blackStar,
+        },
+        {
+          id:3,
+          img:blackStar,
+        },
+        {
+          id:4,
+          img:blackStar,
+        },
+        {
+          id:5,
+          img:whiteStar,
+        }
+      ],
       paint: mapPaint,
       user: userIcon,
     },
-    {
-      img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
-      paint: mapPaint,
-      user: userIcon,
-    },
-    {
-      img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
-      paint: mapPaint,
-      user: userIcon,
-    },
-    {
-      img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
-      paint: mapPaint,
-      user: userIcon,
-    },
-    {
-      img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
-      paint: mapPaint,
-      user: userIcon,
-    },
-    {
-      img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
-      paint: mapPaint,
-      user: userIcon,
-    },
-    {
-      img: photo,
-      stars: [blackStar, blackStar, blackStar, blackStar, whiteStar],
-      paint: mapPaint,
-      user: userIcon,
-    },
+
   ];
   let cards = [];
   if (props.cards === undefined) {
@@ -79,10 +65,10 @@ const BestSlider = (props) => {
       <Slider {...settings}>
         {cards.map((item) => {
           return (
-            <Link to="/tourspage">
-              <div className="card" key="" onClick={() => onClickCard(item.id)}>
+            <Link to="/tourspage" key={item.id} onClick={() => onClickCard(item.id)}>
+              <div className="card" >
                 <div className="block-img">
-                  <img src={cards1[0].img} />
+                  <img src={cards1[0].img} alt="img" />
                 </div>
 
                 <div className="content">
@@ -94,18 +80,18 @@ const BestSlider = (props) => {
                   <div className="reitng">
                     <div className="block-stars">
                       {cards1[0].stars.map((items) => {
-                        return <img src={items} alt="" className="stars" />;
+                        return <img src={items.img} key={items.id} alt="img" className="stars" />;
                       })}
                     </div>
                     <span className="reting-figures">422 reviews</span>
                   </div>
                   <div className="block-buttom">
                     <div className="location">
-                      <img src={cards1[0].paint} />
+                      <img src={cards1[0].paint} alt="img" />
                       <span>{item.country}</span>
                     </div>
                     <div className="people">
-                      <img src={cards1[0].user} />
+                      <img src={cards1[0].user} alt="img" />
                       <span>
                         {`${item.min_people}/${item.max_people}`} available
                       </span>

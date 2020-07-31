@@ -1,0 +1,39 @@
+.best-container{
+    width: 515px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.best-content{
+    width: 515px;
+    height: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.block-tour-footer{
+    width: 50%;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.name-tour{
+    font-weight: bold;
+font-size: 14px;
+line-height: 110%;
+/* or 15px */
+
+
+color: #FFFFFF;
+}
+.price-tour{
+    font-size: 14px;
+line-height: 110%;
+/* or 15px */
+
+
+color: #FFFFFF;
+}

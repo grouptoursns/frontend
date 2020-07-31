@@ -30,7 +30,7 @@ class User extends React.Component {
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
-    console.log(event.target);
+
     if (
       this.state.pasword === this.state.pasword2 &&
       this.state.pasword != "" &&
@@ -40,7 +40,6 @@ class User extends React.Component {
       this.props.postUser(this.state);
       this.setState({ isOpen: true, form: false });
     } else {
-      console.log(this.state);
     }
   };
 

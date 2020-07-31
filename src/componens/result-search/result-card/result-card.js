@@ -7,7 +7,8 @@ import mapPaint from "./img/map-pin.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { searchTrigerFalse } from "../../../actions/tourSearch";
-import {detailsTour} from "../../../actions/detailsTour"
+import { detailsTour } from "../../../actions/detailsTour";
+import smail from "./img/Без названия (1).png"
 
 const ResultCard = (props) => {
   useEffect(() => {
@@ -15,16 +16,40 @@ const ResultCard = (props) => {
   }, []);
   const cards = [
     {
+      id:1,
+      img: imgCard,
+      stars: [
+        {
+          id:1,
+          img:star1
+        },
+        {
+          id:2,
+          img:star1
+        },
+        {
+          id:3,
+          img:star1
+        },
+        {
+          id:4,
+          img:star1
+        },
+        {
+          id:5,
+          img:star2
+        },
+      ],
+      paint: mapPaint,
+    },
+    {
+      id:1,
       img: imgCard,
       stars: [star1, star1, star1, star1, star2],
       paint: mapPaint,
     },
     {
-      img: imgCard,
-      stars: [star1, star1, star1, star1, star2],
-      paint: mapPaint,
-    },
-    {
+      id:1,
       img: imgCard,
       stars: [star1, star1, star1, star1, star2],
       paint: mapPaint,
@@ -55,32 +80,37 @@ const ResultCard = (props) => {
     tourActivity = [...props.tourActivity];
     filterTour1 = [...props.tourFilter];
   }
-  const clickDetailsContact=(id)=>{
-    props.detailsTour(id)
-  }
-
+  const clickDetailsContact = (id) => {
+    props.detailsTour(id);
+  };
+  console.log(filterTour1);
   if (props.trigerTour === true) {
     return (
       <div className="result">
         {searchTour.map((item) => {
           return (
-            <div className="result-li">
+            <div className="result-li" key={item.id}>
               <img alt="" src={cards[0].img} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
                   <div>
                     {cards[0].stars.map((star) => {
-                      return <img className="star" alt="" src={star} />;
+                      return <img className="star" alt="" src={star.img} key={star.id}/>;
                     })}
                   </div>
                   <span className="descrip_text">422 reviews</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
-                <sapn className="result-price">from {item.min_price}$ </sapn>
+                <span className="result-price">from {item.min_price}$ </span>
                 <Link to="/tourspage">
-                  <button onClick={()=>clickDetailsContact(item.id)} className="more_details">more details</button>
+                  <button
+                    onClick={() => clickDetailsContact(item.id)}
+                    className="more_details"
+                  >
+                    more details
+                  </button>
                 </Link>
               </div>
             </div>
@@ -94,23 +124,28 @@ const ResultCard = (props) => {
       <div className="result">
         {tour.map((item) => {
           return (
-            <div className="result-li">
+            <div className="result-li" key={item.id}>
               <img alt="" src={cards[0].img} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
                   <div>
                     {cards[0].stars.map((star) => {
-                      return <img className="star" alt="" src={star} />;
+                      return <img className="star" alt="" src={star.img} key={star.id} />;
                     })}
                   </div>
                   <span className="descrip_text">422 reviews</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
-                <sapn className="result-price">from {item.min_price}$ </sapn>
+                <span className="result-price">from {item.min_price}$ </span>
                 <Link to="/tourspage">
-                  <button onClick={()=>clickDetailsContact(item.id)} className="more_details">more details</button>
+                  <button
+                    onClick={() => clickDetailsContact(item.id)}
+                    className="more_details"
+                  >
+                    more details
+                  </button>
                 </Link>
               </div>
             </div>
@@ -130,28 +165,41 @@ const ResultCard = (props) => {
           </div>
         </div>
       );
+    }
+    if (filterTour1.length === 0) {
+      return (
+        <div className="result">
+          <img alt="" src={smail}/>
+          <span>туров нет</span>
+        </div>
+      );
     } else {
       return (
         <div className="result">
           {filterTour1.map((item) => {
             return (
-              <div className="result-li">
+              <div className="result-li" key={item.id}>
                 <img alt="" src={cards[0].img} />
                 <div className="description-tours">
                   <h1 className="title-tours">{item.name}</h1>
                   <div className="description">
                     <div>
                       {cards[0].stars.map((star) => {
-                        return <img className="star" alt="" src={star} />;
+                        return <img className="star" alt="" src={star.img} key={star.id} />;
                       })}
                     </div>
                     <span className="descrip_text">422 reviews</span>
                     <img alt="" className="descrip_text" src={cards[0].paint} />
                     <span className="descrip_text">{item.country}</span>
                   </div>
-                  <sapn className="result-price">from {item.min_price}$ </sapn>
+                  <span className="result-price">from {item.min_price}$ </span>
                   <Link to="/tourspage">
-                    <button onClick={()=>clickDetailsContact(item.id)} className="more_details">more details</button>
+                    <button
+                      onClick={() => clickDetailsContact(item.id)}
+                      className="more_details"
+                    >
+                      more details
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -167,23 +215,28 @@ const ResultCard = (props) => {
       <div className="result">
         {tourActivity.map((item) => {
           return (
-            <div className="result-li">
+            <div className="result-li" key={item.id}>
               <img alt="" src={cards[0].img} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
                   <div>
                     {cards[0].stars.map((star) => {
-                      return <img className="star" alt="" src={star} />;
+                      return <img className="star" alt="" src={star.img} key={star.id} />;
                     })}
                   </div>
                   <span className="descrip_text">422 reviews</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
-                <sapn className="result-price">from {item.min_price}$ </sapn>
+                <span className="result-price">from {item.min_price}$ </span>
                 <Link to="/tourspage">
-                  <button onClick={()=>clickDetailsContact(item.id)} className="more_details">more details</button>
+                  <button
+                    onClick={() => clickDetailsContact(item.id)}
+                    className="more_details"
+                  >
+                    more details
+                  </button>
                 </Link>
               </div>
             </div>
@@ -214,7 +267,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    detailsTour:(id)=>dispatch(detailsTour(id))
+    detailsTour: (id) => dispatch(detailsTour(id)),
   };
 };
 

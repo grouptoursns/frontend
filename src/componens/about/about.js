@@ -7,7 +7,7 @@ const About = () => {
     <div className="page-about">
       <div className="content-about">
         <span className="about-title">About us</span>
-        <img src={imgAbout} />
+        <img src={imgAbout} alt="img"/>
         <span className="about-descrip">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

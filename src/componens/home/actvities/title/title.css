@@ -26,3 +26,7 @@
   color:  rgba(7, 58, 245, 0.63);
   cursor: pointer;
 }
+.span2 svg:hover {
+  stroke: rgba(7, 58, 245, 0.63);
+  fill: rgba(7, 58, 245, 0.63);
+}

@@ -3,11 +3,11 @@ import "./group-tours.css";
 import TextTours from "./text-tours/text-tours.js";
 import ToursSlider from "./tours-slaider/slider.js";
 
-const GroupTours = () => {
+const GroupTours = (props) => {
   return (
     <div className="block-tours">
       <TextTours />
-      <ToursSlider />
+      <ToursSlider card={props.card1}/>
     </div>
   );
 };

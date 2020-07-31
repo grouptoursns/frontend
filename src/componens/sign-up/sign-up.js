@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sign-up.css";
 import User from "./users-sign-up/user.js";
-import Company from "./company-users-up/company.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const SignUp = () => {

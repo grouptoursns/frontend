@@ -16,19 +16,19 @@ const Slider1 = () => {
     <div className="slider-home">
       <Carousel>
         <Carousel.Item>
-          <img className=" w-100 " src={slide1}  />
+          <img className=" w-100 " src={slide1} alt="img" />
           <Carousel.Caption>
            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className=" w-100 " src={slide1}  />
+          <img className=" w-100 " src={slide1} alt="img" />
           <Carousel.Caption>
            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className=" w-100 " src={slide1}  />
+          <img className=" w-100 " src={slide1} alt="img" />
           <Carousel.Caption>
            
           </Carousel.Caption>

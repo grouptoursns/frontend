@@ -9,7 +9,7 @@ const Registy = () => {
       <Link to="/sign-up-company">
         
         <span className="regist">Register as operator</span>
-        <img src={next} />
+        <img src={next} alt="img" />
       </Link>
     </div>
   );

@@ -24,9 +24,7 @@ const Filter = (props) => {
   const chengePrice = (arr) => {
     setPrice([...arr]);
   };
-  console.log(country);
-  console.log(activity);
-  console.log(price);
+
   const filterTour = () => {
     props.trigerSearchOff()
     props.trigerBestOff()

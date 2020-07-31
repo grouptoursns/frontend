@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./app.css";
 import Company from "./company.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

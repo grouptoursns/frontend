@@ -39,7 +39,7 @@ const Activity = () => {
        
                {pictures.map((item) => {
                 return(
-                    <Link to="/result_search"><img key={item.id} className="img_act" src={item.img} /></Link>
+                    <Link to="/result_search"><img key={item.id} alt="img" className="img_act" src={item.img} /></Link>
                     
                 ) 
               })}
