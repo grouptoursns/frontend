@@ -16,6 +16,11 @@ export const closeSpiner=()=>{
         type:"CLOSE_SPINER"
     }
 }
+export const trigerSpiner=()=>{
+  return{
+      type:"TRIGER_SPINER"
+  }
+}
 export const Successful=(successful)=>{
     return{
         type:"SUCCESS",

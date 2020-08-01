@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { searchTrigerFalse } from "../../../actions/tourSearch";
 import { detailsTour } from "../../../actions/detailsTour";
-import smail from "./img/Без названия (1).png"
+import smail from "./img/smile.png"
 
 const ResultCard = (props) => {
   useEffect(() => {
@@ -169,8 +169,8 @@ const ResultCard = (props) => {
     if (filterTour1.length === 0) {
       return (
         <div className="result">
-          <img alt="" src={smail}/>
-          <span>туров нет</span>
+          <img alt="" className="smail" src={smail}/>
+          <span className="text-err">Sorry for these parameters, there are no tours</span>
         </div>
       );
     } else {

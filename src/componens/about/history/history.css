@@ -1,0 +1,53 @@
+.history{
+    width: 100%;
+    height: auto;
+
+}
+.histore-title{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.line-history{
+    width: 80%;
+    border: 0.5px solid #606060;
+}
+.history-titl{
+    font-size: 32px;
+
+    
+    color: #000000;
+}
+.block-content{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.hist{
+    margin-top: 50px;
+}
+.block-history-text{
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.lorem{
+    font-weight: bold;
+font-size: 32px;
+
+
+color: #000000;
+}
+.history-desc{
+    margin-top: 40px;
+}
+.block-buttom-history{
+    margin-top: 30px;
+}

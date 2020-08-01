@@ -11,6 +11,10 @@ export function Spiner(state=initialState,action){
             return {
                 ...state,spiner:false
             }
+            case "TRIGER_SPINER":
+                return {
+                    ...state,spiner:""
+                }
         default:
             return state;
     }

@@ -9,6 +9,7 @@ import {homeAxiosData} from "../../actions/dataHome";
 import{allTour}from "../../actions/allTour"
 import {trigerFilterOff} from "../../actions/trigerFilter";
 import {destinationsData} from "../../actions/destinations";
+import {trigerSpiner} from "../../actions/user";
 
 const Home = (props) => {
 
@@ -18,6 +19,7 @@ const Home = (props) => {
     props.AxiosData('http://161.35.199.172/main-page');
     props.AllTours(' http://161.35.199.172/api/tours/');
     props.destinationsData('http://161.35.199.172/api/test/')
+    props.trigerSpin()
   
   },[]);
   return (
@@ -42,6 +44,7 @@ const mapDispatchToProps = (dispatch) => {
     AllTours:(url)=>dispatch(allTour(url)),
     trigerFilterOff:()=>dispatch(trigerFilterOff()),
     destinationsData: (url) => dispatch(destinationsData(url)),
+    trigerSpin:()=>dispatch(trigerSpiner())
   };
 };
 

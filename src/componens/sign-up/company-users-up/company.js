@@ -271,7 +271,7 @@ class Company extends React.Component {
                 <input
                   value={this.state.pasword}
                   onChange={this.changeHandler}
-                  type="text"
+                  type="password"
                   id="defaultFormRegisterPasswordEx4"
                   className="form-control input"
                   name="pasword"
@@ -292,7 +292,7 @@ class Company extends React.Component {
                 <input
                   value={this.state.pasword2}
                   onChange={this.changeHandler}
-                  type="text"
+                  type="password"
                   id="defaultFormRegisterPasswordEx4"
                   className="form-control input"
                   name="pasword2"

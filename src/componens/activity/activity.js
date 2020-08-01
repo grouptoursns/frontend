@@ -10,8 +10,13 @@ import card6 from "../home/actvities/block-card/img/Rectangle 6.png";
 import card7 from "../home/actvities/block-card/img/Rectangle 7.png";
 import card8 from "../home/actvities/block-card/img/Rectangle 8.png";
 import {Link} from "react-router-dom"
+import { connect } from "react-redux";
+import {searchTrigerFalse} from "../../actions/tourSearch";
+import {trigerActivityOn} from "../../actions/trigerActivity"
+import {trigerBestOff} from "../../actions/trigerBest";
+import {pushActivity} from "../../actions/dataActivity"
 
-const Activity = () => {
+const Activity = (props) => {
     const pictures = [
         { id: 1, img: card1 },
         { id: 2, img: card2 },
@@ -29,7 +34,20 @@ const Activity = () => {
         { id: 14, img: card6 },
         { id: 15, img: card7 },
       ];
-
+      let card=[];
+      if(props.allCards===undefined){
+        card=[]
+      }
+      else{
+        card=[...props.allCards]
+      }
+      const onClickCard=(item)=>{
+        props.triger()   
+        props.trigerActivity()
+        props.trigerBest()
+        props.pushActivity(item)
+    
+      }
   return (
     <div className="container p1">
       <div className="destion-title">
@@ -37,9 +55,14 @@ const Activity = () => {
       </div>
       <div className="destion-cards">
        
-               {pictures.map((item) => {
+               {card.map((item) => {
                 return(
-                    <Link to="/result_search"><img key={item.id} alt="img" className="img_act" src={item.img} /></Link>
+                  <Link to="/result_search" key={item.id} onClick={() => onClickCard(item.name)}>
+                  <div className="active-card"   >
+                    <img key={item.name} className="img_act" src={item.image} />
+                    <span className="card-text-activity">{item.name}</span>
+                  </div>
+                </Link>
                     
                 ) 
               })}
@@ -48,4 +71,21 @@ const Activity = () => {
     </div>
   );
 };
-export default Activity;
+
+
+const mapStateToProps = (state) => {
+  return {
+    allCards:state.allDestinations.allDestinations.Category
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    pushActivity: (activity) => dispatch(pushActivity(activity)),
+    triger: () => dispatch(searchTrigerFalse()),
+    trigerActivity:()=>dispatch(trigerActivityOn()),
+    trigerBest:()=>dispatch(trigerBestOff())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Activity);
