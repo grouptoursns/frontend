@@ -21,16 +21,16 @@ const App = () => {
         <NavBar />
 
         <Switch>
-        <Route path="/result_search" component={ResultSearch} />
-        <Route exact path="/" component={Home} />
-        <Route path="/destinations" component={Destinations} />
-        <Route path="/activity" component={Activity} />
-        <Route path="/tourspage"  component={Tour} />
-        <Route path="/sign-up"  component={SignUp} />
-        <Route path="/sign-in"  component={SignIn} />
-        <Route path="/sign-up-company"  component={SignCompany} />
-        <Route path="/about"  component={About} />
-        <Route  component={NotFound} />
+          <Route path="/result_search" component={ResultSearch} />
+          <Route exact path="/" component={Home} />
+          <Route path="/destinations" component={Destinations} />
+          <Route path="/activity" component={Activity} />
+          <Route path="/tourspage"  component={Tour} />
+          <Route path="/sign-up"  component={SignUp} />
+          <Route path="/sign-in"  component={SignIn} />
+          <Route path="/sign-up-company"  component={SignCompany} />
+          <Route path="/about"  component={About} />
+          <Route component={NotFound} />
         </Switch>
 
         <Footer />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Home from "../../../home/home";
 import '../form.css'
 
 
@@ -35,6 +36,8 @@ export default class User extends Component {
         let emailErr = '';
         let passwordErr = '';
         let userErr = '';
+
+
 
         if(this.state.resData){
             userErr = "No such user exists"
@@ -82,9 +85,11 @@ export default class User extends Component {
             console.log(data);
             this.setState({
             resData:data.token,
-            isAuthenticated:true
+            isAuthenticated:true,
             });
-        },
+
+
+            },
         (error) => {
             console.log(error)
             this.setState({
@@ -97,7 +102,7 @@ export default class User extends Component {
 
 
     render() {
-        if(this.state.isAuthenticated){}
+        if(this.state.isAuthenticated == true) return <Redirect to="/" />
         return (
             <div className="form">
                 <form className="form-cont" onSubmit={this.handleSubmit}>

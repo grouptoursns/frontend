@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import User from './user/user.js'
+import Home from "../../home/home";
 
 
 const Form =()=>{
@@ -9,8 +10,8 @@ const Form =()=>{
         <div className="tabs">
             <Router>
                 <Switch>
-                    <Route path="/user" component={User} />
-                    <Redirect from="/" to="/user" />
+                    <Route path="/sign-in" component={User} />
+                    <Route path="/" component={Home} />
                 </Switch>
             </Router>
         </div>

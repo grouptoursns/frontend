@@ -2,6 +2,8 @@ import React from "react";
 import ReactStars from 'react-stars'
 import './title.css'
 import geo from './img/map-pin.png'
+// import {detailsTour} from "../../../../actions/detailsTour";
+// import {allTour} from "../../../../actions/allTour";
 
 const Title = ()=>{
     return(
@@ -15,7 +17,7 @@ const Title = ()=>{
                     value={3.5}
                     edit={false}
                     half={true}
-                    color1="white"
+                    color1="lightgrey"
                     color2="black"
                 />
                 </div>

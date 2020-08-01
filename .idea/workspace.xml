@@ -27,14 +27,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +70,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
@@ -129,7 +129,9 @@
       <workItem from="1595969959248" duration="6408000" />
       <workItem from="1596028077951" duration="3378000" />
       <workItem from="1596043879795" duration="9309000" />
-      <workItem from="1596143061663" duration="6390000" />
+      <workItem from="1596143061663" duration="6701000" />
+      <workItem from="1596183797747" duration="588000" />
+      <workItem from="1596204301530" duration="21121000" />
     </task>
     <servers />
   </component>
@@ -181,6 +183,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596214955807">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596214955807" />
     <state width="1343" height="122" key="GridCell.Tab.0.bottom" timestamp="1593718802452">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -201,6 +207,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="0" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595588262727" />
+    <state x="-128" y="2" width="998" height="726" key="SettingsEditor" timestamp="1596228263417">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-128" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596228263417" />
     <state x="274" y="93" key="Vcs.Push.Dialog.v2" timestamp="1593719878679">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
