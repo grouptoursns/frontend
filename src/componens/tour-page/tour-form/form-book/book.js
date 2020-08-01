@@ -9,6 +9,7 @@ import './book.css'
 const Book =()=>{
     const [selectedDate, setSelectedDate] = useState(null)
 
+
     return(
         <div className="book">
             <div className="book-price">
@@ -25,7 +26,7 @@ const Book =()=>{
                     minDate = {new Date()}
                 />
                     <Counter />
-                <button className="book-picker__btn">Update search</button>
+                <button className="book-picker__btn">Update</button>
 
                 <div className="book-picker__text">
                     <p className="book-picker__text-title">

@@ -6,10 +6,12 @@ import Actvities from "./actvities/actvities.js";
 import BestTours from "./best-tours/best-tours.js"
 import { connect } from "react-redux";
 import {homeAxiosData} from "../../actions/dataHome";
-import{allTour}from "../../actions/allTour"
+import {allTour}from "../../actions/allTour"
 import {trigerFilterOff} from "../../actions/trigerFilter";
 import {destinationsData} from "../../actions/destinations";
 import {trigerSpiner} from "../../actions/user";
+
+
 
 const Home = (props) => {
 

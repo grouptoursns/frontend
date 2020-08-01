@@ -1,0 +1,14 @@
+.general{
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+.general-content{
+    margin: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 0px;
+    border-bottom: 1px solid #C4C4C4;
+}
+.general-content p{
+    width: 72%;
+}

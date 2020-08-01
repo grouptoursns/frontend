@@ -1,0 +1,14 @@
+.guide{
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+.guide-content{
+    margin: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 0px;
+    border-bottom: 1px solid #C4C4C4;
+}
+.guide-content p{
+    width: 72%;
+}

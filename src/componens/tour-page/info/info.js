@@ -1,15 +1,29 @@
 import React from "react";
-import Sub from './info-subtitle/subtitle.js'
-import Over from './info-overview/overview.js'
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './info.css'
+import Tabs from "./tabs/tabs.js";
+import General from "./general/general";
+import Itinerary from "./itinerary/itinerary";
+import Guide from "./guide/guide";
+import Meet from "./meet/meet";
+import Reviews from "./reviews/reviews";
+import Inclusions from "./inclusions/inclusions";
 
 const Info = () =>{
     return(
         <div className='info'>
-            <Sub />
-            <Over />
+            <div>
+                <Tabs />
+                    <Switch>
+                        <Route exact path="/tourspage/general" component={General}/>
+                        <Route path="/tourspage/itinerary" component={Itinerary}/>
+                        <Route path="/tourspage/inclusions" component={Inclusions}/>
+                        <Route path="/tourspage/guide" component={Guide}/>
+                        <Route path="/tourspage/meet" component={Meet}/>
+                        <Route path="/tourspage/reviews" component={Reviews}/>
+                    </Switch>
+            </div>
         </div>
     )
 }
-
 export default Info;
