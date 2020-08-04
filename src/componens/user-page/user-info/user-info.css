@@ -1,0 +1,27 @@
+.user-info{
+    width: 100%;
+    height: 184px;
+    display: flex;
+    flex-direction: row;
+}
+.info-content{
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 60px;
+}
+.user-information{
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.user-links{
+    width: 706px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

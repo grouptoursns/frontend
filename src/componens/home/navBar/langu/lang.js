@@ -25,12 +25,12 @@ const Lang =()=>{
           data-toggle="dropdown"
           aria-haspopup="true"
         >
-          Login in
+          Sign in
         </span>
         <div className={menuClass} aria-labelledby="dropdownMenuButton">
           
-          <Link className="dropdown-item" to="/sign-in">Login in</Link>
-          <Link className="dropdown-item" to="/sign-up">Login up</Link>
+          <Link className="dropdown-item" to="/sign-in">Sign in</Link>
+          <Link className="dropdown-item" to="/sign-up">Sign up</Link>
         </div>
       </div>
     );
