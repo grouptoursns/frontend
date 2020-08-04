@@ -12,7 +12,9 @@ const  initialState ={
     emailErr:'',
     passwordErr:'',
     checked: false,
-    userErr: ''
+    userErr: '',
+    isUser: '',
+    isCompany: ''
 }
 
 export default class User extends Component {
@@ -38,7 +40,6 @@ export default class User extends Component {
         let userErr = '';
 
 
-
         if(this.state.resData){
             userErr = "No such user exists"
         }
@@ -54,6 +55,7 @@ export default class User extends Component {
             this.setState({emailErr, passwordErr, userErr})
             return false;
         }
+
         return true;
     };
 
@@ -86,9 +88,9 @@ export default class User extends Component {
             this.setState({
             resData:data.token,
             isAuthenticated:true,
+            isUser:data.is_customer,
+            isCompany:data.is_company,
             });
-
-
             },
         (error) => {
             console.log(error)
@@ -102,7 +104,8 @@ export default class User extends Component {
 
 
     render() {
-        if(this.state.isAuthenticated == true) return <Redirect to="/" />
+        if(this.state.isCompany) return <Redirect to="/company-page"/>
+        if(this.state.isUser) return <Redirect to="/user-page"/>
         return (
             <div className="form">
                 <form className="form-cont" onSubmit={this.handleSubmit}>

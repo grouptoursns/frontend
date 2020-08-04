@@ -1,13 +1,16 @@
 .tour{
+    background-color: #F4F4F4;
     display: flex;
     justify-content: center;
-    margin: 40px;
 }
 .tour-rating{
-    height: auto;
+    background-color: white;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 90px 50px;
+    margin: 10% 0%;
 }
 .tour-rating__btn{
     width: 139px;

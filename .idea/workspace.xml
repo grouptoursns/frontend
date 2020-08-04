@@ -27,11 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/rootReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,8 @@
       <workItem from="1596204301530" duration="21121000" />
       <workItem from="1596301410796" duration="1781000" />
       <workItem from="1596342672086" duration="3155000" />
-      <workItem from="1596485873764" duration="7108000" />
+      <workItem from="1596485873764" duration="7285000" />
+      <workItem from="1596552025227" duration="8330000" />
     </task>
     <servers />
   </component>
