@@ -14,13 +14,13 @@ const UserInfo =()=>{
             <div className="info-content">
                 <div className="user-information">
                     <span className="user-name">Dan Abramov</span>
-                    <div><img src={mapPin} alt=""/><span className="user-text">Kyrgyzstan, Bishkek</span></div>
+                    <div><img src={mapPin} alt=""/><span className="user-text ">Kyrgyzstan, Bishkek</span></div>
                     <div><img src={map} alt=""/><span  className="user-text">Visited tours 54 </span></div>
                 </div>
                 <div className="user-links">
                     <div><img src={flag} alt=""/> <span  className="user-text">Booked tours</span></div>
-                    <div><img src={galka} alt=""/> <span  className="user-text">Visited tours</span></div>
-                    <div><img src={settings} alt=""/> <span  className="user-text">Profile settings</span></div>
+                    <div className="button-mr"><img src={galka} alt=""/> <span  className="user-text">Visited tours</span></div>
+                    <div  className="button-mr"><img src={settings} alt=""/> <span  className="user-text">Profile settings</span></div>
                 </div>
 
             </div>

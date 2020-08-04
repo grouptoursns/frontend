@@ -1,0 +1,38 @@
+.MuiTablePagination-input {
+    color: inherit;
+    font-size: inherit;
+    flex-shrink: 0;
+    display: none !important;
+}
+.MuiTablePagination-caption {
+    flex-shrink: 0;
+    display: none !important;
+}
+.list-text{
+    font-size: 12px;
+line-height: 14px;
+
+color: #000000;
+}
+.table-title{
+    width: 100%;
+    height: auto;
+border-bottom:1px solid #EAE2E2;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.date{
+width: 160px;
+}
+.tour{
+width: 230px;
+}
+.places{
+width: 160px;
+}
+.action{
+width: 60px;
+}
