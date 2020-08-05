@@ -16,6 +16,7 @@ import {filterTour} from "./filterTour";
 import {trigerFilter} from "./trigerFilter";
 import {detailsTour} from "./detailsTour"
 import {allDestinations} from "./allDestinations"
+import {tourData} from "./tourData"
 
 const rootReduser = combineReducers({
     UserRegistr,
@@ -33,7 +34,8 @@ const rootReduser = combineReducers({
     filterTour,
     trigerFilter,
     detailsTour,
-    allDestinations
+    allDestinations,
+    tourData
 });
 
 export default rootReduser;

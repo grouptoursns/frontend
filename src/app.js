@@ -11,7 +11,11 @@ import SignUp from "./componens/sign-up/sign-up.js";
 import SignIn from "./componens/sign-in/sign-in.js"
 import SignCompany from "./componens/sign-up/company-users-up/app"
 import About from "./componens/about/about.js"
+
 import UserPage from "./componens/user-page/user-page"
+
+import TourRating from "./componens/tour-rating/tour-rating";
+
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -32,6 +36,7 @@ const App = () => {
           <Route path="/sign-up-company"  component={SignCompany} />
           <Route path="/about"  component={About} />
           <Route path="/user-page"  component={UserPage} />
+          <Route path="/tour-rating"  component={TourRating} />
           <Route component={NotFound} />
         </Switch>
 
