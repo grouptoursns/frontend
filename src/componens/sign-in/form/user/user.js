@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Home from "../../../home/home";
 import '../form.css'
+import { connect } from "react-redux";
+import {signIn} from "../../../../actions/signIn"
 
 
 const  initialState ={
@@ -17,7 +19,7 @@ const  initialState ={
     isCompany: ''
 }
 
-export default class User extends Component {
+class User extends Component {
 
     constructor(props){
         super(props);
@@ -75,38 +77,12 @@ export default class User extends Component {
             email: (this.state.email),
             password: (this.state.password)
         }
-        fetch('http:///161.35.199.172/api/users/login/',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify(payLoad)
-        })
-        .then(res=>res.json())
-        .then((data)=>{
-            console.log(data);
-            this.setState({
-            resData:data.token,
-            isAuthenticated:true,
-            isUser:data.is_customer,
-            isCompany:data.is_company,
-            });
-            },
-        (error) => {
-            console.log(error)
-            this.setState({
-                isAuthenticated:false,
-                resData:''
-            })
-        }
-        );
+        this.props.signIn(payLoad)
 
     }
 
 
     render() {
-        if(this.state.isCompany) return <Redirect to="/company-page"/>
-        if(this.state.isUser) return <Redirect to="/user-page"/>
         return (
             <div className="form">
                 <form className="form-cont" onSubmit={this.handleSubmit}>
@@ -154,3 +130,17 @@ export default class User extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      signIn: (data) => dispatch(signIn(data)),
+    };
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(User);
+

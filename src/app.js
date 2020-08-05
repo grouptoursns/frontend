@@ -11,17 +11,17 @@ import SignUp from "./componens/sign-up/sign-up.js";
 import SignIn from "./componens/sign-in/sign-in.js"
 import SignCompany from "./componens/sign-up/company-users-up/app"
 import About from "./componens/about/about.js"
-
 import UserPage from "./componens/user-page/user-page"
-
+import {history} from "./history";
 import TourRating from "./componens/tour-rating/tour-rating";
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
+
   return (
-    <Router>
+    <Router history={history} >
       <div>
         <NavBar />
 
