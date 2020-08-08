@@ -23,6 +23,8 @@ export function signIn(data) {
           localStorage.setItem("user", res.data.is_customer);
           localStorage.setItem("company", res.data.is_company);
           localStorage.setItem("email", data.email);
+          localStorage.setItem("id", res.data.id);
+
           history.push("/");
         })
         .catch((error) => {

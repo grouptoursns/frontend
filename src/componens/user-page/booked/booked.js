@@ -81,23 +81,9 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(name, calories, fat,but) {
-  return { name, calories, fat ,but};
-}
 
-const rows = [
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-  createData('20/12/2021 07:00PM', '1 Day Burana-Kegety Gorge-Kol-Tor lake trip',6,<button></button>),
-].sort((a, b) => (a.calories < b.calories ? -1 : 1));
+
+
 
 const useStyles2 = makeStyles({
   table: {
@@ -105,11 +91,24 @@ const useStyles2 = makeStyles({
   },
 });
 
-export default function Booked() {
+export default function Booked( props) {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(7);
-
+  let rows=[]
+  if(props.tourList.book_user===undefined){
+    rows=[]
+  }
+  else{
+    rows =props.tourList.book_user.map((item)=>{
+      return{
+        time:item.group.finish_time,
+        name:item.group.name,
+        people:item.count_of_extra_people,
+        status:item.group.status_group_tour
+      }
+    })
+  }
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   const handleChangePage = (event, newPage) => {
@@ -121,12 +120,13 @@ export default function Booked() {
     setPage(0);
   };
 
+  console.log(props.tourList)
   return (
 
     <TableContainer component={Paper}>
         <div className="table-title">
             <span className="date">Date</span>
-            <span className="tour">Tour</span>
+            <span className="tour-user">Tour</span>
             <span className="places">Reserved places</span>
             <span className="action">Action</span>
         </div>
@@ -138,16 +138,16 @@ export default function Booked() {
           ).map((row) => (
             <TableRow key={row.name}>
               <TableCell component="th" style={{ width: 160}} scope="row">
-                {row.name}
+                {row.time}
               </TableCell>
               <TableCell style={{ width: 230}} className="list-text" align="left">
-                {row.calories}
+                {row.name}
               </TableCell>
               <TableCell style={{ width: 60 }} align="right">
-                {row.fat}
+                {row.people}
               </TableCell>
               <TableCell style={{ width: 160 }} align="right">
-                {row.but}
+                {row.status}
               </TableCell>
             </TableRow>
           ))}
