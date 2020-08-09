@@ -9,7 +9,7 @@ export function putDataUser(data) {
         first_name: data.fname,
         last_name: data.lname,
         birthday: data.date,
-        avatar: data.avatar,
+        avatar: data.avatar.File,
       })
       .then((res) => {
         console.log(res);
