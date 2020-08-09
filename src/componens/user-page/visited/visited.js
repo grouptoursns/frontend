@@ -1,5 +1,8 @@
+
+import "./visited.css"
+
+
 import React from "react"
-import "./booked.css"
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -92,7 +95,7 @@ const useStyles2 = makeStyles({
   },
 });
 
- function Booked( props) {
+ function Visited( props) {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(7);
@@ -101,7 +104,7 @@ const useStyles2 = makeStyles({
     rows=[]
   }
   else{
-    rows =props.custimerCabinetData.book_user.map((item)=>{
+    rows =props.custimerCabinetData.map((item)=>{
       return{
         time:item.group.finish_time,
         name:item.group.name,
@@ -182,7 +185,8 @@ const useStyles2 = makeStyles({
 }
 const mapStateToProps = (state) => {
   return {
-      custimerCabinetData:state.custimerCabinet.data
+      custimerCabinetData:state.custimerCabinet.data.book_user.filter((items) =>
+      items.group.status_group_tour.includes("Successful")),
   };
 };
 
@@ -192,4 +196,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Booked);
+export default connect(mapStateToProps, mapDispatchToProps)(Visited);

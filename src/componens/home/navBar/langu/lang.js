@@ -10,19 +10,21 @@ const Lang = () => {
   const [user, setUser] = useState(false);
   const [company, setCompany] = useState(false);
   const [email, setEmail] = useState(1);
-
-  const toggleOpen = () => {
-    setOpen(!open);
-  };
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     setUser(localStorage.getItem("user"));
     setCompany(localStorage.getItem("company"));
     setEmail(localStorage.getItem("email"));
   },[]);
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
+  
   console.log(user);
   const menuClass = `dropdown-menu${open ? " show" : ""}`;
-
+const logout=()=>{
+  localStorage.clear();
+}
   if (localStorage.length !== 0) {
     if (user === 'true') {
       return (
@@ -40,8 +42,11 @@ const Lang = () => {
             <Link className="dropdown-item" to="/user-page">
               Personal Area
             </Link>
-            <Link className="dropdown-item" to="/sign-up">
+            <Link  className="dropdown-item" to="/">
+              <div onClick={logout}>
               logout
+                </div>
+             
             </Link>
           </div>
         </div>
@@ -63,7 +68,7 @@ const Lang = () => {
             <Link className="dropdown-item" to="/sign-in">
               Admin panel
             </Link>
-            <Link className="dropdown-item" to="/sign-up">
+            <Link  className="dropdown-item" to="/">
               logout
             </Link>
           </div>

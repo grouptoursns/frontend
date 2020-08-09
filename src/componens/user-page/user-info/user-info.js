@@ -6,6 +6,7 @@ import map from "./img/map.png"
 import flag from "./img/Vector (4).png"
 import galka from "./img/Vector (5).png"
 import settings from "./img/settings.png"
+import {Link} from "react-router-dom"
 
 const UserInfo =(props)=>{
     console.log(props.userInfo)
@@ -25,9 +26,10 @@ const UserInfo =(props)=>{
                     <div><img src={map} alt=""/><span  className="user-text">Visited tours 54 </span></div>
                 </div>
                 <div className="user-links">    
-                    <div className={ (clas ==="1" ? " active-button":'' )} ><img src={flag} alt=""/> <span id="1" onClick={(e)=>clickLink(e)} className="user-text">Booked tours</span></div>
-                    <div  className={"button-mr"+ (clas ==="2" ? " active-button":'' )}><img src={galka} alt=""/> <span id="2"  onClick={(e)=>clickLink(e)}  className="user-text">Visited tours</span></div>
-                    <div  className={"button-mr"+ (clas ==="3" ? " active-button":'' )}><img src={settings} alt=""/> <span id="3"  onClick={(e)=>clickLink(e)} className="user-text">Profile settings</span></div>
+                    <Link to="/user-page"><div className={ (clas ==="1" ? " active-button":'' )} id="1" onClick={(e)=>clickLink(e)} ><img src={flag} alt=""/> <span id="1" onClick={(e)=>clickLink(e)}  className="user-text">Booked tours</span></div></Link>
+                    
+                    <Link to="/user-page/visited-tour"><div id="2"  onClick={(e)=>clickLink(e)}  className={"button-mr"+ (clas ==="2" ? " active-button":'' )}><img src={galka} alt=""/> <span id="2"  onClick={(e)=>clickLink(e)}   className="user-text">Visited tours</span></div></Link>
+                    <Link to="/user-page/settings"><div id="3"  onClick={(e)=>clickLink(e)}  className={"button-mr"+ (clas ==="3" ? " active-button":'' )}><img src={settings} alt=""/> <span id="3"  onClick={(e)=>clickLink(e)} className="user-text">Profile settings</span></div></Link>
                 </div>
 
             </div>

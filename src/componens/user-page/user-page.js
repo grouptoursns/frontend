@@ -4,12 +4,16 @@ import UserInfo from "./user-info/user-info"
 import Booked from "./booked/booked"
 import { connect } from "react-redux";
 import {custimerCabinet} from "../../actions/custumerCabinet"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Visited from "./visited/visited"
+import AppSettings from "./settings/appSettings"
 
 const UserPage = (props) => {
+    
 useEffect(()=>{
 
     props.custumerCabinet()
-},[])
+},[props.custumerCabinet])
 console.log(props.custimerCabinetData.data)
 let custimerData
 if(props.custimerCabinetData.data===undefined){
@@ -23,8 +27,13 @@ else{
           <div className="user-container">
               <UserInfo userInfo={custimerData}/>
            
-              <div className="booking">
-              <Booked tourList={custimerData}/>
+              <div className="booking1">
+             <Switch>
+             <Route exact path="/user-page" component={Booked}/>
+             <Route  path="/user-page/visited-tour" component={Visited}/>
+             <Route  path="/user-page/settings" component={AppSettings}/>
+             </Switch>
+              
               </div>
           </div>
 

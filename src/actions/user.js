@@ -48,7 +48,7 @@ export function putData(data) {
           dispatch(Successful(res.data.message))
         })
         .catch((error) => {
-          console.log(error.data);
+          console.log(error.response.data);
         });
     }catch{
 

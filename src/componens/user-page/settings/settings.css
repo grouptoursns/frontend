@@ -1,0 +1,46 @@
+.user-settings{
+    width: 100%;
+    height: 500px;
+}
+.imgPrew{
+    width: 144px;
+    height: 184px;
+}
+.imgPreview{
+
+    outline: 1px solid #373e4a;
+    width: 144px;
+    height: 184px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fileInput{
+    margin-top: 10px;
+}
+.settings-btn{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.btn-change{
+    background-color: #373e4a;
+    color: #ffffff;
+    border: 1px solid #373e4a;
+    background-color: 250ms;
+    width: 172px;
+    height: 27px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: .25rem;
+}
+.btn-change:hover{
+    cursor: pointer;
+    background-color: white;
+    color: rgb(70, 153, 179);
+    border: 1px solid rgb(70, 153, 179);
+}
