@@ -3,8 +3,9 @@ import "./lang.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
+import {SignInOff} from "../../../../actions/signIn"
 
-const Lang = () => {
+const Lang = (props) => {
   const [open, setOpen] = useState(false);
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(false);
@@ -24,6 +25,7 @@ const Lang = () => {
   const menuClass = `dropdown-menu${open ? " show" : ""}`;
 const logout=()=>{
   localStorage.clear();
+  props.siginOff()
 }
   if (localStorage.length !== 0) {
     if (user === 'true') {
@@ -40,11 +42,12 @@ const logout=()=>{
           </span>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
             <Link className="dropdown-item" to="/user-page">
-              Personal Area
+              
+                My profile
             </Link>
             <Link  className="dropdown-item" to="/">
               <div onClick={logout}>
-              logout
+              log out
                 </div>
              
             </Link>
@@ -69,7 +72,9 @@ const logout=()=>{
               Admin panel
             </Link>
             <Link  className="dropdown-item" to="/">
-              logout
+            <div onClick={logout}>
+              log out
+                </div>
             </Link>
           </div>
         </div>
@@ -125,12 +130,14 @@ const logout=()=>{
 
 const mapStateToProps = (state) => {
   return {
-    signIn: state.SuccessSignIn.signIn,
+ 
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    siginOff:()=>dispatch(SignInOff())
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Lang);

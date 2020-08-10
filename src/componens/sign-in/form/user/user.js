@@ -3,12 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Home from "../../../home/home";
 import "../form.css";
 import { connect } from "react-redux";
 import { signIn } from "../../../../actions/signIn";
+import { history } from "../../../../history";
 
 const initialState = {
   isAuthenticated: false,
@@ -79,13 +80,15 @@ class User extends Component {
       password: this.state.password,
     };
     this.props.signIn(payLoad);
+   
+    
   }
 
   render() {
+    if(this.props.signIntriger=== true) return <Redirect to="/"/>
     return (
       <div className="form">
         <form className="form-cont" onSubmit={this.handleSubmit}>
-          <h2>Login</h2>
           <div>
             <p className="form-cont__title">Email</p>
             <input
@@ -151,7 +154,7 @@ class User extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    signInData: state.SuccessSignIn.signIn,
+    signIntriger: state.SuccessSignIn.triger,
   };
 };
 

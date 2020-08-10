@@ -6,19 +6,20 @@ import map from "./img/map.png"
 import flag from "./img/Vector (4).png"
 import galka from "./img/Vector (5).png"
 import settings from "./img/settings.png"
+import noPhoto from "./img/null.png"
 import {Link} from "react-router-dom"
 
 const UserInfo =(props)=>{
     console.log(props.userInfo)
     const [clas,setClas]=useState("1");
-    let{first_name,last_name}=props.userInfo
+    let{first_name,last_name,avatar}=props.userInfo
     const clickLink=(event)=>{
 
         setClas(event.target.id)
     }
     return(
         <div className="user-info">
-            <img alt="" src={avatar}/>
+            <img alt="" src={avatar || noPhoto}/>
             <div className="info-content">
                 <div className="user-information">
     <span className="user-name">{first_name+" "+ last_name}</span>

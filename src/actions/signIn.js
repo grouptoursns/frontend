@@ -1,10 +1,15 @@
 import axios from "axios";
 import { history } from "../history";
 
-export const SuccessfulSignIn = (data) => {
+export const SignInOn = () => {
   return {
-    type: "SUCCESS_LOGIN",
-    data,
+    type: "LOGIN_ON",
+
+  };
+};
+export const SignInOff = () => {
+  return {
+    type: "LOGIN_OFF",
   };
 };
 
@@ -18,14 +23,14 @@ export function signIn(data) {
         })
         .then((res) => {
           console.log(res.data);
-          dispatch(SuccessfulSignIn(res.data));
+
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("user", res.data.is_customer);
           localStorage.setItem("company", res.data.is_company);
           localStorage.setItem("email", data.email);
           localStorage.setItem("id", res.data.id);
-
-          history.push("/");
+dispatch(SignInOn())
+    
         })
         .catch((error) => {
           console.log(error.data);

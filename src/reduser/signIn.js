@@ -1,20 +1,16 @@
 const initialState={
-    signIn:{
-        user:false,
-        company:false,
-    },
+    triger:false
 }
 export function SuccessSignIn(state=initialState,action){
     switch(action.type){
-        case "SUCCESS_LOGIN":
+        case "LOGIN_ON":
             return { 
-                ...state,
-                signIn: {
-                    ...state.signIn,
-                    user: action.data.is_customer,
-                    company:action.data.is_company
-                  },
+                ...state,triger:true
              }
+        case "LOGIN_OFF":
+            return { 
+                ...state,triger:false
+            }
         default:
             return state;
     }

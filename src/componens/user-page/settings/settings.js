@@ -19,7 +19,14 @@ class Settings extends React.Component {
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
-    this.props.putDataUser(this.state)
+    let formData= new FormData();
+    formData.append('first_name',this.state.fname);
+    formData.append('last_name',this.state.lname);
+    formData.append('birthday',this.state.date);
+    formData.append('avatar',this.state.avatar);
+    console.log(formData.get('first_name'))
+    console.log(formData)
+    this.props.putDataUser(formData)
   };
   submitImages=(file)=>{
       this.setState({avatar:file})
@@ -89,6 +96,9 @@ class Settings extends React.Component {
           </MDBRow>
           <MDBRow>
             <MDBCol md="6" className="mb-3">
+            <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
+            Upload photo
+              </label>
               <Avatar submit={this.submitImages}/>
             </MDBCol>
             <MDBCol md="6" className="mb-3">
