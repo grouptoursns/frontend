@@ -28,23 +28,23 @@ const Book =()=>{
                     <Counter />
                 <button className="book-picker__btn">Update</button>
 
-                <div className="book-picker__text">
-                    <p className="book-picker__text-title">
-                        Reserve Now & Pay Later
-                    </p>
-                    <p className="book-picker__text-subtitle">
-                        Secure your spot while staying flexible
-                    </p>
-                </div>
+                {/*<div className="book-picker__text">*/}
+                {/*    <p className="book-picker__text-title">*/}
+                {/*        Reserve Now & Pay Later*/}
+                {/*    </p>*/}
+                {/*    <p className="book-picker__text-subtitle">*/}
+                {/*        Secure your spot while staying flexible*/}
+                {/*    </p>*/}
+                {/*</div>*/}
 
-                <div className="book-picker__text">
-                    <p className="book-picker__text-title">
-                        Free Cancellation
-                    </p>
-                    <p className="book-picker__text-subtitle">
-                        Up to 24 hours in advance
-                    </p>
-                </div>
+                {/*<div className="book-picker__text">*/}
+                {/*    <p className="book-picker__text-title">*/}
+                {/*        Free Cancellation*/}
+                {/*    </p>*/}
+                {/*    <p className="book-picker__text-subtitle">*/}
+                {/*        Up to 24 hours in advance*/}
+                {/*    </p>*/}
+                {/*</div>*/}
             </div>
 
         </div>
