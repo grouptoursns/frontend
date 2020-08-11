@@ -17,6 +17,7 @@ import TourRating from "./componens/tour-rating/tour-rating";
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Groups from "./componens/tour-page/groups-page/groups";
 
 const App = () => {
 
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/about"  component={About} />
           <Route path="/user-page"  component={UserPage} />
           <Route path="/tour-rating"  component={TourRating} />
+          <Route path="/tour-groups"  component={Groups} />
           <Route component={NotFound} />
         </Switch>
 

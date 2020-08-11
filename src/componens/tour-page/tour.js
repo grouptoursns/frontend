@@ -13,15 +13,13 @@ import {tourDataFetch} from "../../actions/tourData";
 
 class Tour extends Component{
     componentDidMount() {
-        this.props.fetchData("http://161.35.199.172/tours/2")
-        console.log(this.props)
+        this.props.fetchData("http://161.35.199.172/api/tours/8")
     }
 
     render() {
         return (
             <div className='tour-page'>
                 <Form/>
-
                 <Info/>
             </div>
         );

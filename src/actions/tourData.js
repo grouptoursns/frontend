@@ -16,10 +16,8 @@ export function tourDataFetch(url){
                     throw new Error(res.statusText)
                 }
                 return res;
-
             })
             .then(res =>res.json())
-            .then(data => console.log(data))
             .then(tourData => dispatch(tourDataFetchSuccess(tourData)))
     }
 }
