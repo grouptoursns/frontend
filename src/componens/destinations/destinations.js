@@ -8,15 +8,16 @@ import card5 from "../home/best-destinations/img/CARD_DESTINATON(4).png";
 import card6 from "../home/best-destinations/img/CARD_DESTINATON(5).png";
 import card7 from "../home/best-destinations/img/CARD_DESTINATON(6).png";
 import card8 from "../home/best-destinations/img/CARD_DESTINATON(7).png";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {ResultSearchCount} from "../../actions/ResultSearchCount";
-import {searchTrigerFalse} from "../../actions/tourSearch";
-import {trigerActivityOff} from "../../actions/trigerActivity"
-import {trigerBestOn} from "../../actions/trigerBest";
+import { ResultSearchCount } from "../../actions/ResultSearchCount";
+import { searchTrigerFalse } from "../../actions/tourSearch";
+import { trigerActivityOff } from "../../actions/trigerActivity";
+import { trigerBestOn } from "../../actions/trigerBest";
+import NavBar from "../home/navBar/navBar";
+import Footer from "../home/footer/footer";
 
 const Destinations = (props) => {
-
   const pictures = [
     { id: 1, img: card1 },
     { id: 2, img: card2 },
@@ -31,45 +32,50 @@ const Destinations = (props) => {
     { id: 11, img: card3 },
     { id: 12, img: card4 },
   ];
-  let card=[];
-  if(props.allCards===undefined){
-    card=[]
+  let card = [];
+  if (props.allCards === undefined) {
+    card = [];
+  } else {
+    card = [...props.allCards];
   }
-  else{
-    card=[...props.allCards]
-  }
-  const onClickCard=(item)=>{
-    props.triger()   
-    props.trigerActivity()
-    props.trigerBest()
-    props.pushCount(item)
-
-  }
+  const onClickCard = (item) => {
+    props.triger();
+    props.trigerActivity();
+    props.trigerBest();
+    props.pushCount(item);
+  };
   return (
-    <div className="container p1">
-      <div className="destion-title">
-        <span>Destinations</span>
+    <div>
+      <NavBar />
+      <div className="container p1">
+        <div className="destion-title">
+          <span>Destinations</span>
+        </div>
+        <div className="destion-cards">
+          {card.map((item) => {
+            return (
+              <Link
+                to="/result_search"
+                key={item.id}
+                onClick={() => onClickCard(item.country)}
+              >
+                <div className="cards">
+                  <img className="img" src={item.country_image} alt="img" />
+                  <span className="card-text">{item.country}</span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
-      <div className="destion-cards">
-        {card.map((item) => {
-          return (
-            <Link to="/result_search" key={item.id}  onClick={()=>onClickCard(item.country)}>
-              <div className="cards" >
-              <img className="img" src={item.country_image} alt="img" />
-                <span  className="card-text">{item.country}</span>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      <Footer />
     </div>
   );
 };
 
-
 const mapStateToProps = (state) => {
   return {
-    allCards:state.allDestinations.allDestinations.Tour
+    allCards: state.allDestinations.allDestinations.Tour,
   };
 };
 
@@ -77,10 +83,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     pushCount: (city) => dispatch(ResultSearchCount(city)),
     triger: () => dispatch(searchTrigerFalse()),
-    trigerActivity:()=>dispatch(trigerActivityOff()),
-    trigerBest:()=>dispatch(trigerBestOn())
+    trigerActivity: () => dispatch(trigerActivityOff()),
+    trigerBest: () => dispatch(trigerBestOn()),
   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Destinations);
-

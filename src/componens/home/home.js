@@ -10,6 +10,8 @@ import {allTour}from "../../actions/allTour"
 import {trigerFilterOff} from "../../actions/trigerFilter";
 import {destinationsData} from "../../actions/destinations";
 import {trigerSpiner} from "../../actions/user";
+import NavBar from "../home/navBar/navBar";
+import Footer from "../home/footer/footer"
 
 
 
@@ -26,11 +28,13 @@ const Home = (props) => {
   },[]);
   return (
     <div>
+      <NavBar/>
       <Slider1 />
       <BoxCard cards={props.bestImg.ImageToFront} />
       <BestTours card={props.bestImg.Tour}/>
       <Actvities activityCard={props.bestImg.Category}/>
       <GroupTours card1={props.bestImg.Tour}/>
+      <Footer/>
     </div>
   );
 };
