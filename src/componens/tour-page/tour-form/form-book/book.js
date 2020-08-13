@@ -6,7 +6,7 @@ import './book.css'
 
 
 
-const Book =()=>{
+const Book =(props)=>{
     const [selectedDate, setSelectedDate] = useState(null)
 
 

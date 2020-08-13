@@ -27,8 +27,18 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/title.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +146,9 @@
       <workItem from="1597082915612" duration="2015000" />
       <workItem from="1597092402589" duration="5167000" />
       <workItem from="1597152756806" duration="583000" />
-      <workItem from="1597162882794" duration="8186000" />
+      <workItem from="1597162882794" duration="8319000" />
+      <workItem from="1597254445511" duration="11913000" />
+      <workItem from="1597349145506" duration="4541000" />
     </task>
     <servers />
   </component>
@@ -224,5 +236,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596150675550" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

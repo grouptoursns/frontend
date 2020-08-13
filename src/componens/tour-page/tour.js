@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useEffect} from "react";
 import Form from './tour-form/form.js';
 import Booking from './booking/booking.js';
 import Info from './info/info.js';
@@ -9,28 +9,30 @@ import {allTour} from "../../actions/allTour";
 import {trigerFilterOff} from "../../actions/trigerFilter";
 
 import {tourDataFetch} from "../../actions/tourData";
+import {tourData} from "../../reduser/tourData";
 
 
-class Tour extends Component{
-    componentDidMount() {
-        this.props.fetchData("http://161.35.199.172/api/tours/8")
-    }
+const Tour =(props)=>{
 
-    render() {
-        return (
+
+    useEffect( () => {
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    },[]);
+
+            return (
             <div className='tour-page'>
-                <Form/>
-                <Info/>
+                <Form data={props.tourData}/>
+                <Info info={props.tourData}/>
             </div>
         );
     }
-}
     const mapStateToProps = (state) => {
         return {
-            tourData:state.tourData
-
+            tourData:state.tourData,
+            detailsTours: state.detailsTour.detailsTour
         };
     };
+
 
     const mapDispatchToProps = (dispatch) => {
         return {

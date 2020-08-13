@@ -10,7 +10,7 @@ import img2 from './img/a5.jpg'
 
 
 
-const Pic = () =>{
+const Pic = (props) =>{
     return(
         <div className='slider'>
             <Carousel autoPlay>
@@ -18,7 +18,7 @@ const Pic = () =>{
                     <img className='slider-carousel__img' src={img2} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
-                    <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
+                    <img className='slider-carousel__img' src={props.pic.tour_image} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
                     <img className='slider-carousel__img' src={img2} alt="pic.icon"/>
