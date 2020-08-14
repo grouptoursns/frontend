@@ -25,7 +25,8 @@
     margin-top: 40px;
 }
 .navPanel-btn{
-    height: 31px;
+  width: 100%;
+    height: 35px;
     background: none;
     border: 2px solid none;
     outline: none;
@@ -49,4 +50,7 @@ color: #FFFFFF;
 }
 .navPanel-btn img{
     margin-right: 20px;
+}
+.active-btn-navPanel{
+  background: #525965;
 }

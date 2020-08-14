@@ -1,0 +1,106 @@
+.adminPanel-block-form {
+  width: 90%;
+  height: auto;
+
+  padding: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+}
+.wrapperr-addTour{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.block-title-adminPanel {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.block-title-adminPanel span {
+  font-size: 24px;
+
+  color: #000000;
+}
+.adminPanel-form{
+    margin-top: 50px;
+}
+.top-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.input-descr{
+    height: 85.5% !important;
+}
+.right-col{
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+.line-black-admin{
+  height: 2px;
+  width: 100%;
+  margin-bottom: 20px;
+
+background: rgba(48, 54, 65, 0.54);
+}
+.bottom-textarea{
+  height: 113px !important ;
+}
+.bottom-form{
+  width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.row {
+
+  margin-right: 0px !important; 
+   margin-left: 0px !important; 
+}
+
+.dropzone{
+
+  background: #FFFFFF !important;
+border: 1px solid rgba(55, 62, 74, 0.54) !important;
+height: 68px !important;
+border-radius: 7px !important;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center !important;
+text-align: center;
+}
+.right-col-img{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-evenly !important;
+}
+.creat-block{
+  width: 100%;
+  height: 34px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.create-tour{
+  width: 185px;
+height: 100%;
+border: 1px solid #5CB85C;
+background: #5CB85C;
+font-size: 12px;
+
+
+color: #FFFFFF;
+}
+
+
+
+
+

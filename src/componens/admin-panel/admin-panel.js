@@ -4,6 +4,7 @@ import NavBar from "./navBar/navBar"
 import Content from "./content/content"
 
 const AdminPanel=()=>{
+
     return(
         <div className="page-admin-panel">
             <NavBar/>

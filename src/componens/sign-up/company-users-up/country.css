@@ -19,3 +19,14 @@
     -webkit-tap-highlight-color: rgba(255,255,255,0);
     padding: inherit;
 }
+.ui.search.selection.dropdown>input.search {
+    line-height: 1.21428571em;
+    padding: .67857143em 2.1em .67857143em 1em;
+     margin-top: 0px !important; 
+}
+.ui.search.dropdown > .text {
+    top: -5px !important;
+}
+.ui.selection.dropdown>.dropdown.icon {
+     top: 0.8em !important; 
+}

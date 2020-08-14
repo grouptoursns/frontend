@@ -68,7 +68,7 @@ const logout=()=>{
           {email}
           </span>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
-            <Link className="dropdown-item" to="/sign-in">
+            <Link className="dropdown-item" to="/admin-panel">
               Admin panel
             </Link>
             <Link  className="dropdown-item" to="/">

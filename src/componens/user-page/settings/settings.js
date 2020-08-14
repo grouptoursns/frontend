@@ -10,9 +10,7 @@ class Settings extends React.Component {
   state = {
     fname: "",
     lname: "",
-
     date: "",
-
     avatar: null,
   };
 
@@ -25,7 +23,8 @@ class Settings extends React.Component {
     formData.append('birthday',this.state.date);
     formData.append('avatar',this.state.avatar);
     console.log(formData.get('first_name'))
-    console.log(formData)
+    console.log(formData.get('avatar'))
+
     this.props.putDataUser(formData)
   };
   submitImages=(file)=>{
