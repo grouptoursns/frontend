@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./groups.css";
 import PropTypes from "prop-types";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -17,6 +17,7 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
+import { getGroupList } from "../../../../actions/admin-panel/group-list/getGroupList";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -106,19 +107,23 @@ function Groups(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(7);
   let rows = [];
-  /* if(props.custimerCabinetData===undefined){
-    rows=[]
+  useEffect(() => {
+    props.getGroupList("http://161.35.199.172/api/company/groups/");
+  }, []);
+  if (props.groupList === undefined) {
+    rows = [];
+  } else {
+    rows = props.groupList.map((item) => {
+      return {
+        tour: item.tour,
+        status: item.status_group_tour,
+        finish_time: item.finish_time,
+        price: item.price,
+        count: item.count_of_people,
+      };
+    });
   }
-  else{
-    rows =props.custimerCabinetData.book_user.map((item)=>{
-      return{
-        time:item.group.finish_time,
-        name:item.group.name,
-        people:item.count_of_extra_people,
-        status:item.group.status_group_tour
-      }
-    })
-  }*/
+
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -136,11 +141,13 @@ function Groups(props) {
       <BlockBtn />
       <div className="table-adminPanel">
         <TableContainer component={Paper}>
-          <div className="table-title">
-            <span className="date">Date</span>
-            <span className="tour-user">Tour</span>
-            <span className="places">Reserved places</span>
-            <span className="action">Action</span>
+          <div className="admin-table-title">
+            <span className="name-group">Tour</span>
+            <span className="status-group">Status</span>
+            <span className="time-group">Time</span>
+            <span className="price-group">Price</span>
+            <span className="places-group">Places</span>
+            <span className="action-group">Action</span>
           </div>
           <Table className={classes.table} aria-label="custom pagination table">
             <TableBody>
@@ -152,21 +159,39 @@ function Groups(props) {
                 : rows
               ).map((row) => (
                 <TableRow key={row.name}>
-                  <TableCell component="th" style={{ width: 160 }} scope="row">
-                    {row.time}
+                  <TableCell component="th" style={{ width: 200 }} scope="row">
+                    {row.tour}
                   </TableCell>
                   <TableCell
-                    style={{ width: 230 }}
+                    style={{ width: 100 }}
                     className="list-text"
                     align="left"
                   >
-                    {row.name}
-                  </TableCell>
-                  <TableCell style={{ width: 60 }} align="right">
-                    {row.people}
-                  </TableCell>
-                  <TableCell style={{ width: 160 }} align="right">
                     {row.status}
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                    {row.finish_time}
+                  </TableCell>
+                  <TableCell style={{ width: 60 }} align="left">
+                    {row.price}
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                    {row.count}
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="right">
+                    <button className="tour-list-btn tourl-list-delete">
+                      DELETE
+                    </button>
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="center">
+                    <button className="tour-list-btn tour-list-edit">
+                      EDIT
+                    </button>
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="left">
+                    <button className="tour-list-btn tour-list-view">
+                      VIEW
+                    </button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -195,11 +220,15 @@ function Groups(props) {
   );
 }
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    groupList: state.GroupListAdmin.state,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    getGroupList: (url) => dispatch(getGroupList(url)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Groups);

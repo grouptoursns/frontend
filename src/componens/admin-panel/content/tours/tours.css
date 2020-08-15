@@ -2,3 +2,53 @@
 
     border: 1px solid #EAE2E2 !important;
 }
+.tour-list-btn{
+    padding: 5px;
+
+}
+.tourl-list-delete{
+    background: #E62222;
+    border: 1px solid #E62222;
+    font-size: 12px;
+
+color: #FFFFFF;
+}
+.tour-list-edit{
+    background: #5874BA;
+    border: 1px solid #5874BA;
+    font-size: 12px;
+
+    color: #FFFFFF;
+}
+.tour-list-view{
+    background: #5874BA;
+    border: 1px solid #5874BA;
+    font-size: 12px;
+
+    color: #FFFFFF;
+}
+.name-admin{
+    width: 265px;
+
+}
+.status-admin{
+width: 120px;
+}
+.groups-admin{
+ width: 80px;
+}
+.reviews-admin{
+    width: 90px;
+}
+.raiting-admin{
+    width: 170px;
+}
+.admin-table-title{
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #EAE2E2;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    
+}

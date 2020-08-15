@@ -20,6 +20,10 @@ import {tourData} from "./tourData"
 import {SuccessSignIn} from "./signIn"
 import {custimerCabinet} from "./custimerCabinet";
 import {changePassword} from "./changePassword"
+import {ToursListAdmin} from "./admin-panel/Tours-list";
+import {GroupListAdmin}  from "./admin-panel/groupList";
+import {dataCompany}  from "./admin-panel/getDataCompany";
+
 
 const rootReduser = combineReducers({
     UserRegistr,
@@ -41,7 +45,10 @@ const rootReduser = combineReducers({
     tourData,
     SuccessSignIn,
     custimerCabinet,
-    changePassword
+    changePassword,
+    ToursListAdmin,
+    GroupListAdmin,
+    dataCompany
 });
 
 export default rootReduser;

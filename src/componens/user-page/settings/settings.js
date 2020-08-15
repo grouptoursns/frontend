@@ -4,7 +4,8 @@ import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import Avatar from "./avatar";
 import { connect } from "react-redux";
 import {putDataUser} from "../../../actions/putDataUser"
-import {Link}from "react-router-dom"
+import {Link}from "react-router-dom";
+import imgNull from "./img/null.png";
 
 class Settings extends React.Component {
   state = {
@@ -24,7 +25,9 @@ class Settings extends React.Component {
     formData.append('avatar',this.state.avatar);
     console.log(formData.get('first_name'))
     console.log(formData.get('avatar'))
-
+    for (let key of formData.keys()) {
+      console.log(`${key}: ${formData.get(key)}`);
+    }
     this.props.putDataUser(formData)
   };
   submitImages=(file)=>{

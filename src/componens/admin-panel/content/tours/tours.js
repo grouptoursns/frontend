@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import "./tours.css";
 import PropTypes from "prop-types";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -17,6 +17,7 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
+import {getToursAdmin} from "../../../../actions/admin-panel/tours-list/getToursAdmin"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -102,23 +103,29 @@ const useStyles2 = makeStyles({
 });
 
 function Tours(props) {
+  const[tours,setTours]=useState([])
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(7);
   let rows = [];
-  /* if(props.custimerCabinetData===undefined){
+  useEffect(()=>{
+    props.getTours('http://161.35.199.172/api/company/tours/');
+   
+  },[])
+   if(props.ToursList===undefined){
     rows=[]
   }
   else{
-    rows =props.custimerCabinetData.book_user.map((item)=>{
+    rows =props.ToursList.map((item)=>{
       return{
-        time:item.group.finish_time,
-        name:item.group.name,
-        people:item.count_of_extra_people,
-        status:item.group.status_group_tour
+        name:item.name,
+        status:item.tour_status,
+        groups:"7",
+        reviews:item.avg_rate_tour[0].count_of_voices,
+        rating:item.avg_rate_tour[0].rating
       }
     })
-  }*/
+  }
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -136,11 +143,13 @@ function Tours(props) {
       <BlockBtn />
       <div className="table-adminPanel">
         <TableContainer component={Paper}>
-          <div className="table-title">
-            <span className="date">Date</span>
-            <span className="tour-user">Tour</span>
-            <span className="places">Reserved places</span>
-            <span className="action">Action</span>
+          <div className="admin-table-title">
+            <span className="name-admin">Name</span>
+            <span className="status-admin">Status</span>
+            <span className="groups-admin">Groups</span>
+            <span className="reviews-admin">Reviews</span>
+            <span className="raiting-admin">Raiting</span>
+            <span className="action-admin">Action</span>
           </div>
           <Table className={classes.table} aria-label="custom pagination table">
             <TableBody>
@@ -152,21 +161,33 @@ function Tours(props) {
                 : rows
               ).map((row) => (
                 <TableRow key={row.name}>
-                  <TableCell component="th" style={{ width: 160 }} scope="row">
-                    {row.time}
+                  <TableCell component="th" style={{ width: 200 }} scope="row">
+                    {row.name}
                   </TableCell>
                   <TableCell
-                    style={{ width: 230 }}
+                    style={{ width: 100 }}
                     className="list-text"
                     align="left"
                   >
-                    {row.name}
-                  </TableCell>
-                  <TableCell style={{ width: 60 }} align="right">
-                    {row.people}
-                  </TableCell>
-                  <TableCell style={{ width: 160 }} align="right">
                     {row.status}
+                  </TableCell>
+                  <TableCell style={{ width: 60 }} align="left">
+                    {row.groups}
+                  </TableCell>
+                  <TableCell style={{ width: 60 }} align="left">
+                    {row.reviews}
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                    {row.rating}
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="right">
+                    <button className="tour-list-btn tourl-list-delete">DELETE</button>
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="center">
+                  <button className="tour-list-btn tour-list-edit">EDIT</button>
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="left">
+                  <button className="tour-list-btn tour-list-view">VIEW</button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -195,11 +216,15 @@ function Tours(props) {
   );
 }
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    ToursList:state.ToursListAdmin.state
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+      getTours:(url)=>dispatch(getToursAdmin(url))
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tours);
