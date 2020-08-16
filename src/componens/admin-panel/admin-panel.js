@@ -10,7 +10,7 @@ const AdminPanel=(props)=>{
         let id = localStorage.getItem('id');
 
         props.getDataCompany(`http://161.35.199.172/api/users/company/${id}`)
-    },[])
+    })
     return(
         <div className="page-admin-panel">
             <NavBar/>

@@ -18,17 +18,32 @@ class Settings extends React.Component {
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
+   
+    let data={}
     let formData= new FormData();
-    formData.append('first_name',this.state.fname);
-    formData.append('last_name',this.state.lname);
-    formData.append('birthday',this.state.date);
-    formData.append('avatar',this.state.avatar);
-    console.log(formData.get('first_name'))
-    console.log(formData.get('avatar'))
+    if(this.state.avatar==null){
+      data={
+        first_name:this.state.fname,
+        last_name:this.state.lname,
+        birthday:this.state.date,
+        avatar:this.state.avatar,
+      }
+      this.props.putDataUser(data)
+    }
+    else{
+     
+      formData.append('first_name',this.state.fname);
+      formData.append('last_name',this.state.lname);
+      formData.append('birthday',this.state.date);
+      formData.append('avatar',this.state.avatar);
+      console.log(formData.get('first_name'))
+      console.log(formData.get('avatar'))
+      this.props.putDataUser(formData)
+    }
     for (let key of formData.keys()) {
       console.log(`${key}: ${formData.get(key)}`);
     }
-    this.props.putDataUser(formData)
+
   };
   submitImages=(file)=>{
       this.setState({avatar:file})

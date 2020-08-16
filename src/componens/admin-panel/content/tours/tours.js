@@ -17,7 +17,8 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
-import {getToursAdmin} from "../../../../actions/admin-panel/tours-list/getToursAdmin"
+import {getToursAdmin} from "../../../../actions/admin-panel/tours-list/getToursAdmin";
+import {deleteTourAdmin} from "../../../../actions/admin-panel/deleteTour/deleteTour";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -111,13 +112,15 @@ function Tours(props) {
   useEffect(()=>{
     props.getTours('http://161.35.199.172/api/company/tours/');
    
-  },[])
+  },[props.ToursList])
    if(props.ToursList===undefined){
     rows=[]
   }
   else{
+    console.log(props.ToursList)
     rows =props.ToursList.map((item)=>{
       return{
+        id:item.id,
         name:item.name,
         status:item.tour_status,
         groups:"7",
@@ -125,6 +128,11 @@ function Tours(props) {
         rating:item.avg_rate_tour[0].rating
       }
     })
+  }
+  const onClickDelete=(e)=>{
+    console.log(e.target.id)
+    props.deleteTour(e.target.id)
+   
   }
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -181,7 +189,7 @@ function Tours(props) {
                     {row.rating}
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="right">
-                    <button className="tour-list-btn tourl-list-delete">DELETE</button>
+                    <button className="tour-list-btn tourl-list-delete" id={row.id} onClick={onClickDelete}>DELETE</button>
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="center">
                   <button className="tour-list-btn tour-list-edit">EDIT</button>
@@ -223,7 +231,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      getTours:(url)=>dispatch(getToursAdmin(url))
+      getTours:(url)=>dispatch(getToursAdmin(url)),
+      deleteTour:(id)=>dispatch(deleteTourAdmin(id))
   };
 };
 

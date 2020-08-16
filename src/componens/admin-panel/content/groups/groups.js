@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 import "./groups.css";
 import PropTypes from "prop-types";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -18,6 +18,7 @@ import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
 import { getGroupList } from "../../../../actions/admin-panel/group-list/getGroupList";
+import {deleteGroupAdmin} from "../../../../actions/admin-panel/deleteGroup/deleteGroup"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -106,15 +107,18 @@ function Groups(props) {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(7);
+  const [id,setId]=useState();
   let rows = [];
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
-  }, []);
+  }, [props.groupList]);
   if (props.groupList === undefined) {
     rows = [];
   } else {
     rows = props.groupList.map((item) => {
       return {
+        id:item.id,
+        id_tour:item.tour_id,
         tour: item.tour,
         status: item.status_group_tour,
         finish_time: item.finish_time,
@@ -123,7 +127,12 @@ function Groups(props) {
       };
     });
   }
-
+const OnclickDelete=(e)=>{
+  console.log(e.target.name);
+  let id_tour=e.target.name;
+  let id_group=e.target.id;
+props.deleteGroup(id_tour,id_group)
+}
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -158,7 +167,7 @@ function Groups(props) {
                   )
                 : rows
               ).map((row) => (
-                <TableRow key={row.name}>
+                <TableRow key={row.id}>
                   <TableCell component="th" style={{ width: 200 }} scope="row">
                     {row.tour}
                   </TableCell>
@@ -179,7 +188,7 @@ function Groups(props) {
                     {row.count}
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="right">
-                    <button className="tour-list-btn tourl-list-delete">
+                    <button className="tour-list-btn tourl-list-delete" name={row.id_tour}  id={row.id} onClick={OnclickDelete}>
                       DELETE
                     </button>
                   </TableCell>
@@ -228,6 +237,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getGroupList: (url) => dispatch(getGroupList(url)),
+    deleteGroup:(id_tour,id_group)=>dispatch(deleteGroupAdmin(id_tour,id_group))
   };
 };
 

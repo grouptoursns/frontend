@@ -4,17 +4,19 @@
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   align-items: center;
 }
 .settings-title {
   font-size: 24px;
 
   color: #000000;
+  margin-bottom: 50px;
 }
 .settings-form {
   width: 100%;
   height: auto;
+
 }
 .settings-wrapper {
   width: 100%;
@@ -36,7 +38,7 @@
   background: #5cb85c;
   border: 1px solid #5cb85c;
   font-size: 12px;
-
+  margin-top: 30px;
   color: #ffffff;
 }
 .imgPreview-settings{
@@ -48,4 +50,10 @@
     justify-content: center;
     align-items: center;
 
+}
+form {
+     max-width: 100% !important; 
+    width: 100%;
+    margin: 0 auto;
+ 
 }

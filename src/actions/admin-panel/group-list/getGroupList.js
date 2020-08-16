@@ -20,7 +20,8 @@ export function getGroupList(url){
           }
       })
       .then(res => {
-          dispatch(seccessgetGroupList(res.data))
+          dispatch(seccessgetGroupList(res.data.results));
+          console.log(res.data.results)
       });
 
 }

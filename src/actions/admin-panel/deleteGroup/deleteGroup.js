@@ -1,24 +1,16 @@
 import axios from "axios";
 
-export function seccessgetToursAdmin(data){
-    return{
-        type:"DATA_ ADMIN_TOURS",
-        data,
-
-    }
-}
-
-export function getToursAdmin(url){
+export function deleteGroupAdmin(id_tour,id_group){
     let token = localStorage.getItem('token');
     return async (dispatch)=>{
       await  axios
-      .get(url,{
+      .delete(`http://161.35.199.172/api/company/tours/${id_tour}/group/${id_group}/`,{
           headers:{
             Authorization: 'Token ' + token 
           }
       })
       .then(res => {
-          dispatch(seccessgetToursAdmin(res.data.results))
+         
           console.log(res.data)
       });
 

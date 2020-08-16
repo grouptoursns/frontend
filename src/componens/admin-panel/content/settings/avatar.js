@@ -15,13 +15,13 @@ class Avatar extends React.Component {
 
     let reader = new FileReader();
     let file = e.target.files[0];
-
+    console.log(file)
     reader.onloadend = () => {
       this.setState({
         file: file,
         imagePreviewUrl: reader.result,
       });
-
+      this.props.submit(this.state.file)
     };
 
     reader.readAsDataURL(file);
