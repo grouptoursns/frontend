@@ -17,6 +17,7 @@ const Filter = (props) => {
 
   const chengeCountry = (e) => {
     setCountry(e);
+
   };
   const chengeActivity = (e) => {
     setActivity(e);

@@ -4,6 +4,7 @@ import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import Avatar from "./avatar";
 import { connect } from "react-redux";
 import { changeDataCompany } from "../../../../actions/admin-panel/changeDataCompany/changeDataCompany";
+import Country from "./country";
 
 class AdminSettings extends React.Component {
   state = {
@@ -25,6 +26,34 @@ class AdminSettings extends React.Component {
 
     this.props.changeData(this.state);
     console.log("hide-text");
+    let data = {};
+    let formData = new FormData();
+    if (this.state.photo == null) {
+      this.props.changeData({
+        email: this.state.email,
+        first_name: this.state.fname,
+        last_name: this.state.lname,
+        name: this.state.name,
+        address: this.state.adress,
+        phone: this.state.phone,
+        site: this.state.site,
+        country: this.state.country,
+        tripadvisor: this.state.tripadvisor,
+      });
+    } else {
+      formData.append("email", this.state.email);
+      formData.append("first_name", this.state.fname);
+      formData.append("last_name", this.state.lname);
+      formData.append("name", this.state.name);
+      formData.append("address", this.state.adress);
+      formData.append("phone", this.state.phone);
+      formData.append("site", this.state.site);
+      formData.append("country", this.state.country);
+      formData.append("tripadvisor", this.state.tripadvisor);
+      formData.append("avatar", this.state.photo);
+
+      this.props.changeData(formData);
+    }
   };
   submitImages = (file) => {
     this.setState({ photo: file });
@@ -32,6 +61,9 @@ class AdminSettings extends React.Component {
 
   changeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+  changeCountry = (country1) => {
+    this.setState({ country: country1 });
   };
   componentDidMount() {
     let data = {};
@@ -47,7 +79,7 @@ class AdminSettings extends React.Component {
         email: data.email,
         adress: data.address,
         phone: data.phone,
-        photo:data.avatar,
+        photo: data.avatar,
         site: data.site,
         tripadvisor: data.tripadvisor,
       });
@@ -60,19 +92,75 @@ class AdminSettings extends React.Component {
         <span className="settings-title">Settings</span>
 
         <form
-          className="needs-validation settings-form"
+          className="needs-validation settings-form form-admin"
           onSubmit={this.submitHandler}
           noValidate
         >
           <MDBRow className="settings-wrapper">
             <MDBCol md="4">
-              <label
-                htmlFor="defaultFormRegisterPasswordEx4"
-                className="grey-text"
-              >
-                Photo
-              </label>
-              <Avatar submit={this.submitImages} />
+              <MDBRow className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  First name
+                </label>
+
+                <input
+                  type="text"
+                  value={this.state.fname}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={this.changeHandler}
+                  name="fname"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Last name
+                </label>
+
+                <input
+                  type="text"
+                  value={this.state.lname}
+                  id="defaultFormRegisterPasswordEx4"
+                  name="lname"
+                  onChange={this.changeHandler}
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow className="mb-3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Country
+                </label>
+
+                <Country
+                  country={this.changeCountry}
+                  countryProps={this.state.country}
+                />
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
             </MDBCol>
             <MDBCol md="4">
               <MDBRow className="mb-3">
@@ -215,6 +303,17 @@ class AdminSettings extends React.Component {
                 </div>
                 <div className="valid-feedback">Looks good!</div>
               </MDBRow>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow>
+            <MDBCol md="4">
+              <label
+                htmlFor="defaultFormRegisterPasswordEx4"
+                className="grey-text"
+              >
+                Photo
+              </label>
+              <Avatar submit={this.submitImages} photo={this.state.photo} />
             </MDBCol>
           </MDBRow>
           <div className="block-save">

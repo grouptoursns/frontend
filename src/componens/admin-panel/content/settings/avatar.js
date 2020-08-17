@@ -41,6 +41,7 @@ class Avatar extends React.Component {
         <div className="imgPreview-settings">{$imagePreview}</div>
           <input
             className="fileInput"
+           
             type="file"
             onChange={(e) => this._handleImageChange(e)}
           />

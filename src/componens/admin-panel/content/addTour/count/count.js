@@ -17,11 +17,11 @@ const useStyles = makeStyles({
   
   export default function Count(props) {
     const classes = useStyles();
-    const [value, setValue] = React.useState([200, 600]);
+    const [value, setValue] = React.useState([5, 40]);
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
-  
+  props.count(value)
     };
   
     return (
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
           onChange={handleChange}
           valueLabelDisplay="auto"
           min={0}
-          max={1000}
+          max={100}
           aria-labelledby="range-slider"
           getAriaValueText={valuetext}
 

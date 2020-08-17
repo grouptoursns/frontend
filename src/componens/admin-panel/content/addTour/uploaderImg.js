@@ -16,11 +16,27 @@ function Img(props) {
       {f.name} has <strong>myProps</strong>: {f.myProp === true ? 'YES' : ''}
     </li>
   ));
+  const [image,setImage]=useState();
+  const _handleImageChange=(e)=> {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    console.log(file)
+    reader.onloadend = () => {
+setImage(file)
+
+    };
+
+    reader.readAsDataURL(file);
+    
+    
+  }
 
   return (
     <section className="">
       <div {...getRootProps({className: 'dropzone'})}>
-        <input {...getInputProps()} />
+        <input {...getInputProps()}  onChange={(e) => _handleImageChange(e)} />
         <p>choose image or drop your image here</p>
       </div>
       <aside>

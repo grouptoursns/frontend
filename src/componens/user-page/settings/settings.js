@@ -26,7 +26,6 @@ class Settings extends React.Component {
         first_name:this.state.fname,
         last_name:this.state.lname,
         birthday:this.state.date,
-        avatar:this.state.avatar,
       }
       this.props.putDataUser(data)
     }
@@ -40,9 +39,7 @@ class Settings extends React.Component {
       console.log(formData.get('avatar'))
       this.props.putDataUser(formData)
     }
-    for (let key of formData.keys()) {
-      console.log(`${key}: ${formData.get(key)}`);
-    }
+
 
   };
   submitImages=(file)=>{

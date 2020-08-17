@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
-  
+  props.price(value)
     };
   
     return (

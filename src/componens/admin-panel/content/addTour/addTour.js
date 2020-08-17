@@ -2,31 +2,74 @@ import React from "react";
 import "./addTour.css";
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import Price from "./price/price";
-import Count from "./count/count"
+import Count from "./count/count";
 import Img from "./uploaderImg";
 import BlockBtn from "../block-btn/block-btn";
 import { render } from "react-dom";
+import Country from "./country/country";
+import Status from "./status/status";
 
 class AddTour extends React.Component {
   state = {
-    fname: "",
-    lname: "",
-    date: "",
-    avatar: null,
+    name: "",
+    count_of_day: "",
+    min_people: "5",
+    main_image: null,
+    max_people: "40",
+    country: "",
+    description: "",
+    language: "",
+    age_control: "",
+    difficult: "",
+    location: "",
+    min_price: "200",
+    max_price: "600",
+    about_guide: "",
+    guide_photo: null,
+    gathering_place: "",
+    tour_status: "",
+    route_description: "",
+    residence: "",
+    transport: "",
+    what_is_included: "",
+    need_to_take: "",
+    Category: "",
+    country_image: null,
   };
 
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
-    
+  };
+  changeCountry = (country1) => {
+    this.setState({ country: country1 });
   };
   submitImages = (file) => {
     console.log(this.state.avatar);
   };
-  
+  changeCount = (arr) => {
+    this.setState({
+      min_people: arr[0],
+      max_people: arr[1],
+    });
+  };
+  changePrice = (arr) => {
+    this.setState({
+      min_price: arr[0],
+      max_price: arr[1],
+    });
+  };
   changeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
   };
+  changeStatus=(status)=>{
+    this.setState(
+      {
+        tour_status:status
+      }
+    )
+  }
   render() {
     return (
       <div className="wrapperr-addTour">
@@ -48,7 +91,7 @@ class AddTour extends React.Component {
                 <textarea
                   type="text"
                   id="defaultFormRegisterPasswordEx4"
-                  name="date"
+                  name="description"
                   onChange={this.changeHandler}
                   placeholder=""
                   className="form-control input input-descr"
@@ -68,14 +111,7 @@ class AddTour extends React.Component {
                     Country
                   </label>
 
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="date"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
+                  <Country country={this.changeCountry} />
 
                   <div className="invalid-feedback">
                     Please provide a valid date.
@@ -93,7 +129,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="location"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
@@ -115,7 +151,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="gathering_place"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
@@ -137,7 +173,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="residence"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
@@ -161,7 +197,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="language"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
@@ -177,20 +213,21 @@ class AddTour extends React.Component {
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    Price from 0 to 348$
+                    Price from {this.state.min_price} to {this.state.max_price}$
                   </label>
 
-                  <Price />
+                  <Price price={this.changePrice} />
                 </MDBRow>
                 <MDBRow className="mb-3">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    People count from 0 to 25
+                    People count from {this.state.min_people} to{" "}
+                    {this.state.max_people}
                   </label>
 
-                  <Count />
+                  <Count count={this.changeCount} />
                 </MDBRow>
                 <MDBRow className="mb-3">
                   <label
@@ -203,7 +240,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="Category"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
@@ -230,7 +267,7 @@ class AddTour extends React.Component {
                   <textarea
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="about_guide"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input bottom-textarea"
@@ -252,7 +289,7 @@ class AddTour extends React.Component {
                   <textarea
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="route_description"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input bottom-textarea"
@@ -276,7 +313,7 @@ class AddTour extends React.Component {
                   <textarea
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="what_is_included"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input bottom-textarea"
@@ -298,7 +335,7 @@ class AddTour extends React.Component {
                   <textarea
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="need_to_take"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input bottom-textarea"
@@ -353,14 +390,7 @@ class AddTour extends React.Component {
                     Status
                   </label>
 
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="date"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
+                  <Status status={this.changeStatus} />
 
                   <div className="invalid-feedback">
                     Please provide a valid date.
@@ -380,7 +410,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="age_control"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
@@ -404,7 +434,7 @@ class AddTour extends React.Component {
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="date"
+                    name="transport"
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
