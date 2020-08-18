@@ -3,6 +3,7 @@ import './guide.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
 
+
 const Guide =(props)=>{
 
     useEffect( () => {

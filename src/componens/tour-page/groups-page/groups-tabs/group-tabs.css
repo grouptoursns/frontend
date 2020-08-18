@@ -1,10 +1,11 @@
 .tabs{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-top: 50px;
 }
 
 .info-tabs{
-    padding: 20px 41px;
+    padding: 15px 34px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;

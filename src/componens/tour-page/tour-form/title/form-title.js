@@ -1,13 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactStars from 'react-stars'
 import './title.css'
 import geo from './img/map-pin.png'
+import {tourDataFetch} from "../../../../actions/tourData";
+import {connect} from "react-redux";
 // import {detailsTour} from "../../../../actions/detailsTour";
 // import {allTour} from "../../../../actions/allTour";
 
 const Title = (props)=>{
 
-    console.log(props.info)
+    useEffect( () => {
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    },[]);
+
+
+    let a = []
+    let star = 0
+    { if(props.info.avg_rate_tour){
+        a = [...props?.info?.avg_rate_tour]
+        star = a[0].rating
+    }}
 
     return(
         <div className="form-title">
@@ -17,11 +29,12 @@ const Title = (props)=>{
                     <ReactStars
                     size={20}
                     count={5}
-                    value={3}
+                    value={star}
                     edit={false}
                     half={true}
                     color1="lightgrey"
-                    color2="black"
+
+                    color2="gold"
                 />
                 </div>
                 <div className='title-info__cont' style={{marginLeft: "80px"}}>
@@ -33,4 +46,18 @@ const Title = (props)=>{
     )
 }
 
-export default Title;
+const mapStateToProps = (state) => {
+    return {
+        tourData:state.tourData,
+        detailsTours: state.detailsTour.detailsTour
+    };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: url => {dispatch(tourDataFetch(url))}
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Title);

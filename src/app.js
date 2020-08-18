@@ -38,7 +38,7 @@ const App = () => {
           <Route path="/about"  component={About} />
           <Route path="/user-page"  component={UserPage} />
           <Route path="/tour-rating"  component={TourRating} />
-          <Route path="/tour-groups"  component={Groups} />
+          <Route path="/tour-groups/groups"  component={Groups} />
           <Route component={NotFound} />
         </Switch>
 

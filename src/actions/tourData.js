@@ -20,4 +20,5 @@ export function tourDataFetch(url){
             .then(res =>res.json())
             .then(tourData => dispatch(tourDataFetchSuccess(tourData)))
     }
+
 }

@@ -1,13 +1,9 @@
 import React, {Component, useEffect} from "react";
 import Form from './tour-form/form.js';
-import Booking from './booking/booking.js';
 import Info from './info/info.js';
 import './tour.css'
 import { connect } from "react-redux";
-import {homeAxiosData} from "../../actions/dataHome";
-import {allTour} from "../../actions/allTour";
-import {trigerFilterOff} from "../../actions/trigerFilter";
-
+import Group from './groups-page/group/group.js'
 import {tourDataFetch} from "../../actions/tourData";
 import {tourData} from "../../reduser/tourData";
 
@@ -19,10 +15,21 @@ const Tour =(props)=>{
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
     },[]);
 
+    // let group = props.tourData;
+
+
+    let obj ={}
+    if(props.tourData===undefined){
+        obj = {}
+    }
+
+    else{
+        obj = props.tourData
+    }
             return (
             <div className='tour-page'>
-                <Form data={props.tourData}/>
-                <Info info={props.tourData}/>
+                <Form data={obj}/>
+                <Info info={obj}/>
             </div>
         );
     }

@@ -69,3 +69,24 @@
     font-size: 12px;
     margin-top: -10px;
 }
+
+
+.update{
+    text-decoration: #F4F4F4;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: white;
+    margin-top: 30px;
+    width: 173px;
+    padding: 10px 60px;
+}
+
+.private{
+    text-decoration: #F4F4F4;
+    border: 1px solid #000000;
+    background-color: red;
+    color: white;
+    margin-top: 30px;
+    width: 173px;
+    padding: 10px 60px;
+}

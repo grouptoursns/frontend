@@ -12,9 +12,13 @@ const General =(props)=>{
         return (
             <div className="general">
                 <div className="general-content">
-                    <h3>Duration</h3>
-                    <p>{props.tourData.route_description}</p>
+                    <h3>Description</h3>
+                    <p>{props.tourData.description}</p>
                 </div>
+                {/*<div className="general-content">*/}
+                {/*    <h3>Duration</h3>*/}
+                {/*    <p>{props.tourData.route_description}</p>*/}
+                {/*</div>*/}
                 <div className="general-content">
                     <h3>Type of tour</h3>
                     <p></p>

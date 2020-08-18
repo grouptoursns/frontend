@@ -1,3 +1,44 @@
 .group{
     display: flex;
+    background-color: #ffffff;
+    padding: 40px;
+    font-weight: bold;
+}
+
+
+.group-list__guide{
+    display: flex;
+    justify-content: space-evenly;
+    width: 65%;
+}
+.group-list__guide img{
+    margin-right: 10px;
+}
+
+
+.group-list__people{
+    margin-top: 30px;
+}
+.group-list__people img{
+    margin-right: 10px  ;
+}
+li{
+    margin-left: -33px;
+    margin-top: 10px;
+    list-style-type:none;
+}
+
+
+
+.group-info{
+    font-weight: bolder;
+}
+.group-info button{
+    width: 146px;
+    height: 37px;
+    background: #C63333;
+    border: 1px solid #E23434;
+    border-radius: 0px;
+    color: #ffffff;
+    font-family: Lato;
 }

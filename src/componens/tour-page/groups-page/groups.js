@@ -12,7 +12,7 @@ class Groups extends Component {
                 <div>
                     <GroupTabs />
                     <Switch>
-                        <Route exact path="/tour-groups/groups1" component={Group}/>
+                        <Route exact path="/tour-groups/groups" component={Group}/>
                     </Switch>
                 </div>
             </div>
