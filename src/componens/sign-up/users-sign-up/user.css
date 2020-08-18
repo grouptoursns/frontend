@@ -35,7 +35,7 @@ input.error {
   margin-bottom: 20px;
 }
 
-.submit {
+.submit1 {
   background-color: #373e4a;
   color: #ffffff;
   border: 1px solid #373e4a;
@@ -47,7 +47,7 @@ input.error {
   padding-bottom: 20px;
 }
 
-.submit:hover {
+.submit1:hover {
   cursor: pointer;
   background-color: white;
   color: rgb(70, 153, 179);

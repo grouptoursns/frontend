@@ -1,6 +1,7 @@
 import React, { useEffect ,useState} from "react";
 import "./groups.css";
 import PropTypes from "prop-types";
+import Modal from "react-modal"
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -106,7 +107,11 @@ const useStyles2 = makeStyles({
 function Groups(props) {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(7);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [open, setOpen] = useState(false);
+  const[isDelete,setIsDelete]=useState(false)
+  const [idTour,setIdTour]=useState()
+  const [idGroup,setIdGroup]=useState();
   const [id,setId]=useState();
   let rows = [];
   useEffect(() => {
@@ -131,7 +136,14 @@ const OnclickDelete=(e)=>{
   console.log(e.target.name);
   let id_tour=e.target.name;
   let id_group=e.target.id;
-props.deleteGroup(id_tour,id_group)
+  setIdTour(id_tour);
+  setIdGroup(id_group)
+  setOpen(true);
+
+}
+
+if(isDelete){
+  props.deleteGroup(idTour,idGroup)
 }
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -144,10 +156,49 @@ props.deleteGroup(id_tour,id_group)
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+  const modalOnclickYes=()=>{
+    setOpen(false) ;
+    setIsDelete(true);
+  }
 
   return (
     <div className="wrapperr-addTour">
       <BlockBtn />
+      <Modal
+        isOpen={open}
+        shouldCloseOnOverlayClick={false}
+        onRequestClose={() => setOpen(false)}
+        style={{
+
+        
+          content: {
+            position: 'absolute',
+            top: '30%',
+            left: '30%',
+            right: '30%',
+            bottom: '30%',
+            border: '1px solid #ccc',
+            background: '#fff',
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            borderRadius: '4px',
+            outline: 'none',
+            padding: '20px',
+            display:'flex',
+            flexDirection:'column',
+            alignItems:'center',
+            justifyContent:'space-evenly'
+          }
+        }
+        }
+       
+      >
+        <h3>Do you really want to delete?</h3>
+        <div className="madal-btn">
+          <button className="modal-btn-yes" onClick={modalOnclickYes}>YES</button>
+          <button className="modal-btn-no" onClick={()=>setOpen(false)}>NO</button>
+        </div>
+      </Modal>
       <div className="table-adminPanel">
         <TableContainer component={Paper}>
           <div className="admin-table-title">
@@ -197,11 +248,7 @@ props.deleteGroup(id_tour,id_group)
                       EDIT
                     </button>
                   </TableCell>
-                  <TableCell style={{ width: 40 }} align="left">
-                    <button className="tour-list-btn tour-list-view">
-                      VIEW
-                    </button>
-                  </TableCell>
+  
                 </TableRow>
               ))}
 

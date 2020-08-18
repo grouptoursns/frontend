@@ -35,7 +35,10 @@ class AddTour extends React.Component {
     need_to_take: "",
     Category: "",
     country_image: null,
+
+
   };
+
 
   submitHandler = (event) => {
     event.preventDefault();
@@ -44,6 +47,21 @@ class AddTour extends React.Component {
   changeCountry = (country1) => {
     this.setState({ country: country1 });
   };
+
+  ChangeFiles=(e)=>{
+    const formData= new FormData();
+
+    for(const file of e.target.files){
+      formData.append("MyFile",file)
+    }
+
+    for(const [key,value] of formData){
+      console.log(`Key: ${key}`)
+      console.log(`value: ${value}` )
+    }
+
+  }
+
   submitImages = (file) => {
     console.log(this.state.avatar);
   };
@@ -63,13 +81,11 @@ class AddTour extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
     console.log(this.state);
   };
-  changeStatus=(status)=>{
-    this.setState(
-      {
-        tour_status:status
-      }
-    )
-  }
+  changeStatus = (status) => {
+    this.setState({
+      tour_status: status,
+    });
+  };
   render() {
     return (
       <div className="wrapperr-addTour">
@@ -355,9 +371,10 @@ class AddTour extends React.Component {
                   >
                     Main image
                   </label>
-
-                  <Img />
-
+            
+                  <input type="file" multiple />
+                
+               
                   <div className="invalid-feedback">
                     Please provide a valid date.
                   </div>
@@ -454,6 +471,6 @@ class AddTour extends React.Component {
         </div>
       </div>
     );
-  }
+    }
 }
 export default AddTour;

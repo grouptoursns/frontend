@@ -1,5 +1,6 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./tours.css";
+import Modal from "react-modal";
 import PropTypes from "prop-types";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -17,8 +18,11 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
-import {getToursAdmin} from "../../../../actions/admin-panel/tours-list/getToursAdmin";
-import {deleteTourAdmin} from "../../../../actions/admin-panel/deleteTour/deleteTour";
+import { getToursAdmin } from "../../../../actions/admin-panel/tours-list/getToursAdmin";
+import { deleteTourAdmin } from "../../../../actions/admin-panel/deleteTour/deleteTour";
+import { detailsTourAdmin } from "../../../../actions/admin-panel/detailsTour/detailstTourAdmin";
+import Status from "./status-group/status"
+import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -104,36 +108,46 @@ const useStyles2 = makeStyles({
 });
 
 function Tours(props) {
-  const[tours,setTours]=useState([])
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(7);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [open, setOpen] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
+  const [idTour, setIdTour] = useState();
+  const [addGroup, setAddGroup] = useState(false);
+  const[status,setStatus]=useState();
+  console.log(status)
   let rows = [];
-  useEffect(()=>{
-    props.getTours('http://161.35.199.172/api/company/tours/');
-   
-  },[props.ToursList])
-   if(props.ToursList===undefined){
-    rows=[]
+  useEffect(() => {
+    props.getTours("http://161.35.199.172/api/company/tours/");
+    setIsDelete(false);
+  }, [props]);
+  if (props.ToursList === undefined) {
+    rows = [];
+  } else {
+    rows = props.ToursList.map((item) => {
+      return {
+        id: item.id,
+        name: item.name,
+        status: item.tour_status,
+        groups: "7",
+        reviews: item.avg_rate_tour[0].count_of_voices,
+        rating: item.avg_rate_tour[0].rating,
+      };
+    });
   }
-  else{
-    console.log(props.ToursList)
-    rows =props.ToursList.map((item)=>{
-      return{
-        id:item.id,
-        name:item.name,
-        status:item.tour_status,
-        groups:"7",
-        reviews:item.avg_rate_tour[0].count_of_voices,
-        rating:item.avg_rate_tour[0].rating
-      }
-    })
+  const onClickDelete = (e) => {
+    console.log(e.target.id);
+    setIdTour(e.target.id);
+    setOpen(true);
+  };
+  if (isDelete) {
+    props.deleteTour(idTour);
   }
-  const onClickDelete=(e)=>{
-    console.log(e.target.id)
-    props.deleteTour(e.target.id)
-   
-  }
+  const onClickEdit = (e) => {
+    console.log(e.target.id);
+    props.detailsTour(e.target.id);
+  };
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -145,18 +159,240 @@ function Tours(props) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+  const modalOnclickYes = () => {
+    setOpen(false);
+    setIsDelete(true);
+  };
+  const submitHandlerGroup = (event) => {
+    event.preventDefault();
+    event.target.className += " was-validated";
+  };
+  const changeHandler=(event)=>{
+
+  }
 
   return (
     <div className="wrapperr-addTour">
       <BlockBtn />
+      <Modal
+        isOpen={open}
+        shouldCloseOnOverlayClick={false}
+        onRequestClose={() => setOpen(false)}
+        style={{
+          content: {
+            position: "absolute",
+            top: "30%",
+            left: "30%",
+            right: "30%",
+            bottom: "30%",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "4px",
+            outline: "none",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          },
+        }}
+      >
+        <h3>Do you really want to delete?</h3>
+        <div className="madal-btn">
+          <button className="modal-btn-yes" onClick={modalOnclickYes}>
+            YES
+          </button>
+          <button className="modal-btn-no" onClick={() => setOpen(false)}>
+            NO
+          </button>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={addGroup}
+        shouldCloseOnOverlayClick={false}
+        onRequestClose={() => setAddGroup(false)}
+        style={{
+          content: {
+            position: "absolute",
+            top: "10%",
+            left: "30%",
+            right: "30%",
+            bottom: "10%",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "4px",
+            outline: "none",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-around",
+          },
+        }}
+      >
+        <h3 className="add-group-title">Add group</h3>
+        <form
+          className="needs-validation settings-form form-admin"
+          onSubmit={submitHandlerGroup}
+          noValidate
+        >
+          <MDBRow className="form-add-group">
+            <MDBCol md="6">
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  value=""
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="fname"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Start time
+                </label>
+
+                <input
+                  type="date"
+                  value=""
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="fname"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Status group
+                </label>
+
+                <Status status={(e)=>setStatus(e)}/>
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+            </MDBCol>
+            <MDBCol md="6">
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Price
+                </label>
+
+                <input
+                  type="text"
+                  value=""
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="fname"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Finish time
+                </label>
+
+                <input
+                  type="date"
+                  value=""
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="fname"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                 Count of people
+                </label>
+
+                <input
+                  type="text"
+                  value=""
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="fname"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+            </MDBCol>
+          </MDBRow>
+          <div className="block-bot-button">
+            <button className="form-group-close" onClick={()=>setAddGroup(false)}>CLOSE</button>
+            <MDBBtn type="submit" className="submit submit-add-group">
+              ADD
+            </MDBBtn>
+          </div>
+        </form>
+      </Modal>
       <div className="table-adminPanel">
         <TableContainer component={Paper}>
           <div className="admin-table-title">
             <span className="name-admin">Name</span>
             <span className="status-admin">Status</span>
-            <span className="groups-admin">Groups</span>
+            <span className="groups-admin">Raiting</span>
             <span className="reviews-admin">Reviews</span>
-            <span className="raiting-admin">Raiting</span>
+            <span className="raiting-admin">Groups</span>
             <span className="action-admin">Action</span>
           </div>
           <Table className={classes.table} aria-label="custom pagination table">
@@ -180,22 +416,42 @@ function Tours(props) {
                     {row.status}
                   </TableCell>
                   <TableCell style={{ width: 60 }} align="left">
-                    {row.groups}
+                    {row.rating}
                   </TableCell>
                   <TableCell style={{ width: 60 }} align="left">
                     {row.reviews}
                   </TableCell>
                   <TableCell style={{ width: 100 }} align="left">
-                    {row.rating}
+                    {row.groups}
+                    <button
+                      className="btn-add-group"
+                      onClick={() => setAddGroup(true)}
+                    >
+                      &#43;
+                    </button>
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="right">
-                    <button className="tour-list-btn tourl-list-delete" id={row.id} onClick={onClickDelete}>DELETE</button>
+                    <button
+                      className="tour-list-btn tourl-list-delete"
+                      id={row.id}
+                      onClick={onClickDelete}
+                    >
+                      DELETE
+                    </button>
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="center">
-                  <button className="tour-list-btn tour-list-edit">EDIT</button>
+                    <button
+                      className="tour-list-btn tour-list-edit"
+                      id={row.id}
+                      onClick={onClickEdit}
+                    >
+                      EDIT
+                    </button>
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="left">
-                  <button className="tour-list-btn tour-list-view">VIEW</button>
+                    <button className="tour-list-btn tour-list-view">
+                      VIEW
+                    </button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -225,14 +481,15 @@ function Tours(props) {
 }
 const mapStateToProps = (state) => {
   return {
-    ToursList:state.ToursListAdmin.state
+    ToursList: state.ToursListAdmin.state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      getTours:(url)=>dispatch(getToursAdmin(url)),
-      deleteTour:(id)=>dispatch(deleteTourAdmin(id))
+    getTours: (url) => dispatch(getToursAdmin(url)),
+    deleteTour: (id) => dispatch(deleteTourAdmin(id)),
+    detailsTour: (id) => dispatch(detailsTourAdmin(id)),
   };
 };
 

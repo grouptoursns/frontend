@@ -1,3 +1,5 @@
+
+
 import axios from "axios";
 
 export function seccessgetToursAdmin(data){
@@ -8,18 +10,18 @@ export function seccessgetToursAdmin(data){
     }
 }
 
-export function getToursAdmin(url){
+export function detailsTourAdmin(id){
     let token = localStorage.getItem('token');
     return async (dispatch)=>{
       await  axios
-      .get(url,{
+      .get(`http://161.35.199.172/api/company/tours/${id}/`,{
           headers:{
             Authorization: 'Token ' + token 
           }
       })
       .then(res => {
-          dispatch(seccessgetToursAdmin(res.data.results))
-    
+   
+          console.log(res.data)
       });
 
 }
