@@ -13,9 +13,12 @@ const GroupTabs =(props)=>{
 
     let a = []
     let groups = []
-
+    let i = 0
     if(props.tourData.group_tour){
         a = [...props?.tourData?.group_tour]
+        for (i ; i <= a.length; i++){
+            return i = a.length
+        }
         groups = a.map((group) =>
             <NavLink className="info-tabs" to="/tour-groups/groups">Group {group.id}</NavLink>)
     }
@@ -32,7 +35,8 @@ const GroupTabs =(props)=>{
 const mapStateToProps = (state) => {
     return {
         tourData:state.tourData,
-        detailsTours: state.detailsTour.detailsTour
+        detailsTours: state.detailsTour.detailsTour,
+        groupId: state.tourData
     };
 };
 

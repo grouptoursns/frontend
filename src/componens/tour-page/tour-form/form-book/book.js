@@ -25,23 +25,16 @@ const Book =(props)=> {
     }, []);
 // const [startDate, setStartDate] = useState(null)
 
-    // let state = {
-    //     startDate: "",
-    //     show: false
-    // }
+    let [show, setShow] = useState(false)
+    let state = {
+        show: false
+    }
 
-
-
-    // function showFunc() {
-    //     this.setState({
-    //         show: !this.state.show
-    //     })
-    // }
 
     return (
         <div className="book">
             <div className="book-price">
-                <h2>from {props.tourData.min_price}$ to {props.tourData.max_price}$</h2>
+                <h2>{props.tourData.min_price}$ to {props.tourData.max_price}$</h2>
                 <p className="book-price__size">Price varies by group size</p>
             </div>
             <div className="book-picker">
@@ -53,21 +46,22 @@ const Book =(props)=> {
                 {/*    // includeDates={[new Date(), addDays(new Date(), 1)]}*/}
                 {/*/>*/}
 
-                {/*<div>*/}
-                {/*    <input className="book-date"*/}
-                {/*           onClick={() => this.showFunc()}*/}
-                {/*           type="text"*/}
-                {/*           value={"Start date:"}*/}
-                {/*    />*/}
-                {/*    {*/}
-                {/*        this.state.show ?*/}
-                {/*            <div className="book-date__list">*/}
-                {/*                <p>{props.tourData.group_tour[0].start_time}</p>*/}
-                {/*                <p>{props.tourData.group_tour[0].finish_time}</p>*/}
-                {/*            </div>*/}
-                {/*            : null*/}
-                {/*    }*/}
-                {/*</div>*/}
+                <div>
+                    <input className="book-date"
+                           onClick={()=> setShow(true
+                           )}
+                           // type="text"
+                           // value={"Start date:"}
+                    />
+                    {/*{*/}
+                    {/*    <div className="book-date__list">*/}
+                    {/*    <p>{props.tourData.group_tour[0].start_time}</p>*/}
+                    {/*    <p>{props.tourData.group_tour[0].finish_time}</p>*/}
+                    {/*</div>*/}
+                    {/*}*/}
+
+
+                </div>
 
                 <Counter/>
                 <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">

@@ -27,24 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +149,7 @@
       <workItem from="1597673648101" duration="5066000" />
       <workItem from="1597695578921" duration="5063000" />
       <workItem from="1597766419509" duration="3638000" />
-      <workItem from="1597773402089" duration="3085000" />
+      <workItem from="1597773402089" duration="14265000" />
     </task>
     <servers />
   </component>
