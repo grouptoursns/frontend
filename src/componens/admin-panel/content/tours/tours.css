@@ -132,3 +132,13 @@ color: #FFFFFF;
 
 color: #FFFFFF;
 }
+input.error {
+    border-color: red;
+  }
+  
+  .input-feedback {
+    color: rgb(235, 54, 54);
+    margin-top: -15px;
+    font-size: 10px;
+    margin-bottom: 20px;
+  }

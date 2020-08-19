@@ -42,21 +42,10 @@ const stateOptions = [
 
 
 const Status = (props) => {
-    const change=(e)=>{
-        if (e.target.value !== undefined) {
-       
-          props.status(e.target.value)
+   
       
-    
-          
-        } 
-        else {
-
-            props.status(e.target.textContent)
-        }
-      }
     return(
-<Dropdown  search selection options={stateOptions} onChange={change} />
+<Dropdown  search selection options={stateOptions} />
     )
   
     }

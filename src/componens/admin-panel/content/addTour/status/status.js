@@ -19,7 +19,7 @@ const stateOptions = [
 
 
 const Status = (props) => (
-  <Dropdown  search selection options={stateOptions} onChange={(e)=>props.status(e.target.textContent)} />
+  <Dropdown  search selection options={stateOptions} onChange={(e)=>console.log(e.target.textContent)} />
 )
 
 export default Status

@@ -1,7 +1,7 @@
-import React, { useEffect ,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./groups.css";
 import PropTypes from "prop-types";
-import Modal from "react-modal"
+import Modal from "react-modal";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -19,7 +19,10 @@ import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
 import { getGroupList } from "../../../../actions/admin-panel/group-list/getGroupList";
-import {deleteGroupAdmin} from "../../../../actions/admin-panel/deleteGroup/deleteGroup"
+import { deleteGroupAdmin } from "../../../../actions/admin-panel/deleteGroup/deleteGroup";
+import { detailGroup } from "../../../../actions/admin-panel/detailsGroup/detailGroup";
+import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import Status from "./status/status";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -109,21 +112,32 @@ function Groups(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = useState(false);
-  const[isDelete,setIsDelete]=useState(false)
-  const [idTour,setIdTour]=useState()
-  const [idGroup,setIdGroup]=useState();
-  const [id,setId]=useState();
+  const [isDelete, setIsDelete] = useState(false);
+  const [idTour, setIdTour] = useState();
+  const [idGroup, setIdGroup] = useState();
+  const [id, setId] = useState();
+  const [open2, setOpen2] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    start_time: "",
+    finish_time: "",
+    status_group: "",
+    price: "",
+    count_people: "",
+    free_slots: "",
+  });
   let rows = [];
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
-  }, [props.groupList]);
+  },[]);
+  console.log(props.groupList);
   if (props.groupList === undefined) {
     rows = [];
   } else {
     rows = props.groupList.map((item) => {
       return {
-        id:item.id,
-        id_tour:item.tour_id,
+        id: item.id,
+        id_tour: item.tour_id,
         tour: item.tour,
         status: item.status_group_tour,
         finish_time: item.finish_time,
@@ -132,19 +146,54 @@ function Groups(props) {
       };
     });
   }
-const OnclickDelete=(e)=>{
-  console.log(e.target.name);
-  let id_tour=e.target.name;
-  let id_group=e.target.id;
-  setIdTour(id_tour);
-  setIdGroup(id_group)
-  setOpen(true);
+  let dataGroup2={};
+  if (props.dataGropsAdmin === undefined) {
+    dataGroup2={}
+  }
+  else{
+     dataGroup2=props.dataGropsAdmin;
+    setData({
+      name: dataGroup2.name,
+      start_time: dataGroup2.start_time,
+      finish_time: dataGroup2.finish_time,
+      status_group: dataGroup2.status_group_tour,
+      price: dataGroup2.price,
+      count_people: dataGroup2.count_of_people,
+      free_slots: dataGroup2.free_slots,
+    });
+  }
+  const submitHandlerGroup = (event) => {
+    event.preventDefault();
+    event.target.className += " was-validated";
+    console.log(event.target.name);
+  };
+  const changeHandler = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-}
+  const OnclickDelete = (e) => {
+    console.log(e.target.name);
+    let id_tour = e.target.name;
+    let id_group = e.target.id;
+    setIdTour(id_tour);
+    setIdGroup(id_group);
+    setOpen(true);
+  };
 
-if(isDelete){
-  props.deleteGroup(idTour,idGroup)
-}
+  const clickExit = (e) => {
+    let id_tour = e.target.name;
+    let id_group = e.target.id;
+
+    props.detailGroup2(id_tour, id_group);
+    setOpen2(true);
+  };
+
+  if (isDelete) {
+    props.deleteGroup(idTour, idGroup);
+  }
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -156,10 +205,10 @@ if(isDelete){
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  const modalOnclickYes=()=>{
-    setOpen(false) ;
+  const modalOnclickYes = () => {
+    setOpen(false);
     setIsDelete(true);
-  }
+  };
 
   return (
     <div className="wrapperr-addTour">
@@ -169,35 +218,223 @@ if(isDelete){
         shouldCloseOnOverlayClick={false}
         onRequestClose={() => setOpen(false)}
         style={{
-
-        
           content: {
-            position: 'absolute',
-            top: '30%',
-            left: '30%',
-            right: '30%',
-            bottom: '30%',
-            border: '1px solid #ccc',
-            background: '#fff',
-            overflow: 'auto',
-            WebkitOverflowScrolling: 'touch',
-            borderRadius: '4px',
-            outline: 'none',
-            padding: '20px',
-            display:'flex',
-            flexDirection:'column',
-            alignItems:'center',
-            justifyContent:'space-evenly'
-          }
-        }
-        }
-       
+            position: "absolute",
+            top: "30%",
+            left: "30%",
+            right: "30%",
+            bottom: "30%",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "4px",
+            outline: "none",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          },
+        }}
       >
         <h3>Do you really want to delete?</h3>
         <div className="madal-btn">
-          <button className="modal-btn-yes" onClick={modalOnclickYes}>YES</button>
-          <button className="modal-btn-no" onClick={()=>setOpen(false)}>NO</button>
+          <button className="modal-btn-yes" onClick={modalOnclickYes}>
+            YES
+          </button>
+          <button className="modal-btn-no" onClick={() => setOpen(false)}>
+            NO
+          </button>
         </div>
+      </Modal>
+
+      <Modal
+        isOpen={open2}
+        shouldCloseOnOverlayClick={false}
+        onRequestClose={() => setOpen2(false)}
+        style={{
+          content: {
+            position: "absolute",
+            top: "10%",
+            left: "30%",
+            right: "30%",
+            bottom: "10%",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "none",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "4px",
+            outline: "none",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-around",
+          },
+        }}
+      >
+        <h3 className="add-group-title">Add group</h3>
+        <form
+          className="needs-validation settings-form form-admin"
+          onSubmit={submitHandlerGroup}
+          noValidate
+        >
+          <MDBRow className="form-add-group">
+            <MDBCol md="6">
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  value={data.name}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="name"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Start time
+                </label>
+
+                <input
+                  type="date"
+                  value={data.start_time}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="start_time"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Status group
+                </label>
+
+                <Status
+                  status={(e) =>
+                    setData({
+                      ...data,
+                      status_group: e,
+                    })
+                  }
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+            </MDBCol>
+            <MDBCol md="6">
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Price
+                </label>
+
+                <input
+                  type="text"
+                  value={data.price}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="price"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Finish time
+                </label>
+
+                <input
+                  type="date"
+                  value={data.finish_time}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="finish_time"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+              <MDBRow mb="3">
+                <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Count of people
+                </label>
+
+                <input
+                  type="text"
+                  value={data.count_people}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="count_people"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+              </MDBRow>
+            </MDBCol>
+          </MDBRow>
+          <div className="block-bot-button">
+            <button
+              className="form-group-close"
+              onClick={() => setOpen2(false)}
+            >
+              CLOSE
+            </button>
+            <MDBBtn type="submit" className="submit submit-add-group">
+              ADD
+            </MDBBtn>
+          </div>
+        </form>
       </Modal>
       <div className="table-adminPanel">
         <TableContainer component={Paper}>
@@ -239,16 +476,25 @@ if(isDelete){
                     {row.count}
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="right">
-                    <button className="tour-list-btn tourl-list-delete" name={row.id_tour}  id={row.id} onClick={OnclickDelete}>
+                    <button
+                      className="tour-list-btn tourl-list-delete"
+                      name={row.id_tour}
+                      id={row.id}
+                      onClick={OnclickDelete}
+                    >
                       DELETE
                     </button>
                   </TableCell>
                   <TableCell style={{ width: 40 }} align="center">
-                    <button className="tour-list-btn tour-list-edit">
+                    <button
+                      className="tour-list-btn tour-list-edit"
+                      name={row.id_tour}
+                      id={row.id}
+                      onClick={clickExit}
+                    >
                       EDIT
                     </button>
                   </TableCell>
-  
                 </TableRow>
               ))}
 
@@ -278,13 +524,17 @@ if(isDelete){
 const mapStateToProps = (state) => {
   return {
     groupList: state.GroupListAdmin.state,
+    dataGropsAdmin: state.dataGroupAdmin.state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getGroupList: (url) => dispatch(getGroupList(url)),
-    deleteGroup:(id_tour,id_group)=>dispatch(deleteGroupAdmin(id_tour,id_group))
+    deleteGroup: (id_tour, id_group) =>
+      dispatch(deleteGroupAdmin(id_tour, id_group)),
+    detailGroup2: (id_tour2, id_group2) =>
+      dispatch(detailGroup(id_tour2, id_group2)),
   };
 };
 
