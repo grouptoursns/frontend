@@ -23,6 +23,8 @@ import { deleteGroupAdmin } from "../../../../actions/admin-panel/deleteGroup/de
 import { detailGroup } from "../../../../actions/admin-panel/detailsGroup/detailGroup";
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import Status from "./status/status";
+import {trigerModalExitOff} from "../../../../actions/admin-panel/detailsGroup/detailGroup"
+import {updateGroupAdmin} from "../../../../actions/admin-panel/updateGroup/updateGroup"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -117,6 +119,7 @@ function Groups(props) {
   const [idGroup, setIdGroup] = useState();
   const [id, setId] = useState();
   const [open2, setOpen2] = useState(false);
+
   const [data, setData] = useState({
     name: "",
     start_time: "",
@@ -129,6 +132,7 @@ function Groups(props) {
   let rows = [];
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
+   
   },[]);
   console.log(props.groupList);
   if (props.groupList === undefined) {
@@ -136,36 +140,26 @@ function Groups(props) {
   } else {
     rows = props.groupList.map((item) => {
       return {
+        name:item.name,
         id: item.id,
         id_tour: item.tour_id,
         tour: item.tour,
         status: item.status_group_tour,
+        start_time:item.start_time,
         finish_time: item.finish_time,
         price: item.price,
         count: item.count_of_people,
+        free_slots:item.free_slots
       };
     });
   }
-  let dataGroup2={};
-  if (props.dataGropsAdmin === undefined) {
-    dataGroup2={}
-  }
-  else{
-     dataGroup2=props.dataGropsAdmin;
-    setData({
-      name: dataGroup2.name,
-      start_time: dataGroup2.start_time,
-      finish_time: dataGroup2.finish_time,
-      status_group: dataGroup2.status_group_tour,
-      price: dataGroup2.price,
-      count_people: dataGroup2.count_of_people,
-      free_slots: dataGroup2.free_slots,
-    });
-  }
+ 
+
+  
   const submitHandlerGroup = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
-    console.log(event.target.name);
+ props.updateGroup(idTour,idGroup,data)
   };
   const changeHandler = (event) => {
     setData({
@@ -183,12 +177,31 @@ function Groups(props) {
     setOpen(true);
   };
 
+let data2={}
+
   const clickExit = (e) => {
     let id_tour = e.target.name;
     let id_group = e.target.id;
-
-    props.detailGroup2(id_tour, id_group);
-    setOpen2(true);
+    console.log(id_tour)
+    console.log(id_group)
+    setIdTour(id_tour);
+    setIdGroup(id_group);
+    data2=rows.filter((item)=>item.id==e.target.id)
+    
+    setData({
+      ...data,
+      id:e.target.id,
+      tour:data2[0].tour,
+      name: data2[0].name,
+      start_time: data2[0].start_time,
+      status_group: data2[0].status,
+      finish_time: data2[0].finish_time,
+      price: data2[0].price,
+      count_people: data2[0].count,
+      free_slots:data2[0].free_slots
+    });
+    console.log(data2)
+    setOpen2(!false)
   };
 
   if (isDelete) {
@@ -343,6 +356,7 @@ function Groups(props) {
                       status_group: e,
                     })
                   }
+                  statusProps={data.status_group}
                 />
 
                 <div className="invalid-feedback">
@@ -423,10 +437,35 @@ function Groups(props) {
               </MDBRow>
             </MDBCol>
           </MDBRow>
+          <MDBRow mb="3">
+            <MDBCol md="12">
+            <label
+                  htmlFor="defaultFormRegisterPasswordEx4"
+                  className="grey-text"
+                >
+                  Free slots
+                </label>
+
+                <input
+                  type="text"
+                  value={data.free_slots}
+                  id="defaultFormRegisterPasswordEx4"
+                  onChange={changeHandler}
+                  name="count_people"
+                  placeholder=""
+                  className="form-control input "
+                />
+
+                <div className="invalid-feedback">
+                  Please provide a valid date.
+                </div>
+                <div className="valid-feedback">Looks good!</div>
+            </MDBCol>
+          </MDBRow>
           <div className="block-bot-button">
             <button
               className="form-group-close"
-              onClick={() => setOpen2(false)}
+              onClick={() =>setOpen2(false)}
             >
               CLOSE
             </button>
@@ -480,7 +519,7 @@ function Groups(props) {
                       className="tour-list-btn tourl-list-delete"
                       name={row.id_tour}
                       id={row.id}
-                      onClick={OnclickDelete}
+                      onClick={(e)=>OnclickDelete(e)}
                     >
                       DELETE
                     </button>
@@ -525,6 +564,7 @@ const mapStateToProps = (state) => {
   return {
     groupList: state.GroupListAdmin.state,
     dataGropsAdmin: state.dataGroupAdmin.state,
+    modalTriger:state.ModalEdit.modalEdit
   };
 };
 
@@ -535,6 +575,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(deleteGroupAdmin(id_tour, id_group)),
     detailGroup2: (id_tour2, id_group2) =>
       dispatch(detailGroup(id_tour2, id_group2)),
+      updateGroup:(id1,id2,data)=>dispatch(updateGroupAdmin(id1,id2,data))
   };
 };
 

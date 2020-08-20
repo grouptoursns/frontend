@@ -45,7 +45,7 @@ const Status = (props) => {
    
       
     return(
-<Dropdown  search selection options={stateOptions} />
+<Dropdown  search selection options={stateOptions} placeholder={props.statusProps} />
     )
   
     }

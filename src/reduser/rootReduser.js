@@ -23,7 +23,8 @@ import {changePassword} from "./changePassword"
 import {ToursListAdmin} from "./admin-panel/Tours-list";
 import {GroupListAdmin}  from "./admin-panel/groupList";
 import {dataCompany}  from "./admin-panel/getDataCompany";
-import {dataGroupAdmin} from "./admin-panel/detailGroup"
+import {dataGroupAdmin} from "./admin-panel/detailGroup";
+import {ModalEdit}from "./admin-panel/modalEdit"
 
 
 const rootReduser = combineReducers({
@@ -50,7 +51,8 @@ const rootReduser = combineReducers({
     ToursListAdmin,
     GroupListAdmin,
     dataCompany,
-    dataGroupAdmin
+    dataGroupAdmin,
+    ModalEdit
 });
 
 export default rootReduser;
