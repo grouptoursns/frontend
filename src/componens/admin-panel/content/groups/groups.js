@@ -133,7 +133,7 @@ function Groups(props) {
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
    
-  },[]);
+  },[props]);
   console.log(props.groupList);
   if (props.groupList === undefined) {
     rows = [];
@@ -311,10 +311,11 @@ let data2={}
                   name="name"
                   placeholder=""
                   className="form-control input "
+                  required
                 />
 
                 <div className="invalid-feedback">
-                  Please provide a valid date.
+                  Please provide a valid text.
                 </div>
                 <div className="valid-feedback">Looks good!</div>
               </MDBRow>
@@ -469,8 +470,8 @@ let data2={}
             >
               CLOSE
             </button>
-            <MDBBtn type="submit" className="submit submit-add-group">
-              ADD
+            <MDBBtn type="submit" className="submit submit-add-group" onClick={() =>setOpen2(false)}>
+              SAVE
             </MDBBtn>
           </div>
         </form>

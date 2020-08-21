@@ -8,6 +8,12 @@ import BlockBtn from "../block-btn/block-btn";
 import { render } from "react-dom";
 import Country from "./country/country";
 import Status from "./status/status";
+import FileUpdate from "./addImage/addImage";
+import GuidPhoto from "./guidePhoto/addImage";
+import CountryImage from "./countryImage/addImage";
+import Difficult from "./difficult/difficult";
+import { connect } from "react-redux";
+import createTour from "../../../../actions/admin-panel/createTour/createTour";
 
 class AddTour extends React.Component {
   state = {
@@ -35,36 +41,26 @@ class AddTour extends React.Component {
     need_to_take: "",
     Category: "",
     country_image: null,
-
-
   };
-
 
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
+    const formData = new FormData();
+
+    for (const key in this.state) {
+      if(this.state[key] !== null){
+             formData.append(key, this.state[key]);
+      }
+    }
+    this.props.createdTour(formData);
+    console.log(this.state);
   };
   changeCountry = (country1) => {
     this.setState({ country: country1 });
   };
 
-  ChangeFiles=(e)=>{
-    const formData= new FormData();
-
-    for(const file of e.target.files){
-      formData.append("MyFile",file)
-    }
-
-    for(const [key,value] of formData){
-      console.log(`Key: ${key}`)
-      console.log(`value: ${value}` )
-    }
-
-  }
-
-  submitImages = (file) => {
-    console.log(this.state.avatar);
-  };
+  submitImages = (file) => {};
   changeCount = (arr) => {
     this.setState({
       min_people: arr[0],
@@ -77,13 +73,35 @@ class AddTour extends React.Component {
       max_price: arr[1],
     });
   };
+  changeMainImage = (file1) => {
+    this.setState({
+      main_image: file1,
+    });
+    console.log(this.state.main_image);
+  };
+  changeCountImage = (file3) => {
+    this.setState({
+      country_image: file3,
+    });
+  };
+  changeGuidPhoto = (file2) => {
+    console.log(this.props.image1)
+    this.setState({
+      guide_photo: file2,
+    });
+    console.log(this.state.guide_photo);
+  };
   changeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state);
   };
   changeStatus = (status) => {
     this.setState({
       tour_status: status,
+    });
+  };
+  changeDifficult = (diffic) => {
+    this.setState({
+      difficult: diffic,
     });
   };
   render() {
@@ -94,293 +112,324 @@ class AddTour extends React.Component {
           <div className="block-title-adminPanel">
             <span>Create tour</span>
           </div>
-          <div className="adminPanel-form">
-            <MDBRow className="top-form">
-              <MDBCol md="4" className="mb-3  ">
-                <label
-                  htmlFor="defaultFormRegisterPasswordEx4"
-                  className="grey-text"
-                >
-                  Description
-                </label>
-
-                <textarea
-                  type="text"
-                  id="defaultFormRegisterPasswordEx4"
-                  name="description"
-                  onChange={this.changeHandler}
-                  placeholder=""
-                  className="form-control input input-descr"
-                />
-
-                <div className="invalid-feedback">
-                  Please provide a valid date.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
-              </MDBCol>
-              <MDBCol md="3" className="mb-3  ">
-                <MDBRow className="mb-3">
+          <form
+            className="needs-validation"
+            onSubmit={this.submitHandler}
+            noValidate
+          >
+            <div className="adminPanel-form">
+              <MDBRow>
+                <MDBCol md="4">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    Country
-                  </label>
-
-                  <Country country={this.changeCountry} />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow className="mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Location
+                    Name
                   </label>
 
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="location"
+                    name="name"
+                    value={this.state.name}
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
+                    required
                   />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow className="mb-3">
+                </MDBCol>
+                <MDBCol md="4">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    Gathering place
+                    Count of day
                   </label>
 
                   <input
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="gathering_place"
+                    name="count_of_day"
+                    value={this.state.count_of_day}
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
+                    required
                   />
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow className="mb-3">
+                </MDBCol>
+                <MDBCol md="4">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    Residence
+                    Difficult
                   </label>
 
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="residence"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
+                  <Difficult propsDifficult={this.changeDifficult} />
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-              <MDBCol md="3" className="mb-3 right-col ">
-                <MDBRow className="mb-3">
+                </MDBCol>
+              </MDBRow>
+              <MDBRow className="top-form">
+                <MDBCol md="4" className="mb-3  ">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    Language
-                  </label>
-
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="language"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow className="mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Price from {this.state.min_price} to {this.state.max_price}$
-                  </label>
-
-                  <Price price={this.changePrice} />
-                </MDBRow>
-                <MDBRow className="mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    People count from {this.state.min_people} to{" "}
-                    {this.state.max_people}
-                  </label>
-
-                  <Count count={this.changeCount} />
-                </MDBRow>
-                <MDBRow className="mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Category
-                  </label>
-
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="Category"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-            </MDBRow>
-            <div className="line-black-admin"></div>
-            <MDBRow className="bottom-form">
-              <MDBCol md="4" className="mb-3  ">
-                <MDBRow>
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    About guide
+                    Description
                   </label>
 
                   <textarea
                     type="text"
                     id="defaultFormRegisterPasswordEx4"
-                    name="about_guide"
-                    placeholder=""
+                    name="description"
                     onChange={this.changeHandler}
-                    className="form-control input bottom-textarea"
+                    placeholder=""
+                    className="form-control input input-descr"
+                    required
                   />
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow>
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Route description
-                  </label>
 
-                  <textarea
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="route_description"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input bottom-textarea"
-                  />
+                </MDBCol>
+                <MDBCol md="3" className="mb-3  ">
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Country
+                    </label>
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-              <MDBCol md="4" className="mb-3  ">
-                <MDBRow>
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    What is included ?
-                  </label>
+                    <Country country={this.changeCountry} />
 
-                  <textarea
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="what_is_included"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input bottom-textarea"
-                  />
+                  </MDBRow>
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Location
+                    </label>
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow>
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Need to take
-                  </label>
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="location"
+                      value={this.state.location}
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                      required
+                    />
 
-                  <textarea
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="need_to_take"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input bottom-textarea"
-                  />
+                  </MDBRow>
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Gathering place
+                    </label>
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-              <MDBCol md="3" className="mb-3  right-col-img">
-                <MDBRow className="loadImgClass">
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="gathering_place"
+                      placeholder=""
+                      value={this.state.gathering_place}
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                      required
+                    />
+
+
+                  </MDBRow>
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Residence
+                    </label>
+
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="residence"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                      required
+                    />
+
+
+                  </MDBRow>
+                </MDBCol>
+                <MDBCol md="3" className="mb-3 right-col ">
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Language
+                    </label>
+
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="language"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                      required
+                    />
+
+
+                  </MDBRow>
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Price from {this.state.min_price} to{" "}
+                      {this.state.max_price}$
+                    </label>
+
+                    <Price price={this.changePrice} />
+                  </MDBRow>
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      People count from {this.state.min_people} to{" "}
+                      {this.state.max_people}
+                    </label>
+
+                    <Count count={this.changeCount} />
+                  </MDBRow>
+                  <MDBRow className="mb-3">
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Category
+                    </label>
+
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="Category"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                    />
+
+
+                  </MDBRow>
+                </MDBCol>
+              </MDBRow>
+              <div className="line-black-admin"></div>
+              <MDBRow className="bottom-form">
+                <MDBCol md="4" className="mb-3  ">
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      About guide
+                    </label>
+
+                    <textarea
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="about_guide"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input bottom-textarea"
+                      required
+                    />
+
+                  </MDBRow>
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Route description
+                    </label>
+
+                    <textarea
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="route_description"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input bottom-textarea"
+                      required
+                    />
+
+  
+                  </MDBRow>
+                </MDBCol>
+                <MDBCol md="4" className="mb-3  ">
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      What is included ?
+                    </label>
+
+                    <textarea
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="what_is_included"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input bottom-textarea"
+                      required
+                    />
+
+    
+                  </MDBRow>
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Need to take
+                    </label>
+
+                    <textarea
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="need_to_take"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input bottom-textarea"
+                      required
+                    />
+
+
+                  </MDBRow>
+                </MDBCol>
+                <MDBCol md="3" className="mb-3  right-col-img">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
                     Main image
                   </label>
-            
-                  <input type="file" multiple />
-                
-               
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-                <MDBRow className="loadImgClass">
+
+                  <FileUpdate  imagePropsTriger={(e)=>{
+                    if(e==false){
+                      this.setState({
+                        main_image:null
+                      })
+                    }
+                  }} imageProps={this.changeMainImage} />
+
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
@@ -388,89 +437,115 @@ class AddTour extends React.Component {
                     Guide image
                   </label>
 
-                  <Img />
+                  <GuidPhoto imageProps={(e)=>{
+                    if(e==false){
+                      this.setState({
+                        guide_photo:null
+                      })
+                    }
+                  }} photoGuid={this.changeGuidPhoto} />
+                </MDBCol>
+              </MDBRow>
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Status
+                    </label>
 
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-            </MDBRow>
-            <MDBRow>
-              <MDBCol md="3">
-                <MDBRow>
+                    <Status status={this.changeStatus} />
+
+                    <div className="invalid-feedback">
+                      Please provide a valid date.
+                    </div>
+                    <div className="valid-feedback">Looks good!</div>
+                  </MDBRow>
+                </MDBCol>
+                <MDBCol md="3">
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Age control
+                    </label>
+
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="age_control"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                      required
+                    />
+
+                  </MDBRow>
+                </MDBCol>
+                <MDBCol md="3">
+                  <MDBRow>
+                    <label
+                      htmlFor="defaultFormRegisterPasswordEx4"
+                      className="grey-text"
+                    >
+                      Transport
+                    </label>
+
+                    <input
+                      type="text"
+                      id="defaultFormRegisterPasswordEx4"
+                      name="transport"
+                      placeholder=""
+                      onChange={this.changeHandler}
+                      className="form-control input"
+                      required
+                    />
+
+
+                  </MDBRow>
+                </MDBCol>
+                <MDBCol md="3">
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
                     className="grey-text"
                   >
-                    Status
+                    Country image
                   </label>
 
-                  <Status status={this.changeStatus} />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-              <MDBCol md="3">
-                <MDBRow>
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Age control
-                  </label>
-
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="age_control"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-              <MDBCol md="3">
-                <MDBRow>
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Transport
-                  </label>
-
-                  <input
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    name="transport"
-                    placeholder=""
-                    onChange={this.changeHandler}
-                    className="form-control input"
-                  />
-
-                  <div className="invalid-feedback">
-                    Please provide a valid date.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </MDBRow>
-              </MDBCol>
-            </MDBRow>
-            <div className="creat-block">
-              <button className="create-tour">CREATE TOUR</button>
+                  <CountryImage  imageProps={(e)=>{
+                    if(e==false){
+                      this.setState({
+                        country_image:null
+                      })
+                    }
+                  }} imagePropsCountry={this.changeCountImage} />
+                </MDBCol>
+              </MDBRow>
+              <div className="creat-block">
+                <MDBBtn type="submit" className="create-tour">
+                  CREATE TOUR
+                </MDBBtn>
+              </div>
             </div>
-          </div>
+            
+          </form>
         </div>
       </div>
     );
-    }
+  }
 }
-export default AddTour;
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createdTour: (data) => dispatch(createTour(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddTour);
