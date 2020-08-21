@@ -4,6 +4,7 @@ import profilePhoto from './img/photo 6.png'
 import Booking from "../../booking/booking";
 import axios from "axios";
 import {tourDataFetch} from "../../../../actions/tourData";
+import {groupDataFetch} from "../../../../actions/groupDetails";
 import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
 
@@ -11,7 +12,8 @@ const Group =(props)=> {
 
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        // props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172/group/${props.detailsTours.group_tour}`)
     },[]);
 
     let a = []
@@ -19,28 +21,37 @@ const Group =(props)=> {
     let start = ""
     let finish = ""
     let people = []
+    let guide = []
 
-    if(props.tourData.group_tour){
-        a = [...props?.tourData?.group_tour]
-        price = a[0].price
-        start = a[0].start_time
-        finish = a[0].finish_time
-        people = a[0].book_group
+    if(props.groupData){
+        a = props.groupData
+        price = a.price
+        start = a.start_time
+        finish = a.finish_time
+        people = a.book_group
+        guide = a.tour
     }
 
+    let guideName = ""
+    if(guide){
+        guideName = guide.about_guide
+    }
+
+    let tourName = ""
+    if(guide){
+        tourName = guide.name
+    }
+
+
     let men = []
-    // let extraPeoples = ""
     if(people){
         const b = [...people]
         men = b.map((man) =>
             <li style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <img src={profilePhoto} alt="profile.icon"/>{man.name}
-                <p> + {man.count_of_extra_people} extra people</p>
+                <p style={{color: "red"}}>  + {man.count_of_extra_people} extra people</p>
             </li>
         )
-        // extraPeoples = b.map((extraPeople) =>
-        //
-        // )
     }
 
         return (
@@ -49,8 +60,8 @@ const Group =(props)=> {
                     <div className="group-list__guide">
                         <img src={profilePhoto} alt="photo.icon"/>
                         <p>Hello!<br/>
-                            My name is {props.tourData.about_guide}.
-                            I will be your guide for the {props.tourData.name}.
+                            My name is {guideName}.
+                            I will be your guide for the {tourName}.
                             Nice to meet you!</p>
                     </div>
                     <div className="group-list__people">
@@ -77,14 +88,15 @@ const mapStateToProps = (state) => {
     return {
         tourData:state.tourData,
         detailsTours: state.detailsTour.detailsTour,
-        groupId: state.tourData
+        groupData: state.groupData
     };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: url => {dispatch(tourDataFetch(url))}
+        fetchData: url => {dispatch(groupDataFetch(url))
+        }
     };
 };
 

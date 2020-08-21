@@ -29,7 +29,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reduser/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/rootReduser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -149,7 +150,9 @@
       <workItem from="1597673648101" duration="5066000" />
       <workItem from="1597695578921" duration="5063000" />
       <workItem from="1597766419509" duration="3638000" />
-      <workItem from="1597773402089" duration="14265000" />
+      <workItem from="1597773402089" duration="15545000" />
+      <workItem from="1597924086058" duration="7850000" />
+      <workItem from="1598043170192" duration="2873000" />
     </task>
     <servers />
   </component>

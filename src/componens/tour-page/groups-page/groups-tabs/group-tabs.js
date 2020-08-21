@@ -16,9 +16,9 @@ const GroupTabs =(props)=>{
     let i = 0
     if(props.tourData.group_tour){
         a = [...props?.tourData?.group_tour]
-        for (i ; i <= a.length; i++){
-            return i = a.length
-        }
+        // for (i ; i <= a.length; i++){
+        //      i = a.length
+        // }
         groups = a.map((group) =>
             <NavLink className="info-tabs" to="/tour-groups/groups">Group {group.id}</NavLink>)
     }
