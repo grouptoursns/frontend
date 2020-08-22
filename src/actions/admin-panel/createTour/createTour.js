@@ -1,5 +1,16 @@
 import axios from "axios";
 
+export function seccessCreateTour(){
+  return{
+    type:"SECCESS_CREATE_TOUR"
+  }
+}
+export function errCreateTour(){
+  return{
+    type:"ERR_CREATE_TOUR"
+  }
+}
+
 export default function createTour(data) {
   let token = localStorage.getItem("token");
 
@@ -14,7 +25,10 @@ export default function createTour(data) {
         }
       )
       .then((res) => {
-        console.log(res);
+        console.log(res.status);
+        if(res.status===201){
+     dispatch(seccessCreateTour())
+        }
       })
       .catch((err) => {
         console.log(err);

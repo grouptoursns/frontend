@@ -7,8 +7,10 @@ import Groups from "./groups/groups"
 import AddTour from "./addTour/addTour"
 import AdminSettings from "./settings/settings"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import AddImageTour from "./addImageTour/addImageTour"
 
-const Content = () => {
+const Content = (props) => {
   return (
     <div className="admin-wrapper">
       <div className="left-navPanel">
@@ -18,11 +20,24 @@ const Content = () => {
         <Switch>
           <Route exact path="/admin-panel" component={Tours} />
           <Route  path="/admin-panel/groups" component={Groups} />
-          <Route  path="/admin-panel/add-tour" component={AddTour} />
+          <Route  path="/admin-panel/add-tour" component={props.addImage===false ?AddTour :AddImageTour} />
           <Route  path="/admin-panel/settings" component={AdminSettings} />
         </Switch>
       </div>
     </div>
   );
 };
-export default Content;
+
+const mapStateToProps = (state) => {
+  return {
+    addImage:state.trigerCreateTour.trigerTour
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+   
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

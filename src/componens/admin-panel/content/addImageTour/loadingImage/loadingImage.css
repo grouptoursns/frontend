@@ -1,0 +1,8 @@
+
+.loading-image{
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

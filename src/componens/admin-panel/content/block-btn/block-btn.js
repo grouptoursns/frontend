@@ -1,11 +1,16 @@
 import React,{useEffect,useState} from "react";
 import "./block-btn.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import {errCreateTour} from "../../../../actions/admin-panel/createTour/createTour"
 
-const BlockBtn = () => {
+const BlockBtn = (props) => {
     const[url,setUrl]=useState();
     useEffect(()=>{
         setUrl(window.location.pathname);
+        if(window.location.pathname !== "/admin-panel/add-tour"){
+          props.trigerAddImage()
+        }
     })
 
   return (
@@ -24,4 +29,17 @@ const BlockBtn = () => {
     </div>
   );
 };
-export default BlockBtn;
+
+const mapStateToProps = (state) => {
+  return {
+
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    trigerAddImage:()=>dispatch(errCreateTour())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BlockBtn);

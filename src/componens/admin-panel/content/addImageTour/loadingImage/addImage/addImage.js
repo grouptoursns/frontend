@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {withRouter} from "react-router-dom";
+
 
 import {compose} from "redux";
 import plus from './img/plus.png'
@@ -8,7 +8,7 @@ import deleteImg from './img/del.png'
 import "./addImage.css"
 import css from './addPhote.module.css'
 
- const FileUpdate = props => {
+ const AddImage = props => {
     let {setimg, image} = props;
     const [block, setBlock] = useState('block')
     const [url, setUrl] = useState('')
@@ -51,8 +51,7 @@ import css from './addPhote.module.css'
         reader.onload = (e) =>{
             setUrl(e.target.result);
             setDataFile(file)
-            props.imageProps(file)
-            props.imagePropsTriger(true)
+            props.handleChange(props.id,file)
         } 
     }
     
@@ -85,10 +84,10 @@ import css from './addPhote.module.css'
                      setCheckName(name)
                      setUrl('')
                      setBlock('block')
-                     props.imagePropsTriger(false)
+                     props.deleteChange(props.id)
                  }}
                  alt="Done"/>
         </div>
     )
 }
-export default FileUpdate;
+export default AddImage;

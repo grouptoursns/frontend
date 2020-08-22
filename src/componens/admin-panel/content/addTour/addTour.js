@@ -14,6 +14,7 @@ import CountryImage from "./countryImage/addImage";
 import Difficult from "./difficult/difficult";
 import { connect } from "react-redux";
 import createTour from "../../../../actions/admin-panel/createTour/createTour";
+import {errCreateTour} from "../../../../actions/admin-panel/createTour/createTour"
 
 class AddTour extends React.Component {
   state = {

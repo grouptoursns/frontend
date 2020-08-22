@@ -131,7 +131,7 @@ function Tours(props) {
   useEffect(() => {
     props.getTours("http://161.35.199.172/api/company/tours/");
     setIsDelete(false);
-  },[]);
+  },[props]);
   if (props.ToursList === undefined) {
     rows = [];
   } else {
