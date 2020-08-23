@@ -1,11 +1,13 @@
 const initialState={
-    trigerTour:true
+    trigerTour:false,
+    id:""
 };
 export function trigerCreateTour(state=initialState,action){
     switch(action.type){
         case "SECCESS_CREATE_TOUR":
             return { 
-                ...state,trigerTour:true
+                ...state,trigerTour:true,
+                id:action.id,
              }
         case "ERR_CREATE_TOUR":
             return {

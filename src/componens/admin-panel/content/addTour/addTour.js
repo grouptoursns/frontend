@@ -5,7 +5,7 @@ import Price from "./price/price";
 import Count from "./count/count";
 import Img from "./uploaderImg";
 import BlockBtn from "../block-btn/block-btn";
-import { render } from "react-dom";
+
 import Country from "./country/country";
 import Status from "./status/status";
 import FileUpdate from "./addImage/addImage";
@@ -14,7 +14,9 @@ import CountryImage from "./countryImage/addImage";
 import Difficult from "./difficult/difficult";
 import { connect } from "react-redux";
 import createTour from "../../../../actions/admin-panel/createTour/createTour";
-import {errCreateTour} from "../../../../actions/admin-panel/createTour/createTour"
+import { errCreateTour } from "../../../../actions/admin-panel/createTour/createTour";
+import Category from "./category/category";
+import { number } from "prop-types";
 
 class AddTour extends React.Component {
   state = {
@@ -48,10 +50,11 @@ class AddTour extends React.Component {
     event.preventDefault();
     event.target.className += " was-validated";
     const formData = new FormData();
+ 
 
     for (const key in this.state) {
-      if(this.state[key] !== null){
-             formData.append(key, this.state[key]);
+      if (this.state[key] !== null) {
+        formData.append(key, this.state[key]);
       }
     }
     this.props.createdTour(formData);
@@ -86,13 +89,14 @@ class AddTour extends React.Component {
     });
   };
   changeGuidPhoto = (file2) => {
-    console.log(this.props.image1)
+    console.log(this.props.image1);
     this.setState({
       guide_photo: file2,
     });
     console.log(this.state.guide_photo);
   };
   changeHandler = (event) => {
+
     this.setState({ [event.target.name]: event.target.value });
   };
   changeStatus = (status) => {
@@ -157,7 +161,6 @@ class AddTour extends React.Component {
                     className="form-control input"
                     required
                   />
-
                 </MDBCol>
                 <MDBCol md="4">
                   <label
@@ -168,7 +171,6 @@ class AddTour extends React.Component {
                   </label>
 
                   <Difficult propsDifficult={this.changeDifficult} />
-
                 </MDBCol>
               </MDBRow>
               <MDBRow className="top-form">
@@ -189,8 +191,6 @@ class AddTour extends React.Component {
                     className="form-control input input-descr"
                     required
                   />
-
-
                 </MDBCol>
                 <MDBCol md="3" className="mb-3  ">
                   <MDBRow className="mb-3">
@@ -202,7 +202,6 @@ class AddTour extends React.Component {
                     </label>
 
                     <Country country={this.changeCountry} />
-
                   </MDBRow>
                   <MDBRow className="mb-3">
                     <label
@@ -222,7 +221,6 @@ class AddTour extends React.Component {
                       className="form-control input"
                       required
                     />
-
                   </MDBRow>
                   <MDBRow className="mb-3">
                     <label
@@ -242,8 +240,6 @@ class AddTour extends React.Component {
                       className="form-control input"
                       required
                     />
-
-
                   </MDBRow>
                   <MDBRow className="mb-3">
                     <label
@@ -262,8 +258,6 @@ class AddTour extends React.Component {
                       className="form-control input"
                       required
                     />
-
-
                   </MDBRow>
                 </MDBCol>
                 <MDBCol md="3" className="mb-3 right-col ">
@@ -284,8 +278,6 @@ class AddTour extends React.Component {
                       className="form-control input"
                       required
                     />
-
-
                   </MDBRow>
                   <MDBRow className="mb-3">
                     <label
@@ -317,16 +309,9 @@ class AddTour extends React.Component {
                       Category
                     </label>
 
-                    <input
-                      type="text"
-                      id="defaultFormRegisterPasswordEx4"
-                      name="Category"
-                      placeholder=""
-                      onChange={this.changeHandler}
-                      className="form-control input"
-                    />
-
-
+                    <Category categoryId={(e)=>this.setState({
+                      Category:e
+                    })}/>
                   </MDBRow>
                 </MDBCol>
               </MDBRow>
@@ -350,7 +335,6 @@ class AddTour extends React.Component {
                       className="form-control input bottom-textarea"
                       required
                     />
-
                   </MDBRow>
                   <MDBRow>
                     <label
@@ -369,8 +353,6 @@ class AddTour extends React.Component {
                       className="form-control input bottom-textarea"
                       required
                     />
-
-  
                   </MDBRow>
                 </MDBCol>
                 <MDBCol md="4" className="mb-3  ">
@@ -391,8 +373,6 @@ class AddTour extends React.Component {
                       className="form-control input bottom-textarea"
                       required
                     />
-
-    
                   </MDBRow>
                   <MDBRow>
                     <label
@@ -411,8 +391,6 @@ class AddTour extends React.Component {
                       className="form-control input bottom-textarea"
                       required
                     />
-
-
                   </MDBRow>
                 </MDBCol>
                 <MDBCol md="3" className="mb-3  right-col-img">
@@ -423,13 +401,16 @@ class AddTour extends React.Component {
                     Main image
                   </label>
 
-                  <FileUpdate  imagePropsTriger={(e)=>{
-                    if(e==false){
-                      this.setState({
-                        main_image:null
-                      })
-                    }
-                  }} imageProps={this.changeMainImage} />
+                  <FileUpdate
+                    imagePropsTriger={(e) => {
+                      if (e == false) {
+                        this.setState({
+                          main_image: null,
+                        });
+                      }
+                    }}
+                    imageProps={this.changeMainImage}
+                  />
 
                   <label
                     htmlFor="defaultFormRegisterPasswordEx4"
@@ -438,13 +419,16 @@ class AddTour extends React.Component {
                     Guide image
                   </label>
 
-                  <GuidPhoto imageProps={(e)=>{
-                    if(e==false){
-                      this.setState({
-                        guide_photo:null
-                      })
-                    }
-                  }} photoGuid={this.changeGuidPhoto} />
+                  <GuidPhoto
+                    imageProps={(e) => {
+                      if (e == false) {
+                        this.setState({
+                          guide_photo: null,
+                        });
+                      }
+                    }}
+                    photoGuid={this.changeGuidPhoto}
+                  />
                 </MDBCol>
               </MDBRow>
               <MDBRow>
@@ -483,7 +467,6 @@ class AddTour extends React.Component {
                       className="form-control input"
                       required
                     />
-
                   </MDBRow>
                 </MDBCol>
                 <MDBCol md="3">
@@ -504,8 +487,6 @@ class AddTour extends React.Component {
                       className="form-control input"
                       required
                     />
-
-
                   </MDBRow>
                 </MDBCol>
                 <MDBCol md="3">
@@ -516,13 +497,16 @@ class AddTour extends React.Component {
                     Country image
                   </label>
 
-                  <CountryImage  imageProps={(e)=>{
-                    if(e==false){
-                      this.setState({
-                        country_image:null
-                      })
-                    }
-                  }} imagePropsCountry={this.changeCountImage} />
+                  <CountryImage
+                    imageProps={(e) => {
+                      if (e == false) {
+                        this.setState({
+                          country_image: null,
+                        });
+                      }
+                    }}
+                    imagePropsCountry={this.changeCountImage}
+                  />
                 </MDBCol>
               </MDBRow>
               <div className="creat-block">
@@ -531,7 +515,6 @@ class AddTour extends React.Component {
                 </MDBBtn>
               </div>
             </div>
-            
           </form>
         </div>
       </div>

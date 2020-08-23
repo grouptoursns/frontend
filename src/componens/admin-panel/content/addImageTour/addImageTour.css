@@ -13,9 +13,19 @@
     height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 .addImage-btn{
+    width: auto;
+    padding: 10px;
+    height: auto;
+    background: #5cb85c;
+    border: 1px solid #5cb85c;
+    font-size: 14px;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.addImage-back{
     width: auto;
     padding: 10px;
     height: auto;

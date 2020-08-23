@@ -117,7 +117,7 @@ function Tours(props) {
   const [idTour, setIdTour] = useState();
   const [idGroup,setIdGroup]=useState()
   const [addGroup, setAddGroup] = useState(false);
-  const[status,setStatus]=useState();
+
   const[data,setData]=useState({
     name:"",
     start_time:"",
@@ -131,7 +131,7 @@ function Tours(props) {
   useEffect(() => {
     props.getTours("http://161.35.199.172/api/company/tours/");
     setIsDelete(false);
-  },[props]);
+  },[]);
   if (props.ToursList === undefined) {
     rows = [];
   } else {

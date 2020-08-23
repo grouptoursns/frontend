@@ -24,9 +24,10 @@ export const filterTourErr=(err)=>{
 }
 
 export function filterTour(url) {
-  return async (dispatch) => {
+  return (dispatch) => {
     dispatch(openSpiner());
-    await axios.get(url).then((res) => {
+    axios.get(url)
+    .then((res) => {
       dispatch(closeSpiner());
       dispatch(loadFilterTour(res.data));
     })

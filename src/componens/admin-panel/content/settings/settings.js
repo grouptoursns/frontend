@@ -51,7 +51,9 @@ class AdminSettings extends React.Component {
       formData.append("country", this.state.country);
       formData.append("tripadvisor", this.state.tripadvisor);
       formData.append("avatar", this.state.photo);
-
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
       this.props.changeData(formData);
     }
   };

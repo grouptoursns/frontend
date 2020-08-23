@@ -3,21 +3,21 @@ import "./loadingImage.css";
 import AddImage from "./addImage/addImage";
 
 const LoadingImage = (props) => {
-  const [arrImage, setArrImage] = useState({});
+  const [objImage, setObjImage] = useState({});
 useEffect(()=>{
-    console.log(arrImage)
-
-})
+   
+    const arrImage= Object.values(objImage)
+  
+    props.dataImage(arrImage)
+},[objImage])
   const changeImage = (index, file) => {
-    console.log(index, file);
-    setArrImage({
-      ...arrImage,
+    setObjImage({
+      ...objImage,
       [index]: file,
     });
   };
   const changeDeleteImage = (index) => {
-    const newObj = Object.entries(arrImage).reduce((prev, [key, val]) => {
-      console.log(key);
+    const newObj = Object.entries(objImage).reduce((prev, [key, val]) => {
       if (key[0] === index) {
         return prev;
       }
@@ -27,7 +27,7 @@ useEffect(()=>{
       };
     }, {});
 
-    setArrImage(newObj);
+    setObjImage(newObj);
   };
 
   return (
