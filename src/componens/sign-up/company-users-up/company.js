@@ -79,7 +79,7 @@ class Company extends React.Component {
       return (
         <div>
           <form
-            className="needs-validation"
+            className="needs-validation form-company-up"
             onSubmit={this.submitHandler}
             noValidate
           >

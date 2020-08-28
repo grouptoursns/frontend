@@ -1,0 +1,19 @@
+.updateTour-save{
+    margin-right: 20px;
+}
+.updateTour{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+.modal-update-tour{
+    width: 100%;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

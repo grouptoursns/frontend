@@ -2,9 +2,13 @@ import React from "react";
 import "./app.css";
 import Company from "./company.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavBar from "../../home/navBar/navBar";
+import Footer from "../../home/footer/footer";
 
 const SignCompany = () => {
   return (
+    <>
+      <NavBar />
     <Router>
       <div className="sign-up-company">
         <div className="sign-up_content-company">
@@ -16,6 +20,8 @@ const SignCompany = () => {
         </div>
       </div>
     </Router>
+    <Footer/>
+    </>
   );
 };
 export default SignCompany;

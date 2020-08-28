@@ -232,7 +232,7 @@ class User extends React.Component {
                   </div>
                 </div>
               </MDBCol>
-              <MDBBtn color="primary" type="submit" className="submit">
+              <MDBBtn color="primary" type="submit" className="submit submit1">
                 Sign up
               </MDBBtn>
             </div>

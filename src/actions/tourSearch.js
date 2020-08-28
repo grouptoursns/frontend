@@ -27,7 +27,7 @@ export function tourSearch(url){
       await  axios
       .get(url)
       .then(res => {
-        dispatch(searchTour(res.data))
+        dispatch(searchTour(res.data.results))
     console.log(res.data)
       });
 

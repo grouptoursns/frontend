@@ -11,7 +11,7 @@ h1 {
 }
 
 form {
-  max-width: 500px;
+
   width: 100%;
   margin: 0 auto;
 }
@@ -35,7 +35,7 @@ input.error {
   margin-bottom: 20px;
 }
 
-.submit {
+.submit1 {
   background-color: #373e4a;
   color: #ffffff;
   border: 1px solid #373e4a;
@@ -47,7 +47,7 @@ input.error {
   padding-bottom: 20px;
 }
 
-.submit:hover {
+.submit1:hover {
   cursor: pointer;
   background-color: white;
   color: rgb(70, 153, 179);
@@ -103,4 +103,7 @@ input.error {
 margin-top: 10px;
 
 color: #000000;
+}
+.form-company-up{
+  max-width: 500px;
 }

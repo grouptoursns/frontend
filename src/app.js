@@ -12,8 +12,8 @@ import SignIn from "./componens/sign-in/sign-in.js"
 import SignCompany from "./componens/sign-up/company-users-up/app"
 import About from "./componens/about/about.js"
 import UserPage from "./componens/user-page/user-page"
-import {history} from "./history";
 import TourRating from "./componens/tour-rating/tour-rating";
+import AdminPanel from "./componens/admin-panel/admin-panel"
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -25,9 +25,8 @@ const App = () => {
   const [ tourBookInfo, setTourBookInfo] = useState([])
 
   return (
-    <Router history={history} >
+    <Router  >
       <div>
-        <NavBar />
         <Switch>
           <Route path="/result_search" component={ResultSearch} />
           <Route exact path="/" component={Home} />
@@ -40,11 +39,12 @@ const App = () => {
           <Route path="/about"  component={About} />
           <Route path="/user-page"  component={UserPage} />
           <Route path="/tour-rating"  component={TourRating} />
+          <Route path="/admin-panel"  component={AdminPanel} />
           <Route path="/tour-groups/groups"> <Groups tourBookInfo={tourBookInfo}/> </Route>
           <Route component={NotFound} />
+ 
         </Switch>
 
-        <Footer />
       </div>
     </Router>
   );

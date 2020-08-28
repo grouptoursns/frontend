@@ -47,4 +47,4 @@ const Tour =(props)=>{
         };
     };
 
-    export default connect(mapStateToProps, mapDispatchToProps)(Tour);
+export default connect(mapStateToProps, mapDispatchToProps)(Tour);

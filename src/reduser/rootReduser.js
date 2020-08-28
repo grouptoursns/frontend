@@ -20,6 +20,15 @@ import {tourData} from "./tourData"
 import {SuccessSignIn} from "./signIn"
 import {custimerCabinet} from "./custimerCabinet";
 import {changePassword} from "./changePassword"
+import {ToursListAdmin} from "./admin-panel/Tours-list";
+import {GroupListAdmin}  from "./admin-panel/groupList";
+import {dataCompany}  from "./admin-panel/getDataCompany";
+import {dataGroupAdmin} from "./admin-panel/detailGroup";
+import {ModalEdit}from "./admin-panel/modalEdit"
+import {trigerCreateTour} from "./admin-panel/trigerCreateTour"
+import {detailTourAdmin} from "./admin-panel/detailTour"
+import {trigerModalUpdateTour} from "./admin-panel/trigerModalUpdateTour"
+
 import {groupData} from "./groupDetails";
 import {groupInfo} from "./groupInfo";
 
@@ -44,6 +53,14 @@ const rootReduser = combineReducers({
     SuccessSignIn,
     custimerCabinet,
     changePassword,
+    ToursListAdmin,
+    GroupListAdmin,
+    dataCompany,
+    dataGroupAdmin,
+    ModalEdit,
+    trigerCreateTour,
+    detailTourAdmin,
+    trigerModalUpdateTour,
     groupData,
     groupInfo
 });

@@ -6,12 +6,7 @@ export function putDataUser(data) {
 
   return async (dispatch) => {
     await axios
-      .put(`http://161.35.199.172/api/users/v2/customer/${id}`, data,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      .put(`http://161.35.199.172/api/users/v2/customer/${id}`, data)
       .then((res) => {
         console.log(res);
       })
@@ -20,3 +15,4 @@ export function putDataUser(data) {
       });
   };
 }
+

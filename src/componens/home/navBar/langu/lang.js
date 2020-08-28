@@ -7,12 +7,12 @@ import {SignInOff} from "../../../../actions/signIn"
 
 const Lang = (props) => {
   const [open, setOpen] = useState(false);
-  const [token, setToken] = useState(null);
+
   const [user, setUser] = useState(false);
   const [company, setCompany] = useState(false);
   const [email, setEmail] = useState(1);
   useEffect(() => {
-    setToken(localStorage.getItem("token"));
+   
     setUser(localStorage.getItem("user"));
     setCompany(localStorage.getItem("company"));
     setEmail(localStorage.getItem("email"));
@@ -68,7 +68,7 @@ const logout=()=>{
           {email}
           </span>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
-            <Link className="dropdown-item" to="/sign-in">
+            <Link className="dropdown-item" to="/admin-panel">
               Admin panel
             </Link>
             <Link  className="dropdown-item" to="/">

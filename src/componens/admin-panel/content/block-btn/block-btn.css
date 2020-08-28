@@ -1,0 +1,31 @@
+.adminPanel_btn1{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}
+.button-admin{
+    width: 127px;
+height: 100%;
+border: 1px solid #303641;
+background: none;
+font-size: 14px;
+line-height: 17px;
+
+
+color: #303641;
+}
+.wrapper-btn{
+    width: 455px;
+    height: 39px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.active-btn-admin{
+    background: #303641;
+    color: #FFFFFF;
+    border: 1px solid #303641;
+}
