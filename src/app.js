@@ -27,7 +27,6 @@ const App = () => {
   return (
     <Router  >
       <div>
-        <NavBar />
         <Switch>
           <Route path="/result_search" component={ResultSearch} />
           <Route exact path="/" component={Home} />

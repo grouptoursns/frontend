@@ -22,17 +22,7 @@ const Category = (props) => {
       });
     }
   
-    let idCategory="";
-    if(props.categoryDefault!==""){
-      console.log(props.categoryDefault)
-      idCategory=props.categoryDefault;
-       let categorya=stateOptions.filter((item)=>item.key===idCategory);
-       if(categorya[0]!==undefined){
-        let numberCategory=categorya[0].key
-        props.categoryId(numberCategory)
-       }
-
-    }
+ 
 
 
      
