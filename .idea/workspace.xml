@@ -27,21 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/detailsGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/groupInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/groupDetails.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser/detailsGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/groupInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/rootReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +154,7 @@
       <workItem from="1598132544547" duration="13914000" />
       <workItem from="1598350741074" duration="13808000" />
       <workItem from="1598445699446" duration="18687000" />
-      <workItem from="1598513856596" duration="3000000" />
+      <workItem from="1598513856596" duration="9851000" />
     </task>
     <servers />
   </component>

@@ -40,7 +40,7 @@ const Group =(props)=> {
 
 
     let countOfpeople = props.tourBookInfo.count
-    let date = props.tourBookInfo.value
+    // let date = props.tourBookInfo.value
     let totalPrice = countOfpeople * price
 
     let guideName = ""
@@ -65,24 +65,10 @@ const Group =(props)=> {
         )
     }
 
-    //
-    // const headers = {
-    // }
 
-        const bookNow=()=>{
-            axios
-                .post('http://161.35.199.172/group/2/book/', {
+    const bookNow=()=>{
 
-                     name : "Aktan",
-                     extra_people :countOfpeople,
-                     total_price :totalPrice})
-
-                .then(response =>{
-                    console.log(response)
-                })
-                .catch(error => console.log(error))
-        }
-
+}
 
         return (
             <div className="group">
