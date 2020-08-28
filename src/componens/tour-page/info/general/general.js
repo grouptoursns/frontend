@@ -9,19 +9,23 @@ const General =(props)=>{
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
     },[]);
 
+
+    let type = ""
+    let typeOfTour = ""
+    if (props.tourData.category){
+        type = [...props.tourData.category]
+        typeOfTour = type.name
+    }
+
         return (
             <div className="general">
                 <div className="general-content">
                     <h3>Description</h3>
                     <p>{props.tourData.description}</p>
                 </div>
-                {/*<div className="general-content">*/}
-                {/*    <h3>Duration</h3>*/}
-                {/*    <p>{props.tourData.route_description}</p>*/}
-                {/*</div>*/}
                 <div className="general-content">
                     <h3>Type of tour</h3>
-                    <p></p>
+                    <p>{typeOfTour}</p>
                 </div>
                 <div className="general-content">
                     <h3>Travelers</h3>

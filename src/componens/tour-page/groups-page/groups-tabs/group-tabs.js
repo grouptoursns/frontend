@@ -3,30 +3,23 @@ import {NavLink} from "react-router-dom";
 import './group-tabs.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
+import {groupDataFetch} from "../../../../actions/groupDetails";
+
 
 const GroupTabs =(props)=>{
 
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172/group/${props.groupId}`);
     },[]);
 
-    let a = []
-    let groups = []
-    let i = 0
-    if(props.tourData.group_tour){
-        a = [...props?.tourData?.group_tour]
-        // for (i ; i <= a.length; i++){
-        //      i = a.length
-        // }
-        groups = a.map((group) =>
-            <NavLink className="info-tabs" to="/tour-groups/groups">Group {group.id}</NavLink>)
-    }
+    let a = [...props.groupId]
 
         return (
             <div>
                 <div className="tabs">
-                    {groups}
+                    {a.map((group) =>
+                        <NavLink className="info-tabs" to="/tour-groups/groups">Group {group}</NavLink>)}
                 </div>
             </div>
         );
@@ -34,16 +27,15 @@ const GroupTabs =(props)=>{
 
 const mapStateToProps = (state) => {
     return {
-        tourData:state.tourData,
-        detailsTours: state.detailsTour.detailsTour,
-        groupId: state.tourData
+        groupData: state.groupData,
+        groupId: state.groupInfo.groupInfo
     };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: url => {dispatch(tourDataFetch(url))}
+        fetchData: url => {dispatch(groupDataFetch(url))}
     };
 };
 

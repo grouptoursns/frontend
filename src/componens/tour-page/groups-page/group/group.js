@@ -4,16 +4,19 @@ import profilePhoto from './img/photo 6.png'
 import Booking from "../../booking/booking";
 import axios from "axios";
 import {tourDataFetch} from "../../../../actions/tourData";
-import {groupDataFetch} from "../../../../actions/groupDetails";
+import {groupInfoFetch} from "../../../../actions/groupInfo";
+import {groupInfo} from "../../../../reduser/groupInfo";
 import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
+import {detailsTour} from "../../../../actions/detailsTour";
+import {groupDataFetch} from "../../../../actions/groupDetails";
+
 
 const Group =(props)=> {
 
 
     useEffect( () => {
-        // props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
-        props.fetchData(`http://161.35.199.172/group/${props.detailsTours.group_tour}`)
+        props.fetchData(`http://161.35.199.172/group/${props.groupId}`)
     },[]);
 
     let a = []
@@ -23,6 +26,7 @@ const Group =(props)=> {
     let people = []
     let guide = []
 
+
     if(props.groupData){
         a = props.groupData
         price = a.price
@@ -31,6 +35,13 @@ const Group =(props)=> {
         people = a.book_group
         guide = a.tour
     }
+
+
+
+
+    let countOfpeople = props.tourBookInfo.count
+    let date = props.tourBookInfo.value
+    let totalPrice = countOfpeople * price
 
     let guideName = ""
     if(guide){
@@ -54,6 +65,25 @@ const Group =(props)=> {
         )
     }
 
+    //
+    // const headers = {
+    // }
+
+        const bookNow=()=>{
+            axios
+                .post('http://161.35.199.172/group/2/book/', {
+
+                     name : "Aktan",
+                     extra_people :countOfpeople,
+                     total_price :totalPrice})
+
+                .then(response =>{
+                    console.log(response)
+                })
+                .catch(error => console.log(error))
+        }
+
+
         return (
             <div className="group">
                 <div className="group-list">
@@ -75,7 +105,9 @@ const Group =(props)=> {
                     <p>Price: {price}$</p>
                     <p>Start day: {start}</p>
                     <p>Finish day: {finish}</p>
-                    <button className="alert">Book now</button>
+                    <p>Count of people: {countOfpeople} </p>
+                        <p>Total price: {totalPrice + "$"} </p>
+                    <button className="alert" onClick={bookNow}>Book now</button>
                 </div>
             </div>
         );
@@ -86,17 +118,17 @@ const Group =(props)=> {
 
 const mapStateToProps = (state) => {
     return {
-        tourData:state.tourData,
-        detailsTours: state.detailsTour.detailsTour,
-        groupData: state.groupData
+        groupData: state.groupData,
+        groupId: state.groupInfo.groupInfo
     };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: url => {dispatch(groupDataFetch(url))
-        }
+        fetchData: url => {
+            dispatch(groupDataFetch(url))
+        },
     };
 };
 

@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
 import Counter from "./counter/counter.js";
-import DatePicker, { addDays } from "react-datepicker";
+// import DatePicker, { addDays } from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 import './book.css';
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import {groupInfo} from "../../../../actions/groupInfo";
+import DatePicker from "./datepicker/datepicker"
 
 
 
@@ -14,11 +16,6 @@ const Book =(props)=> {
         const a = [...props?.tourData?.avg_rate_tour]
     }
 
-
-    // const items = props.tourData.group_tour.map((item, key) => {
-    //     console.log(item.start_time);
-    // })
-    // console.log(items)
 
     useEffect(() => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
@@ -29,6 +26,20 @@ const Book =(props)=> {
     let state = {
         show: false
     }
+    let arrId=[];
+    const onclickBook=()=>{
+
+         arrId=props.tourData.group_tour.map((item)=>{
+            return item.id
+
+        })
+        props.groupInfo(arrId)
+        console.log(arrId)
+    }
+
+    const privateTour=()=>{
+
+    }
 
 
     return (
@@ -38,36 +49,18 @@ const Book =(props)=> {
                 <p className="book-price__size">Price varies by group size</p>
             </div>
             <div className="book-picker">
-                <p className="book-picker__select">Select Date and Travelers</p>
-                {/*<DatePicker*/}
-                {/*    placeholder="Select date"*/}
-                {/*    selected={startDate}*/}
-                {/*    onChange={date => setStartDate(date)}*/}
-                {/*    // includeDates={[new Date(), addDays(new Date(), 1)]}*/}
-                {/*/>*/}
 
-                <div>
-                    <input className="book-date"
-                           onClick={()=> setShow(true
-                           )}
-                           // type="text"
-                           // value={"Start date:"}
-                    />
-                    {/*{*/}
-                    {/*    <div className="book-date__list">*/}
-                    {/*    <p>{props.tourData.group_tour[0].start_time}</p>*/}
-                    {/*    <p>{props.tourData.group_tour[0].finish_time}</p>*/}
-                    {/*</div>*/}
-                    {/*}*/}
+                <p className="book-picker__select">Select Date and Travelers:</p>
+                <DatePicker setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
+
+                <p className="book-picker__date">Count of extra people:</p>
+                <Counter setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
 
 
-                </div>
-
-                <Counter/>
                 <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
-                    <button className="update">Book</button>
+                    <button className="update" onClick={onclickBook}>Book</button>
                 </Link>
-                <button className="private">Private tour</button>
+                <button className="private" onClick={privateTour}>Private tour</button>
             </div>
         </div>
     )
@@ -83,7 +76,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: url => {dispatch(tourDataFetch(url))}
+        fetchData: url => {dispatch(tourDataFetch(url))},
+        groupInfo: (arr) => dispatch(groupInfo(arr)),
     };
 };
 

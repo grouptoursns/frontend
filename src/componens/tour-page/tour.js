@@ -28,7 +28,7 @@ const Tour =(props)=>{
     }
             return (
             <div className='tour-page'>
-                <Form data={obj}/>
+                <Form data={obj} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 <Info info={obj}/>
             </div>
         );

@@ -11,7 +11,7 @@ const Form = (props) =>{
                 <Title info={props.data}/>
                 <div className="form-content">
                     <Pic pic={props.data} />
-                    <Book info={props.data}/>
+                    <Book info={props.data} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 </div>
             </div>
         </div>

@@ -1,12 +1,14 @@
 
-export function tourDataFetchSuccess(tourData) {
+export function groupDataFetchSuccess(groupData) {
     return{
-        type:"TOUR_DATA_SUCCESS",
-        tourData
+        type:"GROUP_DATA_SUCCESS",
+        groupData
     }
 }
 
-export function tourDataFetch(url){
+
+
+export function groupDataFetch(url){
     return(dispatch)=>{
         fetch(url)
             .then(res =>{
@@ -16,7 +18,7 @@ export function tourDataFetch(url){
                 return res;
             })
             .then(res =>res.json())
-            .then(tourData => dispatch(tourDataFetchSuccess(tourData)))
+            .then(groupData => dispatch(groupDataFetchSuccess(groupData)))
     }
 
 }
