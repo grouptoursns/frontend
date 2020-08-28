@@ -26,6 +26,8 @@ import {dataCompany}  from "./admin-panel/getDataCompany";
 import {dataGroupAdmin} from "./admin-panel/detailGroup";
 import {ModalEdit}from "./admin-panel/modalEdit"
 import {trigerCreateTour} from "./admin-panel/trigerCreateTour"
+import {detailTourAdmin} from "./admin-panel/detailTour"
+import {trigerModalUpdateTour} from "./admin-panel/trigerModalUpdateTour"
 
 
 const rootReduser = combineReducers({
@@ -54,7 +56,9 @@ const rootReduser = combineReducers({
     dataCompany,
     dataGroupAdmin,
     ModalEdit,
-    trigerCreateTour
+    trigerCreateTour,
+    detailTourAdmin,
+    trigerModalUpdateTour
 });
 
 export default rootReduser;

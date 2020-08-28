@@ -13,8 +13,8 @@ const NavButton = () => {
         About
       </Link>
 
-      <span className="link1">Activities</span>
-      <span className="link1">Destinations</span>
+      <Link className="link1" to="/activity">Activities</Link>
+      <Link className="link1" to="/destinations">Destinations</Link>
     </div>
   );
 };

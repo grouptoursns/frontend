@@ -4,8 +4,15 @@ import axios from "axios";
 
 export function seccessgetToursAdmin(data){
     return{
-        type:"DATA_ ADMIN_TOURS",
+        type:"DATA_ ADMIN_TOUR",
         data,
+
+    }
+}
+
+export function closePortal(){
+    return{
+        type:"CLOSE_PORTAL_ADMIN",
 
     }
 }
@@ -21,6 +28,7 @@ export function detailsTourAdmin(id){
       })
       .then(res => {
    
+          dispatch(seccessgetToursAdmin(res.data))
           console.log(res.data)
       });
 

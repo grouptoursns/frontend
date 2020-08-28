@@ -7,6 +7,8 @@ import logOut from "./img/log-out.png";
 import site from "./img/Group 11.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { closePortal } from "../../../actions/admin-panel/detailsTour/detailstTourAdmin";
+import { SignInOff } from "../../../actions/signIn";
 
 const NavPanel = (props) => {
   const [url, setUrl] = useState();
@@ -20,6 +22,11 @@ const NavPanel = (props) => {
   } else {
     data = props.dataCompany;
   }
+
+  const clickLogout = () => {
+    localStorage.clear();
+    props.siginOff();
+  };
   return (
     <div className="admin-navPanel">
       <div className="logo-navPanel">
@@ -31,8 +38,13 @@ const NavPanel = (props) => {
           <button
             className={
               "navPanel-btn" +
-              (url === "/admin-panel" ? " active-btn-navPanel" : "")
+              (url === "/admin-panel" ||
+              "/admin-panel/add-tour" ||
+              "/admin-panel/groups"
+                ? " active-btn-navPanel"
+                : " navPanel-btn")
             }
+            onClick={() => props.closeUpdateTour()}
           >
             <img alt="img" src={map} />
             Manage Tours
@@ -57,11 +69,12 @@ const NavPanel = (props) => {
             View site
           </button>
         </Link>
-
-        <button className="navPanel-btn">
-          <img alt="img" src={logOut} />
-          Logout
-        </button>
+        <Link to="/">
+          <button className="navPanel-btn" onClick={clickLogout}>
+            <img alt="img" src={logOut} />
+            Log out
+          </button>
+        </Link>
       </div>
     </div>
   );
@@ -74,7 +87,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    closeUpdateTour: () => dispatch(closePortal()),
+    siginOff: () => dispatch(SignInOff()),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavPanel);

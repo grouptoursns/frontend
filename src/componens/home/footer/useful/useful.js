@@ -13,10 +13,10 @@ const Useful = () => {
         <Link to="/about">
           <span className="link-footer">About</span>
         </Link>
-        <Link to="/">
+        <Link to="/activity">
           <span className="link-footer">Activities</span>
         </Link>
-        <Link to="/">
+        <Link to="/destinations">
           <span className="link-footer">Destinations</span>
         </Link>
       </div>

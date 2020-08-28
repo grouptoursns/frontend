@@ -13,6 +13,7 @@ const UserInfo =(props)=>{
     console.log(props.userInfo)
     const [clas,setClas]=useState("1");
     let{first_name,last_name,avatar}=props.userInfo
+    console.log(avatar)
     const clickLink=(event)=>{
 
         setClas(event.target.id)

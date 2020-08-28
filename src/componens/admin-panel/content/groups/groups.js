@@ -133,7 +133,7 @@ function Groups(props) {
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
    
-  },[props]);
+  },[]);
   console.log(props.groupList);
   if (props.groupList === undefined) {
     rows = [];

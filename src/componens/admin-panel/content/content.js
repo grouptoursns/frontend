@@ -6,9 +6,11 @@ import Tours from "./tours/tours";
 import Groups from "./groups/groups"
 import AddTour from "./addTour/addTour"
 import AdminSettings from "./settings/settings"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route,Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import AddImageTour from "./addImageTour/addImageTour"
+import UpdateTour from "./updateTour/updateTour"
+import UpdateTourImage from "./updateTour-image/updatetour-image"
 
 const Content = (props) => {
   return (
@@ -18,10 +20,13 @@ const Content = (props) => {
       </div>
       <div className="block-content">
         <Switch>
+       
           <Route exact path="/admin-panel" component={Tours} />
           <Route  path="/admin-panel/groups" component={Groups} />
           <Route  path="/admin-panel/add-tour" component={props.addImage===false ?AddTour :AddImageTour} />
           <Route  path="/admin-panel/settings" component={AdminSettings} />
+          <Route  path="/admin-panel/ubdate-tour" component={UpdateTour} />
+          <Route  path="/admin-panel/ubdate-tour-image" component={UpdateTourImage} />
         </Switch>
       </div>
     </div>
@@ -30,7 +35,8 @@ const Content = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    addImage:state.trigerCreateTour.trigerTour
+    addImage:state.trigerCreateTour.trigerTour,
+    isOpenUpdateTour:state.detailTourAdmin.isOpenPortal,
   };
 };
 

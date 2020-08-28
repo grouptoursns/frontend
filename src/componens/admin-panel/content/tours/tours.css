@@ -142,3 +142,6 @@ input.error {
     font-size: 10px;
     margin-bottom: 20px;
   }
+  .text-table{
+      font-weight: bold !important;
+  }
