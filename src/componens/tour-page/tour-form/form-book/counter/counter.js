@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './counter.css'
 
+
 class Counter extends Component{
     constructor(props){
         super(props);
@@ -18,9 +19,13 @@ class Counter extends Component{
 
     increment =()=>{
         this.setState({count: this.state.count + 1})
+        this.props.setTourBookInfo({...this.props.tourBookInfo, count: this.state.count = this.state.count + 2})
+        console.log(this.props.tourBookInfo)
     }
     decrement =()=>{
         this.setState({count: Math.max(this.state.count - 1,1)})
+        this.props.setTourBookInfo({...this.props.tourBookInfo, count: this.state.count =this.state.count - 2})
+        console.log(this.props.tourBookInfo)
     }
 
 

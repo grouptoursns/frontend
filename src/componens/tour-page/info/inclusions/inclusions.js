@@ -1,27 +1,36 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import './inclusions.css'
+import {tourDataFetch} from "../../../../actions/tourData";
+import {connect} from "react-redux";
 
-class Inclusions extends Component {
-    render() {
+const Inclusions =(props)=>{
+
+    useEffect( () => {
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    },[]);
         return (
             <div className="inclusions">
                 <div className="inclusions-content">
                     <h3>What include</h3>
-                    <p>Escape the capital on this full-day adventure tour,
-                        which takes you to two of Kyrgyzstan’s most
-                        famed natural and historical attractions.
-                    </p>
-                </div>
-                <div className="inclusions-content">
-                    <h3>Not include</h3>
-                    <p>Escape the capital on this full-day adventure tour,
-                        which takes you to two of Kyrgyzstan’s most
-                        famed natural and historical attractions.
-                    </p>
+                    <p>{props.tourData.what_is_included}</p>
                 </div>
             </div>
         );
     }
-}
 
-export default Inclusions;
+
+const mapStateToProps = (state) => {
+    return {
+        tourData:state.tourData,
+        detailsTours: state.detailsTour.detailsTour
+    };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: url => {dispatch(tourDataFetch(url))}
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Inclusions);

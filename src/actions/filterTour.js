@@ -30,9 +30,7 @@ export function filterTour(url) {
     .then((res) => {
       dispatch(closeSpiner());
       dispatch(loadFilterTour(res.data));
+      console.log(res.data)
     })
-    .catch((err)=>{
-        dispatch(filterTourErr(err))
-    });
   };
 }

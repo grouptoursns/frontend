@@ -1,20 +1,36 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import './itinerary.css'
+import {tourDataFetch} from "../../../../actions/tourData";
+import {connect} from "react-redux";
 
-class Itinerary extends Component {
-    render() {
+const Itinerary =(props)=>{
+
+    useEffect( () => {
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    },[]);
+
         return (
             <div className="itinerary">
                 <div className="itinerary-content">
                     <h3>Accommodation</h3>
-                    <p>Escape the capital on this full-day adventure tour,
-                        which takes you to two of Kyrgyzstan’s most
-                        famed natural and historical attractions.
-                    </p>
+                    <p>{props.tourData.residence}</p>
                 </div>
             </div>
         );
     }
-}
 
-export default Itinerary;
+const mapStateToProps = (state) => {
+    return {
+        tourData:state.tourData,
+        detailsTours: state.detailsTour.detailsTour
+    };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: url => {dispatch(tourDataFetch(url))}
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Itinerary);

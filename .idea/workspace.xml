@@ -27,9 +27,21 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/detailsGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/groupInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/groupDetails.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups-tabs/group-tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reduser/detailsGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/groupInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reduser/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/rootReduser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +75,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
@@ -132,6 +147,27 @@
       <workItem from="1596342672086" duration="3155000" />
       <workItem from="1596485873764" duration="7285000" />
       <workItem from="1596552025227" duration="8330000" />
+      <workItem from="1597006812867" duration="749000" />
+      <workItem from="1597082915612" duration="2015000" />
+      <workItem from="1597092402589" duration="5167000" />
+      <workItem from="1597152756806" duration="583000" />
+      <workItem from="1597162882794" duration="8319000" />
+      <workItem from="1597254445511" duration="11913000" />
+      <workItem from="1597349145506" duration="7895000" />
+      <workItem from="1597436951414" duration="781000" />
+      <workItem from="1597485790187" duration="28069000" />
+      <workItem from="1597585631608" duration="5071000" />
+      <workItem from="1597610589812" duration="4800000" />
+      <workItem from="1597673648101" duration="5066000" />
+      <workItem from="1597695578921" duration="5063000" />
+      <workItem from="1597766419509" duration="3638000" />
+      <workItem from="1597773402089" duration="15545000" />
+      <workItem from="1597924086058" duration="7850000" />
+      <workItem from="1598043170192" duration="8557000" />
+      <workItem from="1598132544547" duration="13914000" />
+      <workItem from="1598350741074" duration="13808000" />
+      <workItem from="1598445699446" duration="18687000" />
+      <workItem from="1598513856596" duration="3000000" />
     </task>
     <servers />
   </component>
@@ -183,6 +219,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="551" y="256" key="#ESLint" timestamp="1597614395851">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="551" y="256" key="#ESLint/0.0.1366.728@0.0.1366.728" timestamp="1597614395851" />
+    <state x="309" y="42" key="#Inspections" timestamp="1597586558933">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1597586558933" />
     <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596214955807">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -207,17 +251,32 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="0" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595588262727" />
-    <state x="-128" y="2" width="998" height="726" key="SettingsEditor" timestamp="1596228263417">
+    <state x="131" y="2" width="998" height="726" key="SettingsEditor" timestamp="1598437462901">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-128" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596228263417" />
+    <state x="131" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598437462901" />
     <state x="274" y="93" key="Vcs.Push.Dialog.v2" timestamp="1593719878679">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593719878679" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1598310140424">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598310140424" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596150675550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596150675550" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

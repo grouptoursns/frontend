@@ -1,19 +1,51 @@
-import React, {Component} from 'react';
+import React, { useEffect} from 'react';
 import './reviews.css'
+import {tourDataFetch} from "../../../../actions/tourData";
+import {connect} from "react-redux";
 
-class Reviews extends Component {
-    render() {
+const Reviews =(props)=>{
+
+    useEffect( () => {
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    },[]);
+
+
+    let items = []
+    let users = []
+    if(props.tourData.rate_tour){
+        const a = [...props?.tourData?.rate_tour]
+        items = a.map((item) =>
+            <p>{item.description}</p>)
+        users = a.map((user) =>
+            <h4>{user.user}</h4>
+        )
+    }
+
         return (
             <div className="reviews">
                 <div className="reviews-content">
                     <h3>Reviews</h3>
-                    <p>
-                        Oh, that was amazing trip
-                    </p>
+                    <div>
+                        <h4>{users}</h4>
+                        <span>{items}</span>
+                    </div>
                 </div>
             </div>
         );
-    }
 }
 
-export default Reviews;
+const mapStateToProps = (state) => {
+    return {
+        tourData:state.tourData,
+        detailsTours: state.detailsTour.detailsTour
+    };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: url => {dispatch(tourDataFetch(url))}
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reviews);

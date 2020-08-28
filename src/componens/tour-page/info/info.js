@@ -9,11 +9,11 @@ import Meet from "./meet/meet";
 import Reviews from "./reviews/reviews";
 import Inclusions from "./inclusions/inclusions";
 
-const Info = () =>{
+const Info = (props) =>{
     return(
         <div className='info'>
             <div>
-                <Tabs />
+                <Tabs info={props.info} />
                     <Switch>
                         <Route exact path="/tourspage/general" component={General}/>
                         <Route path="/tourspage/itinerary" component={Itinerary}/>

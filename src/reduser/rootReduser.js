@@ -29,6 +29,8 @@ import {trigerCreateTour} from "./admin-panel/trigerCreateTour"
 import {detailTourAdmin} from "./admin-panel/detailTour"
 import {trigerModalUpdateTour} from "./admin-panel/trigerModalUpdateTour"
 
+import {groupData} from "./groupDetails";
+import {groupInfo} from "./groupInfo";
 
 const rootReduser = combineReducers({
     UserRegistr,
@@ -58,7 +60,9 @@ const rootReduser = combineReducers({
     ModalEdit,
     trigerCreateTour,
     detailTourAdmin,
-    trigerModalUpdateTour
+    trigerModalUpdateTour,
+    groupData,
+    groupInfo
 });
 
 export default rootReduser;

@@ -1,0 +1,11 @@
+.book-picker__date-inpt{
+
+}
+.book-picker__date{
+    display: flex;
+    flex-direction: column;
+}
+.book-picker__date-elem{
+    border: 1px solid #000000;
+    width: 70%;
+}

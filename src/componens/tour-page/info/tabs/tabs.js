@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import './tabs.css'
 
-class Tabs extends Component {
-    render() {
+const Tabs =(props)=>{
         return (
             <div className="tabs">
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/general">General information</NavLink>
@@ -14,7 +13,6 @@ class Tabs extends Component {
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/reviews">Reviews</NavLink>
             </div>
         );
-    }
 }
 
 export default Tabs;

@@ -1,42 +1,50 @@
-import React from "react";
-import Form from "./tour-form/form.js";
-import Booking from "./booking/booking.js";
-import Info from "./info/info.js";
-import "./tour.css";
+import React, {Component, useEffect} from "react";
+import Form from './tour-form/form.js';
+import Info from './info/info.js';
+import './tour.css'
 import { connect } from "react-redux";
-import { homeAxiosData } from "../../actions/dataHome";
-import { allTour } from "../../actions/allTour";
-import { trigerFilterOff } from "../../actions/trigerFilter";
+import Group from './groups-page/group/group.js'
+import {tourDataFetch} from "../../actions/tourData";
+import {tourData} from "../../reduser/tourData";
 
-import { tourDataFetch } from "../../actions/tourData";
-import NavBar from "../home/navBar/navBar";
-import Footer from "../home/footer/footer";
 
-const Tour = (props) => {
-  return (
-    <div>
-      <NavBar />
-      <div className="tour-page">
-        <Form />
-        <Booking />
-        <Info />
-      </div>
-      <Footer />
-    </div>
-  );
-};
-const mapStateToProps = (state) => {
-  return {
-    tourData: state.tourData,
-  };
-};
+const Tour =(props)=>{
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchData: (url) => {
-      dispatch(tourDataFetch(url));
-    },
-  };
-};
+
+    useEffect( () => {
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    },[]);
+
+    // let group = props.tourData;
+
+
+    let obj ={}
+    if(props.tourData===undefined){
+        obj = {}
+    }
+
+    else{
+        obj = props.tourData
+    }
+            return (
+            <div className='tour-page'>
+                <Form data={obj} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
+                <Info info={obj}/>
+            </div>
+        );
+    }
+    const mapStateToProps = (state) => {
+        return {
+            tourData:state.tourData,
+            detailsTours: state.detailsTour.detailsTour
+        };
+    };
+
+
+    const mapDispatchToProps = (dispatch) => {
+        return {
+            fetchData: url => {dispatch(tourDataFetch(url))}
+        };
+    };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tour);

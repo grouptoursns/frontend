@@ -4,14 +4,14 @@ import Pic from './pic-change/pic.js'
 import Book from './form-book/book.js'
 import './form.css'
 
-const Form = () =>{
+const Form = (props) =>{
     return(
         <div className="contain">
             <div className="form">
-                <Title />
+                <Title info={props.data}/>
                 <div className="form-content">
-                    <Pic />
-                    <Book />
+                    <Pic pic={props.data} />
+                    <Book info={props.data} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 </div>
             </div>
         </div>
