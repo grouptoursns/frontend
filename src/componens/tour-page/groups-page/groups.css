@@ -1,5 +1,7 @@
 .groups{
     background-color: #F4F4F4;
+    flex-direction: column;
     display: flex;
     justify-content: center;
+    align-items: center;
 }

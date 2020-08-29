@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import Group from './groups-page/group/group.js'
 import {tourDataFetch} from "../../actions/tourData";
 import {tourData} from "../../reduser/tourData";
+import NavBar from "../home/navBar/navBar";
+
 
 
 const Tour =(props)=>{
@@ -28,6 +30,7 @@ const Tour =(props)=>{
     }
             return (
             <div className='tour-page'>
+                <NavBar />
                 <Form data={obj} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 <Info info={obj}/>
             </div>

@@ -7,8 +7,6 @@ import {tourDataFetch} from "../../../../actions/tourData";
 import {groupInfoFetch} from "../../../../actions/groupInfo";
 import {groupInfo} from "../../../../reduser/groupInfo";
 import {connect} from "react-redux";
-import {NavLink} from "react-router-dom";
-import {detailsTour} from "../../../../actions/detailsTour";
 import {groupDataFetch} from "../../../../actions/groupDetails";
 
 
@@ -58,17 +56,42 @@ const Group =(props)=> {
     if(people){
         const b = [...people]
         men = b.map((man) =>
-            <li style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+            <li className="img-li" style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <img src={profilePhoto} alt="profile.icon"/>{man.name}
                 <p style={{color: "red"}}>  + {man.count_of_extra_people} extra people</p>
             </li>
         )
     }
 
+    let token ={}
+    token = localStorage.getItem("token")
+    console.log(token)
+
 
     const bookNow=()=>{
+        axios.post('http://161.35.199.172/group/23/book/',{
+            name: "Aktan",
+            extra_people: countOfpeople,
+            count_of_extra_people: countOfpeople -1,
+        }, {
+            headers:{
+                "Authorization": 'Token ' + token
+            }
 
+        })
+            .then(response =>{
+                if(response.status===201){
+                    window.open(response.data.payment_url)
+                    console.log(response.data.payment_url);
+                }
 }
+            )
+
+
+
+
+    }
+
 
         return (
             <div className="group">

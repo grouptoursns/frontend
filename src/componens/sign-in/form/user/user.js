@@ -85,7 +85,11 @@ class User extends Component {
   }
 
   render() {
-    if(this.props.signIntriger=== true) return <Redirect to="/"/>
+    if(this.props.signIntriger=== true) {
+
+      return <Redirect to="/"/>
+      setTimeout(window.location.reload(), 1000)
+    }
     return (
       <div className="form">
         <form className="form-cont" onSubmit={this.handleSubmit}>

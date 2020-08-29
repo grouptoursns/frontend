@@ -22,10 +22,11 @@
 .group-list__people img{
     margin-right: 10px  ;
 }
-li{
+.img-li{
+    list-style-type:none;
+
     margin-left: -33px;
     margin-top: 10px;
-    list-style-type:none;
 }
 
 

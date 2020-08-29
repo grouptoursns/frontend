@@ -3,6 +3,7 @@ import './groups.css'
 import { Switch, Route} from "react-router-dom";
 import GroupTabs from "./groups-tabs/group-tabs";
 import Group from "./group/group";
+import NavBar from "../../home/navBar/navBar";
 
 
 class Groups extends Component {
@@ -13,7 +14,10 @@ class Groups extends Component {
 
     render() {
         return (
+
+
             <div className="groups">
+                <NavBar />
                 <div>
                     <GroupTabs tourBookInfo={this.props.tourBookInfo}/>
                     <Switch>
