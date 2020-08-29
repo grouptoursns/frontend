@@ -5,7 +5,9 @@
     height: 350px;
 }
 .carousel .thumb{
-    margin-right: 40px !important;
+    /*margin-left: 0px !important;*/
+    /*margin-right: -20px !important;*/
+
 }
 ul.thumbs.animated{
     /*padding: 0;*/

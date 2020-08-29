@@ -26,49 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/admin-panel/updateTour-image/updateTour-imge.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componens/home/best-tours/img/no image 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componens/home/group-tours/img/no image 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componens/home/navBar/logo/logo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componens/result-search/result-card/img/no image 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reduser/admin-panel/getImageTour.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/admin-panel/updateTour/updateTour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/admin-panel/updateTour/updateTour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/signIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/signIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/addTour/addTour.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/addTour/addTour.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/groups/groups.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/groups/groups.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/groups/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/groups/groups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/groups/status/status.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/groups/status/status.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/settings/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/settings/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/settings/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/settings/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/status-group/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/status-group/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour-image/loadingImage/addImage/addImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour-image/loadingImage/addImage/addImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour-image/loadingImage/loadingImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour-image/loadingImage/loadingImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour-image/updatetour-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour-image/updatetour-image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour/updateTourText/category/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour/updateTourText/category/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour/updateTourText/updateTourText.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour/updateTourText/updateTourText.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour/updateTourText/updateTourText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/updateTour/updateTourText/updateTourText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/navPanel/navPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/navPanel/navPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/best-tours.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/best-tours.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/best-tours.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/best-tours.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/group-tours/tours-slaider/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/group-tours/tours-slaider/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/logo/logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/logo/logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-card/result-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-card/result-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/sign-in.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/sign-in.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-up/company-users-up/company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/rootReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +153,7 @@
       <workItem from="1598132544547" duration="13914000" />
       <workItem from="1598350741074" duration="13808000" />
       <workItem from="1598445699446" duration="18687000" />
-      <workItem from="1598513856596" duration="27755000" />
+      <workItem from="1598513856596" duration="29654000" />
     </task>
     <servers />
   </component>
