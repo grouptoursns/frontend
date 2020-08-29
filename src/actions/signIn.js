@@ -29,8 +29,8 @@ export function signIn(data) {
           localStorage.setItem("company", res.data.is_company);
           localStorage.setItem("email", data.email);
           localStorage.setItem("id", res.data.id);
-dispatch(SignInOn())
-    
+dispatch(SignInOn()
+    )
         })
         .catch((error) => {
           console.log(error.data);

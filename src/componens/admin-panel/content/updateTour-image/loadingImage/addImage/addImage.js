@@ -9,27 +9,23 @@ import "./addImage.css"
 import css from './addPhote.module.css'
 
  const AddImage = props => {
-    let {setimg, image} = props;
+    
     const [block, setBlock] = useState('block')
     const [url, setUrl] = useState('')
     const [hovered, setHovered] = useState(false)
     const [name, setName] = useState('')
     const [checkName, setCheckName] = useState('')
     const[dataFile,setDataFile]=useState()
-    useEffect(() => {
-        if (image) {
-            setUrl(image.image)
-            setBlock('none')
-            setName(image.image)
-        }
-    }, [image])
+    useEffect(()=>{
+
+
+
+    })
 
    
+
     const handlehange=(e)=>{
         let file = e.target.files[0];
- 
-        
-
         setBlock('none')
         let reader = new FileReader();
         if (e.target.files.length > 0) {
@@ -54,14 +50,15 @@ import css from './addPhote.module.css'
             props.handleChange(props.id,file)
         } 
     }
-    
 
     return (
         <div className={css.fileWrapper}
-             style={{
-                 background: `url(${url}) center center no-repeat`,
-                 backgroundSize: url.length > 0 ? 'cover' : null
-             }}>
+             style={
+                {
+                    background: `url(${url}) center center no-repeat`,
+                    backgroundSize: url.length > 0 ? "cover" : null,
+                  }
+              }>
             <label className={css.inpWrapper}>
                 <input
                     {...props}

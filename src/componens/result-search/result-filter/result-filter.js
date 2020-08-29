@@ -11,9 +11,9 @@ import {trigerBestOff} from "../../../actions/trigerBest";
 import {trigerActivityOff} from "../../../actions/trigerActivity"
 
 const Filter = (props) => {
-  const [country, setCountry] = useState();
-  const [activity, setActivity] = useState();
-  const [price, setPrice] = useState([]);
+  const [country, setCountry] = useState("");
+  const [activity, setActivity] = useState("");
+  const [price, setPrice] = useState([200,600]);
 
   const chengeCountry = (e) => {
     setCountry(e);

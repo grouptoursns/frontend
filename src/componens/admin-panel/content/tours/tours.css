@@ -13,12 +13,20 @@
 
 color: #FFFFFF;
 }
+.tourl-list-delete:hover{
+    background: none;
+    color: #E62222;
+}
 .tour-list-edit{
     background: #5874BA;
     border: 1px solid #5874BA;
     font-size: 12px;
 
     color: #FFFFFF;
+}
+.tour-list-edit:hover{
+    background: none;
+    color: #5874BA;
 }
 .tour-list-view{
     background: #5874BA;
@@ -27,8 +35,12 @@ color: #FFFFFF;
 
     color: #FFFFFF;
 }
+.tour-list-view:hover{
+    background: none;
+    color: #5874BA;
+}
 .name-admin{
-    width: 265px;
+    width: 270px;
 
 }
 .status-admin{
@@ -71,6 +83,10 @@ width: 120px;
 color: #FFFFFF;
 
 }
+.modal-btn-yes:hover{
+    background: none;
+    color: #E62222;
+}
 .modal-btn-no{
     width: 30%;
     height: 40px;
@@ -83,6 +99,10 @@ color: #FFFFFF;
 color: #FFFFFF;
 
 }
+.modal-btn-no:hover{
+    background: none;
+    color: #5CB85C;
+}
 .btn-add-group{
     padding: 5px;
     background: #5CB85C;
@@ -90,6 +110,10 @@ color: #FFFFFF;
     font-size: 12px;
     color: #FFFFFF;
     margin-left: 15px;
+}
+.btn-add-group:hover{
+    background: none;
+    color: black;
 }
 .add-group-title{
     font-size: 24px;
@@ -114,12 +138,16 @@ color: #FFFFFF;
     width: 30%;
     height: 40px;
     border-radius: 7px;
-    background: #5CB85C;
-    border: 1px solid #5CB85C;
+    background: #5874BA;
+    border: 1px solid #5874BA;
     font-size: 12px;
 
 
 color: #FFFFFF;
+}
+.form-group-close:hover{
+    background: none;
+    color: #5874BA;
 }
 .submit-add-group{
     width: 30%;
@@ -131,6 +159,10 @@ color: #FFFFFF;
 
 
 color: #FFFFFF;
+}
+.submit-add-group:hover{
+    background: none;
+    color: #5CB85C;
 }
 input.error {
     border-color: red;

@@ -18,6 +18,7 @@ import { updateTourAdmin } from "../../../../../actions/admin-panel/updateTour/u
 import Modal from "react-modal";
 import galka from "../img/image 1.png";
 import { closeModal } from "../../../../../actions/admin-panel/updateTour/updateTour";
+import {updateTourImage} from "../../../../../actions/admin-panel/updateTour-image/updateTour-imge"
 
 class UpdateTourText extends React.Component {
   state = {
@@ -47,7 +48,9 @@ class UpdateTourText extends React.Component {
     Category: "",
     country_image: null,
   };
-
+  onClickFarther=()=>{
+    this.props.getArrImage(this.state.id)
+  }
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
@@ -85,7 +88,7 @@ class UpdateTourText extends React.Component {
 
     setTimeout(() => {
       this.props.closeModal();
-    }, 2000);
+    }, 4000);
   };
   changeCountry = (country1) => {
     this.setState({ country: country1 });
@@ -180,7 +183,7 @@ class UpdateTourText extends React.Component {
           />
           <h3>Tour changes saved !!!</h3>
         </Modal>
-        <div className="adminPanel-block-form update">
+        <div className="adminPanel-block-form ">
           <div className="block-title-adminPanel">
             <span>Update tour</span>
           </div>
@@ -630,11 +633,12 @@ class UpdateTourText extends React.Component {
                   >
                     SAVE
                   </button>
-                </div>
-                <Link to="/admin-panel/ubdate-tour-image">
-                <button className="addImage-btn">Farther &#10093;</button>
+              
+               {/* <Link to="/admin-panel/ubdate-tour-image">
+               <button className="addImage-btn" onClick={this.onClickFarther}>Farther &#10093;</button>
                 </Link>
-             
+                 */}
+             </div>
               </div>
             </div>
           </form>
@@ -657,6 +661,7 @@ const mapDispatchToProps = (dispatch) => {
     closeUpdate: () => dispatch(closePortal()),
     updateTour: (data, id) => dispatch(updateTourAdmin(data, id)),
     closeModal: () => dispatch(closeModal()),
+    getArrImage:(id)=>dispatch(updateTourImage(id))
   };
 };
 

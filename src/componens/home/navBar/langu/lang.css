@@ -16,4 +16,5 @@
 }
 .dropdown-menu{
   min-width: 5rem !important;
+  width: 100% !important;
 }
