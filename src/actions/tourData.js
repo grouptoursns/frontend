@@ -11,7 +11,7 @@ export function tourDataFetch(url){
         fetch(url)
             .then(res =>{
                 if(!res.ok){
-                    throw new Error(res.statusText)
+                 //   throw new Error(res.statusText)
                 }
                 return res;
             })

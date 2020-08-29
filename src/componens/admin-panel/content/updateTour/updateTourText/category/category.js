@@ -21,11 +21,18 @@ const Category = (props) => {
         }
       });
     }
-  
- 
 
+      let idCategory="";
+      let textCategory=""
+      if(props.categoryDefault!==""){
+        console.log(props.categoryDefault)
+        idCategory=props.categoryDefault;
+         let categorya=stateOptions.filter((item)=>item.key===idCategory);
+         if(categorya[0]!==undefined){
+          textCategory=categorya[0].text
+         }
 
-     
+      }
       
 
 
@@ -40,7 +47,7 @@ const Category = (props) => {
     }
 
     return(
-        <Dropdown  search selection options={stateOptions}  onChange={changeCategory} />
+        <Dropdown  search selection options={stateOptions} placeholder={textCategory}  onChange={changeCategory} />
     )
  
 }

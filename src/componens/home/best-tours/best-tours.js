@@ -5,7 +5,7 @@ import BestSlider from "./tours-slaider/best-slider.js";
 
 const BestTours = (props) => {
   return (
-    <div className="block-tours">
+    <div className="block-tours1">
       <TextTours />
       <BestSlider cards={props.card}/>
     </div>

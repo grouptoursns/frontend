@@ -83,13 +83,12 @@ class User extends Component {
    
     
   }
-
-  render() {
-    if(this.props.signIntriger=== true) {
-
-      return <Redirect to="/"/>
-      setTimeout(window.location.reload(), 1000)
+  signIn2(){
+    if(this.props.signIntriger){
+      this.props.history.push("/")
     }
+  }
+  render() {
     return (
       <div className="form">
         <form className="form-cont" onSubmit={this.handleSubmit}>
@@ -140,7 +139,7 @@ class User extends Component {
             Login
           </button>
           <a className="form-cont__link">Forgot your password?</a>
-
+{this.signIn2()}
           <div
             style={{
               color: "red",

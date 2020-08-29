@@ -5,6 +5,7 @@ import "./company.css";
 import 'react-phone-number-input/style.css'
 import Phone from "./phone"
 import "../users-sign-up/user.css"
+import galka from "../users-sign-up/img/image 1.png"
 
 import { connect } from "react-redux";
 import DropdownExampleSearchSelection from "./country"
@@ -71,7 +72,10 @@ class Company extends React.Component {
     }
     if (modal === false) {
       return(
+        <>
+        <img alt="img" src={galka}/>
         <span>{this.props.seccess}</span>
+        </>
       )
       
     }

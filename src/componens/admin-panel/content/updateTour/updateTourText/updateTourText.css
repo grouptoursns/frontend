@@ -17,3 +17,11 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+.updateTour-save:hover{
+    background: none;
+    color:#5CB85C ;
+}
+.addImage-back:hover{
+    background: none;
+    color:#5CB85C ;
+}

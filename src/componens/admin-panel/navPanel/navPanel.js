@@ -11,6 +11,7 @@ import { closePortal } from "../../../actions/admin-panel/detailsTour/detailstTo
 import { SignInOff } from "../../../actions/signIn";
 
 const NavPanel = (props) => {
+  const [activeBtn,setActiveBtn]=useState([true,false])
   const [url, setUrl] = useState();
   useEffect(() => {
     setUrl(window.location.pathname);
@@ -22,11 +23,19 @@ const NavPanel = (props) => {
   } else {
     data = props.dataCompany;
   }
-
+  
+  const onclickManage=()=>{
+    props.closeUpdateTour()
+    setActiveBtn([true,false])
+  }
   const clickLogout = () => {
+
     localStorage.clear();
     props.siginOff();
   };
+  const onclickSetting =()=>{
+    setActiveBtn([false,true])
+  }
   return (
     <div className="admin-navPanel">
       <div className="logo-navPanel">
@@ -38,13 +47,11 @@ const NavPanel = (props) => {
           <button
             className={
               "navPanel-btn" +
-              (url === "/admin-panel" ||
-              "/admin-panel/add-tour" ||
-              "/admin-panel/groups"
+              ( activeBtn[0]
                 ? " active-btn-navPanel"
-                : " navPanel-btn")
+                : " ")
             }
-            onClick={() => props.closeUpdateTour()}
+            onClick={() => onclickManage}
           >
             <img alt="img" src={map} />
             Manage Tours
@@ -55,8 +62,9 @@ const NavPanel = (props) => {
           <button
             className={
               "navPanel-btn" +
-              (url === "/admin-panel/settings" ? " active-btn-navPanel" : "")
+              ( activeBtn[1] ? " active-btn-navPanel" : " ")
             }
+            onClick={()=>onclickSetting}
           >
             <img alt="img" src={settings} />
             Settings

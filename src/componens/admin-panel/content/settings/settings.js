@@ -91,7 +91,7 @@ class AdminSettings extends React.Component {
   render() {
     return (
       <div className="block-settings">
-        <span className="settings-title">Settings</span>
+        <span className="settings-title">Profile editing</span>
 
         <form
           className="needs-validation settings-form form-admin"

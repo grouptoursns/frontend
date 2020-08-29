@@ -28,7 +28,7 @@ import {ModalEdit}from "./admin-panel/modalEdit"
 import {trigerCreateTour} from "./admin-panel/trigerCreateTour"
 import {detailTourAdmin} from "./admin-panel/detailTour"
 import {trigerModalUpdateTour} from "./admin-panel/trigerModalUpdateTour"
-
+import {getArrImage} from "./admin-panel/getImageTour";
 import {groupData} from "./groupDetails";
 import {groupInfo} from "./groupInfo";
 
@@ -62,7 +62,8 @@ const rootReduser = combineReducers({
     detailTourAdmin,
     trigerModalUpdateTour,
     groupData,
-    groupInfo
+    groupInfo,
+    getArrImage
 });
 
 export default rootReduser;

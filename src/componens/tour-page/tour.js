@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {Component, useEffect,useState} from "react";
 import Form from './tour-form/form.js';
 import Info from './info/info.js';
 import './tour.css'
@@ -12,9 +12,9 @@ import NavBar from "../home/navBar/navBar";
 
 const Tour =(props)=>{
 
-
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTour}`);
+       
     },[]);
 
     // let group = props.tourData;
@@ -27,6 +27,7 @@ const Tour =(props)=>{
 
     else{
         obj = props.tourData
+
     }
             return (
             <div className='tour-page'>

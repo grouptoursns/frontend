@@ -9,6 +9,8 @@ import { connect } from "react-redux";
 import { searchTrigerFalse } from "../../../actions/tourSearch";
 import { detailsTour } from "../../../actions/detailsTour";
 import smail from "./img/smile.png"
+import ReactStars from 'react-stars'
+import noImage from "./img/no image 2.png"
 
 const ResultCard = (props) => {
   useEffect(() => {
@@ -79,27 +81,34 @@ const ResultCard = (props) => {
     searchTour = [...props.tourSearch];
     tourActivity = [...props.tourActivity];
     filterTour1 = [...props.tourFilter];
+    console.log(tour);
   }
   const clickDetailsContact = (id) => {
     props.detailsTour(id);
   };
-  console.log(filterTour1);
+  console.log(searchTour);
   if (props.trigerTour === true) {
     return (
       <div className="result">
         {searchTour.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-              <img alt="" src={cards[0].img} />
+              <img alt="" src={item.main_image ? `http://161.35.199.172${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
                   <div>
-                    {cards[0].stars.map((star) => {
-                      return <img className="star" alt="" src={star.img} key={star.id}/>;
-                    })}
+                  <ReactStars
+                    size={20}
+                    count={5}
+                   value={item.avg_rate_tour[0].rating}
+                    edit={false}
+                    half={true}
+                    color1="lightgrey"
+                    color2="gold"
+                />
                   </div>
-                  <span className="descrip_text">422 reviews</span>
+                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
@@ -125,16 +134,22 @@ const ResultCard = (props) => {
         {tour.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-              <img alt="" src={cards[0].img} />
+              <img alt="" src={item.main_image ?`http://161.35.199.172${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
                   <div>
-                    {cards[0].stars.map((star) => {
-                      return <img className="star" alt="" src={star.img} key={star.id} />;
-                    })}
+                  <ReactStars
+                    size={20}
+                    count={5}
+                   value={item.avg_rate_tour[0].rating}
+                    edit={false}
+                    half={true}
+                    color1="lightgrey"
+                    color2="gold"
+                />
                   </div>
-                  <span className="descrip_text">422 reviews</span>
+                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
@@ -179,16 +194,22 @@ const ResultCard = (props) => {
           {filterTour1.map((item) => {
             return (
               <div className="result-li" key={item.id}>
-                <img alt="" src={cards[0].img} />
+                <img alt="" src={item.main_image ? `http://161.35.199.172${item.main_image}` :noImage} />
                 <div className="description-tours">
                   <h1 className="title-tours">{item.name}</h1>
                   <div className="description">
                     <div>
-                      {cards[0].stars.map((star) => {
-                        return <img className="star" alt="" src={star.img} key={star.id} />;
-                      })}
+                    <ReactStars
+                    size={20}
+                    count={5}
+                   value={item.avg_rate_tour[0].rating}
+                    edit={false}
+                    half={true}
+                    color1="lightgrey"
+                    color2="gold"
+                />
                     </div>
-                    <span className="descrip_text">422 reviews</span>
+                    <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
                     <img alt="" className="descrip_text" src={cards[0].paint} />
                     <span className="descrip_text">{item.country}</span>
                   </div>
@@ -216,16 +237,22 @@ const ResultCard = (props) => {
         {tourActivity.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-              <img alt="" src={cards[0].img} />
+             <img alt="" src={item.main_image ?`http://161.35.199.172${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
                   <div>
-                    {cards[0].stars.map((star) => {
-                      return <img className="star" alt="" src={star.img} key={star.id} />;
-                    })}
+                  <ReactStars
+                    size={20}
+                    count={5}
+                   value={item.avg_rate_tour[0].rating}
+                    edit={false}
+                    half={true}
+                    color1="lightgrey"
+                    color2="gold"
+                />
                   </div>
-                  <span className="descrip_text">422 reviews</span>
+                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>

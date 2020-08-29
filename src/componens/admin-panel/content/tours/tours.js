@@ -124,7 +124,7 @@ function Tours(props) {
     name: "",
     start_time: "",
     finish_time: "",
-    status_group: "",
+    status_group: "Open",
     price: "",
     count_people: "",
   });
@@ -139,12 +139,13 @@ function Tours(props) {
         id: item.id,
         name: item.name,
         status: item.tour_status,
-        groups: "7",
+        groups: item.count_of_groups,
         reviews: item.avg_rate_tour[0].count_of_voices,
         rating: item.avg_rate_tour[0].rating,
       };
     });
   }
+  console.log(rows)
   if (isDelete) {
     props.deleteTour(idTour);
     for (let i = 0; i < rows.length; i++) {
@@ -330,12 +331,7 @@ function Tours(props) {
                   </label>
 
                   <Status
-                    status={(e) =>
-                      setData({
-                        ...data,
-                        status_group: e,
-                      })
-                    }
+                    status={data.status_group}
                   />
 
                   <div className="invalid-feedback">

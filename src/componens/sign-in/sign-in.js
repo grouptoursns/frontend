@@ -7,7 +7,7 @@ import Footer from "../home/footer/footer";
 const SignIn = () => {
   return (
     <div>
-      <NavBar />
+       <NavBar /> 
       <div className="in">
         <Form />
       </div>

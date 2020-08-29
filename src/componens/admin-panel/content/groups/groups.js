@@ -133,7 +133,7 @@ function Groups(props) {
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
    
-  },[]);
+  },[isDelete]);
   console.log(props.groupList);
   if (props.groupList === undefined) {
     rows = [];
@@ -287,7 +287,7 @@ let data2={}
           },
         }}
       >
-        <h3 className="add-group-title">Add group</h3>
+        <h3 className="add-group-title">Group changes</h3>
         <form
           className="needs-validation settings-form form-admin"
           onSubmit={submitHandlerGroup}
@@ -465,12 +465,12 @@ let data2={}
           </MDBRow>
           <div className="block-bot-button">
             <button
-              className="form-group-close"
+              className="form-group-close1"
               onClick={() =>setOpen2(false)}
             >
               CLOSE
             </button>
-            <MDBBtn type="submit" className="submit submit-add-group" onClick={() =>setOpen2(false)}>
+            <MDBBtn type="submit" className="submit submit-add-group1" onClick={() =>setOpen2(false)}>
               SAVE
             </MDBBtn>
           </div>
