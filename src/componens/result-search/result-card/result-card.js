@@ -194,7 +194,7 @@ const ResultCard = (props) => {
           {filterTour1.map((item) => {
             return (
               <div className="result-li" key={item.id}>
-                <img alt="" src={item.main_image ? `http://161.35.199.172${item.main_image}` :noImage} />
+                <img alt="" src={item.main_image ? item.main_image :noImage} />
                 <div className="description-tours">
                   <h1 className="title-tours">{item.name}</h1>
                   <div className="description">

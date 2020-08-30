@@ -29,7 +29,7 @@ export function filterTour(url) {
     axios.get(url)
     .then((res) => {
       dispatch(closeSpiner());
-      dispatch(loadFilterTour(res.data));
+      dispatch(loadFilterTour(res.data.results));
       console.log(res.data)
     })
   };
