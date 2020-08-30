@@ -1,6 +1,8 @@
 import React from "react";
 import "./features.css";
 import image from "../history/img/44240014405_58ce5bce45_h.png";
+import img3 from '.././history/img/photoe.jpg'
+import img4 from '../img/ayuntamiento-de-tours.jpg'
 
 const Features = () => {
   return (
@@ -11,7 +13,7 @@ const Features = () => {
       </div>
       <div className="features-content">
         <div className="features-colum">
-          <img alt="img" src={image} />
+          <img alt="img" style={{"width": "480px" }} src={img3} />
           <div className="block-feat-text">
             <span className="lorem">Lorem ipsum dolor sit amet</span>
             <div className="features-desc">
@@ -51,7 +53,7 @@ const Features = () => {
       </div>
       <div className="features-content">
         <div className="features-colum">
-          <img alt="img" src={image} />
+          <img alt="img" style={{"width": "480px" }} src={img4} />
           <div className="block-feat-text">
             <span className="lorem">Lorem ipsum dolor sit amet</span>
             <div className="features-desc">
