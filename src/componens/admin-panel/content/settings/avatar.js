@@ -33,7 +33,7 @@ class Avatar extends React.Component {
     let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = <img src={imagePreviewUrl} className="imgPrew" />;
+      $imagePreview = <img src={imagePreviewUrl} className="imgPrew1" />;
     } 
 
     return (
