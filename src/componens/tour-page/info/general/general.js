@@ -23,10 +23,10 @@ const General =(props)=>{
                     <h3>Description</h3>
                     <p>{props.tourData.description}</p>
                 </div>
-                <div className="general-content">
-                    <h3>Type of tour</h3>
-                    <p>{typeOfTour}</p>
-                </div>
+                {/*<div className="general-content">*/}
+                {/*    <h3>Type of tour</h3>*/}
+                {/*    <p>{typeOfTour}</p>*/}
+                {/*</div>*/}
                 <div className="general-content">
                     <h3>Travelers</h3>
                     <h4>Minimum numbers of travelers: {props.tourData.min_people}</h4>

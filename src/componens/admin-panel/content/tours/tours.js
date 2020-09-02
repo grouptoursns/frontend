@@ -26,6 +26,7 @@ import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import addGroupAdmin from "../../../../actions/admin-panel/addGroup/addGroup";
 import { Redirect } from "react-router";
 import { closePortal } from "../../../../actions/admin-panel/detailsTour/detailstTourAdmin";
+import {Link}from "react-router-dom"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -204,6 +205,10 @@ function Tours(props) {
   if (props.isOpenUpdateTour) {
     return <Redirect to="/admin-panel/ubdate-tour" />;
   } else {
+    const clickView=(e)=>{
+      console.log(e.target.id)
+      props.detailsTour(e.target.id)
+    }
     return (
       <div className="wrapperr-addTour">
         <BlockBtn />
@@ -511,9 +516,12 @@ function Tours(props) {
                       </button>
                     </TableCell>
                     <TableCell style={{ width: 40 }} align="left">
-                      <button className="tour-list-btn tour-list-view">
-                        VIEW
-                      </button>
+                      <Link to="/tourspage">
+                        <button id={row.id} className="tour-list-btn tour-list-view" onClick={clickView}>
+                          VIEW
+                        </button>
+                      </Link>
+
                     </TableCell>
                   </TableRow>
                 ))}

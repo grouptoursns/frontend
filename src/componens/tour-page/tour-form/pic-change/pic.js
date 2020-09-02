@@ -34,7 +34,7 @@ const Pic = (props) =>{
                     <img className='slider-carousel__img' src={img2} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
-                    <img className='slider-carousel__img' src={img3} alt="pic.icon"/>
+                    <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
                     <img className='slider-carousel__img' src={img2} alt="pic.icon"/>

@@ -6,36 +6,41 @@ import './book.css';
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import { Redirect } from 'react-router'
 import {groupInfo} from "../../../../actions/groupInfo";
 import DatePicker from "./datepicker/datepicker"
 
 
 
 const Book =(props)=> {
-    if (props.tourData.avg_rate_tour) {
-        const a = [...props?.tourData?.avg_rate_tour]
+    let a = []
+    if (props.tourData.group_tour) {
+        a = [...props?.tourData?.group_tour]
     }
 
 
     useEffect(() => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
     }, []);
-// const [startDate, setStartDate] = useState(null)
 
-    let [show, setShow] = useState(false)
-    let state = {
-        show: false
-    }
+
+
     let arrId=[];
     const onclickBook=()=>{
 
-         arrId=props.tourData.group_tour.map((item)=>{
-            return item.id
-
-        })
-        props.groupInfo(arrId)
-        console.log(arrId)
+        if(props.tourBookInfo.count = a[0].free_slots){
+            // return <Redirect to="/tourspage"></Redirect>
+            alert('too mane people!')
+        }
+        else{
+            arrId=props.tourData.group_tour.map((item)=>{
+                return item.id
+            })
+            props.groupInfo(arrId)
+            console.log(arrId)
+        }
     }
+
 
     const privateTour=()=>{
 
@@ -51,10 +56,14 @@ const Book =(props)=> {
             <div className="book-picker">
 
                 <p className="book-picker__select">Select Date and Travelers:</p>
-                <DatePicker setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
+                <DatePicker
+                    setTourBookInfo={props.setTourBookInfo}
+                    tourBookInfo={props.tourBookInfo}/>
 
                 <p className="book-picker__date">Count of extra people:</p>
-                <Counter setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
+                <Counter
+                    setTourBookInfo={props.setTourBookInfo}
+                    tourBookInfo={props.tourBookInfo}/>
 
 
                 <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
