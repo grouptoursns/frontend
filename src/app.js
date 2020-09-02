@@ -40,6 +40,7 @@ const App = () => {
           <Route path="/user-page"  component={UserPage} />
           <Route path="/tour-rating"  component={TourRating} />
           <Route path="/admin-panel"  component={AdminPanel} />
+          
           <Route path="/tour-groups/groups"> <Groups tourBookInfo={tourBookInfo}/> </Route>
           <Route component={NotFound} />
  

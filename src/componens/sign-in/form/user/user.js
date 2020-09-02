@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+
 import { Redirect } from "react-router-dom";
 import Home from "../../../home/home";
 import "../form.css";
 import { connect } from "react-redux";
 import { signIn } from "../../../../actions/signIn";
-import { history } from "../../../../history";
+
 
 const initialState = {
   isAuthenticated: false,
@@ -83,11 +79,7 @@ class User extends Component {
    
     
   }
-  signIn2(){
-    if(this.props.signIntriger){
-      this.props.history.push("/")
-    }
-  }
+
   render() {
     return (
       <div className="form">
@@ -139,7 +131,6 @@ class User extends Component {
             Login
           </button>
           <a className="form-cont__link">Forgot your password?</a>
-{this.signIn2()}
           <div
             style={{
               color: "red",
