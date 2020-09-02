@@ -3,10 +3,16 @@ import Form from "./form/form.js";
 import "./sign-in.css";
 import NavBar from "../home/navBar/navBar";
 import Footer from "../home/footer/footer";
+import { connect } from "react-redux";
 
-const SignIn = () => {
+const SignIn = (props) => {
+
+    if(props.signIntriger){
+      props.history.push("/")
+    }
+  
   return (
-    <div>
+    <div className="page-sign-in">
        <NavBar /> 
       <div className="in">
         <Form />
@@ -16,4 +22,17 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+
+const mapStateToProps = (state) => {
+  return {
+    signIntriger: state.SuccessSignIn.triger,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+   
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+
 import { Redirect } from "react-router-dom";
 import Home from "../../../home/home";
 import "../form.css";
 import { connect } from "react-redux";
 import { signIn } from "../../../../actions/signIn";
-import { history } from "../../../../history";
 
 const initialState = {
   isAuthenticated: false,
@@ -38,6 +33,7 @@ class User extends Component {
         ? event.target.checked
         : event.target.value,
     });
+    this.props.defaultTextErr()
   };
 
   validate = () => {
@@ -80,14 +76,8 @@ class User extends Component {
       password: this.state.password,
     };
     this.props.signIn(payLoad);
-   
-    
   }
-  signIn2(){
-    if(this.props.signIntriger){
-      this.props.history.push("/")
-    }
-  }
+
   render() {
     return (
       <div className="form">
@@ -135,11 +125,12 @@ class User extends Component {
             />
             <p className="form-cont__check-title">Remember me</p>
           </div>
+          {this.props.textErr &&
+           <span className="errText">{this.props.textErr}</span>}
           <button className="form-cont__btn" type="submit" onClick={this.Login}>
             Login
           </button>
           <a className="form-cont__link">Forgot your password?</a>
-{this.signIn2()}
           <div
             style={{
               color: "red",
@@ -158,12 +149,14 @@ class User extends Component {
 const mapStateToProps = (state) => {
   return {
     signIntriger: state.SuccessSignIn.triger,
+    textErr: state.SuccessSignIn.textErr,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     signIn: (data) => dispatch(signIn(data)),
+    defaultTextErr:()=>dispatch({type:"CLEAR_ERR_TEXT"})
   };
 };
 

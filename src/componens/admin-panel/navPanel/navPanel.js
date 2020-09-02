@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./navPanel.css";
-import logo from "./img/123 1.png";
+import nologo from "./img/no logo.png";
 import map from "./img/map.png";
 import settings from "./img/settings.png";
 import logOut from "./img/log-out.png";
@@ -39,7 +39,7 @@ const NavPanel = (props) => {
   return (
     <div className="admin-navPanel">
       <div className="logo-navPanel">
-        <img alt="img" src={logo} />
+        <img className="logo-company" alt="img" src={data.avatar ? `http://161.35.199.172${data.avatar}` :nologo} />
         <span className="logo-navPanel-text">{data.name}</span>
       </div>
       <div className="block-btn-navPanel">

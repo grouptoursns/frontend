@@ -7,14 +7,14 @@ import Home from "../../home/home";
 const Form =()=>{
 
     return(
-        <div className="tabs">
+        <>
             <Router>
                 <Switch>
                     <Route path="/sign-in" component={User} />
                     <Route path="/" component={Home} />
                 </Switch>
             </Router>
-        </div>
+        </>
     )
 
 
