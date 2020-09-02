@@ -70,7 +70,7 @@ const BestSlider = (props) => {
             >
               <div className="card">
                 <div className="block-img">
-                  <img src={item.main_image ? item.main_image : noImage} alt="img" />
+                  <img className="image-best-card" src={item.main_image ? item.main_image : noImage} alt="img" />
                 </div>
 
                 <div className="content">

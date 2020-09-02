@@ -47,8 +47,8 @@
 }
 .imgPreview-settings{
     outline: 1px solid #373e4a;
-    width: 144px;
-    height: 184px;
+    width: 83px;
+    height: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;

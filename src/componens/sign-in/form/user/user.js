@@ -6,7 +6,6 @@ import "../form.css";
 import { connect } from "react-redux";
 import { signIn } from "../../../../actions/signIn";
 
-
 const initialState = {
   isAuthenticated: false,
   resData: "",
@@ -34,6 +33,7 @@ class User extends Component {
         ? event.target.checked
         : event.target.value,
     });
+    this.props.defaultTextErr()
   };
 
   validate = () => {
@@ -76,8 +76,6 @@ class User extends Component {
       password: this.state.password,
     };
     this.props.signIn(payLoad);
-   
-    
   }
 
   render() {
@@ -127,6 +125,8 @@ class User extends Component {
             />
             <p className="form-cont__check-title">Remember me</p>
           </div>
+          {this.props.textErr &&
+           <span className="errText">{this.props.textErr}</span>}
           <button className="form-cont__btn" type="submit" onClick={this.Login}>
             Login
           </button>
@@ -149,12 +149,14 @@ class User extends Component {
 const mapStateToProps = (state) => {
   return {
     signIntriger: state.SuccessSignIn.triger,
+    textErr: state.SuccessSignIn.textErr,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     signIn: (data) => dispatch(signIn(data)),
+    defaultTextErr:()=>dispatch({type:"CLEAR_ERR_TEXT"})
   };
 };
 

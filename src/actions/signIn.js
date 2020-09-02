@@ -31,7 +31,8 @@ export function signIn(data) {
           dispatch(SignInOn());
         })
         .catch((error) => {
-          console.log(error.data);
+          console.log(error.response.data.non_field_errors[0]);
+          dispatch({type:"ERR_AUTORIZATION",text:error.response.data.non_field_errors[0]})
         });
     } catch {}
   };

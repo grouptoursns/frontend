@@ -313,7 +313,7 @@ class AdminSettings extends React.Component {
                 htmlFor="defaultFormRegisterPasswordEx4"
                 className="grey-text"
               >
-                Photo
+                Company logo
               </label>
               <Avatar submit={this.submitImages} photo={this.state.photo} />
             </MDBCol>

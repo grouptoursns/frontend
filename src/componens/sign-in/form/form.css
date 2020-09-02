@@ -76,3 +76,7 @@
     background-color: #FFFFFF;
     color: #000000;
 }
+.errText{
+    color: red;
+font-size: 12px;
+}

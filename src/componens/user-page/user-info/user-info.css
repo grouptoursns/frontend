@@ -49,3 +49,7 @@
 .user-text:hover{
   cursor: pointer;
 }
+.user-image{
+  width: 144px;
+  height: 184px;
+}

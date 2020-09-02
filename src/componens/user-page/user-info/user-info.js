@@ -20,7 +20,7 @@ const UserInfo =(props)=>{
     }
     return(
         <div className="user-info">
-            <img alt="" src={avatar || noPhoto}/>
+            <img className="user-image" alt="" src={avatar || noPhoto}/>
             <div className="info-content">
                 <div className="user-information">
     <span className="user-name">{first_name+" "+ last_name}</span>
