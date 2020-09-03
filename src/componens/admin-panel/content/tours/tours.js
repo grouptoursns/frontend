@@ -27,6 +27,7 @@ import addGroupAdmin from "../../../../actions/admin-panel/addGroup/addGroup";
 import { Redirect } from "react-router";
 import { closePortal } from "../../../../actions/admin-panel/detailsTour/detailstTourAdmin";
 import {Link}from "react-router-dom"
+import {detailsTour} from "../../../../actions/detailsTour"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -173,7 +174,7 @@ function Tours(props) {
 
   const onClickEdit = (e) => {
     console.log(e.target.id);
-    props.detailsTour(e.target.id);
+    props.detailsTourAdmin(e.target.id);
   };
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -239,11 +240,12 @@ function Tours(props) {
         >
           <h3>Do you really want to delete?</h3>
           <div className="madal-btn">
-            <button className="modal-btn-yes" onClick={modalOnclickYes}>
-              YES
-            </button>
-            <button className="modal-btn-no" onClick={() => setOpen(false)}>
+     
+            <button className="modal-btn-yes" onClick={() => setOpen(false)}>
               NO
+            </button>
+            <button className="modal-btn-no" onClick={modalOnclickYes}>
+              YES
             </button>
           </div>
         </Modal>
@@ -291,6 +293,7 @@ function Tours(props) {
 
                   <input
                     type="text"
+                    required
                     value={data.name}
                     id="defaultFormRegisterPasswordEx4"
                     onChange={changeHandler}
@@ -313,6 +316,7 @@ function Tours(props) {
                   </label>
 
                   <input
+                   required
                     type="date"
                     value={data.start_time}
                     id="defaultFormRegisterPasswordEx4"
@@ -336,6 +340,7 @@ function Tours(props) {
                   </label>
 
                   <Status
+                   required
                     status={data.status_group}
                   />
 
@@ -355,7 +360,8 @@ function Tours(props) {
                   </label>
 
                   <input
-                    type="text"
+                   required
+                    type="number"
                     value={data.price}
                     id="defaultFormRegisterPasswordEx4"
                     onChange={changeHandler}
@@ -378,6 +384,7 @@ function Tours(props) {
                   </label>
 
                   <input
+                   required
                     type="date"
                     value={data.finish_time}
                     id="defaultFormRegisterPasswordEx4"
@@ -401,7 +408,7 @@ function Tours(props) {
                   </label>
 
                   <input
-                    type="text"
+                    type="number"
                     value={data.count_people}
                     id="defaultFormRegisterPasswordEx4"
                     onChange={changeHandler}
@@ -561,9 +568,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getTours: (url) => dispatch(getToursAdmin(url)),
     deleteTour: (id) => dispatch(deleteTourAdmin(id)),
-    detailsTour: (id) => dispatch(detailsTourAdmin(id)),
+detailsTourAdmin:(id)=>dispatch(detailsTourAdmin(id)),
     addGroup: (id, data) => dispatch(addGroupAdmin(id, data)),
     closeUpdate: () => dispatch(closePortal()),
+    detailsTour: (id) => dispatch(detailsTour(id)),
   };
 };
 

@@ -56,31 +56,15 @@ class UpdateTourText extends React.Component {
     event.target.className += " was-validated";
     console.log(typeof this.state.country_image);
     const formData = new FormData();
-
-    let newState = this.state;
-    for (const key in newState) {
-      if (newState[key] === null) {
-        delete newState[key];
-      }
-    }
-    let arrKey = Object.keys(newState);
-    for (const key in newState) {
-      if (key === "country_image") {
-        if (typeof newState[key] === "string") {
-          delete newState[key];
-        }
-      }
-      if (key === "guide_photo") {
-        if (typeof newState[key] === "string") {
-          delete newState[key];
-        }
-      }
-      if (key === "main_image") {
-        if (typeof newState[key] === "string") {
-          delete newState[key];
-        }
-      }
-    }
+    const newState = {};
+    for (let key in this.state) {
+        if(this.state[key]===null){
+            newState[key] = "";
+         }
+         else{
+          newState[key]=this.state[key]
+         }
+     }
     for (const key in newState) {
       formData.append(key, newState[key]);
     }
@@ -241,6 +225,7 @@ class UpdateTourText extends React.Component {
                   </label>
 
                   <Difficult
+                   required
                     propsDifficult={this.changeDifficult}
                     difficultDefault={this.state.difficult}
                   />
@@ -276,6 +261,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <Country
+                     required
                       country={this.changeCountry}
                       countryDefault={this.state.country}
                     />
@@ -401,6 +387,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <Category
+                     required
                       categoryId={(e) =>
                         this.setState({
                           Category: e,
@@ -544,6 +531,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <Status
+                     required
                       status={this.changeStatus}
                       statusDefault={this.state.tour_status}
                     />

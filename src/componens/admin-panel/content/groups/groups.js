@@ -133,7 +133,7 @@ function Groups(props) {
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
    
-  },[isDelete]);
+  },[isDelete,open2]);
   console.log(props.groupList);
   if (props.groupList === undefined) {
     rows = [];
@@ -160,6 +160,7 @@ function Groups(props) {
     event.preventDefault();
     event.target.className += " was-validated";
  props.updateGroup(idTour,idGroup,data)
+ setOpen2(false)
   };
   const changeHandler = (event) => {
     setData({
@@ -253,11 +254,12 @@ let data2={}
       >
         <h3>Do you really want to delete?</h3>
         <div className="madal-btn">
-          <button className="modal-btn-yes" onClick={modalOnclickYes}>
-            YES
-          </button>
-          <button className="modal-btn-no" onClick={() => setOpen(false)}>
+
+          <button className="modal-btn-yes" onClick={() => setOpen(false)}>
             NO
+          </button>
+          <button className="modal-btn-no" onClick={modalOnclickYes}>
+            YES
           </button>
         </div>
       </Modal>
@@ -376,7 +378,7 @@ let data2={}
                 </label>
 
                 <input
-                  type="text"
+                  type="number"
                   value={data.price}
                   id="defaultFormRegisterPasswordEx4"
                   onChange={changeHandler}
@@ -422,7 +424,7 @@ let data2={}
                 </label>
 
                 <input
-                  type="text"
+                  type="number"
                   value={data.count_people}
                   id="defaultFormRegisterPasswordEx4"
                   onChange={changeHandler}
@@ -448,7 +450,7 @@ let data2={}
                 </label>
 
                 <input
-                  type="text"
+                  type="number"
                   value={data.free_slots}
                   id="defaultFormRegisterPasswordEx4"
                   onChange={changeHandler}
@@ -470,7 +472,7 @@ let data2={}
             >
               CLOSE
             </button>
-            <MDBBtn type="submit" className="submit submit-add-group1" onClick={() =>setOpen2(false)}>
+            <MDBBtn type="submit" className="submit submit-add-group1" >
               SAVE
             </MDBBtn>
           </div>

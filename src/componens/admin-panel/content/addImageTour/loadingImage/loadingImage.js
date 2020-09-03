@@ -33,6 +33,7 @@ useEffect(()=>{
   return (
     <div className="loading-image">
       <AddImage
+      required={true}
         id="0"
         handleChange={changeImage}
         deleteChange={changeDeleteImage}

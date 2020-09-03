@@ -5,7 +5,7 @@ import Price from "./price/price";
 import Count from "./count/count";
 import Img from "./uploaderImg";
 import BlockBtn from "../block-btn/block-btn";
-
+import Modal from "react-modal";
 import Country from "./country/country";
 import Status from "./status/status";
 import FileUpdate from "./addImage/addImage";
@@ -51,11 +51,17 @@ class AddTour extends React.Component {
     event.target.className += " was-validated";
     const formData = new FormData();
  
-
-    for (const key in this.state) {
-      if (this.state[key] !== null) {
-        formData.append(key, this.state[key]);
-      }
+    const newState = {};
+    for (let key in this.state) {
+        if(this.state[key]===null){
+            newState[key] = "";
+         }
+         else{
+          newState[key]=this.state[key]
+         }
+     }
+    for (const key in newState) {
+      formData.append(key, newState[key]);
     }
     this.props.createdTour(formData);
     console.log(this.state);
@@ -111,7 +117,38 @@ class AddTour extends React.Component {
   };
   render() {
     return (
+
+
       <div className="wrapperr-addTour">
+        <Modal
+          isOpen={this.props.isOpenModal}
+          style={{
+            content: {
+              position: "absolute",
+              top: "30%",
+              left: "30%",
+              right: "30%",
+              bottom: "30%",
+              border: "1px solid #ccc",
+              background: "#fff",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            },
+          }}
+        >
+            <div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+        </Modal>
         <BlockBtn />
         <div className="adminPanel-block-form">
           <div className="block-title-adminPanel">
@@ -140,6 +177,7 @@ class AddTour extends React.Component {
                     placeholder=""
                     onChange={this.changeHandler}
                     className="form-control input"
+                    
                     required
                   />
                 </MDBCol>
@@ -152,7 +190,7 @@ class AddTour extends React.Component {
                   </label>
 
                   <input
-                    type="text"
+                    type="number"
                     id="defaultFormRegisterPasswordEx4"
                     name="count_of_day"
                     value={this.state.count_of_day}
@@ -402,6 +440,7 @@ class AddTour extends React.Component {
                   </label>
 
                   <FileUpdate
+                 
                     imagePropsTriger={(e) => {
                       if (e == false) {
                         this.setState({
@@ -441,7 +480,7 @@ class AddTour extends React.Component {
                       Status
                     </label>
 
-                    <Status status={this.changeStatus} />
+                    <Status required status={this.changeStatus} />
 
                     <div className="invalid-feedback">
                       Please provide a valid date.
@@ -459,7 +498,7 @@ class AddTour extends React.Component {
                     </label>
 
                     <input
-                      type="text"
+                      type="number"
                       id="defaultFormRegisterPasswordEx4"
                       name="age_control"
                       placeholder=""
@@ -511,7 +550,7 @@ class AddTour extends React.Component {
               </MDBRow>
               <div className="creat-block">
                 <MDBBtn type="submit" className="create-tour">
-                  CREATE TOUR
+                  NEXT &#10093;
                 </MDBBtn>
               </div>
             </div>
@@ -523,7 +562,9 @@ class AddTour extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    isOpenModal: state.trigerCreateTour.modal
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

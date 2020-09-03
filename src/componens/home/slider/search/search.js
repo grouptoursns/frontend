@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./search.css";
 import search from "./img/search.png";
 import TextField from '@material-ui/core/TextField';
@@ -16,7 +16,7 @@ import {searchTrigerTrue} from "../../../../actions/tourSearch"
   let count=[]
   let name=[]
   let history = useHistory();
-
+const [isOpen,setIsOpen]=useState(false)
 if(props.tour.Tour=== undefined){
   top100Films =[]
 }
@@ -34,7 +34,14 @@ else{
 }
 top100Films=[...name,...count];
   const inputOnChenge=(e)=>{
-
+    
+    if(e.target.value == ''){
+      setIsOpen(false)
+    }
+    else{
+      setIsOpen(true)
+    }
+    console.log(e.target.value)
     if(e.key ==='Enter'){
       console.log(e.target.value)
       history.push("/result_search");
@@ -44,12 +51,14 @@ top100Films=[...name,...count];
       props.trigerSearchOn()
     }
   }
+
   return (
     <div style={{ width: 800 }}>
       <Autocomplete
         freeSolo
         id="free-solo-2-demo"
         disableClearable
+ 
         onKeyPress={inputOnChenge}
         options={top100Films .map((option) => option.title)}
         renderInput={(params) => (
