@@ -18,7 +18,7 @@ import { updateTourAdmin } from "../../../../../actions/admin-panel/updateTour/u
 import Modal from "react-modal";
 import galka from "../img/image 1.png";
 import { closeModal } from "../../../../../actions/admin-panel/updateTour/updateTour";
-import {updateTourImage} from "../../../../../actions/admin-panel/updateTour-image/updateTour-imge"
+import { updateTourImage } from "../../../../../actions/admin-panel/updateTour-image/updateTour-imge";
 
 class UpdateTourText extends React.Component {
   state = {
@@ -48,23 +48,31 @@ class UpdateTourText extends React.Component {
     Category: "",
     country_image: null,
   };
-  onClickFarther=()=>{
-    this.props.getArrImage(this.state.id)
-  }
+  onClickFarther = () => {
+    this.props.getArrImage(this.state.id);
+  };
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
-    console.log(typeof this.state.country_image);
     const formData = new FormData();
     const newState = {};
     for (let key in this.state) {
-        if(this.state[key]===null){
-            newState[key] = "";
-         }
-         else{
-          newState[key]=this.state[key]
-         }
-     }
+      if (this.state[key] === null) {
+        newState[key] = "";
+      } else {
+          newState[key] = this.state[key];
+      }
+    }
+   
+    if(typeof newState.main_image ==="string" && newState.main_image !== ""){
+      delete newState.main_image
+    }
+    if(typeof newState.guide_photo ==="string" && newState.guide_photo !==""){
+      delete newState.guide_photo
+    }
+    if(typeof newState.country_image ==="string" && newState.country_image !== ""){
+      delete newState.country_image
+    }
     for (const key in newState) {
       formData.append(key, newState[key]);
     }
@@ -92,7 +100,6 @@ class UpdateTourText extends React.Component {
       data[key] = tourData2[key];
     }
     this.setState(data);
-    
   }
 
   changePrice = (arr) => {
@@ -225,7 +232,7 @@ class UpdateTourText extends React.Component {
                   </label>
 
                   <Difficult
-                   required
+                    required
                     propsDifficult={this.changeDifficult}
                     difficultDefault={this.state.difficult}
                   />
@@ -261,7 +268,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <Country
-                     required
+                      required
                       country={this.changeCountry}
                       countryDefault={this.state.country}
                     />
@@ -387,7 +394,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <Category
-                     required
+                      required
                       categoryId={(e) =>
                         this.setState({
                           Category: e,
@@ -531,7 +538,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <Status
-                     required
+                      required
                       status={this.changeStatus}
                       statusDefault={this.state.tour_status}
                     />
@@ -621,12 +628,12 @@ class UpdateTourText extends React.Component {
                   >
                     SAVE
                   </button>
-              
-               {/* <Link to="/admin-panel/ubdate-tour-image">
+
+                  {/* <Link to="/admin-panel/ubdate-tour-image">
                <button className="addImage-btn" onClick={this.onClickFarther}>Farther &#10093;</button>
                 </Link>
                  */}
-             </div>
+                </div>
               </div>
             </div>
           </form>
@@ -640,7 +647,7 @@ const mapStateToProps = (state) => {
   return {
     tourData: state.detailTourAdmin.state,
     isOpenModal: state.trigerModalUpdateTour.trigerModal,
-    arrCategory:state.allDestinations.allDestinations.Category
+    arrCategory: state.allDestinations.allDestinations.Category,
   };
 };
 
@@ -649,7 +656,7 @@ const mapDispatchToProps = (dispatch) => {
     closeUpdate: () => dispatch(closePortal()),
     updateTour: (data, id) => dispatch(updateTourAdmin(data, id)),
     closeModal: () => dispatch(closeModal()),
-    getArrImage:(id)=>dispatch(updateTourImage(id))
+    getArrImage: (id) => dispatch(updateTourImage(id)),
   };
 };
 
