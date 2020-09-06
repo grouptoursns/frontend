@@ -119,6 +119,7 @@ function Groups(props) {
   const [idGroup, setIdGroup] = useState();
   const [id, setId] = useState();
   const [open2, setOpen2] = useState(false);
+  const [update,setUpdate]=useState(false)
 
   const [data, setData] = useState({
     name: "",
@@ -132,8 +133,9 @@ function Groups(props) {
   let rows = [];
   useEffect(() => {
     props.getGroupList("http://161.35.199.172/api/company/groups/");
-   
-  },[isDelete,open2]);
+    setUpdate(false)
+    setIsDelete(false)
+  },[isDelete,update]);
   console.log(props.groupList);
   if (props.groupList === undefined) {
     rows = [];
@@ -160,7 +162,7 @@ function Groups(props) {
     event.preventDefault();
     event.target.className += " was-validated";
  props.updateGroup(idTour,idGroup,data)
- setOpen2(false)
+
   };
   const changeHandler = (event) => {
     setData({
@@ -187,6 +189,7 @@ let data2={}
     console.log(id_group)
     setIdTour(id_tour);
     setIdGroup(id_group);
+    setUpdate(true)
     data2=rows.filter((item)=>item.id==e.target.id)
     
     setData({

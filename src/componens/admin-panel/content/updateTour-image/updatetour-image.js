@@ -21,16 +21,14 @@ const UpdateTourImage = (props) => {
       console.log(`${key}: ${value}`);
     }
   };
-  let arr = [];
-  if (props.arrImage !== []) {
-    console.log(props.arrImage)
-  }
+
   return (
     <div className="wrapperr-addTour update-image-tour">
       <div className="text-image">
-        <LoadingImage arrTourImage={arr} dataImage={updateImage} />
+        <span className="title-update-image">Upload pictures for the tour</span>
+        <LoadingImage arrTourImage={props.arrImage ? props.arrImage : []} dataImage={updateImage} />
         <div className="addImage-block-btn">
-          <button className="addImage-back" onClick={() => props.back1()}>
+          <button className="addImage-back" >
             &#10092; Back
           </button>
           <button className="addImage-btn" onClick={Postdata}>

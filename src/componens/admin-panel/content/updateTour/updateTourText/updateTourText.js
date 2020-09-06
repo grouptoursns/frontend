@@ -48,9 +48,7 @@ class UpdateTourText extends React.Component {
     Category: "",
     country_image: null,
   };
-  onClickFarther = () => {
-    this.props.getArrImage(this.state.id);
-  };
+
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
@@ -77,10 +75,8 @@ class UpdateTourText extends React.Component {
       formData.append(key, newState[key]);
     }
     this.props.updateTour(formData, this.state.id);
+    this.props.getArrImage(this.state.id);
 
-    setTimeout(() => {
-      this.props.closeModal();
-    }, 4000);
   };
   changeCountry = (country1) => {
     this.setState({ country: country1 });
@@ -100,6 +96,7 @@ class UpdateTourText extends React.Component {
       data[key] = tourData2[key];
     }
     this.setState(data);
+
   }
 
   changePrice = (arr) => {
@@ -213,7 +210,7 @@ class UpdateTourText extends React.Component {
                   </label>
 
                   <input
-                    type="text"
+                    type="number"
                     id="defaultFormRegisterPasswordEx4"
                     name="count_of_day"
                     value={this.state.count_of_day}
@@ -559,7 +556,7 @@ class UpdateTourText extends React.Component {
                     </label>
 
                     <input
-                      type="text"
+                      type="number"
                       id="defaultFormRegisterPasswordEx4"
                       name="age_control"
                       placeholder=""
@@ -622,13 +619,16 @@ class UpdateTourText extends React.Component {
                   </button>
                 </Link>
                 <div>
+                  <Link to="/admin-panel/ubdate-tour-image">
                   <button
                     className="addImage-btn updateTour-save"
                     type="submit"
                   >
-                    SAVE
+                    NEXT &#10093;
                   </button>
 
+                  </Link>
+                 
                   {/* <Link to="/admin-panel/ubdate-tour-image">
                <button className="addImage-btn" onClick={this.onClickFarther}>Farther &#10093;</button>
                 </Link>
@@ -656,7 +656,7 @@ const mapDispatchToProps = (dispatch) => {
     closeUpdate: () => dispatch(closePortal()),
     updateTour: (data, id) => dispatch(updateTourAdmin(data, id)),
     closeModal: () => dispatch(closeModal()),
-    getArrImage: (id) => dispatch(updateTourImage(id)),
+
   };
 };
 

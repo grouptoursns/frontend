@@ -27,7 +27,8 @@ import addGroupAdmin from "../../../../actions/admin-panel/addGroup/addGroup";
 import { Redirect } from "react-router";
 import { closePortal } from "../../../../actions/admin-panel/detailsTour/detailstTourAdmin";
 import {Link}from "react-router-dom"
-import {detailsTour} from "../../../../actions/detailsTour"
+import {detailsTour} from "../../../../actions/detailsTour";
+import {updateTourImage} from "../../../../actions/admin-panel/updateTour-image/updateTour-imge"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -121,6 +122,7 @@ function Tours(props) {
   const [idTour, setIdTour] = useState();
   const [idGroup, setIdGroup] = useState();
   const [addGroup, setAddGroup] = useState(false);
+  const [editTour,setEditTour]= useState(false)
 
   const [data, setData] = useState({
     name: "",
@@ -159,8 +161,9 @@ function Tours(props) {
   useEffect(() => {
     props.getTours("http://161.35.199.172/api/company/tours/");
     setIsDelete(false);
+    setEditTour(false)
     props.closeUpdate();
-  }, [isDelete]);
+  }, [isDelete,editTour]);
   const clickAddGroup = (e) => {
     setAddGroup(true);
     setIdGroup(e.target.id);
@@ -175,6 +178,8 @@ function Tours(props) {
   const onClickEdit = (e) => {
     console.log(e.target.id);
     props.detailsTourAdmin(e.target.id);
+    setEditTour(true);
+    props.getArrImage(e.target.id)
   };
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -495,7 +500,7 @@ function Tours(props) {
                       align="left"
                       className="text-table"
                     >
-                      {row.groups}
+                      <span>{row.groups}</span>
                       <button
                         className="btn-add-group"
                         id={row.id}
@@ -572,6 +577,7 @@ detailsTourAdmin:(id)=>dispatch(detailsTourAdmin(id)),
     addGroup: (id, data) => dispatch(addGroupAdmin(id, data)),
     closeUpdate: () => dispatch(closePortal()),
     detailsTour: (id) => dispatch(detailsTour(id)),
+    getArrImage: (id) => dispatch(updateTourImage(id)),
   };
 };
 

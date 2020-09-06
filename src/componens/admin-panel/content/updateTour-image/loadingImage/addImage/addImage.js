@@ -15,10 +15,15 @@ import css from './addPhote.module.css'
     const [hovered, setHovered] = useState(false)
     const [name, setName] = useState('')
     const [checkName, setCheckName] = useState('')
+    const [image,setImage]= useState();
     const[dataFile,setDataFile]=useState()
     useEffect(()=>{
 
-
+        console.log(props.defaultImage[props.id])
+        if(props.defaultImage[props.id]){
+            setBlock("none");
+            setImage(props.defaultImage[props.id].image)
+        }
 
     })
 
@@ -50,15 +55,22 @@ import css from './addPhote.module.css'
             props.handleChange(props.id,file)
         } 
     }
+    const containerStyle = {
+        background: `url(http://161.35.199.172${image}) center center no-repeat`,
+        backgroundSize: "cover",
 
+    
+      };
     return (
         <div className={css.fileWrapper}
-             style={
-                {
-                    background: `url(${url}) center center no-repeat`,
-                    backgroundSize: url.length > 0 ? "cover" : null,
-                  }
-              }>
+        style={
+            url.length > 0
+              ? {
+                  background: `url(${url}) center center no-repeat`,
+                  backgroundSize: url.length > 0 ? "cover" : null,
+                }
+              : containerStyle
+          }>
             <label className={css.inpWrapper}>
                 <input
                     {...props}
