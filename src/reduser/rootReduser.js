@@ -31,8 +31,10 @@ import {trigerModalUpdateTour} from "./admin-panel/trigerModalUpdateTour"
 import {getArrImage} from "./admin-panel/getImageTour";
 import {groupData} from "./groupDetails";
 import {groupInfo} from "./groupInfo";
+import {GroupListTour} from "./admin-panel/groupListTour"
 
 const rootReduser = combineReducers({
+    GroupListTour,
     UserRegistr,
     Spiner,
     Success,

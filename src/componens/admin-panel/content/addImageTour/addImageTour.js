@@ -8,11 +8,17 @@ import { errCreateTour } from "../../../../actions/admin-panel/createTour/create
 
 const AddImageTour = (props) => {
   const [data, setData] = useState([]);
+  const [image,setImage]=useState(false)
   let formData = new FormData();
   const updateImage = (arrFiles) => {
     setData([...arrFiles]);
   };
   const Postdata = () => {
+    if(data.length===0){
+      console.log("hi")
+      setImage(true)
+    }
+    else{
     console.log(data);
     for (let i = 0; i < data.length; i++) {
       formData.append("image", data[i]);
@@ -21,13 +27,19 @@ const AddImageTour = (props) => {
     for (let [key, value] of formData.entries()) {
       console.log(`${key}: ${value}`);
     }
+  }
   };
-
+  const clickInput =()=>{
+    setImage(false)
+  }
   return (
     <div className="wrapperr-addTour">
       <BlockBtn />
       <div className="text-image">
-        <LoadingImage dataImage={updateImage} />
+        <span className={"title-update-image"+ (image ? " err-image" : " ")}>
+          Upload at least one picture for the tour
+        </span>
+        <LoadingImage dataImage={updateImage} clickInput={()=>clickInput} />
         <div className="addImage-block-btn">
           <button className="addImage-back" onClick={() => props.back1()}>
             &#10092; Back

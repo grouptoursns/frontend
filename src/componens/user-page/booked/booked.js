@@ -101,6 +101,7 @@ const useStyles2 = makeStyles({
     rows=[]
   }
   else{
+    console.log(props.custimerCabinetData.book_user)
     rows =props.custimerCabinetData.book_user.map((item)=>{
       return{
         time:item.group.finish_time,

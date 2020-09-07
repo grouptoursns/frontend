@@ -29,6 +29,8 @@ import { closePortal } from "../../../../actions/admin-panel/detailsTour/details
 import {Link}from "react-router-dom"
 import {detailsTour} from "../../../../actions/detailsTour";
 import {updateTourImage} from "../../../../actions/admin-panel/updateTour-image/updateTour-imge"
+import GroupList from "./group-list/group-list";
+import {getGroupListTour} from "../../../../actions/admin-panel/group-list/getGroupList"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -123,6 +125,8 @@ function Tours(props) {
   const [idGroup, setIdGroup] = useState();
   const [addGroup, setAddGroup] = useState(false);
   const [editTour,setEditTour]= useState(false)
+  const [group,setGroup]=useState(false);
+  const [nameTour,setNameTour]=useState()
 
   const [data, setData] = useState({
     name: "",
@@ -148,6 +152,7 @@ function Tours(props) {
         rating: item.avg_rate_tour[0].rating,
       };
     });
+    rows.sort((a, b) => (a.name < b.name ? -1 : 1))
   }
   console.log(rows)
   if (isDelete) {
@@ -162,6 +167,7 @@ function Tours(props) {
     props.getTours("http://161.35.199.172/api/company/tours/");
     setIsDelete(false);
     setEditTour(false)
+    setGroup(false)
     props.closeUpdate();
   }, [isDelete,editTour]);
   const clickAddGroup = (e) => {
@@ -174,7 +180,14 @@ function Tours(props) {
     setIdTour(e.target.id);
     setOpen(true);
   };
-
+const onclickGroups=(e)=>{
+  console.log(e.target.id)
+  console.log(e.target.title)
+  setNameTour(e.target.title)
+  setIdTour(e.target.id)
+  setGroup(true)
+  props.getGroupListTour(`http://161.35.199.172/api/company/tours/${e.target.id}/groups/`)
+}
   const onClickEdit = (e) => {
     console.log(e.target.id);
     props.detailsTourAdmin(e.target.id);
@@ -254,7 +267,38 @@ function Tours(props) {
             </button>
           </div>
         </Modal>
-
+        <Modal
+          isOpen={group}
+          shouldCloseOnOverlayClick={false}
+          onRequestClose={() => setOpen(false)}
+          style={{
+            content: {
+              position: "absolute",
+              top: "10%",
+              left: "10%",
+              right: "10%",
+              bottom: "10%",
+              border: "1px solid none",
+              background: "none",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            },
+          }}
+        >
+          <div className="top-block-group-list">
+            <div className="block-name-tour">
+              <span className="name-tour-modal">{nameTour}</span>
+            </div>
+            <button className="close-modal" onClick={()=>setGroup(false)}>&#10006;</button>
+          </div>
+ <GroupList idTour={idTour}/>
+        </Modal>
         <Modal
           isOpen={addGroup}
           shouldCloseOnOverlayClick={false}
@@ -500,7 +544,7 @@ function Tours(props) {
                       align="left"
                       className="text-table"
                     >
-                      <span>{row.groups}</span>
+                      <span id={row.id} title={row.name} className="number-groups" onClick={onclickGroups}>{row.groups}</span>
                       <button
                         className="btn-add-group"
                         id={row.id}
@@ -566,6 +610,7 @@ const mapStateToProps = (state) => {
   return {
     ToursList: state.ToursListAdmin.state,
     isOpenUpdateTour: state.detailTourAdmin.isOpenPortal,
+    groupListTour:state.GroupListTour.state
   };
 };
 
@@ -578,6 +623,7 @@ detailsTourAdmin:(id)=>dispatch(detailsTourAdmin(id)),
     closeUpdate: () => dispatch(closePortal()),
     detailsTour: (id) => dispatch(detailsTour(id)),
     getArrImage: (id) => dispatch(updateTourImage(id)),
+    getGroupListTour:(url)=>dispatch(getGroupListTour(url))
   };
 };
 

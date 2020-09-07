@@ -58,8 +58,6 @@ import css from './addPhote.module.css'
     const containerStyle = {
         background: `url(http://161.35.199.172${image}) center center no-repeat`,
         backgroundSize: "cover",
-
-    
       };
     return (
         <div className={css.fileWrapper}
