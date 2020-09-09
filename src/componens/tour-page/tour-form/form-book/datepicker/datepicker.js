@@ -1,5 +1,6 @@
-import React, {Component} from "react";
+import React, {Component, useEffect} from "react";
 import './datepicker.css'
+import calendar from '../img/calendar.png'
 
 
 class Datepicker extends Component{
@@ -63,11 +64,14 @@ class Datepicker extends Component{
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <div>
+                            <div className="book-picker__form">
+                                <img src={calendar} alt="calendar.icon" style={{"padding": "0px 10px"}}/>
                             <input className="book-picker__date-inpt"
                                    onClick={() => this.showFunc()}
                                    type="text"
                                    value={this.state.value}
                             />
+                            </div>
                             {
                                 this.state.show ?
                                     <div className="book-picker__date">

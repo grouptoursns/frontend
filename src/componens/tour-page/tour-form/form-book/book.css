@@ -84,7 +84,7 @@
     background-color: #000000;
     color: white;
     margin-top: 30px;
-    width: 173px;
+    width: 100%;
     padding: 10px 60px;
 }
 
@@ -94,6 +94,6 @@
     background-color: red;
     color: white;
     margin-top: 30px;
-    width: 173px;
+    /*width: 173px;*/
     padding: 10px 60px;
 }

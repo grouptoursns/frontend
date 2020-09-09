@@ -22,7 +22,8 @@ import Group from "./componens/tour-page/groups-page/group/group";
 
 const App = () => {
 
-  const [ tourBookInfo, setTourBookInfo] = useState([])
+  const [tourBookInfo, setTourBookInfo] = useState([])
+  console.log('tour info', (tourBookInfo))
 
   return (
     <Router  >

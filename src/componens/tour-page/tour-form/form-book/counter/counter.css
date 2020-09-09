@@ -18,5 +18,12 @@
 }
 
 .book-picker__adults-inp{
-    margin-top: 10px;
+    /*margin-top: 10px;*/
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+
+}
+.book-picker__form{
+    border: 1px solid #000000;
 }

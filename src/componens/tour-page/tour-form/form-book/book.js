@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import Counter from "./counter/counter.js";
-// import DatePicker, { addDays } from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 import './book.css';
 import {tourDataFetch} from "../../../../actions/tourData";
@@ -13,32 +12,42 @@ import DatePicker from "./datepicker/datepicker"
 
 
 const Book =(props)=> {
-    let a = []
-    if (props.tourData.group_tour) {
-        a = [...props?.tourData?.group_tour]
-    }
-
 
     useEffect(() => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.setTourBookInfo([])
+
+        let slots = []
+        if (props.info) {
+            slots = props.info
+        }
+
+        // let freeSlot = []
+        // if (slots.group_tour[0]){
+        //     freeSlot = slots.group_tour[0]
+        // }
+        // setFreeSlots(freeSlot.free_slots)
+
     }, []);
+
+    const [freeSlots,setFreeSlots] = useState();
+    console.log('%c freeSlots: ','color:red',freeSlots)
+
+
+    const setSlots=()=>{
+
+    }
+    setSlots()
+
 
 
 
     let arrId=[];
     const onclickBook=()=>{
-
-        if(props.tourBookInfo.count = a[0].free_slots){
-            // return <Redirect to="/tourspage"></Redirect>
-            alert('too mane people!')
-        }
-        else{
             arrId=props.tourData.group_tour.map((item)=>{
                 return item.id
             })
             props.groupInfo(arrId)
-            console.log(arrId)
-        }
     }
 
 
@@ -51,7 +60,7 @@ const Book =(props)=> {
         <div className="book">
             <div className="book-price">
                 <h2>{props.tourData.min_price}$ to {props.tourData.max_price}$</h2>
-                <p className="book-price__size">Price varies by group size</p>
+
             </div>
             <div className="book-picker">
 
@@ -63,13 +72,15 @@ const Book =(props)=> {
                 <p className="book-picker__date">Count of extra people:</p>
                 <Counter
                     setTourBookInfo={props.setTourBookInfo}
-                    tourBookInfo={props.tourBookInfo}/>
+                    tourBookInfo={props.tourBookInfo}
+                    freeSlots={freeSlots}/>
 
 
                 <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
                     <button className="update" onClick={onclickBook}>Book</button>
                 </Link>
                 <button className="private" onClick={privateTour}>Private tour</button>
+                <p style={{"margin-top": "5px"}}>This button was created for a private tour request</p>
             </div>
         </div>
     )

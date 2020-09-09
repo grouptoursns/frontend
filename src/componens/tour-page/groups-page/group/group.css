@@ -3,13 +3,16 @@
     background-color: #ffffff;
     padding: 40px;
     font-weight: bold;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 
 .group-list__guide{
     display: flex;
     justify-content: space-evenly;
-    width: 65%;
+    margin-right: 40px;
+    margin-bottom: 30px;
 }
 .group-list__guide img{
     margin-right: 10px;
@@ -17,7 +20,8 @@
 
 
 .group-list__people{
-    margin-top: 30px;
+    border-left: 2px solid #C4C4C4;
+    padding: 0px 30px;
 }
 .group-list__people img{
     margin-right: 10px;

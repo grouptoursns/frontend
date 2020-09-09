@@ -1,5 +1,13 @@
 .book-picker__date-inpt{
-
+    border: none;
+    height: 20px;
+    border-radius: 5px;
+}
+.book-picker__form{
+    border: 1px solid #000000;
+    height: 25px;
+    border-radius: 5px;
+    width: auto;
 }
 .book-picker__date{
     display: flex;

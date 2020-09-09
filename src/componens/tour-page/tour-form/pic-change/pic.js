@@ -10,19 +10,19 @@ import {connect} from "react-redux";
 
 
 const Pic = (props) =>{
+    // useEffect( () => {
+    //     props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+    // },[]);
 
+    let picture = props.pic.tour_image
+    console.log(picture)
 
-    useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
-    },[]);
-
-
-    let a;
-    let items = []
-    if(props.pic.tour_image){
-       items = [...props?.pic?.tour_image]
-        a = items.map((item) => item.image)
-    }
+    // let a;
+    // let items = []
+    // if(picture){
+    //    items = [...picture]
+    //     items.map((item) => item.image)
+    // }
 
     return(
         <div className='slider'>
@@ -31,13 +31,13 @@ const Pic = (props) =>{
                     <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>img1
-                    <img className='slider-carousel__img' src={img2} alt="pic.icon"/>
+                    <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
                     <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
-                    <img className='slider-carousel__img' src={img2} alt="pic.icon"/>
+                    <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
                 </div>
                 <div className='slider-carousel'>
                     <img className='slider-carousel__img' src={img1} alt="pic.icon"/>
@@ -47,18 +47,18 @@ const Pic = (props) =>{
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        tourData:state.tourData,
-        detailsTours: state.detailsTour.detailsTour
-    };
-};
+// const mapStateToProps = (state) => {
+//     return {
+//         tourData:state.tourData,
+//         detailsTours: state.detailsTour.detailsTour
+//     };
+// };
+//
+//
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         fetchData: url => {dispatch(tourDataFetch(url))}
+//     };
+// };
 
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: url => {dispatch(tourDataFetch(url))}
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Pic);
+export default Pic;
