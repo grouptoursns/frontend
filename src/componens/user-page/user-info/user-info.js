@@ -12,7 +12,7 @@ import {Link} from "react-router-dom"
 const UserInfo =(props)=>{
     console.log(props.userInfo)
     const [clas,setClas]=useState("1");
-    let{first_name,last_name,avatar}=props.userInfo
+    let{first_name,last_name,avatar,count_of_visited_tours}=props.userInfo
     console.log(avatar)
     const clickLink=(event)=>{
 
@@ -25,7 +25,7 @@ const UserInfo =(props)=>{
                 <div className="user-information">
     <span className="user-name">{first_name+" "+ last_name}</span>
                     <div><img src={mapPin} alt=""/><span className="user-text ">Kyrgyzstan, Bishkek</span></div>
-                    <div><img src={map} alt=""/><span  className="user-text">Visited tours 54 </span></div>
+                    <div><img src={map} alt=""/><span  className="user-text">Visited tours {count_of_visited_tours} </span></div>
                 </div>
                 <div className="user-links">    
                     <Link to="/user-page"><div className={ (clas ==="1" ? " active-button":'' )} id="1" onClick={(e)=>clickLink(e)} ><img src={flag} alt=""/> <span id="1" onClick={(e)=>clickLink(e)}  className="user-text">Booked tours</span></div></Link>

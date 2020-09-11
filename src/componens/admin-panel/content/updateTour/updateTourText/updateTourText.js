@@ -48,12 +48,15 @@ class UpdateTourText extends React.Component {
     Category: "",
     country_image: null,
   };
-
+  onClickFarther = () => {
+    this.props.getArrImage(this.state.id);
+  };
   submitHandler = (event) => {
     event.preventDefault();
     event.target.className += " was-validated";
     const formData = new FormData();
     const newState = {};
+
     for (let key in this.state) {
       if (this.state[key] === null) {
         newState[key] = "";
@@ -75,7 +78,6 @@ class UpdateTourText extends React.Component {
       formData.append(key, newState[key]);
     }
     this.props.updateTour(formData, this.state.id);
-    this.props.getArrImage(this.state.id);
 
   };
   changeCountry = (country1) => {
@@ -619,20 +621,19 @@ class UpdateTourText extends React.Component {
                   </button>
                 </Link>
                 <div>
-                  <Link to="/admin-panel/ubdate-tour-image">
+                  
                   <button
                     className="addImage-btn updateTour-save"
-                    type="submit"
+                   type="submit"
                   >
-                    NEXT &#10093;
+                    SAVE
                   </button>
+     
 
-                  </Link>
-                 
-                  {/* <Link to="/admin-panel/ubdate-tour-image">
-               <button className="addImage-btn" onClick={this.onClickFarther}>Farther &#10093;</button>
+                 <Link to={`/admin-panel/ubdate-tour-image/${this.state.id}`}>
+               <button className="addImage-btn">  NEXT &#10093;</button>
                 </Link>
-                 */}
+                
                 </div>
               </div>
             </div>

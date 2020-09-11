@@ -29,7 +29,13 @@ export function updateTourAdmin(data,id) {
       })
       .then((res) => {
 
-
+console.log(res)
+if(res.status===200){
+  dispatch(openModal());
+  setTimeout(() => {
+    dispatch(closeModal());
+  }, 2000);
+}
         
       })
       .catch((err) => {

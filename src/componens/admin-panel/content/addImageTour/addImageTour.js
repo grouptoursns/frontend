@@ -5,6 +5,7 @@ import LoadingImage from "./loadingImage/loadingImage";
 import { connect } from "react-redux";
 import TourPictureAddAdmin from "../../../../actions/admin-panel/tourPicturesAdd/tourPictureAdd";
 import { errCreateTour } from "../../../../actions/admin-panel/createTour/createTour";
+import Modal from "react-modal";
 
 const AddImageTour = (props) => {
   const [data, setData] = useState([]);
@@ -31,10 +32,40 @@ const AddImageTour = (props) => {
   };
   const clickInput =()=>{
     setImage(false)
+    console.log(image)
   }
   return (
     <div className="wrapperr-addTour">
       <BlockBtn />
+      <Modal
+          isOpen={props.isOpenModal}
+          style={{
+            content: {
+              position: "absolute",
+              top: "30%",
+              left: "30%",
+              right: "30%",
+              bottom: "30%",
+              border: "1px solid #ccc",
+              background: "#fff",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            },
+          }}
+        >
+            <div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+        </Modal>
       <div className="text-image">
         <span className={"title-update-image"+ (image ? " err-image" : " ")}>
           Upload at least one picture for the tour
@@ -56,6 +87,7 @@ const AddImageTour = (props) => {
 const mapStateToProps = (state) => {
   return {
     idTour: state.trigerCreateTour.id,
+    isOpenModal:state.trigerModalCreteTour.trigerModalCreateImage
   };
 };
 

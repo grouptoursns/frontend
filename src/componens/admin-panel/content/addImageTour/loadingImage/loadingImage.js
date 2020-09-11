@@ -35,38 +35,38 @@ useEffect(()=>{
       <AddImage
       required={true}
         id="0"
-        changeImage={()=>props.clickInput()}
+        changeImage={props.clickInput()}
         handleChange={changeImage}
         deleteChange={changeDeleteImage}
       />
       <AddImage
         id="1"
         handleChange={changeImage}
-        changeImage={()=>props.clickInput()}
+        changeImage={props.clickInput()}
         deleteChange={changeDeleteImage}
       />
       <AddImage
         id="2"
         handleChange={changeImage}
-        changeImage={()=>props.clickInput()}
+        changeImage={props.clickInput()}
         deleteChange={changeDeleteImage}
       />
       <AddImage
         id="3"
         handleChange={changeImage}
-        changeImage={()=>props.clickInput()}
+        changeImage={props.clickInput()}
         deleteChange={changeDeleteImage}
       />
       <AddImage
         id="4"
         handleChange={changeImage}
-        changeImage={()=>props.clickInput()}
+        changeImage={props.clickInput()}
         deleteChange={changeDeleteImage}
       />
       <AddImage
         id="5"
         handleChange={changeImage}
-        changeImage={()=>props.clickInput()}
+        changeImage={props.clickInput()}
         deleteChange={changeDeleteImage}
       />
     </div>
