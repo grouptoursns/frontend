@@ -20,3 +20,9 @@
     flex-direction: column;
     align-items: center;
 }
+@media screen and (max-width: 480px) {
+    .block-text{
+        height: 160px;
+    }
+
+  }

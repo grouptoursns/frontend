@@ -53,7 +53,7 @@ top100Films=[...name,...count];
   }
 
   return (
-    <div style={{ width: 800 }}>
+    <div className="serach-slider">
       <Autocomplete
         freeSolo
         id="free-solo-2-demo"

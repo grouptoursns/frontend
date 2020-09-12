@@ -1,5 +1,5 @@
 .navBtn{
-    width: 40%;
+    width: 55%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -18,4 +18,18 @@ a {
 }
 a:hover{
     color: rgba(7, 58, 245, 0.63) !important;  
+}
+@media screen and (max-width: 768px) {
+    .navBtn{
+        height: 300px;
+        margin-top: 70px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .link1{
+        font-size: 25px;
+    }
 }

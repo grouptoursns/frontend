@@ -33,7 +33,6 @@ const Home = (props) => {
       <BoxCard cards={props.bestImg.ImageToFront} />
       <BestTours card={props.bestImg.Tour}/>
       <Actvities activityCard={props.bestImg.Category}/>
-      <GroupTours card1={props.bestImg.Tour}/>
       <Footer/>
     </div>
   );

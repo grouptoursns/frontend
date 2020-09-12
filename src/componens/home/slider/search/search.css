@@ -10,6 +10,9 @@
     background-position: 10px;
     padding-left: 40px;
 }
+.serach-slider{
+    width: 100%;
+}
 .input-serach:focus{
     border:2px solid rgba(33, 68, 190, 0.63);
     box-shadow: 0 0 10px rgba(33, 68, 190, 0.63);

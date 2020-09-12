@@ -9,9 +9,8 @@ import userIcon from "./img/users.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { detailsTour } from "../../../../actions/detailsTour";
-import ReactStars from 'react-stars'
+import ReactStars from "react-stars";
 import noImage from "../img/no image 1.png";
-
 
 const BestSlider = (props) => {
   const cards1 = [
@@ -49,20 +48,20 @@ const BestSlider = (props) => {
     infinite: false,
     speed: 500,
     arrows: true,
-    slidesToShow: props.cards && props.cards.length < 3 ? 1 : 3,
+    slidesToShow:
+      props.cards && props.cards.length < 3  ? 1 : 3,
     slidesToScroll: 2,
   };
-  
+
   const onClickCard = (id) => {
     props.detailsTour(id);
   };
   console.log(props.cards);
   return (
     <div className="container1">
-      
-      <Slider {...settings}>  
-        {props.cards ? props.cards.map((item) => 
-          (
+      <Slider {...settings}>
+        {props.cards ? (
+          props.cards.map((item) => (
             <Link
               to="/tourspage"
               key={item.id}
@@ -70,7 +69,11 @@ const BestSlider = (props) => {
             >
               <div className="card">
                 <div className="block-img">
-                  <img className="image-best-card" src={item.main_image ? item.main_image : noImage} alt="img" />
+                  <img
+                    className="image-best-card"
+                    src={item.main_image ? item.main_image : noImage}
+                    alt="img"
+                  />
                 </div>
 
                 <div className="content">
@@ -81,17 +84,19 @@ const BestSlider = (props) => {
                   </div>
                   <div className="reitng11">
                     <div className="block-stars">
-                    <ReactStars
-                    size={20}
-                    count={5}
-                    value={item.avg_rate_tour[0].rating}
-                    edit={false}
-                    half={true}
-                    color1="lightgrey"
-                    color2="gold"
-                />
+                      <ReactStars
+                        size={20}
+                        count={5}
+                        value={item.avg_rate_tour[0].rating}
+                        edit={false}
+                        half={true}
+                        color1="lightgrey"
+                        color2="gold"
+                      />
                     </div>
-                    <span className="reting-figures">{item.avg_rate_tour[0].count_of_voices} reviews</span>
+                    <span className="reting-figures">
+                      {item.avg_rate_tour[0].count_of_voices} reviews
+                    </span>
                   </div>
                   <div className="block-buttom">
                     <div className="location11">
@@ -108,8 +113,10 @@ const BestSlider = (props) => {
                 </div>
               </div>
             </Link>
-          )
-        ) : <></>}
+          ))
+        ) : (
+          <></>
+        )}
       </Slider>
     </div>
   );

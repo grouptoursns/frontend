@@ -13,3 +13,18 @@
 
   color: #ffffff;
 }
+@media screen and (max-width: 768px) {
+  .title-slider > span {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .title-slider > span {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title-slider > span {
+    font-size: 30px;
+  }
+}
