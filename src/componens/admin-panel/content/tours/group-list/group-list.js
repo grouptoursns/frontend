@@ -1,5 +1,6 @@
+
+import "./group-list.css";
 import React, { useEffect, useState } from "react";
-import "./groups.css";
 import PropTypes from "prop-types";
 import Modal from "react-modal";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -17,20 +18,20 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
-import BlockBtn from "../block-btn/block-btn";
-import { getGroupList } from "../../../../actions/admin-panel/group-list/getGroupList";
-import { deleteGroupAdmin } from "../../../../actions/admin-panel/deleteGroup/deleteGroup";
-import { detailGroup } from "../../../../actions/admin-panel/detailsGroup/detailGroup";
+import { getGroupList } from "../../../../../actions/admin-panel/group-list/getGroupList";
+import { deleteGroupAdmin } from "../../../../../actions/admin-panel/deleteGroup/deleteGroup";
+import { detailGroup } from "../../../../../actions/admin-panel/detailsGroup/detailGroup";
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import Status from "./status/status";
-import {trigerModalExitOff} from "../../../../actions/admin-panel/detailsGroup/detailGroup"
-import {updateGroupAdmin} from "../../../../actions/admin-panel/updateGroup/updateGroup"
+import {trigerModalExitOff} from "../../../../../actions/admin-panel/detailsGroup/detailGroup"
+import {updateGroupAdmin} from "../../../../../actions/admin-panel/updateGroup/updateGroup"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
     flexShrink: 0,
     marginLeft: theme.spacing(2.5),
   },
+
 }));
 
 function TablePaginationActions(props) {
@@ -105,14 +106,14 @@ TablePaginationActions.propTypes = {
 
 const useStyles2 = makeStyles({
   table: {
-    minWidth: 500,
+    width: "100%",
   },
 });
 
-function Groups(props) {
+function GroupList(props) {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [open, setOpen] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
   const [idTour, setIdTour] = useState();
@@ -132,7 +133,6 @@ function Groups(props) {
   });
   let rows = [];
   useEffect(() => {
-    props.getGroupList("http://161.35.199.172/api/company/groups/");
     setUpdate(false)
     setIsDelete(false)
   },[isDelete,update]);
@@ -144,7 +144,6 @@ function Groups(props) {
       return {
         name:item.name,
         id: item.id,
-        id_tour: item.tour_id,
         tour: item.tour,
         status: item.status_group_tour,
         start_time:item.start_time,
@@ -187,7 +186,7 @@ let data2={}
     let id_group = e.target.id;
     console.log(id_tour)
     console.log(id_group)
-    setIdTour(id_tour);
+    setIdTour(props.idTour);
     setIdGroup(id_group);
     setUpdate(true)
     data2=rows.filter((item)=>item.id==e.target.id)
@@ -195,7 +194,6 @@ let data2={}
     setData({
       ...data,
       id:e.target.id,
-      tour:data2[0].tour,
       name: data2[0].name,
       start_time: data2[0].start_time,
       status_group: data2[0].status,
@@ -209,7 +207,7 @@ let data2={}
   };
 
   if (isDelete) {
-    props.deleteGroup(idTour, idGroup);
+    props.deleteGroup(props.idTour, idGroup);
   }
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -219,7 +217,7 @@ let data2={}
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value, 5));
     setPage(0);
   };
   const modalOnclickYes = () => {
@@ -229,7 +227,7 @@ let data2={}
 
   return (
     <div className="wrapperr-addTour">
-      <BlockBtn />
+
       <Modal
         isOpen={open}
         shouldCloseOnOverlayClick={false}
@@ -481,15 +479,15 @@ let data2={}
           </div>
         </form>
       </Modal>
-      <div className="table-adminPanel">
+      < >
         <TableContainer component={Paper}>
           <div className="admin-table-title">
-            <span className="name-group">Tour</span>
-            <span className="status-group">Status</span>
-            <span className="time-group">Time</span>
-            <span className="price-group">Price</span>
-            <span className="places-group">Places</span>
-            <span className="action-group">Action</span>
+            <span className="name-group1">Name</span>
+            <span className="status-group1">Status</span>
+            <span className="time-group1">Time</span>
+            <span className="price-group1">Price</span>
+            <span className="places-group1">Places</span>
+            <span className="action-group1">Action</span>
           </div>
           <Table className={classes.table} aria-label="custom pagination table">
             <TableBody>
@@ -502,7 +500,7 @@ let data2={}
               ).map((row) => (
                 <TableRow key={row.id}>
                   <TableCell component="th" style={{ width: 200 }} scope="row">
-                    {row.tour}
+                    {row.name}
                   </TableCell>
                   <TableCell
                     style={{ width: 100 }}
@@ -533,7 +531,7 @@ let data2={}
                   <TableCell style={{ width: 40 }} align="center">
                     <button
                       className="tour-list-btn tour-list-edit"
-                      name={row.id_tour}
+                      
                       id={row.id}
                       onClick={clickExit}
                     >
@@ -562,13 +560,13 @@ let data2={}
             </TableFooter>
           </Table>
         </TableContainer>
-      </div>
+      </>
     </div>
   );
 }
 const mapStateToProps = (state) => {
   return {
-    groupList: state.GroupListAdmin.state,
+    groupList: state.GroupListTour.state,
     dataGropsAdmin: state.dataGroupAdmin.state,
     modalTriger:state.ModalEdit.modalEdit
   };
@@ -576,7 +574,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getGroupList: (url) => dispatch(getGroupList(url)),
+    
     deleteGroup: (id_tour, id_group) =>
       dispatch(deleteGroupAdmin(id_tour, id_group)),
     detailGroup2: (id_tour2, id_group2) =>
@@ -585,4 +583,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Groups);
+export default connect(mapStateToProps, mapDispatchToProps)(GroupList);

@@ -2,3 +2,13 @@
     height: 755px;
     background: #FFFFFF;
 }
+@media screen and (max-width: 1205px) {
+    .actvities{
+        height: 900px;
+    }
+  }
+  @media screen and (max-width: 990px) {
+    .actvities{
+        height: 1400px;
+    }
+  }

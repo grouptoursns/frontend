@@ -30,3 +30,29 @@
 color: #FFFFFF;
 
 }
+@media screen and (max-width: 990px) {
+  .active-card {
+    width: 354px;
+    height: 124px;
+    margin: 8px;
+margin-left: auto;
+margin-right: auto;
+    position: relative;
+  
+  }
+  .img_act {
+    width: 354px;
+    height: 124px;
+    display: block;
+  }
+  .cards1 {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  justify-content: center;
+
+    margin-top: 40px;
+  
+  }
+}

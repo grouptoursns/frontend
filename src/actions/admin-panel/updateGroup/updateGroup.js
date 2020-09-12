@@ -1,5 +1,8 @@
 import axios from "axios";
 
+
+
+
 export function updateGroupAdmin(id1,id2,data) {
     let token = localStorage.getItem('token');
   let id = localStorage.getItem("id");
@@ -27,6 +30,7 @@ export function updateGroupAdmin(id1,id2,data) {
       })
       .then((res) => {
         console.log(res);
+  
       })
       .catch((err) => {
         console.log(err);

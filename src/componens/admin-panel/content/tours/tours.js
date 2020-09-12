@@ -2,20 +2,22 @@ import React, { useEffect, useState } from "react";
 import "./tours.css";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableFooter from "@material-ui/core/TableFooter";
-import TablePagination from "@material-ui/core/TablePagination";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import IconButton from "@material-ui/core/IconButton";
-import FirstPageIcon from "@material-ui/icons/FirstPage";
-import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import LastPageIcon from "@material-ui/icons/LastPage";
+
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableFooter from '@material-ui/core/TableFooter';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import IconButton from '@material-ui/core/IconButton';
+import FirstPageIcon from '@material-ui/icons/FirstPage';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import LastPageIcon from '@material-ui/icons/LastPage';
+
 import { connect } from "react-redux";
 import BlockBtn from "../block-btn/block-btn";
 import { getToursAdmin } from "../../../../actions/admin-panel/tours-list/getToursAdmin";
@@ -27,7 +29,10 @@ import addGroupAdmin from "../../../../actions/admin-panel/addGroup/addGroup";
 import { Redirect } from "react-router";
 import { closePortal } from "../../../../actions/admin-panel/detailsTour/detailstTourAdmin";
 import {Link}from "react-router-dom"
-import {detailsTour} from "../../../../actions/detailsTour"
+import {detailsTour} from "../../../../actions/detailsTour";
+import {updateTourImage} from "../../../../actions/admin-panel/updateTour-image/updateTour-imge"
+import GroupList from "./group-list/group-list";
+import {getGroupListTour} from "../../../../actions/admin-panel/group-list/getGroupList"
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -64,41 +69,28 @@ function TablePaginationActions(props) {
         disabled={page === 0}
         aria-label="first page"
       >
-        {theme.direction === "rtl" ? <LastPageIcon /> : <FirstPageIcon />}
+        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
       </IconButton>
-      <IconButton
-        onClick={handleBackButtonClick}
-        disabled={page === 0}
-        aria-label="previous page"
-      >
-        {theme.direction === "rtl" ? (
-          <KeyboardArrowRight />
-        ) : (
-          <KeyboardArrowLeft />
-        )}
+      <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
+        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
       </IconButton>
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
         aria-label="next page"
       >
-        {theme.direction === "rtl" ? (
-          <KeyboardArrowLeft />
-        ) : (
-          <KeyboardArrowRight />
-        )}
+        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
       </IconButton>
       <IconButton
         onClick={handleLastPageButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
         aria-label="last page"
       >
-        {theme.direction === "rtl" ? <FirstPageIcon /> : <LastPageIcon />}
+        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
     </div>
   );
 }
-
 TablePaginationActions.propTypes = {
   count: PropTypes.number.isRequired,
   onChangePage: PropTypes.func.isRequired,
@@ -121,6 +113,9 @@ function Tours(props) {
   const [idTour, setIdTour] = useState();
   const [idGroup, setIdGroup] = useState();
   const [addGroup, setAddGroup] = useState(false);
+  const [editTour,setEditTour]= useState(false)
+  const [group,setGroup]=useState(false);
+  const [nameTour,setNameTour]=useState()
 
   const [data, setData] = useState({
     name: "",
@@ -146,6 +141,7 @@ function Tours(props) {
         rating: item.avg_rate_tour[0].rating,
       };
     });
+    rows.sort((a, b) => (a.name < b.name ? -1 : 1))
   }
   console.log(rows)
   if (isDelete) {
@@ -159,8 +155,10 @@ function Tours(props) {
   useEffect(() => {
     props.getTours("http://161.35.199.172/api/company/tours/");
     setIsDelete(false);
+    setEditTour(false)
+    setGroup(false)
     props.closeUpdate();
-  }, [isDelete]);
+  }, [isDelete,editTour]);
   const clickAddGroup = (e) => {
     setAddGroup(true);
     setIdGroup(e.target.id);
@@ -171,19 +169,30 @@ function Tours(props) {
     setIdTour(e.target.id);
     setOpen(true);
   };
-
+const onclickGroups=(e)=>{
+  console.log(e.target.id)
+  console.log(e.target.title)
+  setNameTour(e.target.title)
+  setIdTour(e.target.id)
+  setGroup(true)
+  props.getGroupListTour(`http://161.35.199.172/api/company/tours/${e.target.id}/groups/`)
+}
   const onClickEdit = (e) => {
     console.log(e.target.id);
     props.detailsTourAdmin(e.target.id);
+    setEditTour(true);
+   
   };
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   const handleChangePage = (event, newPage) => {
+  
     setPage(newPage);
   };
 
   const handleChangeRowsPerPage = (event) => {
+    debugger;
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
@@ -205,7 +214,7 @@ function Tours(props) {
   };
   if (props.isOpenUpdateTour) {
     return <Redirect to="/admin-panel/ubdate-tour" />;
-  } else {
+  }
     const clickView=(e)=>{
       console.log(e.target.id)
       props.detailsTour(e.target.id)
@@ -249,7 +258,38 @@ function Tours(props) {
             </button>
           </div>
         </Modal>
-
+        <Modal
+          isOpen={group}
+          shouldCloseOnOverlayClick={false}
+          onRequestClose={() => setOpen(false)}
+          style={{
+            content: {
+              position: "absolute",
+              top: "10%",
+              left: "10%",
+              right: "10%",
+              bottom: "10%",
+              border: "1px solid none",
+              background: "none",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            },
+          }}
+        >
+          <div className="top-block-group-list">
+            <div className="block-name-tour">
+              <span className="name-tour-modal">{nameTour}</span>
+            </div>
+            <button className="close-modal" onClick={()=>setGroup(false)}>&#10006;</button>
+          </div>
+ <GroupList idTour={idTour}/>
+        </Modal>
         <Modal
           isOpen={addGroup}
           shouldCloseOnOverlayClick={false}
@@ -458,15 +498,15 @@ function Tours(props) {
                       page * rowsPerPage + rowsPerPage
                     )
                   : rows
-                ).map((row) => (
-                  <TableRow key={row.name}>
+                ).map((rows) => (
+                  <TableRow key={rows.id}>
                     <TableCell
                       component="th"
                       className="text-table"
                       style={{ width: 200 }}
                       scope="row"
                     >
-                      {row.name}
+                      {rows.name}
                     </TableCell>
                     <TableCell
                       style={{ width: 100 }}
@@ -474,31 +514,31 @@ function Tours(props) {
                       align="left"
                       className="text-table"
                     >
-                      {row.status}
+                      {rows.status}
                     </TableCell>
                     <TableCell
                       style={{ width: 60 }}
                       align="left"
                       className="text-table"
                     >
-                      {row.rating}
+                      {rows.rating}
                     </TableCell>
                     <TableCell
                       style={{ width: 60 }}
                       align="left"
                       className="text-table"
                     >
-                      {row.reviews}
+                      {rows.reviews}
                     </TableCell>
                     <TableCell
                       style={{ width: 100 }}
                       align="left"
                       className="text-table"
                     >
-                      {row.groups}
+                      <span id={rows.id} title={rows.name} className="number-groups" onClick={onclickGroups}>{rows.groups}</span>
                       <button
                         className="btn-add-group"
-                        id={row.id}
+                        id={rows.id}
                         onClick={clickAddGroup}
                       >
                         &#43;
@@ -507,7 +547,7 @@ function Tours(props) {
                     <TableCell style={{ width: 40 }} align="right">
                       <button
                         className="tour-list-btn tourl-list-delete"
-                        id={row.id}
+                        id={rows.id}
                         onClick={onClickDelete}
                       >
                         DELETE
@@ -516,7 +556,7 @@ function Tours(props) {
                     <TableCell style={{ width: 40 }} align="center">
                       <button
                         className="tour-list-btn tour-list-edit"
-                        id={row.id}
+                        id={rows.id}
                         onClick={onClickEdit}
                       >
                         EDIT
@@ -524,7 +564,7 @@ function Tours(props) {
                     </TableCell>
                     <TableCell style={{ width: 40 }} align="left">
                       <Link to="/tourspage">
-                        <button id={row.id} className="tour-list-btn tour-list-view" onClick={clickView}>
+                        <button id={rows.id} className="tour-list-btn tour-list-view" onClick={clickView}>
                           VIEW
                         </button>
                       </Link>
@@ -533,11 +573,6 @@ function Tours(props) {
                   </TableRow>
                 ))}
 
-                {emptyRows > 0 && (
-                  <TableRow style={{ height: 53 * emptyRows }}>
-                    <TableCell colSpan={4} />
-                  </TableRow>
-                )}
               </TableBody>
               <TableFooter>
                 <TableRow>
@@ -556,11 +591,11 @@ function Tours(props) {
       </div>
     );
   }
-}
 const mapStateToProps = (state) => {
   return {
     ToursList: state.ToursListAdmin.state,
     isOpenUpdateTour: state.detailTourAdmin.isOpenPortal,
+    groupListTour:state.GroupListTour.state
   };
 };
 
@@ -572,6 +607,8 @@ detailsTourAdmin:(id)=>dispatch(detailsTourAdmin(id)),
     addGroup: (id, data) => dispatch(addGroupAdmin(id, data)),
     closeUpdate: () => dispatch(closePortal()),
     detailsTour: (id) => dispatch(detailsTour(id)),
+    getArrImage: (id) => dispatch(updateTourImage(id)),
+    getGroupListTour:(url)=>dispatch(getGroupListTour(url))
   };
 };
 

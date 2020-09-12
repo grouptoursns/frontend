@@ -28,7 +28,7 @@ import css from './addPhote.module.css'
     const handlehange=(e)=>{
         let file = e.target.files[0];
  
-        
+        props.changeImage()
 
         setBlock('none')
         let reader = new FileReader();

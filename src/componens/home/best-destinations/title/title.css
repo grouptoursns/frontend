@@ -28,3 +28,14 @@
   stroke: rgba(7, 58, 245, 0.63);
   fill: rgba(7, 58, 245, 0.63);
 }
+@media screen and (max-width: 480px) {
+  .block-title {
+    margin-top: 30px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}

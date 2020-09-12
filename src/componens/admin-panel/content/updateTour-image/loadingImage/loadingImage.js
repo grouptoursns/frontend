@@ -9,6 +9,7 @@ useEffect(()=>{
     const arrImage= Object.values(objImage)
   
     props.dataImage(arrImage)
+    console.log(arrImage)
 },[objImage])
   const changeImage = (index, file) => {
     setObjImage({
@@ -34,39 +35,48 @@ useEffect(()=>{
   return (
     <div className="loading-image">
       <AddImage
-
+      id="0"
+      defaultImage={props.arrTourImage}
         handleChange={changeImage}
-        deleteChange={changeDeleteImage}
+        deleteImage={changeDeleteImage}
+        idTour={props.idTour}
+     
       />
       <AddImage
         id="1"
-
+        defaultImage={props.arrTourImage}
         handleChange={changeImage}
-        deleteChange={changeDeleteImage}
+        deleteImage={changeDeleteImage}
+        idTour={props.idTour}
+     
       />
       <AddImage
         id="2"
-   
+        defaultImage={props.arrTourImage}
         handleChange={changeImage}
-        deleteChange={changeDeleteImage}
+        deleteImage={changeDeleteImage}
+        idTour={props.idTour}
       />
       <AddImage
         id="3"
         handleChange={changeImage}
-        
-        deleteChange={changeDeleteImage}
+        defaultImage={props.arrTourImage}
+        deleteImage={changeDeleteImage}
+        idTour={props.idTour}
       />
       <AddImage
         id="4"
         handleChange={changeImage}
-   
-        deleteChange={changeDeleteImage}
+        defaultImage={props.arrTourImage}
+        deleteImage={changeDeleteImage}
+        idTour={props.idTour}
       />
       <AddImage
         id="5"
         handleChange={changeImage}
-   
-        deleteChange={changeDeleteImage}
+        defaultImage={props.arrTourImage}
+        deleteImage={changeDeleteImage}
+        idTour={props.idTour}
       />
     </div>
   );

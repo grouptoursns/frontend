@@ -25,14 +25,30 @@ border-bottom:1px solid #EAE2E2;
 
 }
 .date{
-width: 160px;
+width: 70px;
 }
 .tour-user{
-width: 230px;
+width: 140px;
 }
 .places{
-width: 160px;
+width: 130px;
+}
+.status{
+width: 60px;
 }
 .action{
-width: 60px;
+    width: 120px;
+    
+}
+
+.booking-cancel{
+    background: #E62222;
+    border: 1px solid #E62222;
+    font-size: 12px;
+    color: #FFFFFF;
+    padding: 5px;
+}
+.booking-cancel:hover{
+    background: none;
+    color: #E62222;
 }
