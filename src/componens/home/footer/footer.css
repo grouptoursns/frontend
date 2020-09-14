@@ -3,4 +3,13 @@
     height: 400px;
     background: #000000;
     padding-top: 40px;
+
 }
+@media screen and (max-width: 480px) {
+    .footer{
+        
+        height: 800px;
+ 
+    
+    }
+  }

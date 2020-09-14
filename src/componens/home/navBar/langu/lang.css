@@ -18,3 +18,8 @@
   min-width: 5rem !important;
   width: 100% !important;
 }
+@media screen and (max-width: 768px) {
+.btn{
+  font-size: 20px !important;
+}
+}

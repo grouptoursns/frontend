@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./content.css";
 import NavPanel from "../navPanel/navPanel";
 import BlockBtn from "./block-btn/block-btn";
@@ -13,6 +13,11 @@ import UpdateTour from "./updateTour/updateTour"
 import UpdateTourImage from "./updateTour-image/updatetour-image"
 
 const Content = (props) => {
+  const [id,setId] = useState()
+  const idTour =(e)=>{
+    setId(e)
+  }
+
   return (
     <div className="admin-wrapper">
       <div className="left-navPanel">
@@ -26,7 +31,7 @@ const Content = (props) => {
           <Route  path="/admin-panel/add-tour" component={props.addImage===false ?AddTour :AddImageTour} />
           <Route  path="/admin-panel/settings" component={AdminSettings} />
           <Route  path="/admin-panel/ubdate-tour" component={UpdateTour} />
-          <Route  path="/admin-panel/ubdate-tour-image" component={UpdateTourImage} />
+          <Route  path="/admin-panel/ubdate-tour-image/:id" component={UpdateTourImage}/>
         </Switch>
       </div>
     </div>

@@ -142,7 +142,7 @@ const useStyles2 = makeStyles({
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
           ).map((row) => (
-            <TableRow key={row.name}>
+            <TableRow key={row.id}>
               <TableCell component="th" style={{ width: 160}} scope="row">
                 {row.time}
               </TableCell>

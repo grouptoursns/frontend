@@ -16,7 +16,7 @@
     position: absolute !important;
     top: 0;
     left: 0;
-    transform: translate(87%,60%);
+    transform: translate(103%,60%);
 }
 
 .control-prev-icon {
@@ -36,3 +36,57 @@
 .carousel-item{
     position: static !important;
 }
+@media screen and (max-width: 1070px) {
+    .text-slider{
+
+        transform: translate(70%,60%);
+    }
+    .nav-panel{
+        transform: translate(50%,500%);
+    }
+
+  }
+  @media screen and (max-width: 1205px) {
+    .nav-panel{
+        transform: translate(35%,500%);
+    }
+    .text-slider{
+
+        transform: translate(70%,60%);
+    }
+  }
+  @media screen and (max-width: 990px) {
+    .text-slider{
+        transform: translate(120%,60%);
+    }
+    .nav-panel{
+        transform: translate(13%,400%);
+        width: 80%;
+    }
+  }
+  @media screen and (max-width: 910px) {
+    .text-slider{
+        transform: translate(100%,60%);
+    }
+
+  }
+  @media screen and (max-width: 768px) {
+    .text-slider{
+        transform: translate(140%,60%);
+    }
+    .nav-panel{
+        transform: translate(13%,280%);
+        width: 80%;
+    }
+
+  }
+  @media screen and (max-width: 480px) {
+    .text-slider{
+       display: none;
+    }
+    .nav-panel{
+        transform: translate(13%,30%);
+        width: 80%;
+    }
+
+  }

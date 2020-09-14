@@ -177,3 +177,39 @@ input.error {
   .text-table{
       font-weight: bold !important;
   }
+  .number-groups:hover{
+      cursor: pointer;
+      font-size: 14px;
+  }
+.top-block-group-list{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.block-name-tour{
+    width: auto;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+}
+.name-tour-modal{
+    font-size: 16px;
+    font-weight: bold;
+}
+.close-modal{
+    width: 50px;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    color:black ;
+    font-size: 17px;
+}
+.close-modal:hover{
+    font-size: 20px;
+}
