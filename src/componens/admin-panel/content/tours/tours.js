@@ -45,6 +45,8 @@ function TablePaginationActions(props) {
     onChangePage(event, 0);
   };
 
+
+
   const handleBackButtonClick = (event) => {
     onChangePage(event, page - 1);
   };
@@ -133,6 +135,7 @@ function Tours(props) {
   console.log(data);
   let rows = [];
 
+
   if (props.ToursList === undefined) {
     rows = [];
   } else {
@@ -155,6 +158,9 @@ function Tours(props) {
         rows.splice(i, 1);
       }
     }
+  }
+  const scrollToTop = () => {
+    window.scrollTo(0,0)
   }
   useEffect(() => {
     props.getTours("http://161.35.199.172/api/company/tours/");
@@ -180,6 +186,7 @@ function Tours(props) {
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   const handleChangePage = (event, newPage) => {
+    scrollToTop();
     setPage(newPage);
   };
 

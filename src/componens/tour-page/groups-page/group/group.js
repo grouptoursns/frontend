@@ -13,9 +13,9 @@ const Group = (props) => {
     console.log(props)
 
 
-    // useEffect(() => {
-    //     props.fetchData(`http://161.35.199.172/group/${props.groupId}`)
-    // }, []);
+    useEffect(() => {
+        props.fetchData(`http://161.35.199.172/group/${props.groupId}`)
+    }, []);
 
     let a = []
     let price = 0
@@ -36,7 +36,6 @@ const Group = (props) => {
 
 
     let countOfpeople = props.tourBookInfo.count
-    // let date = props.tourBookInfo.value
     let totalPrice = countOfpeople * price
 
     let guideName = ""
@@ -62,13 +61,15 @@ const Group = (props) => {
     }
 
     let token = {}
+    let email = {}
     token = localStorage.getItem("token")
+    email = localStorage.getItem("email")
     console.log(token)
 
 
     const bookNow = () => {
-        axios.post('http://161.35.199.172/group/23/book/', {
-            name: "Aktan",
+        axios.post(`http://161.35.199.172/group/${props.groupId}/book/`, {
+            name: "Tologon",
             extra_people: countOfpeople,
             count_of_extra_people: countOfpeople - 1,
         }, {
@@ -84,6 +85,7 @@ const Group = (props) => {
                     }
                 }
             )
+
 
 
     }

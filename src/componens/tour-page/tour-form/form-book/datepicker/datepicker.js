@@ -1,6 +1,8 @@
-import React, {Component, useEffect} from "react";
+import React, {Component} from "react";
 import './datepicker.css'
 import calendar from '../img/calendar.png'
+import {connect} from "react-redux";
+import {tourDataFetch} from "../../../../../actions/tourData";
 
 
 class Datepicker extends Component{
@@ -12,6 +14,7 @@ class Datepicker extends Component{
             show: false,
             isLoaded: false,
             value: "",
+            includesDates: false,
             rememberDate: ""
         }
         this.handleChange = this.handleChange.bind(this);
@@ -19,7 +22,7 @@ class Datepicker extends Component{
     }
 
     componentDidMount() {
-        fetch('http://161.35.199.172/api/tours/2')
+        fetch(`http://161.35.199.172/api/tours/${this.props.detailsTours}`)
             .then(res => res.json())
             .then(json =>{
                 this.setState({
@@ -33,6 +36,13 @@ class Datepicker extends Component{
         this.setState({
             show: !this.state.show
         })
+
+        // if (this.state.items.group_tour[0].start_time){
+        //     this.setState({
+        //         includesDates: true
+        //     })
+        // }  else
+        //     return this.state
     }
 
     handleChange(event) {
@@ -53,8 +63,9 @@ class Datepicker extends Component{
 
     render(){
         let { value } = this.state
-        let { items = {}} = this.state;
+        let { items = {}} = this.state
         let { isLoaded } = this.state
+        let { includesDates } = this.state
         if (!isLoaded){
             return <div>No dates for this tour</div>
         }
@@ -92,5 +103,19 @@ class Datepicker extends Component{
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        tourData:state.tourData,
+        detailsTours: state.detailsTour.detailsTour
+    };
+};
 
-export default Datepicker;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: url => {dispatch(tourDataFetch(url))}
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Datepicker);
