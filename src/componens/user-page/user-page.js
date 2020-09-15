@@ -9,33 +9,37 @@ import Visited from "./visited/visited";
 import AppSettings from "./settings/appSettings";
 import NavBar from "../home/navBar/navBar";
 import Footer from "../home/footer/footer";
+import { Dimmer, Loader, Image, Segment } from "semantic-ui-react";
 
 const UserPage = (props) => {
   useEffect(() => {
     props.custumerCabinet();
   }, [props.custumerCabinet]);
-  console.log(props.custimerCabinetData.data);
-  let custimerData;
-  if (props.custimerCabinetData.data === undefined) {
-    custimerData = {};
-  } else {
-    custimerData = { ...props.custimerCabinetData.data };
-  }
+  console.log(props.custimerCabinetData);
+
   return (
     <div>
       <NavBar />
       <div className="user-page">
-        <div className="user-container">
-          <UserInfo userInfo={custimerData} />
+        {props.custimerCabinetData ? (
+          <div className="user-container">
+            <UserInfo userInfo={props.custimerCabinetData} />
 
-          <div className="booking1">
-            <Switch>
-              <Route exact path="/user-page" component={Booked} />
-              <Route path="/user-page/visited-tour" component={Visited} />
-              <Route path="/user-page/settings" component={AppSettings} />
-            </Switch>
+            <div className="booking1">
+              <Switch>
+                <Route exact path="/user-page" component={Booked} />
+                <Route path="/user-page/visited-tour" component={Visited} />
+                <Route path="/user-page/settings" component={AppSettings} />
+              </Switch>
+            </div>
           </div>
-        </div>
+        ) : (
+
+            <Dimmer active inverted>
+              <Loader inverted>Loading</Loader>
+            </Dimmer>
+
+        )}
       </div>
       <Footer />
     </div>
@@ -44,7 +48,7 @@ const UserPage = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    custimerCabinetData: state.custimerCabinet,
+    custimerCabinetData: state.custimerCabinet.data,
   };
 };
 

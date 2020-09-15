@@ -1,6 +1,5 @@
 import React,{useEffect} from "react";
 import Slider1 from "./slider/slider.js";
-import GroupTours from "./group-tours/group-tours.js";
 import BoxCard from "./best-destinations/box-card/box-card.js";
 import Actvities from "./actvities/actvities.js";
 import BestTours from "./best-tours/best-tours.js"
@@ -33,6 +32,7 @@ const Home = (props) => {
       <BoxCard cards={props.bestImg.ImageToFront} />
       <BestTours card={props.bestImg.Tour}/>
       <Actvities activityCard={props.bestImg.Category}/>
+    
       <Footer/>
     </div>
   );
