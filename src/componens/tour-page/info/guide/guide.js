@@ -2,6 +2,7 @@ import React, {Component, useEffect} from 'react';
 import './guide.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
+import nullPhoto from '../../groups-page/group/img/photo 6.png'
 
 
 const Guide =(props)=>{
@@ -9,12 +10,22 @@ const Guide =(props)=>{
     useEffect( () => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
     },[]);
+
+
+    let guidePhoto
+    guidePhoto = props.tourData.guide_photo
+    if (!guidePhoto){
+        guidePhoto = nullPhoto
+    }
+
         return (
             <div className="guide">
                 <div className="guide-content">
                     <h3>Your guide</h3>
-                    <p>{props.tourData.about_guide}
-                    </p>
+                    <div style={{"display" : "flex"}}>
+                        <img src={guidePhoto} alt="guide_photo.icon" style={{"margin-right": "20px"}}/>
+                        <p>{props.tourData.about_guide}</p>
+                    </div>
                 </div>
             </div>
         );

@@ -1,8 +1,9 @@
 .book-picker__adults{
     display: flex;
-    margin: 10px 10px 10px 0px;
+    margin: 10px 10px 0px 0px;
+    padding-left: 20px;
     align-items: center;
-
+    justify-content: center;
 }
 .book-picker__adults h5{
     width: 20px;

@@ -27,20 +27,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/booking/booking.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/booking/booking.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/about/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/about/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +169,10 @@
       <workItem from="1599423234346" duration="4872000" />
       <workItem from="1599508727147" duration="590000" />
       <workItem from="1599568264882" duration="2089000" />
-      <workItem from="1599660880913" duration="5723000" />
+      <workItem from="1599660880913" duration="5992000" />
+      <workItem from="1599732609414" duration="7395000" />
+      <workItem from="1599821231508" duration="9066000" />
+      <workItem from="1599940669853" duration="9216000" />
     </task>
     <servers />
   </component>
@@ -265,14 +264,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593719878679" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1598310140424">
+    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1599736606574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598310140424" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599223561346">
+    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1599736606574" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1599746740527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599223561346" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599746740527" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599826314204">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599826314204" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

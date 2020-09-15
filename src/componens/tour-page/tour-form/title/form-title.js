@@ -25,20 +25,22 @@ const Title = (props)=>{
         <div className="form-title">
             <h2>{props.info.name}</h2>
             <div className='title-info'>
+
                 <div className='title-info__cont'>
-                    <ReactStars
-                    size={20}
-                    count={5}
-                    value={star}
-                    edit={false}
-                    half={true}
-                    color1="lightgrey"
-                    color2="gold"
-                />
-                </div>
-                <div className='title-info__cont' style={{marginLeft: "80px"}}>
                     <img src={geo} alt="star.icon"/>
                     <span>{props.info.location}</span>
+                </div>
+
+                <div className='title-info__cont'  style={{marginLeft: "80px"}}>
+                    <ReactStars
+                        size={20}
+                        count={5}
+                        value={star}
+                        edit={false}
+                        half={true}
+                        color1="lightgrey"
+                        color2="gold"
+                    />
                 </div>
             </div>
         </div>

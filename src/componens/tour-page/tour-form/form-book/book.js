@@ -5,7 +5,6 @@ import './book.css';
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import { Redirect } from 'react-router'
 import {groupInfo} from "../../../../actions/groupInfo";
 import DatePicker from "./datepicker/datepicker"
 
@@ -17,29 +16,22 @@ const Book =(props)=> {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
         props.setTourBookInfo([])
 
-        let slots = []
-        if (props.info) {
-            slots = props.info
-        }
+        let slots
+        slots = props.info.group_tour
 
-        // let freeSlot = []
-        // if (slots.group_tour[0]){
-        //     freeSlot = slots.group_tour[0]
-        // }
-        // setFreeSlots(freeSlot.free_slots)
+        let freeSlots
+        if (slots){
+           freeSlots = slots[0].free_slots
+        }
+        setFreeSlots(freeSlots)
 
     }, []);
 
     const [freeSlots,setFreeSlots] = useState();
-    console.log('%c freeSlots: ','color:red',freeSlots)
-
-
     const setSlots=()=>{
 
     }
     setSlots()
-
-
 
 
     let arrId=[];
@@ -75,10 +67,11 @@ const Book =(props)=> {
                     tourBookInfo={props.tourBookInfo}
                     freeSlots={freeSlots}/>
 
+                    <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
+                        <button className="update" onClick={onclickBook}>Book</button>
+                    </Link>
 
-                <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
-                    <button className="update" onClick={onclickBook}>Book</button>
-                </Link>
+
                 <button className="private" onClick={privateTour}>Private tour</button>
                 <p style={{"margin-top": "5px"}}>This button was created for a private tour request</p>
             </div>
