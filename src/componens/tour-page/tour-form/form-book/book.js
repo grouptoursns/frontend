@@ -11,21 +11,22 @@ import DatePicker from "./datepicker/datepicker"
 
 
 const Book =(props)=> {
+    const [userBoolen, setUserBoolean] = useState(false)
 
     useEffect(() => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
         props.setTourBookInfo([])
 
         let slots
-        slots = props.info.group_tour
+        slots = props.tourData.group_tour
+            console.log('slots',slots[0])
 
-        let freeSlots
-        if (slots){
-           freeSlots = slots[0].free_slots
-        }
         setFreeSlots(freeSlots)
 
+        setUserBoolean(JSON.parse(localStorage.getItem('user')))
     }, []);
+
+
 
     const [freeSlots,setFreeSlots] = useState();
     const setSlots=()=>{
@@ -43,9 +44,14 @@ const Book =(props)=> {
     }
 
 
+
     const privateTour=()=>{
 
     }
+    console.log('book',props.tourBookInfo)
+    // if (props.tourBookInfo.value = ''){
+    //
+    // }
 
 
     return (
@@ -67,13 +73,20 @@ const Book =(props)=> {
                     tourBookInfo={props.tourBookInfo}
                     freeSlots={freeSlots}/>
 
-                    <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
-                        <button className="update" onClick={onclickBook}>Book</button>
-                    </Link>
+                {
+                    userBoolen ?
+                        <div>
+                            <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
+                            <button className="update" onClick={onclickBook}>Book</button>
+                            </Link>
 
 
-                <button className="private" onClick={privateTour}>Private tour</button>
-                <p style={{"margin-top": "5px"}}>This button was created for a private tour request</p>
+                    <button className="private" onClick={privateTour}>Private tour</button>
+                    <p style={{"margin-top": "5px"}}>This button was created for a private tour request</p>
+                        </div>
+                    :
+                    <p style={{"color": "red","font-size":"16px" ,"font-weight": "bolder", "margin-top":"40px"}}>
+                    You must be login as a user to book this tour!</p> }
             </div>
         </div>
     )
