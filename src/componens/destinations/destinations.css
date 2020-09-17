@@ -44,3 +44,11 @@
 
   color: #ffffff;
 }
+@media screen and (max-width: 590px) {
+  .destion-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}

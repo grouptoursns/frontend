@@ -13,3 +13,11 @@
     
     }
   }
+  @media screen and (max-width: 422px) {
+    .footer{
+        
+        height: 1000px;
+ 
+    
+    }
+  }

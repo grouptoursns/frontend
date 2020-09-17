@@ -85,7 +85,17 @@
        display: none;
     }
     .nav-panel{
-        transform: translate(13%,30%);
+        transform: translate(13%,0%);
+        width: 80%;
+    }
+
+  }
+  @media screen and (max-width: 720px) and( min-width: 481px) {
+    .text-slider{
+        transform: translate(15em,60%);
+    }
+    .nav-panel{
+        transform: translate(13%,190%);
         width: 80%;
     }
 
