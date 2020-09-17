@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import "./slider.css";
 import Slider from "react-slick";
 import photo from "./img/Rectangle 16.png";
@@ -14,6 +14,7 @@ import noImage from "../img/no image 1.png";
 
 const BestSlider = (props) => {
   const[numberCard,setNumberCard]=useState()
+
   const cards1 = [
     {
       img: photo,
@@ -53,7 +54,9 @@ const BestSlider = (props) => {
       props.cards && props.cards.length < 3  ? 1 : 3,
     slidesToScroll: 2,
   };
-console.log("hi")
+
+
+
   const onClickCard = (id) => {
     props.detailsTour(id);
   };
