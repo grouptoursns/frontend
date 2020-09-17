@@ -25,7 +25,7 @@ const Counter = (props) => {
                        value={"Adults: " + count}
                 />
                 </div>
-                {
+                {   
                     show?
                         <div className="book-picker__adults">
                             {

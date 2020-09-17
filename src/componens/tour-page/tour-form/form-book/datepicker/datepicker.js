@@ -89,7 +89,7 @@ class Datepicker extends Component{
                                         <input
                                             className="book-picker__date-elem"
                                             type="submit"
-                                            value={" From " + this.state.items.group_tour[0].start_time}
+                                            value={this.state.items.group_tour[0].start_time}
                                             onClick={this.handleChange}
                                         />
                                     </div>
