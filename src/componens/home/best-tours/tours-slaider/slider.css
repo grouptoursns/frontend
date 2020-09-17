@@ -115,3 +115,11 @@ a{
 
   display: flex !important;
 }
+.slick-next::before {
+  content:  url(../img/Vector\(1\).png) !important;
+ 
+}
+.slick-prev::before {
+  content:  url(../img/Vector\(2\).png) !important;
+ 
+}
