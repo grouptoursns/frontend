@@ -11,6 +11,7 @@ import {destinationsData} from "../../actions/destinations";
 import {trigerSpiner} from "../../actions/user";
 import NavBar from "../home/navBar/navBar";
 import Footer from "../home/footer/footer"
+import GroupTours from "./group-tours/group-tours"
 
 
 
@@ -32,7 +33,6 @@ const Home = (props) => {
       <BoxCard cards={props.bestImg.ImageToFront} />
       <BestTours card={props.bestImg.Tour}/>
       <Actvities activityCard={props.bestImg.Category}/>
-    
       <Footer/>
     </div>
   );

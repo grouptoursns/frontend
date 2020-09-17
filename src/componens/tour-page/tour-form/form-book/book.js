@@ -19,7 +19,7 @@ const Book =(props)=> {
 
         let slots
         slots = props.tourData.group_tour
-            console.log('slots',slots[0])
+            //console.log('slots',slots[0])
 
         setFreeSlots(freeSlots)
 
