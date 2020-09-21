@@ -14,3 +14,9 @@
     height: 20px !important;
     margin-top: 6.4px !important;
 }
+.text{
+    font-size:0.9em !important;
+}
+@media screen and (max-width: 570px) {
+
+  }

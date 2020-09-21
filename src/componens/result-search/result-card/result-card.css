@@ -88,3 +88,56 @@
   width: 341px;
   height: 195px;
 }
+@media screen and (max-width: 960px) {
+  .result-li{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 770px) {
+  .result-li{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+.title-tours{
+  font-size: 1.2em;
+}
+.descrip_text{
+  font-size: 0.8em;
+}
+.image-card{
+  width: 300px;
+  height: 195px;
+}
+.description-tours{
+  margin-left: 0px;
+}
+}
+@media screen and (max-width: 600px) {
+
+  .image-card{
+    width: 250px;
+    height: 195px;
+  }
+}
+@media screen and (max-width: 545px) {
+
+  .description {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  
+    align-items: center;
+  }
+  .image-card{
+    width: 200px;
+    height: 195px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .title-tours{
+    font-size: 1em;
+  }
+}

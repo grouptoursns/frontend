@@ -2,7 +2,7 @@
     height: 20px !important;
 }
 .text{
-    font-size: 14px;
+    font-size: 0.9em;
     color: #000000;
 }
 .ui.default.dropdown:not(.button) > .text, .ui.dropdown:not(.button) > .default.text{
