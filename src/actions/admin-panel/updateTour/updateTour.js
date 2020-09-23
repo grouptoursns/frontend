@@ -19,7 +19,7 @@ export function updateTourAdmin(data,id) {
 
   return async (dispatch) => {
     await axios
-      .put(`http://161.35.199.172/api/company/tours/${id}/`,data
+      .put(`http://161.35.199.172:7000/api/company/tours/${id}/`,data
       ,
       {
         headers: {

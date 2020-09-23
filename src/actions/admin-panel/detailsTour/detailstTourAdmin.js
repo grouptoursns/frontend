@@ -21,7 +21,7 @@ export function detailsTourAdmin(id){
     let token = localStorage.getItem('token');
     return async (dispatch)=>{
       await  axios
-      .get(`http://161.35.199.172/api/company/tours/${id}/`,{
+      .get(`http://161.35.199.172:7000/api/company/tours/${id}/`,{
           headers:{
             Authorization: 'Token ' + token 
           }

@@ -6,7 +6,7 @@ export function changeDataCompany(data) {
 
   return async (dispatch) => {
     await axios
-      .put(`http://161.35.199.172/api/users/company/me/`, data,
+      .put(`http://161.35.199.172:7000/api/users/company/me/`, data,
       {
         headers: {
             Authorization: 'Token ' + token ,

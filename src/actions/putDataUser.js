@@ -6,7 +6,7 @@ export function putDataUser(data) {
 
   return async (dispatch) => {
     await axios
-      .put(`http://161.35.199.172/api/users/v2/customer/${id}`, data)
+      .put(`http://161.35.199.172:7000/api/users/v2/customer/${id}`, data)
       .then((res) => {
         console.log(res);
       })

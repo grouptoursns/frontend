@@ -14,7 +14,7 @@ export function custimerCabinet(){
     let id = localStorage.getItem('id');
     return async (dispatch)=>{
       await  axios
-      .get(`http://161.35.199.172/api/users/v2/customer/${id}`,{
+      .get(`http://161.35.199.172:7000/api/users/v2/customer/${id}`,{
         headers: {
             Authorization: 'Token ' + token 
           }

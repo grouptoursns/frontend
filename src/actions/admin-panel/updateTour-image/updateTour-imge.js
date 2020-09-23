@@ -25,7 +25,7 @@ export function updateTourImage(id) {
   return async (dispatch) => {
 
     await axios
-      .get(`http://161.35.199.172/api/company/tours/${id}/images/`,
+      .get(`http://161.35.199.172:7000/api/company/tours/${id}/images/`,
       {
         headers: {
             Authorization: 'Token ' + token ,

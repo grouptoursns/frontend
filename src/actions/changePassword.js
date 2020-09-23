@@ -21,7 +21,7 @@ export function changePassword(data) {
   return async (dispatch) => {
     await axios
       .put(
-        `http://161.35.199.172/api/users/change-password/`,
+        `http://161.35.199.172:7000/api/users/change-password/`,
         {
           
             old_password: data.password,

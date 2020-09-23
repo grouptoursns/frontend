@@ -6,7 +6,7 @@ export default function addGroupAdmin(id, data) {
   return async (dispatch) => {
     await axios
       .post(
-        `http://161.35.199.172/api/company/tours/${id}/group-create/`,
+        `http://161.35.199.172:7000/api/company/tours/${id}/group-create/`,
         {
           name: data.name,
           start_time: data.start_time,

@@ -29,7 +29,7 @@ export default function createTour(data) {
   
     await axios
       .post(
-        `http://161.35.199.172/api/company/tours/create/`,data,
+        `http://161.35.199.172:7000/api/company/tours/create/`,data,
         {
           headers: {
             Authorization: "Token " + token,

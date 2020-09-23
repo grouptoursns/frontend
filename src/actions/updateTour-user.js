@@ -8,7 +8,7 @@ export function updatTourUser(id) {
 
   return async (dispatch) => {
     await axios
-      .put(`http://161.35.199.172/bookings/${id}`, 
+      .put(`http://161.35.199.172:7000/bookings/${id}`, 
       {
         "status":"Inactive",
 

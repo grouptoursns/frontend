@@ -25,7 +25,7 @@ export function detailGroup(id_tour,id_group){
    
     return async (dispatch)=>{
       await  axios
-      .get(`http://161.35.199.172/api/company/tours/22/group/40/`,{
+      .get(`http://161.35.199.172:7000/api/company/tours/22/group/40/`,{
           headers:{
             Authorization: 'Token ' + token 
           }

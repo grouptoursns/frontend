@@ -28,7 +28,7 @@ export function putCompany(data) {
     try {
        dispatch( openSpiner());
       await axios
-        .post("http://161.35.199.172/api/users/registration/company", {
+        .post("http://161.35.199.172:7000/api/users/registration/company", {
           email: data.email,
           first_name: data.fname,
           last_name: data.lname,

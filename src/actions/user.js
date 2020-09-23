@@ -33,7 +33,7 @@ export function putData(data) {
     try {
        dispatch( openSpiner());
       await axios
-        .post("http://161.35.199.172/api/users/registration/", {
+        .post("http://161.35.199.172:7000/api/users/registration/", {
           email: data.email,
           password: data.pasword,
           password2: data.pasword2,
