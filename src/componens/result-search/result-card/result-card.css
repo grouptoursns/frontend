@@ -140,4 +140,8 @@
   .title-tours{
     font-size: 1em;
   }
+  .result-li {
+
+    height: 250px;
+  }
 }

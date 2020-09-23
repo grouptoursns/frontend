@@ -104,7 +104,7 @@ class Company extends React.Component {
                   className="form-control input"
                   required
                 />
-                <div className="valid-feedback">Looks good!</div>
+     
               </MDBCol>
               <MDBCol md="6" className="mb-3  ">
                 <label
@@ -122,7 +122,7 @@ class Company extends React.Component {
                   className="form-control input"
                   required
                 />
-                <div className="valid-feedback">Looks good!</div>
+         
               </MDBCol>
             </MDBRow>
             <MDBRow>
@@ -142,10 +142,8 @@ class Company extends React.Component {
                   name="cname"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+      
+            
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
@@ -156,10 +154,8 @@ class Company extends React.Component {
                 </label>
                 <Phone phone={this.changePhone}/>
                 
-                <div className="invalid-feedback">
-                  Please provide a valid date.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+           
+          
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
@@ -177,10 +173,8 @@ class Company extends React.Component {
                   name="site"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid email.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+      
+        
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
@@ -198,10 +192,8 @@ class Company extends React.Component {
                   name="email"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid password.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+        
+         
               </MDBCol>
               <div className="line-block">
                 <div className="black-line"></div>
@@ -223,10 +215,8 @@ class Company extends React.Component {
                   name="adress"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid password.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+          
+        
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
@@ -236,10 +226,8 @@ class Company extends React.Component {
                   Choose country
                 </label>
                 <DropdownExampleSearchSelection country={this.changeCountry}/>
-                <div className="invalid-feedback">
-                  Please provide a valid email.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+        
+               
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
@@ -257,10 +245,8 @@ class Company extends React.Component {
                   name="tripadvisor"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid password.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+       
+           
               </MDBCol>
               <div className="line-block">
                 <div className="black-line"></div>
@@ -281,10 +267,8 @@ class Company extends React.Component {
                   name="pasword"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid email.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+
+        
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
@@ -302,10 +286,8 @@ class Company extends React.Component {
                   name="pasword2"
                   required
                 />
-                <div className="invalid-feedback">
-                  Please provide a valid password.
-                </div>
-                <div className="valid-feedback">Looks good!</div>
+   
+       
               </MDBCol>
             </MDBRow>
             <div className="block-check">

@@ -25,3 +25,16 @@
 .form-company-up{
     max-width: 500px;
 }
+@media screen and (max-width: 767px) {
+    .sign-up-company{
+        height: 1300px;
+    }
+
+  }
+  @media screen and (max-width: 410px) {
+    .sign-up_content-company {
+        width: 80%;
+        height: 85%;
+    }
+
+  }
