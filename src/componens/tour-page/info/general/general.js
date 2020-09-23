@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 const General =(props)=>{
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
     },[]);
 
 

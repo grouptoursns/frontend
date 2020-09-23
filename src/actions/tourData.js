@@ -8,7 +8,11 @@ export function tourDataFetchSuccess(tourData) {
 
 export function tourDataFetch(url){
     return(dispatch)=>{
-        fetch(url)
+        fetch(url,{
+            headers:{
+                "Accept-Language": "ru"
+            }
+        })
             .then(res =>{
                 if(!res.ok){
                  //   throw new Error(res.statusText)

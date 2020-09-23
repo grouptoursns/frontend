@@ -159,7 +159,7 @@ function Tours(props) {
     window.scrollTo(0,0)
   }
   useEffect(() => {
-    props.getTours("http://161.35.199.172/api/company/tours/");
+    props.getTours("http://161.35.199.172:7000/api/company/tours/");
     setIsDelete(false);
     setEditTour(false)
     setGroup(false)
@@ -181,7 +181,7 @@ const onclickGroups=(e)=>{
   setNameTour(e.target.title)
   setIdTour(e.target.id)
   setGroup(true)
-  props.getGroupListTour(`http://161.35.199.172/api/company/tours/${e.target.id}/groups/`)
+  props.getGroupListTour(`http://161.35.199.172:7000/api/company/tours/${e.target.id}/groups/`)
 }
   const onClickEdit = (e) => {
     console.log(e.target.id);
