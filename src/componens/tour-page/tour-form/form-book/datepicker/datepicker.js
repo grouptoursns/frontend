@@ -30,7 +30,23 @@ class Datepicker extends Component{
                     items: json
                 })
             });
+        // this.checkItems()
     }
+
+    // checkItems(){
+    //     let time
+    //     if(this.state.items?.group_tour?.length){
+    //         time = this.state.items.group_tour[0].start_time
+    //     }
+    //     else {time = ""}
+    //     // if (time === ""){
+    //     //     this.setState({
+    //     //         isLoaded: false
+    //     //     })
+    //     // }
+    //     // else{ return time }
+    //     console.log('loaded',this.state.isLoaded)
+    // }
 
     showFunc(){
         this.setState({
@@ -42,6 +58,7 @@ class Datepicker extends Component{
         //         includesDates: true
         //     })
         // }  else
+        //
         //     return this.state
     }
 
@@ -53,7 +70,6 @@ class Datepicker extends Component{
 
     handleSubmit(event) {
         event.preventDefault();
-
     }
 
     // handleFormSubmit = () => {
@@ -70,19 +86,19 @@ class Datepicker extends Component{
             return <div>No dates for this tour</div>
         }
         else {
-            console.log(this.state.items)
+            // console.log(this.state.items)
             return (
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <div>
-                            <div className="book-picker__form">
-                                <img src={calendar} alt="calendar.icon" style={{"padding": "0px 10px"}}/>
+                            {/*<div className="book-picker__form">*/}
+                            {/*    <img src={calendar} alt="calendar.icon" style={{"padding": "0px 10px"}}/>*/}
                             <input className="book-picker__date-inpt"
                                    onClick={() => this.showFunc()}
                                    type="text"
                                    value={this.state.value}
                             />
-                            </div>
+                            {/*</div>*/}
                             {
                                 this.state.show ?
                                     <div className="book-picker__date">

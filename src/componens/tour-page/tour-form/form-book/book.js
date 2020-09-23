@@ -17,9 +17,6 @@ const Book =(props)=> {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
         props.setTourBookInfo([])
 
-        let slots
-        slots = props.tourData.group_tour
-            //console.log('slots',slots[0])
 
         setFreeSlots(freeSlots)
 

@@ -1,7 +1,10 @@
 .book-picker__date-inpt{
-    border: none;
+    border: 1px solid #000000;
     height: 20px;
     border-radius: 5px;
+    padding: 10px 38px;
+    background-image: url("../img/calendar.png");
+    background-repeat: no-repeat;
 }
 .book-picker__form{
     border: 1px solid #000000;
