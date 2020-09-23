@@ -53,6 +53,27 @@ const BestSlider = (props) => {
     slidesToShow:
       props.cards && props.cards.length < 3  ? 1 : 3,
     slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 1190,
+        settings: {
+          slidesToShow: props.cards && props.cards.length < 2  ? 1 : 2,
+          slidesToScroll: 1,
+          infinite: false,
+          arrows: true,
+        }
+      },
+      {
+        breakpoint: 790,
+        settings: {
+          slidesToShow:1,
+          slidesToScroll: 1,
+          infinite: false,
+          arrows: true,
+        }
+      }
+
+    ]
   };
 
 

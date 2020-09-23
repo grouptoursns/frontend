@@ -123,3 +123,10 @@ a{
   content:  url(../img/Vector\(2\).png) !important;
  
 }
+@media screen and (max-width: 790px) {
+  .card{
+    margin-left: auto !important;
+    margin-right: auto;
+  }
+
+}
