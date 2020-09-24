@@ -5,7 +5,7 @@
   flex-direction: row;
 }
 .info-content {
-  width: auto;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   justify-content: space-between;
 }
 .user-links {
-  width: 706px;
+  width: 90%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -52,4 +52,16 @@
 .user-image{
   width: 144px;
   height: 184px;
+}
+@media screen and (max-width: 718px) {
+  .user-info {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-information {
+    margin-top: 20px;
+  }
 }

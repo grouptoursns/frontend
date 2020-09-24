@@ -481,16 +481,38 @@ let data2={}
       </Modal>
       < >
         <TableContainer component={Paper}>
-          <div className="admin-table-title">
-            <span className="name-group1">Name</span>
-            <span className="status-group1">Status</span>
-            <span className="time-group1">Time</span>
-            <span className="price-group1">Price</span>
-            <span className="places-group1">Places</span>
-            <span className="action-group1">Action</span>
-          </div>
+
           <Table className={classes.table} aria-label="custom pagination table">
             <TableBody>
+            <TableRow>
+                  <TableCell component="th" style={{ width: 200 }} scope="row">
+                  Name
+                  </TableCell>
+                  <TableCell
+                    style={{ width: 100 }}
+                    className="list-text"
+                    align="left"
+                  >
+                 Status
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                  Time
+                  </TableCell>
+                  <TableCell style={{ width: 60 }} align="left">
+                  Price
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                  Places
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="right">
+      
+                    Actions
+              
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="center">
+
+                  </TableCell>
+                </TableRow>
               {(rowsPerPage > 0
                 ? rows.slice(
                     page * rowsPerPage,

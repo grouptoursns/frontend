@@ -182,7 +182,7 @@ props.updateTour(idGroup)
       </div>
     </Modal>
     <TableContainer component={Paper}>
-      <div className="table-title">
+      {/* <div className="table-title">
         <span className="date">Date</span>
         <span className="tour-user">Tour</span>
         <span className="places">Reserved places</span>
@@ -190,9 +190,33 @@ props.updateTour(idGroup)
         <span align="right" className="action">
           Action
         </span>
-      </div>
+      </div> */}
+      
+     
       <Table className={classes.table} aria-label="custom pagination table">
         <TableBody>
+        <TableRow >
+              <TableCell component="th" style={{ width: 80 }} scope="row">
+                Date
+              </TableCell>
+              <TableCell
+                style={{ width: 160 }}
+                className="list-text"
+                align="left"
+              >
+                Tour
+              </TableCell>
+              <TableCell style={{ width: 70 }} align="left">
+              Reserved places
+              </TableCell>
+              <TableCell style={{ width: 100 }} align="center">
+              Status
+              </TableCell>
+              <TableCell style={{ width: 60 }} align="right">
+ 
+              Action
+              </TableCell>
+            </TableRow>
           {(rowsPerPage > 0
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows

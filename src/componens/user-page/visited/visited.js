@@ -130,14 +130,23 @@ const useStyles2 = makeStyles({
   return (
 
     <TableContainer component={Paper}>
-        <div className="table-title">
-            <span className="date">Date</span>
-            <span className="tour-user">Tour</span>
-            <span className="places">Reserved places</span>
-            <span className="action">Action</span>
-        </div>
+
       <Table className={classes.table} aria-label="custom pagination table">
         <TableBody>
+        <TableRow>
+              <TableCell component="th" style={{ width: 160}} scope="row">
+              Date
+              </TableCell>
+              <TableCell style={{ width: 230}} className="list-text" align="left">
+              Tour
+              </TableCell>
+              <TableCell style={{ width: 60 }} align="right">
+              Reserved places
+              </TableCell>
+              <TableCell style={{ width: 160 }} align="right">
+               Status
+              </TableCell>
+            </TableRow>
           {(rowsPerPage > 0
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows

@@ -16,9 +16,38 @@
     padding: 32px 44px;
 }
 .booking1{
-    width:706px ;
+    width:auto ;
     margin-left: 204px;
-    margin-right: auto;
+    margin-right: 7%;
     padding-top: 30px;
     padding-bottom: 30px;
 }
+@media screen and (max-width: 976px) {
+    .booking1{
+        width:auto ;
+        margin-left: auto;
+        margin-right: 7%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+  }
+  @media screen and (max-width: 718px) {
+    .booking1{
+        width:100% ;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+  }
+  @media screen and (max-width: 580px) {
+    .user-container{
+        width: 100%;
+
+    }
+    .booking1{
+        width:100% ;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+  }

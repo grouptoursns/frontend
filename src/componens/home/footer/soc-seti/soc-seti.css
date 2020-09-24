@@ -8,3 +8,25 @@
     color: #ffffff;
     font-size: 14px;
 }
+.soc-icon{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media screen and (max-width: 480px) {
+    .block-soc-seti{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .soc-icon{
+        width: 90%;
+
+    }
+    
+  }

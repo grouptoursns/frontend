@@ -17,8 +17,9 @@ color: #000000;
 .table-title{
     width: 100%;
     height: auto;
-border-bottom:1px solid #EAE2E2;
+    border-bottom:1px solid #EAE2E2;
     padding: 16px;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

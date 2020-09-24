@@ -10,8 +10,8 @@ const AdminPanel=(props)=>{
     useEffect(()=>{
         let id = localStorage.getItem('id');
 
-        props.getDataCompany(`http://161.35.199.172/api/users/company/${id}`);
-        props.destinationsData('http://161.35.199.172/api/test/')
+        props.getDataCompany(`http://161.35.199.172:7000/api/users/company/${id}`);
+        props.destinationsData('http://161.35.199.172:7000/api/test/')
     })
     return(
         <div className="page-admin-panel">

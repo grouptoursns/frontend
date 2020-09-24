@@ -132,7 +132,7 @@ function Groups(props) {
   });
   let rows = [];
   useEffect(() => {
-    props.getGroupList("http://161.35.199.172/api/company/groups/");
+    props.getGroupList("http://161.35.199.172:7000/api/company/groups/");
     setUpdate(false)
     setIsDelete(false)
   },[isDelete,update]);
@@ -483,16 +483,36 @@ let data2={}
       </Modal>
       <div className="table-adminPanel">
         <TableContainer component={Paper}>
-          <div className="admin-table-title">
-            <span className="name-group">Tour</span>
-            <span className="status-group">Status</span>
-            <span className="time-group">Time</span>
-            <span className="price-group">Price</span>
-            <span className="places-group">Places</span>
-            <span className="action-group">Action</span>
-          </div>
+
           <Table className={classes.table} aria-label="custom pagination table">
             <TableBody>
+            <TableRow >
+                  <TableCell component="th" style={{ width: 200 }} scope="row">
+                  Tour
+                  </TableCell>
+                  <TableCell
+                    style={{ width: 100 }}
+                    className="list-text"
+                    align="left"
+                  >
+                 Status
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                  Time
+                  </TableCell>
+                  <TableCell style={{ width: 60 }} align="left">
+                  Price
+                  </TableCell>
+                  <TableCell style={{ width: 100 }} align="left">
+                  Places
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="center">
+                  Action
+                  </TableCell>
+                  <TableCell style={{ width: 40 }} align="center">
+  
+                  </TableCell>
+                </TableRow>
               {(rowsPerPage > 0
                 ? rows.slice(
                     page * rowsPerPage,

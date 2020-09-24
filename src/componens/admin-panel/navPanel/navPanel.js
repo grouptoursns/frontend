@@ -39,7 +39,7 @@ const NavPanel = (props) => {
   return (
     <div className="admin-navPanel">
       <div className="logo-navPanel">
-        <img className="logo-company" alt="img" src={data.avatar ? `http://161.35.199.172${data.avatar}` :nologo} />
+        <img className="logo-company" alt="img" src={data.avatar ? `http://161.35.199.172:7000${data.avatar}` :nologo} />
         <span className="logo-navPanel-text">{data.name}</span>
       </div>
       <div className="block-btn-navPanel">
