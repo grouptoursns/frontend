@@ -38,7 +38,6 @@ class User extends React.Component {
       this.state.checkbox ===true
     ) {
       this.props.postUser(this.state);
-      this.setState({ isOpen: true, form: false });
     } else {
     }
   };
@@ -55,27 +54,12 @@ class User extends React.Component {
   }
   render() {
     const modal = this.props.spiner;
-    if (modal === true) {
-      return (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        </div>
-      );
-    }
-    if (modal === false) {
-      return (
-        <div className="modal1">
-          <img className="modal-galka" src={galka} alt=""/>
-          <span className="madal-text">{this.props.success}</span>
-        </div>
-      );
-    }
-    if (this.state.form === true) {
+
+
+
       return (
         <div>
-          <form
+          <form 
             className="needs-validation"
             onSubmit={this.submitHandler}
             noValidate
@@ -232,6 +216,9 @@ class User extends React.Component {
                   </div>
                 </div>
               </MDBCol>
+              <span className="err-text">
+                {this.props.success}
+              </span>
               <MDBBtn color="primary" type="submit" className="submit submit1">
                 Sign up
               </MDBBtn>
@@ -241,11 +228,11 @@ class User extends React.Component {
       );
     }
   }
-}
 const mapStateToProps = (state) => {
   return {
     success: state.Success.success,
-    spiner: state.Spiner.spiner,
+    spiner: state.Spiner.modal.data,
+  
   };
 };
 

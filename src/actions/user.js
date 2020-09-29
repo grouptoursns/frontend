@@ -21,6 +21,7 @@ export const trigerSpiner=()=>{
       type:"TRIGER_SPINER"
   }
 }
+
 export const Successful=(successful)=>{
     return{
         type:"SUCCESS",
@@ -46,9 +47,12 @@ export function putData(data) {
             dispatch(closeSpiner());
           dispatch(loadData(data));
           dispatch(Successful(res.data.message))
+          dispatch({type:"OPEN_SWCCESS"})
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response.data.email[0]);
+          dispatch(Successful(error.response.data.email[0]))
+     
         });
     }catch{
 

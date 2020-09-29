@@ -48,7 +48,7 @@ export function putCompany(data) {
           dispatch(SuccessfulCompany(res.data.message))
         })
         .catch((error) => {
-          console.log(error.data);
+          console.log(error.response.data);
         });
     }catch{
 
