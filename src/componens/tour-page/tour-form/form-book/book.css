@@ -97,3 +97,17 @@
     width: 100%;
     padding: 10px 60px;
 }
+@media screen and (max-width: 1205px) {
+    .book{
+        padding: 0px 20px 0px 20px;
+        margin-left: 40px;
+        /*margin-right: 40px;*/
+        background-color: #fff;
+        width: auto;
+        height: 430px;
+    }
+  }
+  .info {
+    width: 75%;
+    /* background-color: #ffffff; */
+}

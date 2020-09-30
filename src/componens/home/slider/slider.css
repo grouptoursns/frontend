@@ -78,6 +78,15 @@
         transform: translate(13%,280%);
         width: 80%;
     }
+}
+    @media screen and (max-width: 600px) {
+        .text-slider{
+            transform: translate(100%,60%);
+        }
+        .nav-panel{
+            transform: translate(13%,200%);
+        
+        }
 
   }
   @media screen and (max-width: 480px) {

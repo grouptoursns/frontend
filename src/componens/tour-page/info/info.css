@@ -2,3 +2,9 @@
     width: 75%;
     /*background-color: #ffffff;*/
 }
+@media screen and (max-width: 1205px) {
+    .info{
+        width: 95%;
+        /*background-color: #ffffff;*/
+    }
+  }

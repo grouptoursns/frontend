@@ -12,3 +12,13 @@
 .active{
     background-color: #FFFFFF;
 }
+@media screen and (max-width: 1000px) {
+    .tabs{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+}
+.slider {
+    width: 45%;
+}
