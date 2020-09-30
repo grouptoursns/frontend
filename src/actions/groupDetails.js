@@ -6,11 +6,14 @@ export function groupDataFetchSuccess(groupData) {
     }
 }
 
-
+let lang = localStorage.getItem("language")
 
 export function groupDataFetch(url){
     return(dispatch)=>{
-        fetch(url)
+        fetch(url,{
+            headers:{
+                "Accept-Language": lang
+            }})
             .then(res =>{
                 if(!res.ok){
                     throw new Error(res.statusText)

@@ -8,10 +8,16 @@ export function homeAxiosDataSeccess(data){
     }
 }
 
+const lang = localStorage.getItem('language')
+
 export function homeAxiosData(url){
     return async (dispatch)=>{
       await  axios
-      .get(url)
+      .get(url,{
+          headers:{
+              "Accept-Language": lang
+          }
+      })
       .then(res => {
         dispatch(homeAxiosDataSeccess(res.data.results))
       });

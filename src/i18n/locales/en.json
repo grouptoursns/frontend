@@ -1,0 +1,118 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "destinations": "Destinations"
+  },
+  "making": {
+    "title": "We are making ",
+    "subtitle": "better tours"
+  },
+  "bestDestinations": {
+    "destinations": "Best destinations",
+    "allDestinations": "All destinations"
+  },
+  "bestTours": {
+    "best": "Best tours",
+    "from": "from",
+    "reviews": "reviews",
+    "available": "available"
+  },
+  "activities": {
+    "activity": "Activities",
+    "allActivities": "All Activities"
+  },
+  "footer": {
+    "title": "Contacts",
+    "address": "Baytik Baatyr st., 70 Kyrgyz Republic, Bishkek",
+    "usefulLinks": "Useful links",
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "destinations": "Destinations",
+    "register": "Register as operator",
+    "social": "We are in social media"
+  },
+  "result": {
+    "search": "Results of search",
+    "apply": "apply",
+    "country": "Countries",
+    "price": "Price range",
+    "chooseC": "Сhoose a country",
+    "chooseA": "Сhoose an activity",
+    "more": "more details",
+    "sorry": "Sorry for these parameters, there are no tours",
+    "loading": "Loading..."
+  },
+  "tour": {
+    "date": "Select Date and Travelers:",
+    "count": "Count of extra people:",
+    "to": "to",
+    "book": "Book",
+    "private": "Private tour",
+    "descrip": "This button was created for a private tour request",
+    "must": "You must be login as a user to book this tour!"
+  },
+  "langu": {
+    "login": "Sign in",
+    "signUp": "Sign up",
+    "profile": "My profile",
+    "out": "Log out",
+    "admin": "Admin panel"
+  },
+  "info": {
+    "general": "General information",
+    "itinerary": "Itinerary",
+    "inclusions": "Inclusions",
+    "guide": "Your guide",
+    "meet": "Meeting point",
+    "reviews": "Reviews",
+    "description": "Description",
+    "travelers": "Travelers",
+    "min": "Minimum numbers of travelers:",
+    "max": "Maximum numbers of travelers:",
+    "required": "Required to bring",
+    "fitness": "Fitness level",
+    "accommondation": "Accomodation",
+    "whatInclude": "What include"
+  },
+  "sign": {
+    "email": "Email",
+    "password": "Password"
+  },
+  "profile": {
+    "visited": "Visited tours",
+    "booked": "Booked tours",
+    "settings": "Profile settings",
+    "date": "Date",
+    "tour": "Tour",
+    "reserve": "Reserved places",
+    "status": "Status",
+    "action": "Action",
+    "canceling": "CANCELING",
+    "sure": "Are you sure you want to cancel your reservation?",
+    "yes": "YES",
+    "no": "NO"
+  },
+  "notFound": {
+    "page": "Page Not Found!",
+    "back": "back to",
+    "home": "home"
+  },
+  "aboutUs": {
+    "about": "About us",
+    "first": "TripsAroundMe was created to help travelers get the best from destinations\n              by providing a great choice of local tours.\n              Wherever your travels take you, we’ll show you the unique and unmissable\n              things to do in your destination. TripsAroundMe can help you easily\n              join likeminded people in group trips or book a private tour.",
+    "second": "We believe that there is a world of unique travel\n              experiences out there that most people don't know about.\n              Hundreds of small tour operators around the globe are offering unique trips\n              and accommodations that we want to make searchable in a single place.\n              We're changing the way people connect to the places they visit.\n              You’ll find activities for all ages and interests on TripsAroundMe."
+  },
+  "group": {
+    "price": "Price:",
+    "start": "Start day:",
+    "finish": "Finish day:",
+    "count": "Count of people",
+    "total": "Total price",
+    "list": "List of participants:",
+    "book": "Book now",
+    "extra": "extra people"
+  }
+}

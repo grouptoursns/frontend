@@ -2,8 +2,11 @@ import React, {Component, useEffect} from 'react';
 import './general.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
+import {useTranslation} from "react-i18next";
+
 
 const General =(props)=>{
+    const {t} = useTranslation()
 
     useEffect( () => {
         props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
@@ -20,7 +23,7 @@ const General =(props)=>{
         return (
             <div className="general">
                 <div className="general-content">
-                    <h3>Description</h3>
+                    <h3>{t("info.description")}</h3>
                     <p>{props.tourData.description}</p>
                 </div>
                 {/*<div className="general-content">*/}
@@ -28,16 +31,16 @@ const General =(props)=>{
                 {/*    <p>{typeOfTour}</p>*/}
                 {/*</div>*/}
                 <div className="general-content">
-                    <h3>Travelers</h3>
-                    <h4>Minimum numbers of travelers: {props.tourData.min_people}</h4>
-                    <h4>Maximum numbers of travelers: {props.tourData.max_people}</h4>
+                    <h3>{t("info.travelers")}</h3>
+                    <h4>{t("info.min")} {props.tourData.min_people}</h4>
+                    <h4>{t("info.max")} {props.tourData.max_people}</h4>
                 </div>
                 <div className="general-content">
-                    <h3>Required to bring</h3>
+                    <h3>{t("info.required")}</h3>
                     <p>{props.tourData.need_to_take}</p>
                 </div>
                 <div className="general-content">
-                    <h3>Fitness level</h3>
+                    <h3>{t("info.fitness")}</h3>
                     <p>{props.tourData.difficult}</p>
                 </div>
             </div>

@@ -29,17 +29,53 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/allTour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/allTour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/dataHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/dataHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/destinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/destinations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/groupDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/groupDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/admin-panel/content/tours/tours.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/about/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/about/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/about/history/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/about/history/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/activity/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/activity/activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/destinations/destinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/destinations/destinations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/actvities/title/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/actvities/title/title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-destinations/title/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-destinations/title/title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/text-tours/text-tours.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/text-tours/text-tours.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/about-us/about-us.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/about-us/about-us.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/soc-seti/soc-seti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/soc-seti/soc-seti.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/useful/useful.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/useful/useful.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/navBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/navBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/slider/title/title-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/slider/title/title-slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/notFound/notFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/notFound/notFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-card/result-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-card/result-card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/activity/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/activity/activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/country/country.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/country/country.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/price/prise.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/price/prise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/user-page/booked/booked.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/user-page/booked/booked.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/user-page/user-info/user-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/user-page/user-info/user-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +85,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -74,6 +110,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/i18n/locales" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -85,15 +122,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\projects\frontend\src\i18n\locales" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="tour.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tour-page/tour.js" working-dir="$PROJECT_DIR$/src/tour-page">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.tour.js" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -187,7 +228,12 @@
       <workItem from="1600682622008" duration="621000" />
       <workItem from="1600777044629" duration="97000" />
       <workItem from="1600777478696" duration="4600000" />
-      <workItem from="1600863220176" duration="2937000" />
+      <workItem from="1600863220176" duration="3161000" />
+      <workItem from="1600980166176" duration="4669000" />
+      <workItem from="1601030796756" duration="9383000" />
+      <workItem from="1601116380075" duration="5593000" />
+      <workItem from="1601221676427" duration="5196000" />
+      <workItem from="1601373451748" duration="29156000" />
     </task>
     <servers />
   </component>
@@ -247,6 +293,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1597586558933" />
+    <state x="174" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601379636502">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="174" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601379636502" />
     <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600777083866">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -255,38 +305,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596214955807" />
-    <state width="1345" height="122" key="GridCell.Tab.0.bottom" timestamp="1598823867134">
+    <state width="1345" height="122" key="GridCell.Tab.0.bottom" timestamp="1601379651193">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598823867134" />
-    <state width="1345" height="122" key="GridCell.Tab.0.center" timestamp="1598823867133">
+    <state width="1345" height="122" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
+    <state width="1345" height="122" key="GridCell.Tab.0.center" timestamp="1601379651192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598823867133" />
-    <state width="1345" height="122" key="GridCell.Tab.0.left" timestamp="1598823867132">
+    <state width="1345" height="122" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
+    <state width="1345" height="122" key="GridCell.Tab.0.left" timestamp="1601379651192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598823867132" />
-    <state width="1345" height="122" key="GridCell.Tab.0.right" timestamp="1598823867133">
+    <state width="1345" height="122" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
+    <state width="1345" height="122" key="GridCell.Tab.0.right" timestamp="1601379651192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598823867133" />
+    <state width="1345" height="122" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
     <state x="413" y="0" key="RollbackChangesDialog" timestamp="1595588262727">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="0" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595588262727" />
-    <state x="131" y="2" width="998" height="726" key="SettingsEditor" timestamp="1598437462901">
+    <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1601123060199">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="131" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598437462901" />
+    <state x="-279" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601123060199" />
     <state x="274" y="93" key="Vcs.Push.Dialog.v2" timestamp="1600251236148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600251236148" />
-    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1599736606574">
+    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1601381338048">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1599736606574" />
+    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1601381338048" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1599746740527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -303,6 +353,11 @@
           <url>file://$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js</url>
           <line>4</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

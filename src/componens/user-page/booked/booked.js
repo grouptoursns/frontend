@@ -18,6 +18,7 @@ import LastPageIcon from "@material-ui/icons/LastPage";
 import { connect } from "react-redux";
 import {updatTourUser} from "../../../actions/updateTour-user";
 import Modal from "react-modal";
+import {useTranslation} from "react-i18next";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -27,7 +28,8 @@ const useStyles1 = makeStyles((theme) => ({
 }));
 
 function TablePaginationActions(props) {
-  const classes = useStyles1();
+    const {t} = useTranslation()
+    const classes = useStyles1();
   const theme = useTheme();
   const { count, page, rowsPerPage, onChangePage } = props;
 
@@ -103,7 +105,8 @@ const useStyles2 = makeStyles({
 });
 
 function Booked(props) {
-  const classes = useStyles2();
+    const {t} = useTranslation()
+    const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(7);
   const [open,setOpen]=useState(false)
@@ -167,17 +170,17 @@ props.updateTour(idGroup)
         },
       }}
     >
-      <h3>Are you sure you want to cancel your reservation</h3>
+      <h3>{t("profile.sure")}</h3>
       <div className="madal-btn">
  
         <button className="modal-btn-yes" onClick={() => setOpen(false)}>
-          NO
+            {t("profile.no")}
         </button>
         <button className="modal-btn-no" onClick={()=>{
           clickCancel()
           setOpen(false)
           }}>
-          YES
+            {t("profile.yes")}
         </button>
       </div>
     </Modal>
@@ -197,24 +200,24 @@ props.updateTour(idGroup)
         <TableBody>
         <TableRow >
               <TableCell component="th" style={{ width: 80 }} scope="row">
-                Date
+                  {t("profile.date")}
               </TableCell>
               <TableCell
                 style={{ width: 160 }}
                 className="list-text"
                 align="left"
               >
-                Tour
+                  {t("profile.tour")}
               </TableCell>
               <TableCell style={{ width: 70 }} align="left">
-              Reserved places
+                  {t("profile.reserve")}
               </TableCell>
               <TableCell style={{ width: 100 }} align="center">
-              Status
+                  {t("profile.status")}
               </TableCell>
               <TableCell style={{ width: 60 }} align="right">
- 
-              Action
+
+                  {t("profile.action")}
               </TableCell>
             </TableRow>
           {(rowsPerPage > 0
@@ -242,7 +245,7 @@ props.updateTour(idGroup)
  
                 <button id={row.id} className="booking-cancel"  onClick={(e)=>{
                   setIdGroup(e.target.id)
-                  setOpen(true)}}>CANCELING</button>
+                  setOpen(true)}}>{t("profile.canceling")}</button>
               </TableCell>
             </TableRow>
           ))}

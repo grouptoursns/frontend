@@ -16,8 +16,11 @@ import { trigerActivityOff } from "../../actions/trigerActivity";
 import { trigerBestOn } from "../../actions/trigerBest";
 import NavBar from "../home/navBar/navBar";
 import Footer from "../home/footer/footer";
+import {useTranslation} from "react-i18next";
 
 const Destinations = (props) => {
+  const {t} = useTranslation()
+
   const pictures = [
     { id: 1, img: card1 },
     { id: 2, img: card2 },
@@ -49,7 +52,7 @@ const Destinations = (props) => {
       <NavBar />
       <div className="container p1">
         <div className="destion-title">
-          <span>Destinations</span>
+          <span>{t("navbar.destinations")}</span>
         </div>
         <div className="destion-cards">
           {card.map((item) => {

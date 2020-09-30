@@ -3,12 +3,14 @@ import './guide.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
 import nullPhoto from '../../groups-page/group/img/photo 6.png'
+import {useTranslation} from "react-i18next";
 
 
 const Guide =(props)=>{
+    const {t} = useTranslation()
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
     },[]);
 
 
@@ -21,7 +23,7 @@ const Guide =(props)=>{
         return (
             <div className="guide">
                 <div className="guide-content">
-                    <h3>Your guide</h3>
+                    <h3>{t("info.guide")}</h3>
                     <div style={{"display" : "flex"}}>
                         <img src={guidePhoto} alt="guide_photo.icon" style={{"margin-right": "20px"}}/>
                         <p>{props.tourData.about_guide}</p>

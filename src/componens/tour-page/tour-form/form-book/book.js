@@ -7,16 +7,17 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {groupInfo} from "../../../../actions/groupInfo";
 import DatePicker from "./datepicker/datepicker"
+import {useTranslation} from "react-i18next";
 
 
 
 const Book =(props)=> {
+    const {t} = useTranslation()
     const [userBoolen, setUserBoolean] = useState(false)
 
     useEffect(() => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
         props.setTourBookInfo([])
-
 
         setFreeSlots(freeSlots)
 
@@ -54,17 +55,17 @@ const Book =(props)=> {
     return (
         <div className="book">
             <div className="book-price">
-                <h2>{props.tourData.min_price}$ to {props.tourData.max_price}$</h2>
+                <h2>{props.tourData.min_price}$ {t("tour.to")} {props.tourData.max_price}$</h2>
 
             </div>
             <div className="book-picker">
 
-                <p className="book-picker__select">Select Date and Travelers:</p>
+                <p className="book-picker__select">{t("tour.date")}</p>
                 <DatePicker
                     setTourBookInfo={props.setTourBookInfo}
                     tourBookInfo={props.tourBookInfo}/>
 
-                <p className="book-picker__date">Count of extra people:</p>
+                <p className="book-picker__date">{t("tour.count")}</p>
                 <Counter
                     setTourBookInfo={props.setTourBookInfo}
                     tourBookInfo={props.tourBookInfo}
@@ -74,16 +75,16 @@ const Book =(props)=> {
                     userBoolen ?
                         <div>
                             <Link style={{color: 'white', textDecoration: 'none'}} to="/tour-groups/groups">
-                            <button className="update" onClick={onclickBook}>Book</button>
+                            <button className="update" onClick={onclickBook}>{t("tour.book")}</button>
                             </Link>
 
 
-                    <button className="private" onClick={privateTour}>Private tour</button>
-                    <p style={{"margin-top": "5px"}}>This button was created for a private tour request</p>
+                    <button className="private" onClick={privateTour}>{t("tour.private")}</button>
+                    <p style={{"margin-top": "5px"}}>{t("tour.descrip")}</p>
                         </div>
                     :
                     <p style={{"color": "red","font-size":"16px" ,"font-weight": "bolder", "margin-top":"40px"}}>
-                    You must be login as a user to book this tour!</p> }
+                        {t("tour.must")}</p> }
             </div>
         </div>
     )

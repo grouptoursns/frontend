@@ -10,6 +10,7 @@ import Reviews from "./reviews/reviews";
 import Inclusions from "./inclusions/inclusions";
 
 const Info = (props) =>{
+
     return(
         <div className='info'>
             <div>

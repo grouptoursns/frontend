@@ -2,14 +2,17 @@ import React from "react";
 import "./title.css";
 import next from "../img/Vector(1).png";
 import { Link } from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const Title = () => {
-  return (
+    const {t} = useTranslation()
+
+    return (
     <div className="block-title container">
-      <span className="title">Best destinations</span>
+      <span className="title">{t("bestDestinations.destinations")}</span>
       <Link to="/destinations">
         <span className="all">
-          All destinations{" "}
+          {t("bestDestinations.allDestinations")}{" "}
           <svg
             width="11"
             height="11"

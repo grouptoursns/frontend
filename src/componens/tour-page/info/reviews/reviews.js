@@ -2,11 +2,13 @@ import React, { useEffect} from 'react';
 import './reviews.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
+import {useTranslation} from "react-i18next";
 
 const Reviews =(props)=>{
+    const {t} = useTranslation()
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
     },[]);
 
 
@@ -24,7 +26,7 @@ const Reviews =(props)=>{
         return (
             <div className="reviews">
                 <div className="reviews-content">
-                    <h3>Reviews</h3>
+                    <h3>{t("info.reviews")}</h3>
                     <div>
                         <h4>{users}</h4>
                         <span>{items}</span>

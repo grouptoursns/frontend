@@ -5,13 +5,17 @@ import History from "../about/history/history";
 // import Features from "../about/features/features";
 import NavBar from "../home/navBar/navBar";
 import Footer from "../home/footer/footer"
+import {useTranslation} from "react-i18next";
+
 const About = () => {
-  return (
+    const {t} = useTranslation()
+
+    return (
     <div>
       <NavBar />
       <div className="page-about">
         <div className="content-about">
-          <span className="about-title">About us</span>
+          <span className="about-title">{t("aboutUs.about")}</span>
           <History />
           {/*<Features />*/}
         </div>
