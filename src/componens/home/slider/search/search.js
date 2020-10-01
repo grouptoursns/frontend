@@ -48,7 +48,7 @@ top100Films=[...name,...count];
     if(e.key ==='Enter'){
       console.log(e.target.value)
       history.push("/result_search");
-      props.getTourSearch(`http://161.35.199.172:7000/api/tour-search/?search=${e.target.value}`);
+      props.getTourSearch(`http://admin.tripsaround.me/api/tour-search/?search=${e.target.value}`);
       props.ofBestCount()
       props.trigerActiv()
       props.trigerSearchOn()

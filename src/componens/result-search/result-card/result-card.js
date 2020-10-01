@@ -137,7 +137,7 @@ const ResultCard = (props) => {
         {tour.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-              <img alt="img" className="image-card" src={item.main_image ?`http://161.35.199.172:7000${item.main_image}` :noImage} />
+              <img alt="img" className="image-card" src={item.main_image ?`http://admin.tripsaround.me${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
@@ -240,7 +240,7 @@ const ResultCard = (props) => {
         {tourActivity.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-             <img alt="img" className="image-card" src={item.main_image ?`http://161.35.199.172:7000${item.main_image}` :noImage} />
+             <img alt="img" className="image-card" src={item.main_image ?`http://admin.tripsaround.me${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">

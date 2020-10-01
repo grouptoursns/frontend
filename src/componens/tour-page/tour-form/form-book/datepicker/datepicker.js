@@ -22,7 +22,7 @@ class Datepicker extends Component{
     }
 
     componentDidMount() {
-        fetch(`http://161.35.199.172:7000/api/tours/${this.props.detailsTours}`)
+        fetch(`http://admin.tripsaround.me/api/tours/${this.props.detailsTours}`)
             .then(res => res.json())
             .then(json =>{
                 this.setState({
@@ -86,7 +86,7 @@ class Datepicker extends Component{
             // console.log(this.state   .items)
             return (
                 <div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form style={{"padding":"0px"}} onSubmit={this.handleSubmit}>
                         <div>
                             {/*<div className="book-picker__form">*/}
                             {/*    <img src={calendar} alt="calendar.icon" style={{"padding": "0px 10px"}}/>*/}
@@ -99,16 +99,12 @@ class Datepicker extends Component{
                             {
                                 this.state.show ?
                                     <div className="book-picker__date">
-
-
-                                        {
-                                            this.state.items.group_tour.map((start_time)=><input
+                                            <input
                                                 className="book-picker__date-elem"
                                                 type="submit"
-                                                value={start_time}
+                                                value={this.state.items.group_tour[0].start_time}
                                                 onClick={this.handleChange}
-                                            />)
-                                        }
+                                            />
                                     </div>
                                     : null
                             }

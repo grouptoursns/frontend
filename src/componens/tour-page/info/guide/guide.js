@@ -10,7 +10,7 @@ const Guide =(props)=>{
     const {t} = useTranslation()
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
     },[]);
 
 

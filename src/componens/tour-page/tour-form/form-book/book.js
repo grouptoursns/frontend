@@ -16,7 +16,7 @@ const Book =(props)=> {
     const [userBoolen, setUserBoolean] = useState(false)
 
     useEffect(() => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
         props.setTourBookInfo([])
 
         setFreeSlots(freeSlots)

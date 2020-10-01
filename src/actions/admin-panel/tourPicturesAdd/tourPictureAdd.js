@@ -19,7 +19,7 @@ export default function TourPictureAddAdmin(id,data) {
     dispatch(openModal())
     await axios
       .post(
-        `http://161.35.199.172:7000/api/company/tours/${id}/images/`,data,
+        `http://admin.tripsaround.me/api/company/tours/${id}/images/`,data,
         {
           headers: {
             Authorization: "Token " + token,

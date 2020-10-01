@@ -20,9 +20,9 @@ const Home = (props) => {
   useEffect( () => {
 
     props.trigerFilterOff()
-    props.AxiosData('http://161.35.199.172:7000/main-page');
-    props.AllTours(' http://161.35.199.172:7000/api/tours/');
-    props.destinationsData('http://161.35.199.172:7000/api/test/')
+    props.AxiosData('http://admin.tripsaround.me/main-page');
+    props.AllTours('http://admin.tripsaround.me/api/tours/');
+    props.destinationsData('http://admin.tripsaround.me/api/test/')
     props.trigerSpin()
   
   },[]);

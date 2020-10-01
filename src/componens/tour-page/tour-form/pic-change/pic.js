@@ -15,7 +15,7 @@ const Pic = (props) =>{
 
     if (pictures?.length){
         for (let i=0; i < 5; i++){
-            picture = pictures[i]?.image ? `http://161.35.199.172:7000${pictures[i].image}` : noImage
+            picture = pictures[i]?.image ? `http://admin.tripsaround.me${pictures[i].image}` : noImage
             list.push(picture)
         }
     }

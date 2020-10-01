@@ -34,7 +34,7 @@ const Filter = (props) => {
     props.trigerBestOff()
     props.trigerActivityOff()
     props.getFilterTour(
-      `http://161.35.199.172:7000/api/tour-filter/?country=${country}&/&min_price=${price[0]}&max_price=${price[1]}&category=${activity}`
+      `http://admin.tripsaround.me/api/tour-filter/?country=${country}&/&min_price=${price[0]}&max_price=${price[1]}&category=${activity}`
     );
     props.trigerFilter()
   };

@@ -15,7 +15,7 @@ const Group = (props) => {
 
 
     useEffect(() => {
-        props.fetchData(`http://161.35.199.172:7000/group/${props.groupId}`)
+        props.fetchData(`http://admin.tripsaround.me/group/${props.groupId}`)
     }, []);
 
     let a = []
@@ -71,7 +71,7 @@ const Group = (props) => {
 
 
     const bookNow = () => {
-        axios.post(`http://161.35.199.172:7000/group/${props.groupId}/book/`, {
+        axios.post(`http://admin.tripsaround.me/group/${props.groupId}/book/`, {
             name: name,
             extra_people: countOfpeople - 1,
             count_of_extra_people: countOfpeople,

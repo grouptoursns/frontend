@@ -16,7 +16,7 @@ export function signIn(data) {
   return async (dispatch) => {
     try {
       await axios
-        .post("http://161.35.199.172:7000/api/users/login/", {
+        .post("http://admin.tripsaround.me/api/users/login/", {
           email: data.email,
           password: data.password,
         })

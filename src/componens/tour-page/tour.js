@@ -13,7 +13,7 @@ import NavBar from "../home/navBar/navBar";
 const Tour =(props)=>{
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
     },[]);
 
     console.log(props.tourData)

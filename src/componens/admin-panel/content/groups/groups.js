@@ -132,7 +132,7 @@ function Groups(props) {
   });
   let rows = [];
   useEffect(() => {
-    props.getGroupList("http://161.35.199.172:7000/api/company/groups/");
+    props.getGroupList("http://admin.tripsaround.me/api/company/groups/");
     setUpdate(false)
     setIsDelete(false)
   },[isDelete,update]);
