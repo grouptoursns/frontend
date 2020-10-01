@@ -7,11 +7,17 @@ export function allTourSeccess(data){
 
     }
 }
+const lang = localStorage.getItem('language')
+
 
 export function allTour(url){
     return async (dispatch)=>{
       await  axios
-      .get(url)
+      .get(url,{
+          headers:{
+              "Accept-Language": lang
+          }
+      })
       .then(res => {
         dispatch(allTourSeccess(res.data))
       });

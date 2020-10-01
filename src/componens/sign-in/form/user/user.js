@@ -5,6 +5,7 @@ import Home from "../../../home/home";
 import "../form.css";
 import { connect } from "react-redux";
 import { signIn } from "../../../../actions/signIn";
+import {useTranslation, withTranslation} from "react-i18next";
 
 const initialState = {
   isAuthenticated: false,
@@ -20,6 +21,7 @@ const initialState = {
 };
 
 class User extends Component {
+
   constructor(props) {
     super(props);
     this.state = { initialState };
@@ -79,14 +81,15 @@ class User extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="form">
         <form className="form-cont" onSubmit={this.handleSubmit}>
           <div>
-            <p className="form-cont__title">Email</p>
+            <p className="form-cont__title">{this.props.t("sign.email")}</p>
             <input
               className="form-cont__input"
-              placeholder="Email"
+              placeholder={this.props.t("sign.email")}
               type="text"
               name="email"
               onChange={this.handleChange}
@@ -100,10 +103,10 @@ class User extends Component {
             </div>
           </div>
           <div>
-            <p className="form-cont__title">Password</p>
+            <p className="form-cont__title">{this.props.t("sign.password")}</p>
             <input
               className="form-cont__input"
-              placeholder="Password"
+              placeholder={this.props.t("sign.password")}
               type="password"
               name="password"
               onChange={this.handleChange}
@@ -123,14 +126,14 @@ class User extends Component {
               onChange={this.handleChange.bind(this)}
               value={this.state.checked}
             />
-            <p className="form-cont__check-title">Remember me</p>
+            <p className="form-cont__check-title">{this.props.t("sign.remember")}</p>
           </div>
           {this.props.textErr &&
            <span className="errText">{this.props.textErr}</span>}
           <button className="form-cont__btn" type="submit" onClick={this.Login}>
-            Login
+            {this.props.t("sign.login")}
           </button>
-          <a className="form-cont__link">Forgot your password?</a>
+          {/*<a className="form-cont__link">Forgot your password?</a>*/}
           <div
             style={{
               color: "red",
@@ -160,4 +163,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(User);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(User));

@@ -9,8 +9,11 @@ import{trigerFilterOn} from "../../../actions/trigerFilter"
 import{searchTrigerFalse} from "../../../actions/tourSearch";
 import {trigerBestOff} from "../../../actions/trigerBest";
 import {trigerActivityOff} from "../../../actions/trigerActivity"
+import {useTranslation} from "react-i18next";
+
 
 const Filter = (props) => {
+  const {t} = useTranslation()
   const [country, setCountry] = useState("");
   const [activity, setActivity] = useState("");
   const [price, setPrice] = useState([200,600]);
@@ -38,16 +41,16 @@ const Filter = (props) => {
   return (
     <div className="block-filter">
       <div className="block-title-filter">
-        <h1>Results of search</h1>
+        <h1>{t("result.search")}</h1>
       </div>
       <div className="filter-block">
         <div className="dropdown-filter">
           <div className="country">
-            <span className="country-span">Countries</span>
+            <span className="country-span">{t("result.country")}</span>
             <DropdownCountry countryProps={chengeCountry} />
           </div>
           <div className="activity">
-            <span>Activities</span>
+            <span>{t("activities.activity")}</span>
             <Activity activityProps={chengeActivity} />
           </div>
           <div className="price">
@@ -55,7 +58,7 @@ const Filter = (props) => {
           </div>
         </div>
         <button onClick={filterTour} className="apply">
-          apply
+          {t("result.apply")}
         </button>
       </div>
     </div>

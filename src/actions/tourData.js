@@ -6,11 +6,13 @@ export function tourDataFetchSuccess(tourData) {
     }
 }
 
+const lang = localStorage.getItem("language")
+
 export function tourDataFetch(url){
     return(dispatch)=>{
         fetch(url,{
             headers:{
-                "Accept-Language": "ru"
+                "Accept-Language": lang
             }
         })
             .then(res =>{

@@ -2,8 +2,10 @@ import React, {Component, useEffect} from 'react';
 import './itinerary.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
+import {useTranslation} from "react-i18next";
 
 const Itinerary =(props)=>{
+    const {t} = useTranslation()
 
     useEffect( () => {
         props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
@@ -12,7 +14,7 @@ const Itinerary =(props)=>{
         return (
             <div className="itinerary">
                 <div className="itinerary-content">
-                    <h3>Accommodation</h3>
+                    <h3>{t("info.accommondation")}</h3>
                     <p>{props.tourData.residence}</p>
                 </div>
             </div>

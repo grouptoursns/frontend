@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import {SignInOff} from "../../../../actions/signIn"
+import {useTranslation} from "react-i18next";
+
 
 const Lang = (props) => {
   const [open, setOpen] = useState(false);
-
   const [user, setUser] = useState(false);
   const [company, setCompany] = useState(false);
   const [email, setEmail] = useState(1);
-  useEffect(() => {
+    const {t} = useTranslation()
+
+    useEffect(() => {
    
     setUser(localStorage.getItem("user"));
     setCompany(localStorage.getItem("company"));
@@ -42,12 +45,11 @@ const logout=()=>{
           </span>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
             <Link className="dropdown-item" to="/user-page">
-              
-                My profile
+                {t("langu.profile")}
             </Link>
             <Link  className="dropdown-item" to="/">
               <div onClick={logout}>
-              log out
+                  {t("langu.out")}
                 </div>
              
             </Link>
@@ -69,11 +71,11 @@ const logout=()=>{
           </span>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
             <Link className="dropdown-item" to="/admin-panel">
-              Admin panel
+                {t("langu.admin")}
             </Link>
             <Link  className="dropdown-item" to="/">
             <div onClick={logout}>
-              log out
+                {t("langu.out")}
                 </div>
             </Link>
           </div>
@@ -89,14 +91,14 @@ const logout=()=>{
             data-toggle="dropdown"
             aria-haspopup="true"
           >
-            Sign in
+            {t("langu.login")}
           </span>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
             <Link className="dropdown-item" to="/sign-in">
-              Sign in
+                {t("langu.login")}
             </Link>
             <Link className="dropdown-item" to="/sign-up">
-              Sign up
+                {t("langu.signUp")}
             </Link>
           </div>
         </div>
@@ -113,14 +115,14 @@ const logout=()=>{
           data-toggle="dropdown"
           aria-haspopup="true"
         >
-          Sign in
+          {t("langu.login")}
         </span>
         <div className={menuClass} aria-labelledby="dropdownMenuButton">
           <Link className="dropdown-item" to="/sign-in">
-            Sign in
+              {t("langu.login")}
           </Link>
           <Link className="dropdown-item" to="/sign-up">
-            Sign up
+              {t("langu.signUp")}
           </Link>
         </div>
       </div>

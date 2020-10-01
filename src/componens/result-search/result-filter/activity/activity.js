@@ -7,10 +7,13 @@ import { Dropdown } from 'semantic-ui-react';
 import "./activity.css";
 import { connect } from "react-redux";
 import "semantic-ui-css/semantic.min.css";
+import {useTranslation} from "react-i18next";
 
 
 
 const Activity = (props) => {
+  const {t} = useTranslation()
+
   let category=[]
 if(props.allActivity=== undefined){
   category =[]
@@ -34,7 +37,7 @@ else{
   }
   return (
     <Dropdown
-      placeholder="Сhoose a activity"
+      placeholder={t("result.chooseA")}
       fluid
       search
       selection

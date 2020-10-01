@@ -5,12 +5,15 @@ import facebook from "./img/Vector(2).png";
 import stripe from "./img/Vector(3).png";
 import twiter from "./img/Vector(4).png";
 import youtube from "./img/Vector(5).png";
+import {useTranslation} from "react-i18next";
 
 
 const SocSeti =()=>{
+    const {t} = useTranslation()
+
     return(
         <div className="block-soc-seti">
-            <span>We are in social media</span>
+            <span>{t("footer.social")}</span>
             <div className="soc-icon">
             <img src={instagram} alt="img"/>
             <img src={facebook} alt="img"/>

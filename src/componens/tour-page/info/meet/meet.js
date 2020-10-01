@@ -2,16 +2,18 @@ import React, {Component, useEffect} from 'react';
 import './meet.css'
 import {tourDataFetch} from "../../../../actions/tourData";
 import {connect} from "react-redux";
+import {useTranslation} from "react-i18next";
 
 const Meet =(props)=>{
+    const {t} = useTranslation()
 
     useEffect( () => {
-        props.fetchData(`http://161.35.199.172/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://161.35.199.172:7000/api/tours/${props.detailsTours}`);
     },[]);
         return (
             <div className="meet">
                 <div className="meet-content">
-                    <h3>Meeting point</h3>
+                    <h3>{t("info.meet")}</h3>
                     <p>
                         {props.tourData.gathering_place}
                     </p>

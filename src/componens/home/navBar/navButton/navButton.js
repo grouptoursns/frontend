@@ -1,21 +1,24 @@
 import React from "react";
 import "./navButton.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const NavButton = () => {
-  return (
-    <div className="navBtn">
-      <Link className="link1" to="/">
-        Home
-      </Link>
+    const {t} = useTranslation()
 
-      <Link className="link1" to="/about">
-        About
-      </Link>
+    return (
+        <div className="navBtn">
+            <Link className="link1" to="/">
+                {t("navbar.home")}
+            </Link>
 
-      <Link className="link1" to="/activity">Activities</Link>
-      <Link className="link1" to="/destinations">Destinations</Link>
-    </div>
-  );
+            <Link className="link1" to="/about">
+                {t("navbar.about")}
+            </Link>
+
+            <Link className="link1" to="/activity">{t("navbar.activities")}</Link>
+            <Link className="link1" to="/destinations">{t("navbar.destinations")}</Link>
+        </div>
+    );
 };
 export default NavButton;
