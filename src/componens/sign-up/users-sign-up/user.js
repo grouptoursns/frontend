@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import galka from "./img/image 1.png";
 
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import {withTranslation} from "react-i18next";
 
 class User extends React.Component {
   state = {
@@ -86,7 +87,7 @@ class User extends React.Component {
                   htmlFor="defaultFormRegisterNameEx"
                   className="grey-text"
                 >
-                  First name
+                  {this.props.t("sign.first")}
                 </label>
                 <input
                   value={this.state.fname}
@@ -97,14 +98,14 @@ class User extends React.Component {
                   className="form-control input"
                   required
                 />
-                <div className="valid-feedback">Looks good!</div>
+                <div className="valid-feedback">{this.props.t("sign.looks")}</div>
               </MDBCol>
               <MDBCol md="6" className="mb-3  ">
                 <label
                   htmlFor="defaultFormRegisterEmailEx2"
                   className="grey-text"
                 >
-                  Last name
+                  {this.props.t("sign.last")}
                 </label>
                 <input
                   value={this.state.lname}
@@ -115,7 +116,7 @@ class User extends React.Component {
                   className="form-control input"
                   required
                 />
-                <div className="valid-feedback">Looks good!</div>
+                <div className="valid-feedback">{this.props.t("sign.looks")}</div>
               </MDBCol>
             </MDBRow>
             <MDBRow>
@@ -124,7 +125,7 @@ class User extends React.Component {
                   htmlFor="defaultFormRegisterPasswordEx4"
                   className="grey-text"
                 >
-                  Email
+                  {this.props.t("sign.email")}
                 </label>
                 <input
                   value={this.state.email}
@@ -136,16 +137,16 @@ class User extends React.Component {
                   required
                 />
                 <div className="invalid-feedback">
-                  Please provide a valid city.
+                  {this.props.t("sign.provideC")}
                 </div>
-                <div className="valid-feedback">Looks good!</div>
+                <div className="valid-feedback">{this.props.t("sign.looks")}</div>
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
                   htmlFor="defaultFormRegisterPasswordEx4"
                   className="grey-text"
                 >
-                  Birthday
+                  {this.props.t("sign.birthday")}
                 </label>
 
                 <input
@@ -159,9 +160,9 @@ class User extends React.Component {
                 />
 
                 <div className="invalid-feedback">
-                  Please provide a valid date.
+                  {this.props.t("sign.provideD")}
                 </div>
-                <div className="valid-feedback">Looks good!</div>
+                <div className="valid-feedback">{this.props.t("sign.looks")}</div>
               </MDBCol>
               <div className="line-block">
                 <div className="black-line"></div>
@@ -171,7 +172,7 @@ class User extends React.Component {
                   htmlFor="defaultFormRegisterPasswordEx4"
                   className="grey-text"
                 >
-                  Password
+                  {this.props.t("sign.password")}
                 </label>
                 <input
                   value={this.state.pasword}
@@ -183,16 +184,16 @@ class User extends React.Component {
                   required
                 />
                 <div className="invalid-feedback">
-                  Please provide a valid email.
+                  {this.props.t("sign.provideE")}
                 </div>
-                <div className="valid-feedback">Looks good!</div>
+                <div className="valid-feedback">{this.props.t("sign.looks")}</div>
               </MDBCol>
               <MDBCol md="6" className="mb-3">
                 <label
                   htmlFor="defaultFormRegisterPasswordEx4"
                   className="grey-text"
                 >
-                  Repeat password
+                  {this.props.t("sign.repeat")}
                 </label>
                 <input
                   value={this.state.pasword2}
@@ -204,9 +205,9 @@ class User extends React.Component {
                   required
                 />
                 <div className="invalid-feedback">
-                  Please provide a valid password.
+                  {this.props.t("sign.provideP")}
                 </div>
-                <div className="valid-feedback">Looks good!</div>
+                <div className="valid-feedback">{this.props.t("sign.looks")}</div>
               </MDBCol>
             </MDBRow>
             <div className="block-check">
@@ -225,15 +226,15 @@ class User extends React.Component {
                     className="custom-control-label"
                     htmlFor="invalidCheck"
                   >
-                    I have read and agree to the privacy policy and terms
+                    {this.props.t("sign.privacy")}
                   </label>
                   <div className="invalid-feedback">
-                    You must agree before submitting.
+                    {this.props.t("sign.agree")}
                   </div>
                 </div>
               </MDBCol>
               <MDBBtn color="primary" type="submit" className="submit submit1">
-                Sign up
+                {this.props.t("sign.up")}
               </MDBBtn>
             </div>
           </form>
@@ -255,5 +256,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(User);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(User));
 

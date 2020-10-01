@@ -10,7 +10,14 @@ const Language = () => {
     const {t, i18n} = useTranslation()
 
     useEffect(() => {
-        localStorage.setItem("language", language)
+        let nul = localStorage.getItem("language")
+        if (nul == null){
+            localStorage.setItem("language", "EN")
+        }
+        else{
+            localStorage.setItem("language", language)
+        }
+
     }, [language])
 
     return (

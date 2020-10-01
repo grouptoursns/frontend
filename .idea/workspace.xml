@@ -27,55 +27,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/allTour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/allTour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/dataHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/dataHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/destinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/destinations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/groupDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/groupDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/about/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/about/about.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/about/history/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/about/history/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/activity/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/activity/activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/destinations/destinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/destinations/destinations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/actvities/title/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/actvities/title/title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-destinations/title/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-destinations/title/title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/text-tours/text-tours.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/text-tours/text-tours.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/best-tours/tours-slaider/best-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/about-us/about-us.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/about-us/about-us.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/registr/registr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/soc-seti/soc-seti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/soc-seti/soc-seti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/footer/useful/useful.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/footer/useful/useful.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/langu/lang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/navBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/navBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/navButton/navButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/home/slider/title/title-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/slider/title/title-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/notFound/notFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/notFound/notFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-card/result-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-card/result-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/activity/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/activity/activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/country/country.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/country/country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/price/prise.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/price/prise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/result-search/result-filter/result-filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/group/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/navBar/language/language.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/navBar/language/language.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/home/slider/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/home/slider/search/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-in/form/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/sign-up/users-sign-up/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/sign-up/users-sign-up/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/user-page/booked/booked.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/user-page/booked/booked.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/user-page/user-info/user-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/user-page/user-info/user-info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/locales/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/locales/ru.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +191,7 @@
       <workItem from="1601030796756" duration="9383000" />
       <workItem from="1601116380075" duration="5593000" />
       <workItem from="1601221676427" duration="5196000" />
-      <workItem from="1601373451748" duration="29156000" />
+      <workItem from="1601373451748" duration="39286000" />
     </task>
     <servers />
   </component>
@@ -305,22 +263,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596214955807" />
-    <state width="1345" height="122" key="GridCell.Tab.0.bottom" timestamp="1601379651193">
+    <state width="1345" height="122" key="GridCell.Tab.0.bottom" timestamp="1601558001837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
-    <state width="1345" height="122" key="GridCell.Tab.0.center" timestamp="1601379651192">
+    <state width="1345" height="122" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601558001837" />
+    <state width="1345" height="122" key="GridCell.Tab.0.center" timestamp="1601558001837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
-    <state width="1345" height="122" key="GridCell.Tab.0.left" timestamp="1601379651192">
+    <state width="1345" height="122" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601558001837" />
+    <state width="1345" height="122" key="GridCell.Tab.0.left" timestamp="1601558001837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
-    <state width="1345" height="122" key="GridCell.Tab.0.right" timestamp="1601379651192">
+    <state width="1345" height="122" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601558001837" />
+    <state width="1345" height="122" key="GridCell.Tab.0.right" timestamp="1601558001837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="122" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601379651192" />
+    <state width="1345" height="122" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601558001837" />
     <state x="413" y="0" key="RollbackChangesDialog" timestamp="1595588262727">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -79,7 +79,26 @@
   },
   "sign": {
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "remember": "Remember me",
+    "login": "Login",
+    "exist": "No such user exists",
+    "blank": "Password cannot be blank",
+    "invalid": "Invalid email",
+    "first": "First name",
+    "last": "Last name",
+    "repeat": "Repeat password",
+    "birthday": "Birthday",
+    "privacy": "I have read and agree to the privacy policy and terms",
+    "agree": "You must agree before submitting.",
+    "up": "Sign up",
+    "provideC": "Please provide a valid city",
+    "provideB": "Please provide a valid birthday",
+    "provideE": "Please provide a valid email",
+    "provideD": "Please provide a valid date",
+    "provideP": "Please provide a valid password",
+    "looks": "Looks good!"
+
   },
   "profile": {
     "visited": "Visited tours",
@@ -114,5 +133,6 @@
     "list": "List of participants:",
     "book": "Book now",
     "extra": "extra people"
-  }
+  },
+  "search": "Search tours"
 }

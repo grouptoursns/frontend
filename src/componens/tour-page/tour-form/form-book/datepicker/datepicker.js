@@ -99,12 +99,16 @@ class Datepicker extends Component{
                             {
                                 this.state.show ?
                                     <div className="book-picker__date">
-                                        <input
-                                            className="book-picker__date-elem"
-                                            type="submit"
-                                            value={this.state.items.group_tour[0].start_time}
-                                            onClick={this.handleChange}
-                                        />
+
+
+                                        {
+                                            this.state.items.group_tour.map((start_time)=><input
+                                                className="book-picker__date-elem"
+                                                type="submit"
+                                                value={start_time}
+                                                onClick={this.handleChange}
+                                            />)
+                                        }
                                     </div>
                                     : null
                             }
