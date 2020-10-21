@@ -44,12 +44,11 @@ const Book =(props)=> {
 
 
     const privateTour=()=>{
-
+        fetch(`http://admin.tripsaround.me/tour/${props.detailsTours}/send-email`)
+            .then((response) => response.json())
+            .then((data) => console.log('This is your data', data))
+            .catch((err) => console.log(err))
     }
-    console.log('book',props.tourBookInfo)
-    // if (props.tourBookInfo.value = ''){
-    //
-    // }
 
 
     return (
