@@ -3,11 +3,14 @@
     background-color: #ffffff;
     padding: 40px;
     font-weight: bold;
-    justify-content: space-evenly;
+    justify-content:space-between;
     width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-
-
+.group-list{
+    margin-right: 70px;
+}
 .group-list__guide{
     display: flex;
     justify-content: space-evenly;
@@ -46,4 +49,16 @@
     border-radius: 0px;
     color: #ffffff;
     font-family: Lato;
+}
+
+
+@media screen and (max-width: 580px){
+    .group{
+        display: flex;
+        flex-direction: column;
+    }
+    .group-list__people{
+        margin-top: 30px;
+        border: none;
+    }
 }

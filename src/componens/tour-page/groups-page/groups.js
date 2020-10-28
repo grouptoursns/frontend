@@ -10,7 +10,7 @@ const Groups = (props) => {
         <div className="groups">
             <NavBar />
             <div>
-                <GroupTabs tourBookInfo={props.tourBookInfo}/>
+                {/*<GroupTabs tourBookInfo={props.tourBookInfo}/>*/}
                 <Switch>
                     <Route exact path="/tour-groups/groups"><Group tourBookInfo={props.tourBookInfo}/> </Route>
                 </Switch>

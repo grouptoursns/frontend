@@ -9,9 +9,12 @@ import {tourSearch} from "../../../../actions/tourSearch"
 import {trigerBestOff} from "../../../../actions/trigerBest"
 import {trigerActivityOff} from "../../../../actions/trigerActivity"
 import {searchTrigerTrue} from "../../../../actions/tourSearch"
+import {useTranslation} from "react-i18next";
 
  function Search(props) {
-  let top100Films = []
+     const {t} = useTranslation()
+
+     let top100Films = []
   //let top100Films = []
   let count=[]
   let name=[]
@@ -45,7 +48,7 @@ top100Films=[...name,...count];
     if(e.key ==='Enter'){
       console.log(e.target.value)
       history.push("/result_search");
-      props.getTourSearch(`http://161.35.199.172/api/tour-search/?search=${e.target.value}`);
+      props.getTourSearch(`http://admin.tripsaround.me/api/tour-search/?search=${e.target.value}`);
       props.ofBestCount()
       props.trigerActiv()
       props.trigerSearchOn()
@@ -64,7 +67,7 @@ top100Films=[...name,...count];
         renderInput={(params) => (
           <TextField
             {...params}
-            placeholder="Search tours"
+            placeholder={t("search")}
             margin="normal"
             variant="outlined"
             InputProps={{ ...params.InputProps, type: 'search' }}

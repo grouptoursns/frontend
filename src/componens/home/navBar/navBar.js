@@ -3,6 +3,7 @@ import "./navBar.css";
 import Logo from "./logo/logo.js";
 import NavButton from "./navButton/navButton.js";
 import Lang from "./langu/lang.js";
+import Language from "./language/language";
 
 const NavBar = () => {
   const [burger,setBurger]=useState(false)
@@ -12,6 +13,7 @@ const NavBar = () => {
       <div className={`${burger ? "open" : ''} list`}>
       <NavButton />
       <Lang />
+      <Language />
         </div>
 
       <div

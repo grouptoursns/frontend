@@ -7,14 +7,15 @@ import {groupInfoFetch} from "../../../../actions/groupInfo";
 import {groupInfo} from "../../../../reduser/groupInfo";
 import {connect} from "react-redux";
 import {groupDataFetch} from "../../../../actions/groupDetails";
+import {useTranslation} from "react-i18next";
 
 
 const Group = (props) => {
-    console.log(props)
+    const {t} = useTranslation()
 
 
     useEffect(() => {
-        props.fetchData(`http://161.35.199.172/group/${props.groupId}`)
+        props.fetchData(`http://admin.tripsaround.me/group/${props.groupId}`)
     }, []);
 
     let a = []
@@ -23,6 +24,7 @@ const Group = (props) => {
     let finish = ""
     let people = []
     let guide = []
+    let tour = ""
 
 
     if (props.groupData) {
@@ -41,6 +43,7 @@ const Group = (props) => {
     let guideName = ""
     if (guide) {
         guideName = guide.about_guide
+        tour = guide.name
     }
 
     let tourName = ""
@@ -55,23 +58,23 @@ const Group = (props) => {
         men = b.map((man) =>
             <li className="img-li" style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <img src={profilePhoto} alt="profile.icon"/>{man.name}
-                <p style={{color: "red"}}> + {man.count_of_extra_people} extra people</p>
+                <p style={{color: "red"}}> + {man.count_of_extra_people} {t("group.extra")}</p>
             </li>
         )
     }
 
     let token = {}
-    let email = {}
+    let name = ""
     token = localStorage.getItem("token")
-    email = localStorage.getItem("email")
+    name = localStorage.getItem("name")
     console.log(token)
 
 
     const bookNow = () => {
-        axios.post(`http://161.35.199.172/group/${props.groupId}/book/`, {
-            name: "Tologon",
-            extra_people: countOfpeople,
-            count_of_extra_people: countOfpeople - 1,
+        axios.post(`http://admin.tripsaround.me/group/${props.groupId}/book/`, {
+            name: name,
+            extra_people: countOfpeople - 1,
+            count_of_extra_people: countOfpeople,
         }, {
             headers: {
                 "Authorization": 'Token ' + token
@@ -95,20 +98,20 @@ const Group = (props) => {
         <div className="group">
             <div className="group-list">
                 <div className="group-list__guide">
-                    <h3>1 Day Burana-Kegety Gorge-Kol-Tor lake trip</h3>
+                    <h3>{tour}</h3>
                 </div>
                 <div className="group-info">
-                    <p>Price: {price}$</p>
-                    <p>Start day: {start}</p>
-                    <p>Finish day: {finish}</p>
-                    <p>Count of people: {countOfpeople} </p>
-                    <p>Total price: {totalPrice + "$"} </p>
-                    <button className="alert" onClick={bookNow}>Book now</button>
+                    <p>{t("group.price")} {price}$</p>
+                    <p>{t("group.start")} {start}</p>
+                    <p>{t("group.finish")} {finish}</p>
+                    <p>{t("group.count")} {countOfpeople} </p>
+                    <p>{t("group.total")} {totalPrice + "$"} </p>
+                    <button className="alert" onClick={bookNow}>{t("group.book")}</button>
                 </div>
             </div>
 
             <div className="group-list__people">
-                <h3>List of participants:</h3>
+                <h3>{t("group.list")}</h3>
                 <ul>
                     {men}
                 </ul>

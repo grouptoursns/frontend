@@ -11,8 +11,11 @@ import { detailsTour } from "../../../actions/detailsTour";
 import smail from "./img/smile.png"
 import ReactStars from 'react-stars'
 import noImage from "./img/no image 2.png"
+import {useTranslation} from "react-i18next";
 
 const ResultCard = (props) => {
+  const {t} = useTranslation()
+
   useEffect(() => {
     //props.triger();
   }, []);
@@ -108,17 +111,17 @@ const ResultCard = (props) => {
                     color2="gold"
                 />
                   </div>
-                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
-                  <img alt="" className="descrip_text" src={cards[0].paint} />
+                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} {t("bestTours.reviews")}</span>
+                  <img alt="pic.icon" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
-                <span className="result-price">from {item.min_price}$ </span>
+                <span className="result-price">{t("bestTours.from")} {item.min_price}$ </span>
                 <Link to="/tourspage">
                   <button
                     onClick={() => clickDetailsContact(item.id)}
                     className="more_details"
                   >
-                    more details
+                    {t("result.more")}
                   </button>
                 </Link>
               </div>
@@ -134,7 +137,7 @@ const ResultCard = (props) => {
         {tour.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-              <img alt="img" className="image-card" src={item.main_image ?`http://161.35.199.172:7000${item.main_image}` :noImage} />
+              <img alt="img" className="image-card" src={item.main_image ?`http://admin.tripsaround.me${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
@@ -149,17 +152,17 @@ const ResultCard = (props) => {
                     color2="gold"
                 />
                   </div>
-                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
+                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} {t("bestTours.reviews")}</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
-                <span className="result-price">from {item.min_price}$ </span>
+                <span className="result-price">{t("bestTours.from")} {item.min_price}$ </span>
                 <Link to="/tourspage">
                   <button
                     onClick={() => clickDetailsContact(item.id)}
                     className="more_details"
                   >
-                    more details
+                    {t("result.more")}
                   </button>
                 </Link>
               </div>
@@ -175,7 +178,7 @@ const ResultCard = (props) => {
         <div className="result">
           <div className="d-flex justify-content-center filter-spiner">
             <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
+              <span className="sr-only">{t("result.loading")}</span>
             </div>
           </div>
         </div>
@@ -185,7 +188,7 @@ const ResultCard = (props) => {
       return (
         <div className="result">
           <img alt="" className="smail" src={smail}/>
-          <span className="text-err">Sorry for these parameters, there are no tours</span>
+          <span className="text-err">{t("result.sorry")}</span>
         </div>
       );
     } else {
@@ -209,17 +212,17 @@ const ResultCard = (props) => {
                     color2="gold"
                 />
                     </div>
-                    <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
+                    <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} {t("bestTours.reviews")}</span>
                     <img alt="" className="descrip_text" src={cards[0].paint} />
                     <span className="descrip_text">{item.country}</span>
                   </div>
-                  <span className="result-price">from {item.min_price}$ </span>
+                  <span className="result-price">{t("bestTours.from")} {item.min_price}$ </span>
                   <Link to="/tourspage">
                     <button
                       onClick={() => clickDetailsContact(item.id)}
                       className="more_details"
                     >
-                      more details
+                      {t("result.more")}
                     </button>
                   </Link>
                 </div>
@@ -237,7 +240,7 @@ const ResultCard = (props) => {
         {tourActivity.map((item) => {
           return (
             <div className="result-li" key={item.id}>
-             <img alt="img" className="image-card" src={item.main_image ?`http://161.35.199.172:7000${item.main_image}` :noImage} />
+             <img alt="img" className="image-card" src={item.main_image ?`http://admin.tripsaround.me${item.main_image}` :noImage} />
               <div className="description-tours">
                 <h1 className="title-tours">{item.name}</h1>
                 <div className="description">
@@ -252,17 +255,17 @@ const ResultCard = (props) => {
                     color2="gold"
                 />
                   </div>
-                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} reviews</span>
+                  <span className="descrip_text">{item.avg_rate_tour[0].count_of_voices} {t("bestTours.reviews")}</span>
                   <img alt="" className="descrip_text" src={cards[0].paint} />
                   <span className="descrip_text">{item.country}</span>
                 </div>
-                <span className="result-price">from {item.min_price}$ </span>
+                <span className="result-price">{t("bestTours.from")} {item.min_price}$ </span>
                 <Link to="/tourspage">
                   <button
                     onClick={() => clickDetailsContact(item.id)}
                     className="more_details"
                   >
-                    more details
+                    {t("result.more")}
                   </button>
                 </Link>
               </div>

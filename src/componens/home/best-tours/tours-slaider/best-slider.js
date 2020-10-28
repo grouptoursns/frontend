@@ -11,9 +11,13 @@ import { connect } from "react-redux";
 import { detailsTour } from "../../../../actions/detailsTour";
 import ReactStars from "react-stars";
 import noImage from "../img/no image 1.png";
+import {useTranslation} from "react-i18next";
+
 
 const BestSlider = (props) => {
   const[numberCard,setNumberCard]=useState()
+  const {t} = useTranslation()
+
 
   const cards1 = [
     {
@@ -104,7 +108,7 @@ const BestSlider = (props) => {
                 <div className="content">
                   <span className="card-name">{item.name}</span>
                   <div>
-                    <span className="from">from </span>
+                    <span className="from">{t("bestTours.from")} </span>
                     <span className="tour-price">{item.min_price} $</span>
                   </div>
                   <div className="reitng11">
@@ -120,7 +124,7 @@ const BestSlider = (props) => {
                       />
                     </div>
                     <span className="reting-figures">
-                      {item.avg_rate_tour[0].count_of_voices} reviews
+                      {item.avg_rate_tour[0].count_of_voices} {t("bestTours.reviews")}
                     </span>
                   </div>
                   <div className="block-buttom">
@@ -131,7 +135,7 @@ const BestSlider = (props) => {
                     <div className="people">
                       <img src={cards1[0].user} alt="img" />
                       <span>
-                        {`${item.min_people}/${item.max_people}`} available
+                        {`${item.min_people}/${item.max_people}`} {t("bestTours.available")}
                       </span>
                     </div>
                   </div>

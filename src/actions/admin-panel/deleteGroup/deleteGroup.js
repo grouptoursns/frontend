@@ -7,7 +7,7 @@ export function deleteGroupAdmin(id_tour,id_group){
     let token = localStorage.getItem('token');
     return async (dispatch)=>{
       await  axios
-      .delete(`http://161.35.199.172:7000/api/company/tours/${id_tour}/group/${id_group}/`,{
+      .delete(`http://admin.tripsaround.me/api/company/tours/${id_tour}/group/${id_group}/`,{
           headers:{
             Authorization: 'Token ' + token 
           }

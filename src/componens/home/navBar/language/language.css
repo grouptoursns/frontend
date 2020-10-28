@@ -1,0 +1,4 @@
+.drop-language{
+    display: flex;
+    flex-direction: column;
+}

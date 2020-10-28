@@ -9,7 +9,7 @@ export function updateGroupAdmin(id1,id2,data) {
 
   return async (dispatch) => {
     await axios
-      .put(`http://161.35.199.172:7000/api/company/tours/${id1}/group/${id2}/`, 
+      .put(`http://admin.tripsaround.me/api/company/tours/${id1}/group/${id2}/`,
       {
         "id": data.id,
         "name": data.name,

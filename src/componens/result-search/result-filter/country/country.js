@@ -3,9 +3,11 @@ import "./country.css";
 import { Dropdown } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { connect } from "react-redux";
+import {useTranslation} from "react-i18next";
 
 
 const DropdownCountry = (props) => {
+  const {t} = useTranslation()
 
   let country=[]
 if(props.allCountry=== undefined){
@@ -30,7 +32,7 @@ else{
 
   return (
     <Dropdown
-      placeholder="Сhoose a country"
+      placeholder={t("result.chooseC")}
       fluid
       search
       selection

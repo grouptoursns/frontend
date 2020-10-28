@@ -7,11 +7,16 @@ export function seccessdestinationData(data){
 
     }
 }
+const lang = localStorage.getItem('language')
 
 export function destinationsData(url){
     return async (dispatch)=>{
       await  axios
-      .get(url)
+      .get(url,{
+          headers:{
+              "Accept-Language": lang
+          }
+      })
       .then(res => {
         dispatch(seccessdestinationData(res.data.results))
       });

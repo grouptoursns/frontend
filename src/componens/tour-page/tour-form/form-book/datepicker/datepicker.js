@@ -22,13 +22,14 @@ class Datepicker extends Component{
     }
 
     componentDidMount() {
-        fetch(`http://161.35.199.172/api/tours/${this.props.detailsTours}`)
+        fetch(`http://admin.tripsaround.me/api/tours/${this.props.detailsTours}`)
             .then(res => res.json())
             .then(json =>{
                 this.setState({
                     isLoaded: true,
                     items: json
                 })
+                console.log("JSON",json)
             });
         // this.checkItems()
     }
@@ -72,10 +73,6 @@ class Datepicker extends Component{
         event.preventDefault();
     }
 
-    // handleFormSubmit = () => {
-    //     let { rememberDate } = this.state;
-    //     localStorage.setItem('rememberDate', rememberDate);
-    // };
 
     render(){
         let { value } = this.state
@@ -86,10 +83,10 @@ class Datepicker extends Component{
             return <div>No dates for this tour</div>
         }
         else {
-            // console.log(this.state.items)
+            // console.log(this.state   .items)
             return (
                 <div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form style={{"padding":"0px"}} onSubmit={this.handleSubmit}>
                         <div>
                             {/*<div className="book-picker__form">*/}
                             {/*    <img src={calendar} alt="calendar.icon" style={{"padding": "0px 10px"}}/>*/}
@@ -102,12 +99,12 @@ class Datepicker extends Component{
                             {
                                 this.state.show ?
                                     <div className="book-picker__date">
-                                        <input
-                                            className="book-picker__date-elem"
-                                            type="submit"
-                                            value={this.state.items.group_tour[0].start_time}
-                                            onClick={this.handleChange}
-                                        />
+                                            <input
+                                                className="book-picker__date-elem"
+                                                type="submit"
+                                                value={this.state.items.group_tour[0].start_time}
+                                                onClick={this.handleChange}
+                                            />
                                     </div>
                                     : null
                             }
