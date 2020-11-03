@@ -97,6 +97,24 @@
     width: 100%;
     padding: 10px 60px;
 }
+
+.modal-request{
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+.modal-request-btn{
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    border: none;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 1205px) {
     .book{
         padding: 0px 20px 0px 20px;

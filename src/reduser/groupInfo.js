@@ -8,13 +8,14 @@
 // }
 
 const initialState={
-    groupInfo:[],
+    groupInfo:0,
 }
 export function groupInfo(state=initialState,action){
     switch(action.type){
         case "GROUP_INFO_SUCCESS":
             return {
-                ...state,groupInfo:[...action.arr]
+                ...state,
+                groupInfo:action.id
             }
         default:
             return state;

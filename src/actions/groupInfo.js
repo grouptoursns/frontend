@@ -1,7 +1,7 @@
-export function groupInfo(arr) {
+export function groupInfo(id) {
     return{
         type:"GROUP_INFO_SUCCESS",
-        arr,
+        id,
     }
 }
 

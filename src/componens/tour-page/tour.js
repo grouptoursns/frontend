@@ -16,11 +16,6 @@ const Tour =(props)=>{
         props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
     },[]);
 
-    console.log(props.tourData)
-
-    // let group = props.tourData;
-
-
     let obj ={}
     if(props.tourData===undefined){
         obj = {}

@@ -25,7 +25,6 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/i18n/locales" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BilimAl/Frontend" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -68,8 +67,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Markdown" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -85,6 +85,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -184,11 +185,21 @@
       <workItem from="1601221676427" duration="5196000" />
       <workItem from="1601373451748" duration="42182000" />
       <workItem from="1601583109180" duration="3311000" />
+      <workItem from="1601629389037" duration="3816000" />
+      <workItem from="1601980882232" duration="105000" />
+      <workItem from="1603303897396" duration="3201000" />
+      <workItem from="1603373171748" duration="3518000" />
+      <workItem from="1603457747254" duration="36000" />
+      <workItem from="1603801154305" duration="2863000" />
+      <workItem from="1603900999050" duration="1340000" />
+      <workItem from="1603913321891" duration="17666000" />
+      <workItem from="1604320954057" duration="6962000" />
+      <workItem from="1604402996733" duration="353000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -255,30 +266,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596214955807" />
-    <state width="1345" height="7" key="GridCell.Tab.0.bottom" timestamp="1601586505161">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1601980995367">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="7" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601586505161" />
-    <state width="1345" height="7" key="GridCell.Tab.0.center" timestamp="1601586505161">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601980995367" />
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="7" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601586505161" />
-    <state width="1345" height="7" key="GridCell.Tab.0.left" timestamp="1601586505161">
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state width="1345" height="2" key="GridCell.Tab.0.center" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="7" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601586505161" />
-    <state width="1345" height="7" key="GridCell.Tab.0.right" timestamp="1601586505161">
+    <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state width="1345" height="2" key="GridCell.Tab.0.left" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="7" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601586505161" />
-    <state x="413" y="0" key="RollbackChangesDialog" timestamp="1595588262727">
+    <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state width="1345" height="2" key="GridCell.Tab.0.right" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="0" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595588262727" />
-    <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1601123060199">
+    <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1603307628803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-279" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601123060199" />
+    <state x="-279" y="2" width="998" height="726" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603307628803" />
     <state x="274" y="93" key="Vcs.Push.Dialog.v2" timestamp="1600251236148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -291,10 +302,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599746740527" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600864224809">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604322767600">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600864224809" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604322767600" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
