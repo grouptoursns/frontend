@@ -22,6 +22,19 @@ export const SuccessfulCompany=(successfulCompany)=>{
         successfulCompany,
     }
 }
+export const errCompany=(successfulCompany)=>{
+  return{
+      type:"ERR_COMPANY",
+      successfulCompany,
+  }
+}
+export const errorMesseg=()=>{
+  return{
+      type:"ERR_COMPANY_FALSE",
+   
+  }
+}
+
 
 export function putCompany(data) {
   return async (dispatch) => {
@@ -48,7 +61,10 @@ export function putCompany(data) {
           dispatch(SuccessfulCompany(res.data.message))
         })
         .catch((error) => {
-          console.log(error.response.data);
+          dispatch(errCompany(error.response.data));
+          setTimeout(() => {
+            dispatch(errorMesseg());
+          }, 2000);
         });
     }catch{
 

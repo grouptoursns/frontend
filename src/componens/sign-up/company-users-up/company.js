@@ -41,7 +41,7 @@ class Company extends React.Component {
     event.preventDefault();
     event.target.className += " was-validated";
     if (
-      this.state.pasword === this.state.pasword2 &&
+      
       this.state.pasword != "" &&
       this.state.pasword2 != ""
     ) {
@@ -61,15 +61,8 @@ class Company extends React.Component {
 
   render() {
     const modal =this.props.spiner;
-    if (modal === true) {
-      return (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        </div>
-      );
-    }
+   const triger = this.props.triger
+ 
     if (modal === false) {
       return(
         <>
@@ -79,7 +72,7 @@ class Company extends React.Component {
       )
       
     }
-    if (this.state.form1 === true) {
+
       return (
         <div>
           <form
@@ -311,6 +304,10 @@ class Company extends React.Component {
                   </div>
                 </div>
               </MDBCol>
+              {
+                triger &&
+                <span className="err-rega-org">Ошибка регистрации</span>
+              }
               <MDBBtn color="primary" type="submit" className="submit">
                 Sign up
               </MDBBtn>
@@ -320,11 +317,12 @@ class Company extends React.Component {
       );
     }
   }
-}
+
 const mapStateToProps = (state) => {
   return {
    seccess:state.SuccessCompany.successCompany,
-    spiner:state.Spiner.spiner
+    spiner:state.Spiner.spiner,
+    triger:state.UserRegistr1.triger
   };
 };
 

@@ -33,10 +33,12 @@ import {groupData} from "./groupDetails";
 import {groupInfo} from "./groupInfo";
 import {GroupListTour} from "./admin-panel/groupListTour";
 import {trigerModalCreteTour} from "./admin-panel/addImageTour"
+import {UserRegistr1} from "./companyRegistr"
 
 const rootReduser = combineReducers({
     trigerModalCreteTour,
     GroupListTour,
+    UserRegistr1,
     UserRegistr,
     Spiner,
     Success,
