@@ -7,31 +7,32 @@ import {tourDataFetch} from "../../../../../actions/tourData";
 
 
 const Counter = (props) => {
+    const [count,setCount] = useState(1);
+    const [show,setShow] = useState(false);
 
     useEffect(() => {
         props.fetchData(`http://161.35.199.172/group/${props.detailsTours}`)
     }, []);
 
+    useEffect(()=>{
+        setCount(1)
+    },[props.tourBookInfo.value])
+
     let slot
     if (props?.tourData?.group_tour?.length){
-        slot = props.tourData.group_tour[0].free_slots
-        console.log(slot)
+        slot = props.tourData.group_tour[props?.tourBookInfo?.index || 0].free_slots
     }
     else{
         slot = 0
     }
-    // console.log(props.tourData.group_tour[0].free_slots)
 
-    const [count,setCount] = useState(1);
-    const [show,setShow] = useState(false);
+
 
     const updateCount = (updateValue) => {
         setCount(count + updateValue)
         props.setTourBookInfo({...props.tourBookInfo, count : count+updateValue})
-        console.log(props.tourBookInfo)
     }
 
-    // console.log('%c freeSlots: ','color:greenyellow',props.freeSlots)
     return(
         <div>
             <div>

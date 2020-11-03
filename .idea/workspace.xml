@@ -27,9 +27,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/groupInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/groupInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/locales/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/locales/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reduser/groupInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/groupInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +82,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Markdown" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -90,6 +98,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -191,12 +200,19 @@
       <workItem from="1601583109180" duration="3311000" />
       <workItem from="1601629389037" duration="3816000" />
       <workItem from="1601980882232" duration="105000" />
-      <workItem from="1603303897396" duration="3128000" />
+      <workItem from="1603303897396" duration="3201000" />
+      <workItem from="1603373171748" duration="3518000" />
+      <workItem from="1603457747254" duration="36000" />
+      <workItem from="1603801154305" duration="2863000" />
+      <workItem from="1603900999050" duration="1340000" />
+      <workItem from="1603913321891" duration="17666000" />
+      <workItem from="1604320954057" duration="6962000" />
+      <workItem from="1604402996733" duration="353000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -267,26 +283,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601980995367" />
-    <state width="1345" height="266" key="GridCell.Tab.0.bottom" timestamp="1603306081381">
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="266" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603306081381" />
-    <state width="1345" height="266" key="GridCell.Tab.0.center" timestamp="1603306081381">
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state width="1345" height="2" key="GridCell.Tab.0.center" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="266" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603306081381" />
-    <state width="1345" height="266" key="GridCell.Tab.0.left" timestamp="1603306081377">
+    <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state width="1345" height="2" key="GridCell.Tab.0.left" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="266" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603306081377" />
-    <state width="1345" height="266" key="GridCell.Tab.0.right" timestamp="1603306081381">
+    <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
+    <state width="1345" height="2" key="GridCell.Tab.0.right" timestamp="1604300366889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="266" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603306081381" />
-    <state x="413" y="0" key="RollbackChangesDialog" timestamp="1595588262727">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="0" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595588262727" />
+    <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604300366889" />
     <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1603307628803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -303,10 +315,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599746740527" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603307643082">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604322767600">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603307643082" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604322767600" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

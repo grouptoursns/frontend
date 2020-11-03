@@ -3,6 +3,8 @@ import './datepicker.css'
 import calendar from '../img/calendar.png'
 import {connect} from "react-redux";
 import {tourDataFetch} from "../../../../../actions/tourData";
+import List from '@material-ui/core/List';
+import Paper from "@material-ui/core/Paper";
 
 
 class Datepicker extends Component{
@@ -15,7 +17,8 @@ class Datepicker extends Component{
             isLoaded: false,
             value: "",
             includesDates: false,
-            rememberDate: ""
+            index: 0,
+            id: 0
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,38 +37,16 @@ class Datepicker extends Component{
         // this.checkItems()
     }
 
-    // checkItems(){
-    //     let time
-    //     if(this.state.items?.group_tour?.length){
-    //         time = this.state.items.group_tour[0].start_time
-    //     }
-    //     else {time = ""}
-    //     // if (time === ""){
-    //     //     this.setState({
-    //     //         isLoaded: false
-    //     //     })
-    //     // }
-    //     // else{ return time }
-    //     console.log('loaded',this.state.isLoaded)
-    // }
 
     showFunc(){
         this.setState({
             show: !this.state.show
         })
-
-        // if (this.state.items.group_tour[0].start_time){
-        //     this.setState({
-        //         includesDates: true
-        //     })
-        // }  else
-        //
-        //     return this.state
     }
 
-    handleChange(event) {
+    handleChange(event, index, id) {
         this.setState({value: event.target.value});
-        this.props.setTourBookInfo({...this.props.tourBookInfo, value: event.target.value})
+        this.props.setTourBookInfo({...this.props.tourBookInfo, value: event.target.value, index, id})
         console.log(this.props.tourBookInfo)
     }
 
@@ -83,28 +64,31 @@ class Datepicker extends Component{
             return <div>No dates for this tour</div>
         }
         else {
-            // console.log(this.state   .items)
             return (
                 <div>
                     <form style={{"padding":"0px"}} onSubmit={this.handleSubmit}>
                         <div>
-                            {/*<div className="book-picker__form">*/}
-                            {/*    <img src={calendar} alt="calendar.icon" style={{"padding": "0px 10px"}}/>*/}
                             <input className="book-picker__date-inpt"
                                    onClick={() => this.showFunc()}
                                    type="text"
                                    value={this.state.value}
                             />
-                            {/*</div>*/}
                             {
                                 this.state.show ?
                                     <div className="book-picker__date">
-                                            <input
-                                                className="book-picker__date-elem"
-                                                type="submit"
-                                                value={this.state.items.group_tour[0].start_time}
-                                                onClick={this.handleChange}
-                                            />
+                                        <Paper style={{maxHeight: 100, overflow: 'auto'}}>
+                                            <List>
+                                                {
+                                                    this.state.items.group_tour.map((item, index)=> <input
+                                                        value={item.start_time}
+                                                        onClick={(e)=>this.handleChange(e, index, item.id)}
+                                                        className="book-picker__date-elem"
+                                                        type="submit"
+                                                    />)
+                                                }
+                                            </List>
+                                        </Paper>
+
                                     </div>
                                     : null
                             }

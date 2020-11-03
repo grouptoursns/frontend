@@ -8,44 +8,51 @@ import {Link} from "react-router-dom";
 import {groupInfo} from "../../../../actions/groupInfo";
 import DatePicker from "./datepicker/datepicker"
 import {useTranslation} from "react-i18next";
-
+import Modal from "react-bootstrap/Modal";
 
 
 const Book =(props)=> {
     const {t} = useTranslation()
     const [userBoolen, setUserBoolean] = useState(false)
+    const [show, setShow] = useState(false)
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
         props.setTourBookInfo([])
-
-        setFreeSlots(freeSlots)
 
         setUserBoolean(JSON.parse(localStorage.getItem('user')))
     }, []);
 
 
 
-    const [freeSlots,setFreeSlots] = useState();
-    const setSlots=()=>{
-
-    }
-    setSlots()
-
 
     let arrId=[];
     const onclickBook=()=>{
-            arrId=props.tourData.group_tour.map((item)=>{
-                return item.id
-            })
-            props.groupInfo(arrId)
+            // arrId=props.tourData.group_tour.map((item)=>{
+            //     return console.log(item.id)
+            // })
+            props.groupInfo(props.tourBookInfo.id)
     }
 
 
 
+
+    let token = localStorage.getItem('token')
     const privateTour=()=>{
-        fetch(`http://admin.tripsaround.me/tour/${props.detailsTours}/send-email`)
-            .then((response) => response.json())
+        fetch(`http://admin.tripsaround.me/tour/${props.detailsTours}/send-email`,{
+            headers: {
+                Authorization: 'Token ' + token
+            }
+        })
+            .then((response) => {
+                if (response.ok == true){
+                    setShow(true)
+                }
+                return response.json()
+            })
             .then((data) => console.log('This is your data', data))
             .catch((err) => console.log(err))
     }
@@ -68,7 +75,7 @@ const Book =(props)=> {
                 <Counter
                     setTourBookInfo={props.setTourBookInfo}
                     tourBookInfo={props.tourBookInfo}
-                    freeSlots={freeSlots}/>
+                    />
 
                 {
                     userBoolen ?
@@ -84,6 +91,13 @@ const Book =(props)=> {
                     :
                     <p style={{"color": "red","font-size":"16px" ,"font-weight": "bolder", "margin-top":"40px"}}>
                         {t("tour.must")}</p> }
+
+                <Modal show={show} onHide={handleClose}>
+                    <div className="modal-request">
+                        <h1>{t("privateTour")}</h1>
+                        <button className="modal-request-btn" onClick={handleClose}>OK</button>
+                    </div>
+                </Modal>
             </div>
         </div>
     )
@@ -100,7 +114,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: url => {dispatch(tourDataFetch(url))},
-        groupInfo: (arr) => dispatch(groupInfo(arr)),
+        groupInfo: (id) => dispatch(groupInfo(id)),
     };
 };
 
