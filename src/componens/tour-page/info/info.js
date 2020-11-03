@@ -16,7 +16,7 @@ const Info = (props) =>{
             <div>
                 <Tabs info={props.info} />
                     <Switch>
-                        <Route exact path="/tourspage/general" component={General}/>
+                        <Route exact path="/tourspage" component={General}/>
                         <Route path="/tourspage/itinerary" component={Itinerary}/>
                         <Route path="/tourspage/inclusions" component={Inclusions}/>
                         <Route path="/tourspage/guide" component={Guide}/>

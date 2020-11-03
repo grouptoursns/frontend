@@ -14,6 +14,7 @@ const Tour =(props)=>{
 
     useEffect( () => {
         props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
+        window.scrollTo(0,0)
     },[]);
 
     let obj ={}
