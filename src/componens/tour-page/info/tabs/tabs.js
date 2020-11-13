@@ -8,7 +8,7 @@ const Tabs =(props)=>{
 
         return (
             <div className="tabs">
-                <NavLink activeClassName="active" className="info-tabs" to="/tourspage/general">{t("info.general")}</NavLink>
+                <NavLink activeClassName="active" className="info-tabs" to="/tourspage">{t("info.general")}</NavLink>
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/itinerary">{t("info.itinerary")}</NavLink>
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/inclusions">{t("info.inclusions")}</NavLink>
                 <NavLink activeClassName="active" className="info-tabs" to="/tourspage/guide">{t("info.guide")}</NavLink>
