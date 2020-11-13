@@ -92,9 +92,9 @@ const BestSlider = (props) => {
         {props.cards ? (
           props.cards.map((item) => (
             <Link
-              to="/tourspage"
+              to={`/tourspage/${item.id}`}
               key={item.id}
-              onClick={() => onClickCard(item.id)}
+           
             >
               <div className="card">
                 <div className="block-img">

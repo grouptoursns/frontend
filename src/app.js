@@ -33,7 +33,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/destinations" component={Destinations} />
           <Route path="/activity" component={Activity} />
-          <Route path="/tourspage"> <Tour setTourBookInfo={setTourBookInfo} tourBookInfo={tourBookInfo}/> </Route>
+          <Route path="/tourspage/:id"> <Tour setTourBookInfo={setTourBookInfo} tourBookInfo={tourBookInfo}/> </Route>
           <Route path="/sign-up"  component={SignUp} />
           <Route path="/sign-in"  component={SignIn} />
           <Route path="/sign-up-company"  component={SignCompany} />

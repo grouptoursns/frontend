@@ -7,14 +7,16 @@ import Group from './groups-page/group/group.js'
 import {tourDataFetch} from "../../actions/tourData";
 import {tourData} from "../../reduser/tourData";
 import NavBar from "../home/navBar/navBar";
+import { Link, Route, Switch, useParams } from "react-router-dom";
 
 
 
 const Tour =(props)=>{
-
+    const params = useParams();
+    console.log(params)
     useEffect( () => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
-    },[]);
+        props.fetchData(`http://admin.tripsaround.me/api/tours/${params.id}`);
+    },[props]);
 
     let obj ={}
     if(props.tourData===undefined){

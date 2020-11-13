@@ -67,9 +67,9 @@ const ToursSlider = (props) => {
       {props.card ? props.card.map((item) => 
           (
             <Link
-              to="/tourspage"
+              to={`/tourspagevdsvs/${item.id}`}
               key={item.id}
-              onClick={() => onClickCard(item.id)}
+        
             >
               <div className="card">
                 <div className="block-img">
