@@ -14,7 +14,7 @@ import About from "./componens/about/about.js"
 import UserPage from "./componens/user-page/user-page"
 import TourRating from "./componens/tour-rating/tour-rating";
 import AdminPanel from "./componens/admin-panel/admin-panel"
-
+import Confirm from "./componens/confirm-email/confirm";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Groups from "./componens/tour-page/groups-page/groups";
@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/user-page"  component={UserPage} />
           <Route path="/tour-rating"  component={TourRating} />
           <Route path="/admin-panel"  component={AdminPanel} />
-          
+          <Route path="/api/users/customer-activate/:uid/:token" component={Confirm} />
           <Route path="/tour-groups/groups"> <Groups tourBookInfo={tourBookInfo}/> </Route>
           <Route component={NotFound} />
  

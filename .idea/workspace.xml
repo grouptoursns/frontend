@@ -27,8 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3b538c8a-800e-4090-8dca-9c91ca4e4a04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -97,7 +98,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d7892d55-e11f-4110-b261-6efbfd2b6a6a" name="Default Changelist" comment="" />
+      <changelist id="3b538c8a-800e-4090-8dca-9c91ca4e4a04" name="Default Changelist" comment="" />
       <created>1593636108606</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -201,6 +202,11 @@
       <workItem from="1603913321891" duration="17666000" />
       <workItem from="1604320954057" duration="6962000" />
       <workItem from="1604402996733" duration="353000" />
+      <workItem from="1605453661878" duration="2235000" />
+      <workItem from="1605609288511" duration="4885000" />
+      <workItem from="1605732838072" duration="3991000" />
+      <workItem from="1605797013842" duration="7000" />
+      <workItem from="1605883061995" duration="5748000" />
     </task>
     <servers />
   </component>
@@ -268,30 +274,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1600777083866" />
-    <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596214955807">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="412" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596214955807" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1601980995367">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601980995367" />
-    <state width="1345" height="2" key="GridCell.Tab.0.bottom" timestamp="1604404696435">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1605738443825">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1345" height="2" key="GridCell.Tab.0.center" timestamp="1604404696435">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1605738443825">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1345" height="2" key="GridCell.Tab.0.left" timestamp="1604404696435">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1605738443825">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1345" height="2" key="GridCell.Tab.0.right" timestamp="1604404696435">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1605738443825">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
     <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1603307628803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -308,10 +314,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599746740527" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604322767600">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="389" y="55" width="756" height="768" key="search.everywhere.popup" timestamp="1605734755710">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604322767600" />
+    <state x="389" y="55" width="756" height="768" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605734755710" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

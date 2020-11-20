@@ -33,6 +33,7 @@ class Datepicker extends Component{
                     items: json
                 })
                 console.log("JSON",json)
+                console.log('props',this.props)
             });
         // this.checkItems()
     }

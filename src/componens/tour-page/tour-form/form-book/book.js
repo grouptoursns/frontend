@@ -20,13 +20,13 @@ const Book =(props)=> {
     const handleShow = () => setShow(true);
 
     useEffect(() => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
+        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.info.id}`);
         props.setTourBookInfo([])
 
         setUserBoolean(JSON.parse(localStorage.getItem('user')))
     }, []);
 
-
+    // console.log('data book',props)
 
 
     let arrId=[];
@@ -42,7 +42,7 @@ const Book =(props)=> {
 
     let token = localStorage.getItem('token')
     const privateTour=()=>{
-        fetch(`http://admin.tripsaround.me/tour/${props.detailsTours}/send-email`,{
+        fetch(`http://admin.tripsaround.me/tour/${props.info.id}/send-email`,{
             headers: {
                 Authorization: 'Token ' + token
             }
