@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import './datepicker.css'
-import calendar from '../img/calendar.png'
 import {connect} from "react-redux";
 import {tourDataFetch} from "../../../../../actions/tourData";
 import List from '@material-ui/core/List';
@@ -12,30 +11,16 @@ class Datepicker extends Component{
     constructor(props){
         super(props);
         this.state ={
-            items: {},
+            items: [],
             show: false,
             isLoaded: false,
             value: "",
             includesDates: false,
             index: 0,
-            id: 0
+            id: this.props.id
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    componentDidMount() {
-        fetch(`http://admin.tripsaround.me/api/tours/${this.props.detailsTours}`)
-            .then(res => res.json())
-            .then(json =>{
-                this.setState({
-                    isLoaded: true,
-                    items: json
-                })
-                console.log("JSON",json)
-                console.log('props',this.props)
-            });
-        // this.checkItems()
     }
 
 
@@ -57,11 +42,7 @@ class Datepicker extends Component{
 
 
     render(){
-        let { value } = this.state
-        let { items = {}} = this.state
-        let { isLoaded } = this.state
-        let { includesDates } = this.state
-        if (!isLoaded){
+        if (!this.props.info.group_tour){
             return <div>No dates for this tour</div>
         }
         else {
@@ -80,7 +61,7 @@ class Datepicker extends Component{
                                         <Paper style={{maxHeight: 100, overflow: 'auto'}}>
                                             <List>
                                                 {
-                                                    this.state.items.group_tour.map((item, index)=> <input
+                                                    this.props.info.group_tour?.map((item, index)=> <input
                                                         value={item.start_time}
                                                         onClick={(e)=>this.handleChange(e, index, item.id)}
                                                         className="book-picker__date-elem"
@@ -111,7 +92,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: url => {dispatch(tourDataFetch(url))}
+        // fetchData: url => {dispatch(tourDataFetch(url))}
     };
 };
 

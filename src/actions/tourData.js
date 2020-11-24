@@ -21,8 +21,13 @@ export function tourDataFetch(url){
                 }
                 return res;
             })
-            .then(res =>res.json())
-            .then(tourData => dispatch(tourDataFetchSuccess(tourData)))
+            .then(res =>{
+                return res.json()
+            })
+            .then(tourData => {
+                console.log(tourData)
+                return dispatch(tourDataFetchSuccess(tourData))
+            })
     }
 
 }

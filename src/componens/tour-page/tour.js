@@ -14,23 +14,21 @@ const Tour =(props)=>{
     // console.log(params)
     useEffect( () => {
         props.fetchData(`http://admin.tripsaround.me/api/tours/${params.id}`);
-    },[props]);
+    },[]);
 
-    let tourId =  params.id
 
-    let obj ={}
+    let obj;
     if(props.tourData===undefined){
         obj = {}
     }
-
     else{
         obj = props.tourData
-
     }
+    // console.log(obj)
             return (
             <div className='tour-page'>
                 <NavBar />
-                <Form id={tourId} data={obj} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
+                <Form data={obj} id={params.id} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 <Info info={obj}/>
             </div>
         );

@@ -20,7 +20,7 @@ const Book =(props)=> {
     const handleShow = () => setShow(true);
 
     useEffect(() => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.info.id}`);
+        // props.fetchData(`http://admin.tripsaround.me/api/tours/${props.id}`);
         props.setTourBookInfo([])
 
         setUserBoolean(JSON.parse(localStorage.getItem('user')))
@@ -42,7 +42,7 @@ const Book =(props)=> {
 
     let token = localStorage.getItem('token')
     const privateTour=()=>{
-        fetch(`http://admin.tripsaround.me/tour/${props.info.id}/send-email`,{
+        fetch(`http://admin.tripsaround.me/tour/${props.id}/send-email`,{
             headers: {
                 Authorization: 'Token ' + token
             }
@@ -69,12 +69,17 @@ const Book =(props)=> {
                 <p className="book-picker__select">{t("tour.date")}</p>
                 <DatePicker
                     setTourBookInfo={props.setTourBookInfo}
-                    tourBookInfo={props.tourBookInfo}/>
+                    tourBookInfo={props.tourBookInfo}
+                    id={props.id}
+                    info={props.info}
+                />
 
                 <p className="book-picker__date">{t("tour.count")}</p>
                 <Counter
                     setTourBookInfo={props.setTourBookInfo}
                     tourBookInfo={props.tourBookInfo}
+                    id={props.id}
+                    info={props.info}
                     />
 
                 {

@@ -27,9 +27,22 @@
   <component name="ChangeListManager">
     <list default="true" id="3b538c8a-800e-4090-8dca-9c91ca4e4a04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/confirm-email/confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/confirm-email/confirm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +219,10 @@
       <workItem from="1605609288511" duration="4885000" />
       <workItem from="1605732838072" duration="3991000" />
       <workItem from="1605797013842" duration="7000" />
-      <workItem from="1605883061995" duration="5748000" />
+      <workItem from="1605883061995" duration="7607000" />
+      <workItem from="1605953834110" duration="30000" />
+      <workItem from="1606154238406" duration="723000" />
+      <workItem from="1606236386301" duration="6488000" />
     </task>
     <servers />
   </component>
@@ -262,10 +278,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="551" y="256" key="#ESLint/0.0.1366.728@0.0.1366.728" timestamp="1597614395851" />
-    <state x="309" y="42" key="#Inspections" timestamp="1597586558933">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1597586558933" />
     <state x="174" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601379636502">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -278,26 +290,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601980995367" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1605738443825">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1606154967180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1605738443825">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606154967180" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1606154967179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1605738443825">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606154967179" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1606154967179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1605738443825">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606154967179" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1606154967179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605738443825" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606154967179" />
     <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1603307628803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -310,10 +322,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1601381338048" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1599746740527">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="381" y="183" key="run.anything.popup" timestamp="1606243213771">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599746740527" />
+    <state x="381" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606243213771" />
     <state x="389" y="55" width="756" height="768" key="search.everywhere.popup" timestamp="1605734755710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

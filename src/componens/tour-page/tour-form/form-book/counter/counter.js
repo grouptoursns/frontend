@@ -11,7 +11,7 @@ const Counter = (props) => {
     const [show,setShow] = useState(false);
 
     useEffect(() => {
-        props.fetchData(`http://161.35.199.172/group/${props.detailsTours}`)
+        // props.fetchData(`http://161.35.199.172/group/${props.detailsTours}`)
     }, []);
 
     useEffect(()=>{

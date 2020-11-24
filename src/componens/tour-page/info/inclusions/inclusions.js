@@ -7,9 +7,6 @@ import {useTranslation} from "react-i18next";
 const Inclusions =(props)=>{
     const {t} = useTranslation()
 
-    useEffect( () => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
-    },[]);
         return (
             <div className="inclusions">
                 <div className="inclusions-content">

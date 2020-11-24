@@ -8,11 +8,6 @@ import {useTranslation} from "react-i18next";
 const General =(props)=>{
     const {t} = useTranslation()
 
-    useEffect( () => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
-    },[]);
-
-
     let type = ""
     let typeOfTour = ""
     if (props.tourData.category){

@@ -6,7 +6,7 @@ import noImage from './img/no-image-icon-13.jpg'
 
 
 const Pic = (props) =>{
-
+    console.log(props)
     let pictures;
     pictures = props.pic.tour_image
 

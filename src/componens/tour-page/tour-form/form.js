@@ -5,13 +5,14 @@ import Book from './form-book/book.js'
 import './form.css'
 
 const Form = (props) =>{
+
     return(
         <div className="contain">
             <div className="form">
                 <Title info={props.data}/>
                 <div className="form-content">
                     <Pic pic={props.data} />
-                    <Book info={props.data} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
+                    <Book info={props.data} id={props.id} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 </div>
             </div>
         </div>

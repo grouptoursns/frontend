@@ -9,7 +9,6 @@ const Confirm =()=>{
     const [confirmSuccess, setConfirmSuccess] = useState(false)
     const [confirmErr,setConfirmErr] = useState(false)
     const params = useParams()
-    console.log(params)
 
 
     useEffect(()=>{

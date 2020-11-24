@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 const Title = (props)=>{
 
     useEffect( () => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
+        // props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
     },[]);
 
 
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: url => {dispatch(tourDataFetch(url))}
+        // fetchData: url => {dispatch(tourDataFetch(url))}
     };
 };
 

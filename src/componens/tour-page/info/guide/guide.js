@@ -9,11 +9,6 @@ import {useTranslation} from "react-i18next";
 const Guide =(props)=>{
     const {t} = useTranslation()
 
-    useEffect( () => {
-        props.fetchData(`http://admin.tripsaround.me/api/tours/${props.detailsTours}`);
-    },[]);
-
-
     let guidePhoto
     guidePhoto = props.tourData.guide_photo
     if (!guidePhoto){

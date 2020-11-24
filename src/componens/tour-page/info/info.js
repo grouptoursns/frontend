@@ -16,12 +16,12 @@ const Info = (props) =>{
             <div>
                 <Tabs info={props.info} />
                     <Switch>
-                        <Route exact path="/tourspage" component={General}/>
-                        <Route path="/tourspage/itinerary" component={Itinerary}/>
-                        <Route path="/tourspage/inclusions" component={Inclusions}/>
-                        <Route path="/tourspage/guide" component={Guide}/>
-                        <Route path="/tourspage/meet" component={Meet}/>
-                        <Route path="/tourspage/reviews" component={Reviews}/>
+                        <Route exact path="/tourspage/:id" component={General}/>
+                        <Route path="/tourspage/:id/itinerary" component={Itinerary}/>
+                        <Route path="/tourspage/:id/inclusions" component={Inclusions}/>
+                        <Route path="/tourspage/:id/guide" component={Guide}/>
+                        <Route path="/tourspage/:id/meet" component={Meet}/>
+                        <Route path="/tourspage/:id/reviews" component={Reviews}/>
                     </Switch>
             </div>
         </div>
