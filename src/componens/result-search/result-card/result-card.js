@@ -116,7 +116,7 @@ const ResultCard = (props) => {
                   <span className="descrip_text">{item.country}</span>
                 </div>
                 <span className="result-price">{t("bestTours.from")} {item.min_price}$ </span>
-                <Link to="/tourspage">
+                <Link to={`/tourspage/${item.id}`}>
                   <button
                     onClick={() => clickDetailsContact(item.id)}
                     className="more_details"
