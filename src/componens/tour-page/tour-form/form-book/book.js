@@ -17,23 +17,18 @@ const Book =(props)=> {
     const [show, setShow] = useState(false)
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     useEffect(() => {
-        // props.fetchData(`http://admin.tripsaround.me/api/tours/${props.id}`);
         props.setTourBookInfo([])
 
         setUserBoolean(JSON.parse(localStorage.getItem('user')))
     }, []);
 
-    // console.log('data book',props)
 
 
     let arrId=[];
     const onclickBook=()=>{
-            // arrId=props.tourData.group_tour.map((item)=>{
-            //     return console.log(item.id)
-            // })
+
             props.groupInfo(props.tourBookInfo.id)
     }
 
@@ -53,7 +48,7 @@ const Book =(props)=> {
                 }
                 return response.json()
             })
-            .then((data) => console.log('This is your data', data))
+            .then((data) => console.log(data))
             .catch((err) => console.log(err))
     }
 
@@ -90,8 +85,12 @@ const Book =(props)=> {
                             </Link>
 
 
-                    <button className="private" onClick={privateTour}>{t("tour.private")}</button>
-                    <p style={{"margin-top": "5px"}}>{t("tour.descrip")}</p>
+                            <button className="private" onClick={privateTour}>{t("tour.private")}</button>
+                            <p style={{"margin-top": "5px"}}>{t("tour.descrip")}</p>
+
+                            <Link to="/tour-rating" style={{color: 'white', textDecoration: 'none'}}>
+                                <button className="update">{t("rating.btn")}</button>
+                            </Link>
                         </div>
                     :
                     <p style={{"color": "red","font-size":"16px" ,"font-weight": "bolder", "margin-top":"40px"}}>

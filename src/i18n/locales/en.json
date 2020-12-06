@@ -135,5 +135,12 @@
     "extra": "extra people"
   },
   "search": "Search tours",
-  "privateTour": "Your request has been accepted, await a response"
+  "privateTour": "Your request has been accepted, await a response",
+  "rating": {
+    "btn": "Rate tour",
+    "write":  "Please write your opinion",
+    "opinion": "Please rate how much you enjoyed the trip!",
+    "feedback": "give feedback",
+    "thanks": "Thanks for contributing to making our service better!"
+  }
 }
