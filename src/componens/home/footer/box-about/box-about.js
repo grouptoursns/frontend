@@ -4,10 +4,10 @@ import AboutUs from "../about-us/about-us.js"
 import Useful from "../useful/useful.js"
 
 
-const BoxAbout =()=>{
+const BoxAbout =({data})=>{
     return(
         <div className="box-about">
-            <AboutUs/>
+            <AboutUs data={data&&data}/>
             <Useful/>
 
         </div>

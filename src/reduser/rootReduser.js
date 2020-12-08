@@ -34,6 +34,7 @@ import {groupInfo} from "./groupInfo";
 import {GroupListTour} from "./admin-panel/groupListTour";
 import {trigerModalCreteTour} from "./admin-panel/addImageTour"
 import {UserRegistr1} from "./companyRegistr"
+import {AboutData} from "./about"
 
 const rootReduser = combineReducers({
     trigerModalCreteTour,
@@ -69,7 +70,8 @@ const rootReduser = combineReducers({
     trigerModalUpdateTour,
     groupData,
     groupInfo,
-    getArrImage
+    getArrImage,
+    AboutData
 });
 
 export default rootReduser;

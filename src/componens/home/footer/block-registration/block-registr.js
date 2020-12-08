@@ -3,11 +3,11 @@ import "./block-registr.css"
 import Registy from "../registr/registr.js"
 import SocSeti from "../soc-seti/soc-seti.js"
 
-const BlockRegistr =()=>{
+const BlockRegistr =({data})=>{
     return(
         <div className="block-registr">
             <Registy/>
-            <SocSeti/>
+            <SocSeti data={data&&data}/>
         </div>
     )
 }

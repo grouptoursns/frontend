@@ -30,3 +30,8 @@ margin-bottom: 60px;
 color: #000000;
 margin-top: 50px;
 }
+.about_img{
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}

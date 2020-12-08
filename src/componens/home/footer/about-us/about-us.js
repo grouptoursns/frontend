@@ -6,25 +6,44 @@ import mail from "./img/mail.png";
 import {useTranslation} from "react-i18next";
 
 
-const AboutUs = () => {
+const AboutUs = ({data}) => {
   const {t} = useTranslation()
 
   return (
     <div className="about">
       <span className="title-contact">{t("footer.title")}</span>
       <div className="content-block">
-        <div className="block-text-footer">
-          <img className="paint-footer" alt="img" src={paint} />
-          <span>{t("footer.address")}</span>
-        </div>
-        <div className="block-text-footer">
-          <img alt="img" src={phone} />
-          <span>+996 999 99 99 99</span>
-        </div>
-        <div className="block-text-footer">
-          <img alt="img" src={mail} />
-          <span>ivanivanov@gmail.com</span>
-        </div>
+        {
+          data&&
+          data.map((item,index)=>{
+            if(item.name=="address"){
+              return(
+                <div className="block-text-footer" key={item.id}>
+                <img className="paint-footer" alt="img" src={paint} />
+              <span>{item.text}</span>
+              </div>
+              )
+            }
+            if(item.name=="phone"){
+              return(
+                <div className="block-text-footer" key={item.id}>
+           <img alt="img" src={phone} />
+              <span>{item.text}</span>
+              </div>
+              )
+            }
+            if(item.name=="mail"){
+              return(
+                <div className="block-text-footer" key={item.id}>
+                <img alt="img" src={mail} />
+              <span>{item.text}</span>
+              </div>
+              )
+            }
+          })
+        }
+       
+
       </div>
     </div>
   );
