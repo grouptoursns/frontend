@@ -31,16 +31,10 @@
     <list default="true" id="3b538c8a-800e-4090-8dca-9c91ca4e4a04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/groups-page/groups.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-rating/tour-rating.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/locales/ru.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +221,9 @@
       <workItem from="1606954510088" duration="763000" />
       <workItem from="1607025984016" duration="4800000" />
       <workItem from="1607086728562" duration="40000" />
-      <workItem from="1607290075398" duration="2504000" />
+      <workItem from="1607290075398" duration="2824000" />
+      <workItem from="1607371916317" duration="1631000" />
+      <workItem from="1607521715316" duration="135000" />
     </task>
     <servers />
   </component>
@@ -291,26 +287,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601980995367" />
-    <state width="1515" height="249" key="GridCell.Tab.0.bottom" timestamp="1607033993173">
+    <state width="1515" height="109" key="GridCell.Tab.0.bottom" timestamp="1607375550075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="249" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607033993173" />
-    <state width="1515" height="249" key="GridCell.Tab.0.center" timestamp="1607033993173">
+    <state width="1515" height="109" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607375550075" />
+    <state width="1515" height="109" key="GridCell.Tab.0.center" timestamp="1607375550075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="249" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607033993173" />
-    <state width="1515" height="249" key="GridCell.Tab.0.left" timestamp="1607033993173">
+    <state width="1515" height="109" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607375550075" />
+    <state width="1515" height="109" key="GridCell.Tab.0.left" timestamp="1607375550075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="249" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607033993173" />
-    <state width="1515" height="249" key="GridCell.Tab.0.right" timestamp="1607033993173">
+    <state width="1515" height="109" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607375550075" />
+    <state width="1515" height="109" key="GridCell.Tab.0.right" timestamp="1607375550075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604404696435" />
-    <state width="1515" height="249" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607033993173" />
+    <state width="1515" height="109" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607375550075" />
     <state x="-279" y="2" width="998" height="726" key="SettingsEditor" timestamp="1603307628803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

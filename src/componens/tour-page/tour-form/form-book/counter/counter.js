@@ -10,6 +10,7 @@ const Counter = (props) => {
 
     useEffect(()=>{
         setCount(1)
+        props.setTourBookInfo({...props.tourBookInfo, count : count})
     },[props.tourBookInfo.value])
 
     let slot;

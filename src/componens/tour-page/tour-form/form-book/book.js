@@ -28,7 +28,6 @@ const Book =(props)=> {
 
     let arrId=[];
     const onclickBook=()=>{
-
             props.groupInfo(props.tourBookInfo.id)
     }
 

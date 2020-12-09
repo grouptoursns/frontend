@@ -128,8 +128,8 @@
     "price": "Price:",
     "start": "Start day:",
     "finish": "Finish day:",
-    "count": "Count of people",
-    "total": "Total price",
+    "count": "Count of people:",
+    "total": "Total price:",
     "list": "List of participants:",
     "book": "Book now",
     "extra": "extra people"
