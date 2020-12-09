@@ -18,7 +18,6 @@ import Confirm from "./componens/confirm-email/confirm";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Groups from "./componens/tour-page/groups-page/groups";
-import Group from "./componens/tour-page/groups-page/group/group";
 
 const App = () => {
 

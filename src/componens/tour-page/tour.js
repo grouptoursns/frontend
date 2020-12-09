@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import {tourDataFetch} from "../../actions/tourData";
 import NavBar from "../home/navBar/navBar";
 import { Link, Route, Switch, useParams } from "react-router-dom";
-
+import Footer from "../home/footer/footer";
 
 
 const Tour =(props)=>{
@@ -14,7 +14,10 @@ const Tour =(props)=>{
     // console.log(params)
     useEffect( () => {
         props.fetchData(`http://admin.tripsaround.me/api/tours/${params.id}`);
+        window.scrollTo(0,0);
     },[]);
+
+    localStorage.setItem('tourId', params.id);
 
 
     let obj;
@@ -30,6 +33,7 @@ const Tour =(props)=>{
                 <NavBar />
                 <Form data={obj} id={params.id} setTourBookInfo={props.setTourBookInfo} tourBookInfo={props.tourBookInfo}/>
                 <Info info={obj}/>
+                <Footer />
             </div>
         );
     }

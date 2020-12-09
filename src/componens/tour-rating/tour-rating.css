@@ -19,3 +19,9 @@
     border: none;
     color: white;
 }
+
+.tour-rating__description{
+    width: 80%;
+    height: 50%;
+    margin-bottom: 50px;
+}
