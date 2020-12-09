@@ -26,24 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b538c8a-800e-4090-8dca-9c91ca4e4a04" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tourData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tourData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/confirm-email/confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/confirm-email/confirm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/guide/guide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/inclusions/inclusions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/itinerary/itinerary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/meet/meet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/reviews/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/info/tabs/tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form-book/datepicker/datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/pic-change/pic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour-form/title/form-title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componens/tour-page/tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componens/tour-page/tour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
